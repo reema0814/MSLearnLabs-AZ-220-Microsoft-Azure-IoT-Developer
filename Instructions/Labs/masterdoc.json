@@ -1,0 +1,109 @@
+[
+  {
+    "Name": "AZ-220: Microsoft Azure IoT Developer",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/new/master/Instructions/Labs",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_01-getting-started-with-azure.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_02-getting-started-with-azure-iot-services.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_03-OPT-1-set-up-the-development-environment.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_03-set-up-the-development-environment.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_04-OPT-1-connect-iot-device-to-azure.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_04-connect-iot-device-to-azure.md",
+        "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_05-OPT-1-individual-enrollment-of-device-in-dps.md",
+        "Order": 7
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_05-individual-enrollment-of-device-in-dps.md",
+        "Order": 8
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_06-OPT-1-automatic-enrollment-of-devices-in-dps.md",
+        "Order": 9
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_06-automatic-enrollment-of-devices-in-dps.md",
+        "Order": 10
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_07-analyze-message-data-in-real-time.md",
+        "Order": 11
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_09-iot-hub-integration-with-azure-event-grid.md",
+        "Order": 12
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_10-analyze-time-stamped-data-with-time-series-insights.md",
+        "Order": 13
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_11-introduction-to-azure-iot-edge.md",
+        "Order": 14
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_12-setup-an-iot-edge-gateway.md",
+        "Order": 15
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_13-deploy-and-debug-custom-azure-iot-edge-module.md",
+        "Order": 16
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_14-iot-edge-device-in-restricted-network.md",
+        "Order": 17
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_15-OPT-1-remotely-monitor-and-control-devices.md",
+        "Order": 18
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_15-remotely-monitor-and-control-devices.md",
+        "Order": 19
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_16-OPT-1-automatic-device-management.md",
+        "Order": 20
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_16-automatic-device-management.md",
+        "Order": 21
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_17-how-to-manage-your-azure-iot-hub.md",
+        "Order": 22
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_18-azure-defender-for-iot.md",
+        "Order": 23
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_19-OPT-1-azure-digital-twins.md",
+        "Order": 24
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/master/Instructions/Labs/LAB_AK_19-azure-digital-twins.md",
+        "Order": 25
+      }
+    ]
+  }
+]
