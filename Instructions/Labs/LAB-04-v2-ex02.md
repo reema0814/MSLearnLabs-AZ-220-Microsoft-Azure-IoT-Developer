@@ -7,20 +7,18 @@ In this exercise, you will create a simulated device application using Visual St
 > **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
 
 ### Task 1: Create the initial project
+ 
+1. Open **Visual Studio Code** editor from the desktop.
 
-1. Open a new command-line / terminal window.
+   ![](../media2/v2img8.png)
 
-    For example, you can use the Windows **Command Prompt** command-line application.
+1. Select **Terminal** and click on **New Terminal** from the menu.
 
-1. Navigate to the folder location where you want to create your simulated device application.
+1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
 
-    The root folder location is not critical, but something easy to find with a short folder path amy be helpful.
-
-1. At the command prompt, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
-
-   ```bash
-   mkdir CaveDevice
-   cd CaveDevice
+   ```
+   New-Item -Path "C:\CaveDevice" -ItemType "Directory"
+   cd C:\CaveDevice
    ```
 
 1. To create a new .NET console application, enter the following command:
@@ -47,11 +45,9 @@ In this exercise, you will create a simulated device application using Visual St
     dotnet restore
     ```
 
-1. Open **Visual Studio Code**.
-
-    You can open Visual Studio Code from the Windows Start menu.
-
 1. In Visual Studio Code, on the **File** menu, click **Open Folder**.
+
+   ![](../media2/v2img11.png)
 
 1. In the **Open Folder** dialog, navigate to the location where you created the **CaveDevice** directory.
 
@@ -62,7 +58,9 @@ In this exercise, you will create a simulated device application using Visual St
     * CaveDevice.csproj
     * Program.cs
 
-    > **Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
+      ![](../media2/v2img12.png)
+
+      > **Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
 
 ### Task 2: Explore the application
 
@@ -114,39 +112,20 @@ In this task, you will use Visual Studio Code to review the contents and purpose
     Your file contents should be similar to the following:
 
     ```csharp
-    using System;
-
-    namespace CaveDevice
-    {
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                Console.WriteLine("Hello World!");
-            }
-        }
-    }
+     Console.WriteLine("Hello, World!");
     ```
 
     This program simply writes "Hello World!" to the command line window. Even though there isn't much code here, there are still some things worth noting:
 
-    * The **using** area - the source file lists the namespaces that the code is **using** (this is typically done at the top of the file as it is here). In this example, the code specifies that it is using **System**. This means that when your code uses a component that's contained within the **System** namespace, you don't have to explicitly list the word **System** within that code line. For example, in the code above, the **Console** class is used to write "Hello World!". The **Console** class is part of the **System** namespace, but you didn't have to include the word **System** when you used **Console**. The benefit of this becomes more apparent when you consider that some namespaces are nested quite deeply (five or more levels is common). Once again referring to the code above, if you didn't specify **using System;**, you would have to write the console line as:
+1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
 
-        ```csharp
-        System.Console.WriteLine("Hello World!");
-        ```
+   ![](../media2/v2img13.png)
 
-    * The **namespace** area - this specifies that the classes contained with the **{ }** that follow the namespace are part of that namespace. So, similar to how **Console** is part of the **System** namespace, in the example above, the **Program** class is part of the **CaveDevice** namespace, and its full name is **CaveDevice.Program**.
-
-    * The **class** area - this defines the contents of the **Program** class. You can have more than one class within a single source file
-
-    > **Note**: Developers will typically separate classes into their own source file (a single class per source file), especially in larger projects. However, in this lab, you will be including multiple classes per file. This will help to simplify the lab instructions and does not imply best practice.
-
-1. On the Visual Studio Code **View** menu, click **Terminal**.
-
-    This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
+     This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
+
+   ![](../media2/v2img14.png)
 
     The Terminal command prompt includes the current directory path. The commands that you enter are run at the current location, so be sure that you are located in the **CaveDevice** folder.
 
@@ -157,6 +136,8 @@ In this task, you will use Visual Studio Code to review the contents and purpose
     ```
 
 1. Notice that **Hello World!** is displayed.
+
+   ![](../media2/v2img15.png)
 
     After a moment, you should see **Hello World!** displayed on the line directly below the **dotnet run** command that you entered.
 
@@ -406,6 +387,114 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     > **Information**: You can view a more representative example of the code that interacts with a simple temperature, humidity and pressure sensor [here](https://bit.ly/IoT-BME280).
 
+1. Final code should look like this. Make sure you replace the `<Connection_String>` with the connection string you copied earlier.
+
+   ```csharp
+    using System;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Devices.Client;
+    using Newtonsoft.Json;
+
+    namespace CaveDevice
+    {
+        class Program
+        {
+            // Contains methods that a device can use to send messages to and receive from an IoT Hub.
+            private static DeviceClient deviceClient;
+
+            // The device connection string to authenticate the device with your IoT hub.
+            // Note: in real-world applications you would not "hard-code" the connection string
+            // It could be stored within an environment variable, passed in via the command-line or
+            // stored securely within a TPM module.
+            private readonly static string connectionString = "<Con_STR>";
+
+            private static void Main(string[] args)
+            {
+                Console.WriteLine("IoT Hub C# Simulated Cave Device. Ctrl-C to exit.\n");
+
+                // Connect to the IoT hub using the MQTT protocol
+                deviceClient = DeviceClient.CreateFromConnectionString(connectionString, TransportType.Mqtt);
+                SendDeviceToCloudMessagesAsync();
+                Console.ReadLine();
+            }
+
+            private static async void SendDeviceToCloudMessagesAsync()
+            {
+                // Create an instance of our sensor
+                var sensor = new EnvironmentSensor();
+
+                while (true)
+                {
+                    // read data from the sensor
+                    var currentTemperature = sensor.ReadTemperature();
+                    var currentHumidity = sensor.ReadHumidity();
+
+                    var messageString = CreateMessageString(currentTemperature, currentHumidity);
+
+                    // create a byte array from the message string using ASCII encoding
+                    var message = new Message(Encoding.ASCII.GetBytes(messageString));
+
+                    // Add a custom application property to the message.
+                    // An IoT hub can filter on these properties without access to the message body.
+                    message.Properties.Add("temperatureAlert", (currentTemperature > 30) ? "true" : "false");
+
+                    // Send the telemetry message
+                    await deviceClient.SendEventAsync(message);
+                    Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
+
+                    await Task.Delay(1000);
+                }
+            }
+
+            private static string CreateMessageString(double temperature, double humidity)
+            {
+                // Create an anonymous object that matches the data structure we wish to send
+                var telemetryDataPoint = new
+                {
+                    temperature = temperature,
+                    humidity = humidity
+                };
+
+                // Create a JSON string from the anonymous object
+                return JsonConvert.SerializeObject(telemetryDataPoint);
+            }
+
+        }
+
+        /// <summary>
+    /// This class represents a sensor
+    /// real-world sensors would contain code to initialize
+    /// the device or devices and maintain internal state
+    /// a real-world example can be found here: https://bit.ly/IoT-BME280
+    /// </summary>
+    internal class EnvironmentSensor
+        {
+            // Initial telemetry values
+            double minTemperature = 20;
+            double minHumidity = 60;
+            Random rand = new Random();
+
+            internal EnvironmentSensor()
+            {
+                // device initialization could occur here
+            }
+
+            internal double ReadTemperature()
+            {
+                return minTemperature + rand.NextDouble() * 15;
+            }
+
+            internal double ReadHumidity()
+            {
+                return minHumidity + rand.NextDouble() * 20;
+            }
+        }
+
+    }
+
+   ```
+
 1. On the **File** menu, click **Save**.
 
 1. Take a minute to scan through your completed application.
@@ -418,7 +507,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 1. In the Visual Studio Code Explorer pane, on the **View** menu, click **Terminal**.
 
-    Verify that the selected terminal shell is the windows command prompt.
+   ![](../media2/v2img13.png)
 
 1. In the Terminal view, at the command prompt, enter the following command:
 
@@ -463,57 +552,23 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
-1. Switch to the Microsoft Edge browser window where you have the Azure portal open.
+1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-1. Open a new browser tab, and then navigate to the Azure Cloud Shell: +++https://shell.azure.com/+++
-
-    If prompted to Sign in using Azure account credentials, use the following values at the sign in prompts:
-
-    **Username**: +++@lab.CloudPortalCredential(User1).Username+++
-
-    **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+   ![](../media2/v2img16.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
-1. Under **Subscription**, ensure the correct subscription is displayed.
+   ![](../media2/v2img17.png)
 
-1. To specify storage options, click **Show advanced settings**.
+1. select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
 
-1. Under **Resource group**, ensure **Use existing** is selected and the **@lab.CloudResourceGroup(ResourceGroup1).Name** is shown.
+   ![](../media2/v2img18.png)
 
-1. Under **Storage account**, select **Create new** and enter the following: **stoaz220{your-id}**.
-
-1. Under **File share**, select **Create new** and enter the following **cloudshell**.
-
-1. To finish to configuration of the cloud shell, click **Create storage**.
-
-1. Open your text editor, such as Notepad, and enter the following Azure CLI command:
+1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
 
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
     ```
-
-    Notice that the command contains a placeholder value for the name of your IoT Hub. You need to update that in the text editor before running the command.
-
-1. In your text editor, replace the **{IoTHubName}** placeholder with the name of your Azure IoT Hub.
-
-1. Create a copy of the updated Azure CLI command, and then switch back to the Azure Cloud Shell browser window.
-
-1. In the Azure Cloud Shell, to monitor the event messages that are being received by your IoT hub, enter the updated command:
-
-    > **Note**: If the Azure CLI extension for IoT has not been installed, you will be prompted to install it now. Enter "Y" at the prompt.
-
-    > **Note**:  If you receive a message stating _"Dependency update required for IoT extension version"_ when running the Azure CLI command, then press `y` to accept the update and press **Enter**. This will allow the command to continue as expected.
-
-    The **monitor-events** command (within the **az iot hub** Azure CLI module) offers the capability to monitor device telemetry and other message types sent to an Azure IoT Hub. This can be a very useful tool during code development, and the convenience of the command-line interface is also nice.
-
-    The **--device-id** parameter is optional and allows you to monitor the events from a single device. If the parameter is omitted, the command will monitor all events sent to the specified Azure IoT Hub.
-
-1. Notice that the **az iot hub monitor-events** Azure CLI command outputs a JSON representation of the events that are arriving at your specified Azure IoT Hub.
-
-    > **Note**: If the Azure CLI command returns an error stating that you IoT Hub can not be found in the subscription, use your Azure portal to verify that both the IoT Hub name and subscription number are correct. If the values reported in the Azure Cloud Shell match the values listed in the Azure portal, wait a minute and then re-run the command.
- 
-    This command enables you to monitor the events being sent to IoT hub. You are also verifying that the device is able to connect to and communicate with the your IoT hub.
 
     You should see messages displayed that are similar to the following:
 
@@ -536,3 +591,9 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl-C** in the Azure Cloud Shell and Visual Studio Code windows.
 
     Ctrl-C is used to stop the running apps. Always remember to shut down unneeded apps and jobs.
+
+## Summary 
+
+In this exercise, you have created a simulator using c# to simulate telemetry data and send to IoT Hub and verified it.
+
+### You have successfully completed the lab !!
