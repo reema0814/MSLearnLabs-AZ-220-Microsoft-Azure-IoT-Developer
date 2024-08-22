@@ -38,3 +38,17 @@ You plan to implement features of IoT Hub that enable automatic device managemen
 The following resources will be created:
 
 ![Lab 16 Architecture](media/LAB_AK_16-architecture.png)
+
+## Lab Objectives
+
+In this lab, you will complete the following activities:
+
+* Configure the lab prerequisites (the required Azure resources)
+* Write code for a simulated device that will implement a firmware update
+* Test the firmware update process on a single device using Azure IoT Hub automatic device management
+
+### Exercise 1: Configure Lab Prerequisites
+
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-rg**.
+
+   ![](../media2/v2img1.png)
