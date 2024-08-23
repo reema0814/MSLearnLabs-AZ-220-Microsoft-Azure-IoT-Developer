@@ -59,7 +59,7 @@ In this lab, you will complete the following activities:
 
 1. Click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
 
-   ![](../media2/iot2.png)
+   ![](../media/iot2.png)
 
 1. Copy the **primary connection string** and paste it in a notepad.
 
@@ -69,7 +69,7 @@ In this lab, you will complete the following activities:
 
 1. Open **Visual Studio Code** from the desktop.
 
-   ![](../media2/v2img8.png)
+   ![](../media/v2img8.png)
 
 1. Click on File (1) and select Open Folder (2).
 
