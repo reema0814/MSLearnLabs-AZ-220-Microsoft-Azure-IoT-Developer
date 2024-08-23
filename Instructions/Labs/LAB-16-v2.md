@@ -84,13 +84,17 @@ In this lab, you will complete the following activities:
    - FWUpdateDevice.csproj
    - Program.cs
 
+      ![](./media/iot23.png)
+
 1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
 
    Notice the referenced NuGet packages:
 
-      Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
-      Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
-      Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
+      - Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
+      - Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
+      - Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
+
+           ![](./media/iot22.png)
 
 1. Navigate to **Program.cs** and at the top of the code file, locate the code comment line that begins with **The device connection string**.
 
@@ -98,9 +102,27 @@ In this lab, you will complete the following activities:
 
       > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
 
-      
-1. 
+      ![](./media/iot15.png)
 
+1. Scroll down to the bottom of the code file to locate the **Main** method.
+
+    > **IMPORTANT**: Since this lab simulates both the device and the firmware update process rather than downloading actual firmware from the cloud to a physical device and rebooting, it can be helpful to review the code used to simulate the process.
+  
+    Notice that the Main method uses **s_deviceConnectionString** to create a **DeviceClient** instance that connects to IoT Hub. The deviceClient object can be passed between methods of the simulated device app so that the app is able to access and report device twin property updates.  
+
+    The **InitDevice** method simulates the bootup cycle of the device and reports the current firmware by updating the device twin via the **UpdateFWUpdateStatus** method.
+
+    After the device is initialized, the device twin property changed callback is configured.
+
+    The app then enters a loop, where it waits for a device twin update that will trigger the firmware update.
+
+1. Locate the **UpdateFWUpdateStatus** method and review the code:
+
+    This method creates a new **TwinCollection** instance, populates it with the provided values, and then updates the device twin.
+
+1. Locate the **OnDesiredPropertyChanged** method and review the code:
+
+    This method is invoked as the callback when a device twin update is received by the device. If a firmware update is detected, the **UpdateFirmware** method is called. This method simulates the download of the firmware, updating the firmware and then rebooting the device.
 
 ### Task 3: Test firmware update on a single device
 
