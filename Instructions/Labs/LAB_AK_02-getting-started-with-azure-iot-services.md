@@ -54,16 +54,12 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 1. Select your **Resource group(2)** from the drop down menu.
 
 1. Enter the **IoT hub name**: **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
-   
-   enter a globally unique name for your IoT Hub as follows:
-
-    For example: **iot-az220-training-cah191216(3)**
-   
+      
     > **Note**:  Azure will ensure that the name you enter is unique. If the name that you enter is not unique, Azure will display a message below the name field as a warning. If you see the warning message, you should update your unique ID. Try appending your unique ID with '**00**', or '**01**', or '**02**, 'etc. as necessary to achieve a globally unique name.
 
     > **Note**: Some resource names do not allow extended characters like the dash (-) or underscore (_), so stick with numeric digits when updating your unique ID.
 
-1. Select the **Region** as **eastus(4)** from the drp down menu. It should be in the same region as the Resource group.
+1. **Region** : **<inject key="Region" enableCopy="false"/>** 
 
 1. Select the **Tier** as **Free(5)** from the drop down.
 
@@ -188,7 +184,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 1. **Name**: Enter a globally unique name.
     For example: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
 
-1. **Region**: **eastus(4)** Open the drop-down list and select the region same as the Resource group.
+1. **Region**: **<inject key="Region" enableCopy="false"/>**
 
     > **Note**: When picking a datacenter to host your resources, keep in mind that picking a datacenter close to your end users will decrease load/response times. If you are on the other side of the world from your end users, you should not be picking the datacenter nearest you.
 
