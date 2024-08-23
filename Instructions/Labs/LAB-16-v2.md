@@ -59,7 +59,7 @@ In this lab, you will complete the following activities:
 
 1. Click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
 
-   ![](../media/iot2.png)
+   ![](./media/iot2.png)
 
 1. Copy the **primary connection string** and paste it in a notepad.
 
@@ -98,8 +98,7 @@ In this lab, you will complete the following activities:
 
       > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
 
-      ![](./media/iot15.png)
-
+      
 1. 
 
 
@@ -138,23 +137,23 @@ In this lab, you will complete the following activities:
 
 1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
 
-   ![](./media2/iot2.png)
+   ![](./media/iot2.png)
 
 1. Click on **Device twin** and review the contents of the device twin file.
 
     Notice the values of the desired and reported properties, and the update times listed.
 
-      ![](./media2/iot6.png)
+      ![](./media/iot6.png)
 
-      ![](./media2/iot7.png)
+      ![](./media/iot7.png)
 
 1. Navigate back to **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** blade, click on **Configurations + Deployments (1)**, click on + Add and select **Device Twin Configuration (2)**.
 
-   ![](./media2/iot8.png)
+   ![](./media/iot8.png)
 
 1. In the **Name and Label** tab, provide the name as **firmwareupdate (1)** and click on **Next: Twins Settings > (2)**
 
-   ![](./media2/iot9.png)
+   ![](./media/iot9.png)
 
 1. Under the **Twin Setting**s tab, in the **Device Twin Property** field, enter **properties.desired.firmware (1)**. In the **Device Twin Property Content (2)** field, replace the existing contents with the following and click on **Next: Target Devices> (3)**:
 
