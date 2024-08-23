@@ -47,7 +47,7 @@ In this lab, you will complete the following activities:
 * Write code for a simulated device that will implement a firmware update
 * Test the firmware update process on a single device using Azure IoT Hub automatic device management
 
-### Exercise 1: Configure Lab Prerequisites
+### Task 1: Configure Lab Prerequisites
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-rg**.
 
@@ -65,6 +65,8 @@ In this lab, you will complete the following activities:
 
    ![](./media/iot3.png)
 
+### Task 2: Examine code for a simulated device that implements firmware update
+
 1. Open **Visual Studio Code** from the desktop.
 
    ![](../media2/v2img8.png)
@@ -77,4 +79,28 @@ In this lab, you will complete the following activities:
 
    ![](./media/iot4.png)
 
+1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
+
+   - FWUpdateDevice.csproj
+   - Program.cs
+
+1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
+
+Notice the referenced NuGet packages:
+
+Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
+Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
+Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
+
+1. Navigate to **Program.cs** and at the top of the code file, locate the code comment line that begins with **The device connection string**.
+
+    In this simple simulated device app, the device ID and the current firmware version will be tracked during the firmware update process.
+
+      > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
+
+      ![](./media/iot15.png)
+
 1. 
+
+
+### Task 3: Test firmware update on a single device
