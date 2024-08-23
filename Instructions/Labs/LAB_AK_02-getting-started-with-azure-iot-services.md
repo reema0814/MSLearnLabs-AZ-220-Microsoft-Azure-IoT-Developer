@@ -8,7 +8,7 @@ You are an Azure IoT Developer working for Contoso, a company that crafts and di
 
 You have been tasked with exploring Azure and the Azure IoT services that you will using to develop Contoso's IoT solution. You have already become familiar with the Azure portal and created a resource group for your project. Now you need to begin investigating the Azure IoT services.
 
-## In This Lab
+## Lab Objectives
 
 In this lab, you will create and examine an Azure IoT Hub and an IoT Hub Device Provisioning Service. The lab includes the following exercises:
 
@@ -288,3 +288,9 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 1. Take a minute to review some of the other menu options under **Settings**
 
    > **Note**:  This lab exercise is only intended to be an introduction to the IoT Hub Device Provisioning Service and get you more comfortable with the UI, so don't worry if you feel a bit overwhelmed at this point.
+
+## Summary
+
+In this lab, you have created a Azure IoT Hub and explored its features, then created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
+
+### You have successfully completed the lab
