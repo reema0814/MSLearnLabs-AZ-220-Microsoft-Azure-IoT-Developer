@@ -6,6 +6,8 @@ lab:
 
 # Getting Started with Azure IoT Services
 
+# Module 1: Introduction to IoT and Azure IoT Services
+
 ## Lab Scenario
 
 You are an Azure IoT Developer working for Contoso, a company that crafts and distributes gourmet cheeses.
