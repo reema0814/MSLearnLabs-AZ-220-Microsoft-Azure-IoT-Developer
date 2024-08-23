@@ -55,7 +55,7 @@ In this lab, you will complete the following activities:
 
 1. In the **az220-rg** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
-   ![](../media2/iot1.png)
+   ![](./media/iot1.png)
 
 1. Click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
 
@@ -63,7 +63,7 @@ In this lab, you will complete the following activities:
 
 1. Copy the **primary connection string** and paste it in a notepad.
 
-   ![](../media2/iot3.png)
+   ![](./media/iot3.png)
 
 1. Open **Visual Studio Code** from the desktop.
 
@@ -75,6 +75,6 @@ In this lab, you will complete the following activities:
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-   ![](../media2/iot4.png)
+   ![](./media/iot4.png)
 
 1. 
