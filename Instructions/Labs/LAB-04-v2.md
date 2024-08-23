@@ -36,11 +36,11 @@ In this exercise, you will open your IoT Hub in the Azure portal, add a new IoT 
 
 In this task, you will create a device in the IoT Hub.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-rg**.
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/v2img1.png)
 
-1. On the resources tile, click **iot-az220-training-{your-id}**
+1. On the resources tile, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
    ![](../media2/v2img2.png)
 

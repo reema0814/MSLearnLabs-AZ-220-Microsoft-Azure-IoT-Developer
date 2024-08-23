@@ -1,5 +1,9 @@
 # Device Message Routing
 
+## Overview
+
+In this lab, you will begin by ensuring that your Azure subscription includes the required resources for this lab. You will then create a simulated device that sends vibration telemetry to your IoT hub. With your simulated data arriving at IoT hub, you will implement an IoT hub message route and Azure Stream Analytics job that can be used to process device messages (in both cases data will be delivered to a Blob storage container that is used to verify successful implementation).
+
 ## Lab Scenario
 
 Contoso Management is impressed with your implementation of automatic device enrollment using DPS. They are now interested in having you develop an IoT-based solution related to product packaging and shipping.
@@ -23,6 +27,12 @@ You decide to prototype the solution using simulated telemetry from a single IoT
 
 To simulate the vibration data in a realistic manner, you work with an engineer from Operations to understand a little bit about what causes the vibrations. It turns out there are a number of different types of vibration that contribute to the overall vibration level. For example, a "force vibration" could be introduced by a broken guide wheel or an especially heavy load placed improperly on the conveyor belt. There's also an "increasing vibration", that can be introduced when a system design limit (such as speed or weight) is exceeded. The Engineering team agrees to help you develop the code for a simulated IoT device that will produce an acceptable representation of vibration data (including anomalies).
 
+## Lab Objectives
+ 
+ - Exercise 1: Write Code to generate Vibration Telemetry
+ - Exercise 2: Create a Message Route to Azure Blob Storage
+ - Exercise 3: Create an Azure Stream Analytics Job
+
 The following resources will be created:
 
 ![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
@@ -41,6 +51,8 @@ In this exercise, you will:
 * ensure that telemetry is arriving at your IoT hub
 
 ### Task 1: Open your simulated device project
+
+In this task, you will be opening the Simulated device project using visual studio code.
 
 1. In the virtual machine environment, open **Visual Studio Code** from the Desktop.
 
@@ -87,6 +99,8 @@ In this exercise, you will:
 In the next task, you will configure the connection string and review the application.
 
 ### Task 2: Configure connection and review code
+
+In this task, you will be reviewing your code and also configure it with connection string.
 
 The simulated device app that you will build in this task simulates an IoT device that is monitoring the conveyor belt. The app will simulate sensor readings and report vibration sensor data every two seconds.
 
@@ -139,6 +153,8 @@ The simulated device app that you will build in this task simulates an IoT devic
     The updated device connection string must be saved before running the code. 
 
 ### Task 3: Test your code to send telemetry
+
+In this task, you well verify if your code is working or not by running it.
 
 1. At the Terminal command prompt, to run the app, enter the following command:
 
@@ -216,6 +232,8 @@ In this exercise, you will create and test the logging route.
 
 ### Task 1: Define the message routing endpoint
 
+In this task, you will creating a routes using the message routing tab in the Azure IoT Hub.
+
 1. In the Azure portal window, ensure that your IoT hub blade is open.
 
 1. On the left-hand menu, under **Hub settings**, click **Message routing**. Ensure that the **Routes** tab is selected.
@@ -248,6 +266,8 @@ In this exercise, you will create and test the logging route.
 
 ### Task 2: Define the storage account container
 
+In thi stask, you will create a storage account and a container for route.
+
 1. On the **Storage accounts** blade, click **vibrationstore{your-id}**.
 
    ![](../media2/lab7img13.png)
@@ -276,6 +296,8 @@ In this exercise, you will create and test the logging route.
 
 ### Task 3: Define the routing query
 
+In this task, you will define a route for storage account.
+
 1. On the **Add a route** blade, under **Data source**, ensure that **Device Telemetry Messages** is selected.
 
 1. Under **Enable route**, ensure that **Enable** is selected.
@@ -297,6 +319,8 @@ In this exercise, you will create and test the logging route.
 1. Once you see your new route listed on the **Message routing** pane, navigate back to your Azure portal Dashboard.
 
 ### Task 4: Verify Data Archival
+
+In this task, you will verify that the data is properly archived or not by looking into your storage account.
 
 1. Ensure that the device app you created in Visual Studio Code is still running.
 
@@ -337,6 +361,8 @@ This will enable you to verify that your ASA job processes message data to an ou
 
 ### Task 1: Create the Stream Analytics Job
 
+In thi task, you will create a stream analytics job in the Azure portal.
+
 1. On the Azure portal menu, click **+ Create a resource**.
 
    ![](../media2/lab7img24.png)
@@ -356,6 +382,8 @@ This will enable you to verify that your ASA job processes message data to an ou
 1. Wait for the **Your deployment is complete** message, and then click **Go to resource**.
 
 ### Task 2: Create the Stream Analytics Job Input
+
+In this task, you will create a input in the Stream Analytics in the Portal.
 
 1. On your Stream Analytics Job blade, on the left-side menu under **Job topology**, click **Inputs**.
 
@@ -395,6 +423,8 @@ This will enable you to verify that your ASA job processes message data to an ou
 
 ### Task 3: Create the Stream Analytics Job Output
 
+In this task, you will create a output in the Stream Analytics in the Portal.
+
 1. To create an output, on the left-side menu under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Blob storage/ADLS Gen2**.
 
    ![](../media2/lab7img30.png)
@@ -431,6 +461,8 @@ This will enable you to verify that your ASA job processes message data to an ou
 
 ### Task 4: Create the Stream Analytics Job Query
 
+In this task, you will create query in Stream Analytics.
+
 1. To edit the query, on the left-side menu under **Job topology**, click **Query**.
 
    ![](../media2/lab7img32.png)
@@ -451,6 +483,8 @@ This will enable you to verify that your ASA job processes message data to an ou
 1. On the left-side menu, click **Overview**.
 
 ### Task 5: Test the Logging Route
+
+In this task, you will test the route that you have set in the previous task.
 
 Now for the fun part. Is the telemetry from your device app being processed through your ASA job and delivered to the storage container?
 
@@ -510,3 +544,5 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 ## Summary 
 
 In this lab, You've traced the message data processes from the device app, to the IoT hub, and then through both an IoT hub route and Azure Stream Analytics job all the way to a Blob storage container. Great progress!
+
+## You have successfully completed the Lab!!

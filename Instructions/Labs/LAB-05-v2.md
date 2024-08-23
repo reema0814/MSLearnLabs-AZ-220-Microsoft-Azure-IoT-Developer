@@ -12,9 +12,15 @@ The proposed system will use IoT devices with integrated sensors for tracking th
 
 In Contoso's cheese packaging facility, when an empty container enters the system it will be equipped with the new IoT device and then loaded with packaged cheese products. The IoT device will be auto-provisioned to IoT hub using DPS. When the container arrives at the destination, the IoT device will be retrieved and must be fully deprovisioned (disenrolled and deregistered). The recovered devices will be recycled and re-used for future shipments following the same auto-provisioning process.
 
-You have been tasked with validating the device provisioning and deprovisioning process using DPS. For the initial testing phase you will use an Individual Enrollment approach.
+## Lab Objectives
 
-The following resources will be created:
+In this lab, you will perform:
+ - Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
+ - Exercise 2: Configure Simulated Device
+ - Exercise 3: Test the Simulated Device
+ - Exercise 4: Deprovision the Device
+
+## Architecture Diagram
 
 ![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
 
@@ -23,6 +29,8 @@ The following resources will be created:
 In this exercise, you will create a new individual enrollment for a device within the Device Provisioning Service (DPS) using _symmetric key attestation_. You will also configure the initial device state within the enrollment. After saving your enrollment, you will go back in and obtain the auto-generated attestation Keys that get created when the enrollment is saved.
 
 ### Task 1: Create the enrollment
+
+In this task, you wil create an individual enrollment in the Device Provisioning Service.
 
 1. In the Azure portal navigate to the resource group **az220-did**. and select the **dps-az220-training-did** from the resource list.
 
@@ -73,6 +81,8 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
+In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
+
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **individual enrollments**.
 
     ![](../media2/lab5img6.png)
@@ -96,6 +106,8 @@ The simulated device that you create in this exercise represents an IoT device t
 > **Note**: You may have the impression that creating this simulated device is a bit redundant with what you created in the previous lab, but the attestation mechanism that you implement in this lab is quite different from what you did previously. In the previous lab, you used a shared access key to authenticate, which does not require device provisioning, but also does not give the provisioning management benefits (such as leveraging device twins), and it requires fairly large distribution and management of a shared key. In this lab, you are provisioning a unique device through the Device Provisioning Service.
 
 ### Task 1: Create the Simulated Device
+
+In this task, you will be creating the simulating device using the dotnet project.
 
 1. On the left-side menu of the **dps-az220-training-{your-id}** blade, click **Overview**.
 
@@ -136,6 +148,8 @@ The simulated device that you create in this exercise represents an IoT device t
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
 
 ### Task 2: Add the provisioning code
+
+In this task, you will be adding the code to the dotnet project for provisioning.
 
 In this task, you will implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
 
@@ -228,6 +242,8 @@ In this task, you will implement the code that provisions the device via DPS and
 
 In order to use the device twin properties (from Azure IoT Hub) on a device, you need to create the code that accesses and applies the device twin properties. In this case, you want to update your simulated device code to read the telemetryDelay device twin Desired Property, and then assign that value to the corresponding **telemetryDelay** variable in your code. You also want to update the device twin Reported Property (maintained by IoT Hub) to have a record of the delay time that is currently implemented on our device.
 
+In this task, you will be using the protal to change the device twin peroperties.
+
 1. In the Visual Studio Code editor, locate the **Main** method.
 
 1. Locate the `// INSERT Setup OnDesiredPropertyChanged Event Handling below here` comment.
@@ -303,6 +319,8 @@ In this exercise, you will run the Simulated Device and verify that it's sending
 
 #### Task 1: Build and run the device
 
+In this task you will build the dotnet project and run to send the telemetry data.
+
 1. Ensure that you have your code project open in Visual Studio Code. Open *New Terminal**.
 
    ![](../media2/lab5img13.png)
@@ -349,6 +367,8 @@ In this exercise, you will run the Simulated Device and verify that it's sending
 
 ### Task 2: Verify Telemetry Stream sent to Azure IoT Hub
 
+In this task, you will verify the Telemetry stream by using Azure Cloud Shell.
+
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
@@ -376,6 +396,8 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     Continue to leave the simulated device application running for the next task.
 
 ### Task 3: Change the device configuration through its twin
+
+In this task, you will be changing the twin property and will verify that device will automaticcly accomodate the changes made.
 
 With the simulated device running, the `telemetryDelay` configuration can be updated by editing the device twin Desired State within Azure IoT Hub. This can be done by configuring the Device in the Azure IoT Hub within the Azure portal.
 
@@ -456,6 +478,8 @@ In this exercise, you will perform the tasks necessary to deprovision the device
 
 ### Task 1: Disenroll the device from the DPS
 
+In this task, you will be deleteing the device from the enrollments
+
 1. If necessary, log in to your Azure portal using your Azure account credentials.
 
     If you have more than one Azure account, be sure that you are logged in with the account that is tied to the subscription that you will be using for this course.
@@ -482,7 +506,9 @@ In this exercise, you will perform the tasks necessary to deprovision the device
 
     The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
 
-#### Task 2: Deregister the device from the IoT Hub
+### Task 2: Deregister the device from the IoT Hub
+
+In this task you will delete the device from the IoT hub device management.
 
 1. In the Azure portal, navigate back to your Dashboard.
 
@@ -501,3 +527,9 @@ In this exercise, you will perform the tasks necessary to deprovision the device
     > **Note**:  Deleting the device ID from IoT Hub will permanently remove the device registration. To temporarily disable the device from connecting to IoT Hub, you can set the **Enable connection to IoT Hub** to **Disable** within the properties for the device.
 
 Now that the Device Enrollment has been removed from the Device Provisioning Service, and the matching Device ID has been removed from the Azure IoT Hub, the simulated device has been fully retired from the solution.
+
+## Summary
+
+In this lab, you have configured the enrollment in the Device Provision Service and built a device which sends the telemetry data to the IoT hub and also tested the device by changing configurations. also deprovisioned device at last.
+
+## You have successfully completed the Lab!!
