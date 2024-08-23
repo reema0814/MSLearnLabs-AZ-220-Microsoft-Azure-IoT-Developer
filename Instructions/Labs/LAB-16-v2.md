@@ -128,7 +128,7 @@ In this lab, you will complete the following activities:
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. The folder location shown within the command prompt should show the FWUpdateDevice project folder.
 
-   ![](./media/iot20.png)
+   ![](./media/az25.png)
 
 1. To run the FWUpdateDevice app, enter the following command:
 
