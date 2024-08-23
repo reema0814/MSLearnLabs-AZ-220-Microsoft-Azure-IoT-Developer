@@ -39,15 +39,15 @@ In this exercise, you will use the Azure portal to create and configure your IoT
    
 1. On the Azure portal menu, click **+ Create a resource**.
 
-    ![](media/iot1.png)
+    ![](media/create.png)
 
 1. In the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **iot hub** and click on it.
 
-    ![](media/iot2.png)
+    ![](media/hub.png)
 
 1. To begin the process of creating your new IoT Hub, click **Create**.
 
-    ![](media/iot3.png)
+    ![](media/createiot.png)
     
 1. On the **IoT hub** blades **Basics** tab, in the **Subscription** dropdown, select the available Subscription **(1)**.
  
@@ -63,19 +63,19 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
 1. Select the **Tier** as **Free(5)** from the drop down.
 
-    ![](media/iot4.png)
+    ![](media/randc.png)
 
 1. At the top of the blade, click **Networking**.
 
 1. Ensure the **Minimum TLS Version** is set to **1.0**.
 
-    ![](media/iot7.png)
+    ![](media/Net.png)
 
 1. At the top of the blade, click **Management**.
 
 1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **2**.
 
-    ![](media/iot5.png)
+    ![](media/manage.png)
 
 1. At the bottom of the blade, click **Review + create**.
 
@@ -85,7 +85,7 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
 1. Once the Deployment is completed,Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
-    ![](media/iott9.png)
+    ![](media/iothub.png)
 
 
 ### Exercise 2: Examine the IoT Hub Service

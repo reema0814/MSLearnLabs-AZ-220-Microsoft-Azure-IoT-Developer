@@ -124,21 +124,19 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. In the search results, click **Logic App**.
 
+1. Select the **Logic App** from below results.
+
 1. On the **Logic App** blade, click **Create**.
 
-1. On the **Basics** tab, under **Project details**, select the **Subscription** that you are using for this lab.
+1. On the **Basics** tab, under **Create Logic App (Multi-tenant)**, select the **Subscription** that you are using for this lab.
 
-1. In the **Resource group** dropdown, under **Select existing**, click **@lab.CloudResourceGroup(ResourceGroup1).Name**.
+1. **Resource group** : Select your Resource group from the drop down menu.
 
 1. Under **Instance details**, under **Type** select **Consumption**.
 
-1. In the **Name** field, enter **logic-az220-training-{your-id}**
+1. In the **Name** field, enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/>**
 
-    For example: **logic-az220-training-cp191218**
-
-    The name of your Azure Logic App must be globally unique because it is a publicly accessible resource that you must be able to access from any IP connected device.
-
-1. In the **Region** dropdown, select the same Azure region that was used for the resource group.
+1. **Region** : **<inject key="Region" enableCopy="false"/>**
 
 1. Leave **Enable Log Analytics** set to **No**.
 
@@ -148,7 +146,10 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
     > **Note**:  It will take a minute or two for the Logic App deployment to complete.
 
-1. Navigate back to your Azure portal Dashboard.
+1. After the deployment is completed, click on **Go to resource**.
+
+1. Here you can see the newly created Logic app.
+
 
 #### Task 2: Configure Your Logic App
 
