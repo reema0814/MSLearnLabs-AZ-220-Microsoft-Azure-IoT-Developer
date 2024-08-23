@@ -53,7 +53,9 @@ In this exercise, you will use the Azure portal to create and configure your IoT
  
 1. Select your **Resource group(2)** from the drop down menu.
 
-1. Enter the **IoT hub name**, enter a globally unique name for your IoT Hub as follows:
+1. Enter the **IoT hub name**: **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
+   
+   enter a globally unique name for your IoT Hub as follows:
 
     For example: **iot-az220-training-cah191216(3)**
    
@@ -101,7 +103,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 1. Open your Azure dashboard.
 
-1. Search and select **IoT hub** and then click on the newly created **iot-az220-training-cah281216**
+1. Search and select **IoT hub** and then click on the newly created **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>**
 
     ![](media/iot10.png)
 
@@ -184,7 +186,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 1. **Resource Group**: Select your Resource group **(2)**
 
 1. **Name**: Enter a globally unique name.
-    For example: **dps-az220-training-cah281216(3)**
+    For example: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
 
 1. **Region**: **eastus(4)** Open the drop-down list and select the region same as the Resource group.
 
@@ -210,7 +212,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. On the **Add link to IoT hub** blade, ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
 
-1. Open the IoT hub dropdown, and then click **iot-az220-training-cah281216(4)**.
+1. Open the IoT hub dropdown, and then click **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(4)**.
 
     This is the IoT Hub that you created in the previous exercise.
 
