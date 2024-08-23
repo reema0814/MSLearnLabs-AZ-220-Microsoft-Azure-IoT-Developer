@@ -85,7 +85,7 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
 1. Once the Deployment is completed,Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
-    ![](media/iothub.png)
+    ![](media/iott9.png)
 
 
 ### Exercise 2: Examine the IoT Hub Service
@@ -101,7 +101,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 1. Search and select **IoT hub** and then click on the newly created **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>**
 
-    ![](media/iot10.png)
+    ![](media/iotselect.png)
 
 1. At the bottom of your IoT Hub blade **Overview** page, notice the **IoT Hub Usage** tile.
 
@@ -118,7 +118,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 1. On the IoT Hub blade,from the left navigation menu,under **Device management**, click **Devices**
 
-    ![](media/iot12.png)
+    ![](media/device.png)
 
     This pane can be used to add, modify, and delete devices registered to your hub.
 
@@ -136,7 +136,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
     * _Event Hub compatible endpoint_ **(1)**
     * _Cloud to device messaging_ **(2)**
 
-    ![](media/iot14.png)
+    ![](media/endpoint.png)
 
 1. On the left-side menu, under **Hub settings**, click **Message routing**
 
