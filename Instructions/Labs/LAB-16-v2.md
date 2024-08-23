@@ -75,7 +75,7 @@ In this lab, you will complete the following:
 
 1. Click on File (1) and select Open Folder (2).
 
-1. Navigate to `C:\Users\GayatriMurali\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\16-Automate IoT Device Management with Azure IoT Hub\Final` and select the **fwupdatedevice** folder.
+1. Navigate to `C:\Users\demouser\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\16-Automate IoT Device Management with Azure IoT Hub\Final` and select the **fwupdatedevice** folder.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
