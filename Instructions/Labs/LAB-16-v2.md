@@ -86,11 +86,11 @@ In this lab, you will complete the following activities:
 
 1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
 
-Notice the referenced NuGet packages:
+   Notice the referenced NuGet packages:
 
-Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
-Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
-Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
+      Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
+      Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
+      Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
 
 1. Navigate to **Program.cs** and at the top of the code file, locate the code comment line that begins with **The device connection string**.
 
@@ -98,9 +98,100 @@ Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
 
       > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
 
-      ![](./media/iot15.png)
+      ![](../media/iot15.png)
 
 1. 
 
 
 ### Task 3: Test firmware update on a single device
+
+1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. The folder location shown within the command prompt should show the FWUpdateDevice project folder.
+
+   ![](../media/iot20.png)
+
+1. To run the FWUpdateDevice app, enter the following command:
+
+    ``` bash
+    dotnet run "<your device connection string>"
+    ```
+
+    > **IMPORTANT**: Remember to replace the placeholder value with your actual device connection string which you copied earlier in your notepad, and be sure to include "" around your connection string.
+    >
+    > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
+
+    After about 5-10 seconds you should see the initial output displayed in the Terminal pane.
+
+1. Review the contents of the Terminal pane.
+
+    You should see the following output in the terminal:
+
+    ``` bash
+        sensor-th-0155: Device booted
+        sensor-th-0155: Current firmware version: 1.0.0
+    ```
+
+    Once this information is displayed, the simulated device app enters a holding pattern, waiting for a device twin update that will trigger a firmware update.
+
+      ![](../media/iot5.png)
+
+1. Navigate back to `portal.azure.com`.
+
+1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
+
+   ![](../media2/iot2.png)
+
+1. Click on **Device twin** and review the contents of the device twin file.
+
+    Notice the values of the desired and reported properties, and the update times listed.
+
+      ![](../media2/iot6.png)
+
+      ![](../media2/iot7.png)
+
+1. Navigate back to **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** blade, click on **Configurations + Deployments (1)**, click on + Add and select **Device Twin Configuration (2)**.
+
+   ![](../media2/iot8.png)
+
+1. In the **Name and Label** tab, provide the name as **firmwareupdate (1)** and click on **Next: Twins Settings > (2)**
+
+   ![](../media2/iot9.png)
+
+1. Under the **Twin Setting**s tab, in the **Device Twin Property** field, enter **properties.desired.firmware (1)**. In the **Device Twin Property Content (2)** field, replace the existing contents with the following and click on **Next: Target Devices> (3)**:
+
+    ``` json
+    {
+        "fwVersion":"1.0.1",
+        "fwPackageURI":"https://MyPackage.uri",
+        "fwPackageCheckValue":"1234"
+    }
+    ```
+      > **Note**: You can right-click in the content field and select **Format Document** to format the JSON if needed.
+
+      ![](../media/iot10.png)
+
+1. On the **Target Devices** tab, under **Priority**, in the **Priority (higher values ...)** field, enter **10 (1)**. Under **Target Condition**, in the **Target Condition (2)** field, enter the following query and click on **Next: Metrics> (3)** :
+
+    ``` SQL
+    deviceId='sensor-th-0155'
+    ```
+
+   ![](../media/iot11.png)
+
+1. On the **Metrics** tab, under **METRIC NAME**, enter **fwupdated (1)**. 1. Under **METRIC CRITERIA (2)**, enter the following and click on **Next: Review + Create> (3)**:
+
+    ``` SQL
+    SELECT deviceId FROM devices
+        WHERE properties.reported.firmware.currentFwVersion='1.0.1'
+    ```
+
+      ![](../media/iot12.png)
+
+1. On the **Review + create** tab, click **Create** after the "Validation passed" pops up.
+
+1. Navigate back to **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** pane, under **Configuration Name**, verify that your new **firmwareupdate** configuration is listed.
+
+1. Switch to the **Visual Studio Code** window, and review the contents of the Terminal pane. The Terminal pane should include new output generated by your app that lists the progress of the firmware update process that was triggered.
+
+      ![](../media/iot13.png)
+
+   
