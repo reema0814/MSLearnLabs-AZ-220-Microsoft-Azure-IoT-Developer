@@ -106,7 +106,7 @@ In this lab, you will complete the following activities:
 
 1. Scroll down to the bottom of the code file to locate the **Main** method.
 
-    > **IMPORTANT**: Since this lab simulates both the device and the firmware update process rather than downloading actual firmware from the cloud to a physical device and rebooting, it can be helpful to review the code used to simulate the process.
+    > **Note**: Since this lab simulates both the device and the firmware update process rather than downloading actual firmware from the cloud to a physical device and rebooting, it can be helpful to review the code used to simulate the process.
   
     Notice that the Main method uses **s_deviceConnectionString** to create a **DeviceClient** instance that connects to IoT Hub. The deviceClient object can be passed between methods of the simulated device app so that the app is able to access and report device twin property updates.  
 
