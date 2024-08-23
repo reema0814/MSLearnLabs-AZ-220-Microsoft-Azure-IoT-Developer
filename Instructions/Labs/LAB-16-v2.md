@@ -102,7 +102,7 @@ In this lab, you will complete the following activities:
 
       > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
 
-      ![](./media/iot15.png)
+      ![](./media/az22024.png)
 
 1. Scroll down to the bottom of the code file to locate the **Main** method.
 
