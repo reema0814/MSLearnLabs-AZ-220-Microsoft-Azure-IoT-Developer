@@ -1,5 +1,7 @@
 # Automate IoT Device Management with Azure IoT Hub
 
+## Lab Overview
+
 IoT devices often use optimized operating systems or even run code directly on the silicon (without the need for an actual operating system). In order to update the software running on devices like these the most common method is to flash a new version of the entire software package, including the OS as well as the apps running on it (called firmware).
 
 Because each device has a specific purpose, its firmware is also very specific and optimized for the purpose of the device as well as the constrained resources available.
