@@ -84,7 +84,7 @@ In this lab, you will complete the following activities:
    - FWUpdateDevice.csproj
    - Program.cs
 
-      ![](./media/iot23.png)
+      ![](./media/az22023.png)
 
 1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
 
@@ -94,7 +94,7 @@ In this lab, you will complete the following activities:
       - Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
       - Newtonsoft.Json - Json.NET is a popular high-performance JSON framework for .NET
 
-           ![](./media/iot22.png)
+           ![](./media/az22022.png)
 
 1. Navigate to **Program.cs** and at the top of the code file, locate the code comment line that begins with **The device connection string**.
 
