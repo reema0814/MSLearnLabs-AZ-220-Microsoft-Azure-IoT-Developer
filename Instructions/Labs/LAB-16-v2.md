@@ -52,3 +52,29 @@ In this lab, you will complete the following activities:
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-rg**.
 
    ![](../media2/v2img1.png)
+
+1. In the **az220-rg** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
+
+   ![](../media2/iot1.png)
+
+1. Click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
+
+   ![](../media2/iot2.png)
+
+1. Copy the **primary connection string** and paste it in a notepad.
+
+   ![](../media2/iot3.png)
+
+1. Open **Visual Studio Code** from the desktop.
+
+   ![](../media2/v2img8.png)
+
+1. Click on File (1) and select Open Folder (2).
+
+1. Navigate to `C:\Users\GayatriMurali\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\16-Automate IoT Device Management with Azure IoT Hub\Final` and select the **fwupdatedevice** folder.
+
+1. Click on **Yes, i trust the authors** when prompted.
+
+   ![](../media2/iot4.png)
+
+1. 
