@@ -27,3 +27,8 @@ In this lab, you will complete the following:
 
 
 ### Exercise 1: Configure Lab Prerequisites
+
+1. Search for Resource Groups and select .
+
+1. Select Deployments under the Settings tab in the left pane.
+   
