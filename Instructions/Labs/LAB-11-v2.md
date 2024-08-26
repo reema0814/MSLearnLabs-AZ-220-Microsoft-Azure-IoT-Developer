@@ -40,9 +40,9 @@ In this lab, you will complete the following:
 
 1. Search for **Iot Hub** and select it.
    
-1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge** under **Device Management** tab in the left pane.
+1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
-1. Click on **+ Add IoT Edge Device**.
+      ![](./media/az11-41.png)
 
 1. Provide the name as **sensor-th-0067 (1)** and click on **Save (2)**.
 
@@ -446,17 +446,19 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
     Notice that the existing routing is displayed.
 
-1. Replace the default route defined with the following three routes:
+      ![](./media/az11-1.png)
+      
+1. Replace the default route defined with the following three routes and click **Review + create (7)**.:
 
     * Route 1
-        * NAME: `telemetryToCloud`
-        * VALUE: `FROM /messages/modules/tempsensor/* INTO $upstream`
+        * NAME: **`telemetryToCloud`** **(1)**
+        * VALUE: **`FROM /messages/modules/tempsensor/* INTO $upstream`**  **(2)**
     * Route 2
-        * NAME: `alertsToReset`
-        * VALUE: `FROM /messages/modules/asa-az220-training-{your-id}/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`
+        * NAME: **`alertsToReset`** **(3)**
+        * VALUE: **`FROM /messages/modules/asa-az220-training-{your-id}/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
     * Route 3
-        * NAME: `telemetryToAsa`
-        * VALUE: `FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-{your-id}/inputs/temperature")`
+        * NAME: **`telemetryToAsa`** **(5)**
+        * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-{your-id}/inputs/temperature")`** **(6)**
 
     The routes being defined are as follows:
 
@@ -464,8 +466,8 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
     * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
 
-1. At the bottom of the **Set modules on device: sensor-th-0067** blade, click **Review + create**.
-
+         ![](./media/az11-42.png)
+      
 1. On the **Review + create** tab, notice that the **Deployment Manifest** JSON is now updated with the Stream Analytics module and the routing definition that was just configured.
 
 1. Notice the JSON configuration for the **tempsensor** Simulated Temperature Sensor module:
