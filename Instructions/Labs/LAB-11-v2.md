@@ -343,13 +343,66 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
    ![](./media/az11-11.png)
 
-1. In the New Stream Analytics Job, provide the following:
+1. In the New Stream Analytics Job, provide the following under the **Basics** tab and click on **Next (6)**:
 
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
-   - Name: asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>
+   - Name: **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
    - Region: Select **EAST US (4)**
-   - 
+   - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
+      
+     ![](./media/az11-10.png)
 
+1. Under the storage tab, select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** and click on **Review + create (2)**
 
-1. 
+    ![](./media/az11-9.png)
+   
+1. At the bottom of the blade, click **Create**.
+
+    It can take a few moments to for this resource to be deployed.
+
+#### Task 3: Configure Azure Stream Analytics Job
+
+1. When you see the **Your deployment is complete** message, click **Go to resource**.
+
+    You should now be on the Overview pane of your new Stream Analytics job.
+
+1. On the left side navigation menu, under **Job topology**, click **Inputs (1)**. Under **+ Add Input (1)**, select **Edge Hub (2)**.
+
+     ![](./media/az11-8.png)
+
+1. In the Edge Hub, provide the following and click on **Save (5)**:
+
+   - Input alias: **temperature (1)**
+   - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
+   - Encoding dropdown: Ensure that **UTF-8** is selected **(3)** (UTF-8 is the only JSON encoding supported at the time of writing.)
+   - Event compression type dropdown: Ensure that **None** is selected **(4)**
+ 
+1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Edge Hub**.
+
+1. In the Edge Hub, provide the following and click on **Save (5)**:
+
+   - Output alias: **alert (1)**
+   - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
+   - Format: Ensure that **Line separated** is selected **(3)**
+   - Encoding: Ensure that **UTF-8** is selected (UTF-8 is the only JSON encoding supported at the time of writing.) **(4)**
+
+1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
+
+    ```sql
+    SELECT
+        'reset' AS command
+    INTO
+        alert
+    FROM
+        temperature TIMESTAMP BY timeCreated
+    GROUP BY TumblingWindow(second,15)
+    HAVING Avg(machine.temperature) > 25
+    ```
+
+      Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
+
+   > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
+
+#### Task 4: Configure Storage Account Settings
+
