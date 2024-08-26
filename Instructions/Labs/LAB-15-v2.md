@@ -520,7 +520,7 @@ In this exercise, you will enable some code in the back-end service app, to show
 
     If you are interested, you can find the **SetTwinProperties** method further down in the Program.cs file.
 
-1. On the **File** menu, to save the Program.cs file, click **Save**.
+1. Press `Ctrl+S` to save.
 
 #### Task 2: Enable Code to Synchronize Device Twin Settings for the Device
 
