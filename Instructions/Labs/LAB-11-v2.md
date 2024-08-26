@@ -103,4 +103,19 @@ In this lab, you will complete the following:
     az extension update --name azure-iot
     ```
 
-1. 
+### Task 2: Provision IoT Edge VM
+
+1. In the **Custom deployment** page, under **Project details**, enter the following details:
+
+   - Subscription: **Select the default subscription (1)**
+   - Resource Group: **Select the existing resource group (2)**
+   - Region: Select **EAST US (3)**
+   - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
+   - Device Connection string: Paste the **connection string** you copied earlier in your notepad **(5)**
+   - Virtual Machine Size: **Standard_DS1_v2 (6)**
+   - Ubuntu OS Version: 18.04-LTS **(7)**
+   - Admin Username: Provide the name as **demouser (8)**
+   - Authentication Type: Select **Password (9)**
+   - Admin Password Or Key: Provide the password as Password!223 **(10)**
+   - Allow SSH: **True (11)**
+   - Click on **Review + Create (12)**
