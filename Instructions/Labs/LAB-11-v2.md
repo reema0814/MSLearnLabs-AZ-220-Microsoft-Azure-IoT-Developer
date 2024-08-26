@@ -39,6 +39,8 @@ In this lab, you will complete the following:
       ![](./media/az11-39.png)
 
 1. Search for **Iot Hub** and select it.
+
+      ![](./media/az11-50.png)
    
 1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
