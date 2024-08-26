@@ -106,6 +106,11 @@ In this lab, you will complete the following:
 
 #### Task 2: Provision IoT Edge VM
 
+1. Click on the following link to deploy few resources:
+   
+   [![Deploy to Azure](
+https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FCloudLabs-MOC%2FMSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer%2Fstage%2FAllfiles%2FARM%2Flab11a.json)
+
 1. In the **Custom deployment** page, under **Project details**, enter the following details:
 
    - Subscription: **Select the default subscription (1)**
