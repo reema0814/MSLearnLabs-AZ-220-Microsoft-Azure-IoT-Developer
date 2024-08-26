@@ -90,7 +90,6 @@ In this lab, you will complete the following:
 
         ![](./media/az11-33.png)
 
-
 1. At the command prompt, use the following command to install Azure CLI extension for IoT
 
     ``` bash
@@ -119,3 +118,120 @@ In this lab, you will complete the following:
    - Admin Password Or Key: Provide the password as Password!223 **(10)**
    - Allow SSH: **True (11)**
    - Click on **Review + Create (12)**
+
+     ![](./media/az11-29.png)
+
+1. Once validation is passed, click on **Create**.
+
+   > **Note**: Deployment can take as much as 5 minutes to complete.
+
+1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH**.
+
+   ![](./media/az11-28.png)
+
+### Task 3: Connect to the VM
+
+1. If Cloud Shell is not still open, click **Cloud Shell**.
+
+1. At the Cloud Shell command prompt, paste the **Public SSH** command that you noted earlier, and then press **Enter**.
+
+1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**.
+
+      This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer         to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
+   
+1. When prompted to enter the password, enter **Password!223**.
+
+   > **Note**: The password characters that you enter will not be displayed on screen.
+
+      ![](./media/az11-26.png)
+   
+1. Once connected, the terminal command prompt will change to show the name of the Linux VM, similar to the following.
+
+      ![](./media/az11-25.png)
+
+1. To ensure the IoT Edge daemon is running, enter the following command:
+
+    ``` bash
+    sudo iotedge system status
+    ```
+   A successful response will be similar to:
+   
+    ``` bash
+    System services:
+    aziot-edged             Running
+    aziot-identityd         Running
+    aziot-keyd              Running
+    aziot-certd             Running
+    aziot-tpmd              Ready
+
+    Use 'iotedge system logs' to check for non-fatal errors.
+    Use 'iotedge check' to diagnose connectivity and configuration issues.
+    ```  
+
+1. To verify the IoT Edge runtime has connected, run the following command:
+
+    ``` bash
+    sudo iotedge check
+    ```
+   This runs a number of checks and displays the results. For this lab, ignore the Configuration checks warnings/errors. The final         Connectivity checks should succeed and be similar to:
+
+    ``` bash
+    Connectivity checks
+    -------------------
+    √ container on the default network can connect to IoT Hub AMQP port - OK
+    √ container on the default network can connect to IoT Hub HTTPS / WebSockets port - OK
+    √ container on the default network can connect to IoT Hub MQTT port - OK
+    √ container on the IoT Edge module network can connect to IoT Hub AMQP port - OK
+    √ container on the IoT Edge module network can connect to IoT Hub HTTPS / WebSockets port - OK
+    √ container on the IoT Edge module network can connect to IoT Hub MQTT port - OK
+    ```
+
+### Exercise 3: Add Edge Module to Edge Device
+
+When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub, and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
+
+In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Edge module, and deploy it to run on the IoT Edge Device.
+
+### Task 1: Configure module for deployment
+
+1. Search for **IoT Hub** and select it.
+
+1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+
+1. Scroll to the bottom of the **sensor-th-0067** blade.Scroll down to find the **Modules (1)** section and notice the list of the modules currently configured for the device.
+
+      Currently, the IoT Edge device is configured with only the Edge Agent ($edgeAgent) and Edge Hub ($edgeHub) modules that are part 
+      of the IoT Edge Runtime.
+
+      At the top of the **sensor-th-0067** blade, click **Set Modules (2)**.
+
+   ![](./media/az11-22.png)
+
+1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click Add, and then select **IoT Edge Module**.
+
+   ![](./media/az11-21.png)
+
+1. On the Add IoT Edge Module pane, under IOT Edge Module Name, enter **tempsensor (1)**. Under Image URI, enter **mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0. (2)**
+
+      > **Note**: This image is a published image on Docker Hub that is provided by the Azure product group to support this testing scenario.
+
+   ![](./media/az11-20.png)
+
+1. Click on Module Twin Settings (1), to specify the desired properties for the module twin, enter the following **JSON (2)** and click on **Add (3)**:
+
+    ```json
+    {
+        "EnableProtobufSerializer": false,
+        "EventGeneratingSettings": {
+            "IntervalMilliSec": 500,
+            "PercentageChange": 2,
+            "SpikeFactor": 2,
+            "StartValue": 20,
+            "SpikeFrequency": 20
+        }
+    }
+    ```
+
+      > **Note**: This JSON configures the Edge Module by setting the desired properties of its module twin.
+
+      ![](./media/az11-19.png)
