@@ -1,6 +1,6 @@
 # Lab 11: Introduction to Azure IoT Edge
 
-# Introduction to Azure IoT Edge
+## Introduction to Azure IoT Edge
 
 ## Lab Scenario
 
