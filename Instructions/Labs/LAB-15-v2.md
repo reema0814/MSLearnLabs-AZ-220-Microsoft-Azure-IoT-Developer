@@ -382,4 +382,109 @@ In this Exercise, you will update your device app by adding the code for a direc
 
   You have now completed the coding that is required on the device side. Next, you need to add code to the back-end Operator        application that will invoke the direct method.
 
+#### Task 2: Add Code to Call Your Direct Method
 
+1. Return to the Visual Studio Code instance that contains the **CheeseCaveOperator** application.
+
+    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and the press **CTRL+C** to exit the running application).
+
+1. Ensure that **Program.cs** is open in the code editor.
+
+1. Near the top of the file, notice that the application defines a global variable to hold a service client instance:
+
+    ```csharp
+    private static ServiceClient serviceClient;
+    ```
+
+    The **ServiceClient** is used to send messages to devices.
+
+1. Locate the **Create a ServiceClient to communicate with service-facing endpoint on your hub** comment line within the code.
+
+1. Uncomment the following lines of code:
+
+    ```csharp
+    serviceClient = ServiceClient.CreateFromConnectionString(serviceConnectionString);
+    
+    InvokeMethod().GetAwaiter().GetResult();
+    ```
+
+      ![](./media/az15-13.png)
+
+1. Press `Ctrl + S` to save.
+   
+    Notice how the **ServiceClient** connects using the **serviceConnectionString** defined earlier. The **InvokeMethod** is then called.
+
+    The **CloudToDeviceMethod** class encapsulates the information regarding the direct method - the method name, timeout, and payload. The **ServiceClient** instance created earlier is then used to invoke the direct method via the IoT Hub, returning a response object. A **response.Status** property value of **200** indicates success.
+
+    > **Information**: The **ServiceClient** class encapsulates interaction with the underlying Azure REST APIs. You can learn more about the underlying REST API for invoking direct methods here - [Understand and invoke direct methods from IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods). You can also find the additional status codes documented:
+    > * 200 indicates successful execution of direct method;
+    > * 404 indicates that either device ID is invalid, or that the device was not online upon invocation of a direct method and for connectTimeoutInSeconds thereafter (use accompanied error message to understand the root cause);
+    > * 504 indicates gateway timeout caused by device not responding to a direct method call within responseTimeoutInSeconds.
+
+    This code is used to invoke the **SetFanState** direct method on the device app.
+
+  You have now completed the code changes to support the **SetFanState** direct method.
+
+#### Task 3: Test the direct method
+
+To test the direct method, you will need to start the apps in the correct order. You can't invoke a direct method that hasn't been registered!
+
+1. Switch to the instance of Visual Studio Code that contains the **CheeseCaveDevice** device app.
+
+1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**.
+   
+   ![](./media/az15-50.png)
+
+1. To start the **CheeseCaveDevice** device app, open a Terminal pane and then enter a `dotnet run` command.
+
+    It will begin writing to the terminal, and telemetry messages will be displayed.
+
+    ```bash
+    dotnet run
+    ```
+   
+1. Switch to the instance of Visual Studio Code that contains the **CheeseCaveOperator** back-end app.
+
+1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**.
+   
+     ![](./media/az15-51.png)
+
+1. To start the **CheeseCaveOperator** back-end app, open a Terminal pane and then enter a `dotnet run` command.
+
+
+    ```bash
+    dotnet run
+    ```
+    
+      > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app.
+
+    The CheeseCaveOperator back-end app will immediately call the direct method.
+
+    Notice the output similar to the following:
+
+      ![](./media/az15-15.png)
+
+1. Now check the console output for the **CheeseCaveDevice** device app, you should see that the fan has been turned on.
+
+      ![](./media/az15-14.png)
+
+You are now successfully monitoring and controlling a remote device. You have implemented a direct method on the device that can be invoked from the cloud. In the Contoso scenario, the direct method is used to turn on a fan, which will bring the environment in the cave to our desired settings. You should notice that the temperature and humidity readings reduce over time, eventually removing the alerts (unless the fan fails).
+
+But what if you want to remotely specify the desired settings for the cheese cave environment? Perhaps you want to set a particular target temperature for the cheese cave at a certain point in the aging process. You could specify desired settings with a direct method (which is a valid approach), or you could use another feature of IoT Hub that is designed for this purpose, device twins. In the next Exercise, you will work on implementing device twin properties within your solution.
+
+### Exercise 5: Implement the Device Twin functionality
+
+As a reminder, a device twin contains four types of information:
+
+* **Tags**: information on the device that isn't visible to the device.
+* **Desired properties**: the desired settings specified by the back-end app.
+* **Reported properties**: the reported values of the settings on the device.
+* **Device identity properties**: read-only information identifying the device.
+
+Device twins, which are managed through IoT Hub, are designed for querying, and they are synchronized with the real IoT device. The device twin can be queried, at any time, by the back-end app. This query can return the current state information for the device. Getting this data doesn't involve a call to the device, as the device and twin will have synchronized. Much of the functionality of device twins is provided by Azure IoT Hub, so not much code needs to be written to make use of them.
+
+There is some overlap between the functionality of device twins and direct methods. You could set device properties using direct methods, which might seem an intuitive way of doing things. However, using direct methods would require the back-end app to record those settings explicitly, if they ever needed to be accessed. Using device twins, this information is stored and maintained by default.
+
+In this exercise, you will enable some code in the back-end service app, to show device twin synchronization in operation (the device code for twin synchronization is already added and has been covered in earlier labs).
+
+#### Task 1: Enable Code To Use Device Twins To Synchronize Device Properties
