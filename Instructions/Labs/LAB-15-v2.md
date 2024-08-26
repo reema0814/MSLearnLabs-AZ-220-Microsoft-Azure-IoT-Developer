@@ -314,6 +314,72 @@ This test is important, checking whether your back-end app is picking up the tel
 
     You now have an app that can send telemetry from a device, and a back-end app acknowledging receipt of the data. In the next            Exercise you will begin work on the steps that handle the control side - what to do when issues arise with the data.
 
+### Exercise 4: Include Code to Invoke a Direct Method
 
-  
+Calls from the back-end app to invoke direct methods can include multiple parameters as part of the payload. Direct methods are typically used to turn features of the device off and on, or specify settings for the device.
+
+In the Contoso scenario, you will be implementing a direct method on the device that controls the operation of a fan located in the cheese cave (simulating the control of temperature and humidity by turing the fan On or Off). The Operator application will communicate with your IoT Hub to invoke the direct method on the device.
+
+There are several error conditions that you need to check for when your cheese cave device receives an instruction to run the direct method. One of these checks is simply to respond with an error if the fan is in a failed state. Another error condition to report is when an invalid parameter is received. Clear error reporting is important, given the potential remoteness of the device.
+
+Direct methods require that the back-end app prepares the parameters, then makes a call specifying the single device on which to invoke the method. The back-end app will then wait for, and report, a response.
+
+The device app contains the functional code for the direct method. The function name is registered with the IoT client for the device. This process ensures the client knows what function to run when the call comes from the IoT Hub (there could be many direct methods).
+
+In this Exercise, you will update your device app by adding the code for a direct method that will simulate turning on the fan in the cheese cave. Next, you will add code to the back-end service app to invoke this direct method.
+
+#### Task 1: Enable Code to Define a Direct Method in the Device App
+
+1. Return to the Visual Studio Code instance that contains your **CheeseCaveDevice** application.
+
+    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and the press **CTRL+C** to exit the running application).
+
+1. Ensure that **Program.cs** is open in the code editor.
+
+1. Locate the **Create a handler for the direct method call** comment line within the code.
+
+1. To register the direct method, uncomment the following code:
+
+    ```csharp
+    deviceClient.SetMethodHandlerAsync("SetFanState", SetFanState, null).Wait();
+    ```
+
+      ![](./media/az15-11.png)
+
+    Notice that the **SetFanState** direct method handler is also set up by this code. As you can see, the **SetMethodHandlerAsync** method of deviceClient takes the remote method name **"SetFanState"** as an argument, along with the actual local method to call, and a user context object (in this case null).
+
+1. Locate the **Handle the direct method call** comment line within the code.
+
+1. Uncomment the **SetFanState** direct method, and review the code and comments.
+
+    `  ![](./media/az15-12.png)
+
+    This is the method that runs on the device when the associated remote method, also called **SetFanState**, is invoked via the IoT Hub. Notice that in addition to receiving a **MethodRequest** instance, it also receives the **userContext** object that was defined when the direct message callback was registered (in this case it will be null).
+
+    The first line of this method determines whether the cheese cave fan is currently in a **Failed** state - the assumption made by the cheese cave simulator is that once the fan has failed, any subsequent command will automatically fail. Therefore, a JSON string is created with the **result** property set to **Fan Failed**. A new **MethodResponse** object is then constructed, with the result string encoded into a byte array and an HTTP status code - in this instance, **400** is used which, in the context of a REST API means a generic client-side error has occurred. As direct method callbacks are required to return a **Task\<MethodResponse\>**, a new task is created and returned.
+
+    > **Information**: You can learn more about how HTTP Status Codes are used within REST APIs [here](https://restfulapi.net/http-status-codes/).
+
+    If the fan state is not **Failed**, the code then proceeds to process the data sent as part of the method request. The **methodRequest.Data** property contains the data in the form of a byte array, so it is first converted to a string. In this scenario, the following two values are expected (including the quotes):
+
+    * "On"
+    * "Off"
+
+    It is assumed that the received data maps to members of the **StateEnum** :
+
+    ```csharp
+    internal enum StateEnum
+    {
+        Off,
+        On,
+        Failed
+    }
+    ```
+
+    In order to parse the data, the quotes must first be removed and then the **Enum.Parse** method is used to find a matching enum value. Should this fail (the data needs to match exactly), an exception is thrown, which is caught below. Notice that the exception handler creates and returns a similar error method response to the one created for the fan failed state.
+
+    If a matching value is found in the **StateEnum**, the cheese cave simulator **UpdateFan** method is called. In this case, the method merely sets the **FanState** property to the supplied value - a real-world implementation would interact with the fan to change the state and determine if the state change was successful. However, in this scenario, success is assumed and the appropriate **result** and **MethodResponse** are created and returned - this time using the HTTP Status code **200** to indicate success.
+
+  You have now completed the coding that is required on the device side. Next, you need to add code to the back-end Operator        application that will invoke the direct method.
+
 
