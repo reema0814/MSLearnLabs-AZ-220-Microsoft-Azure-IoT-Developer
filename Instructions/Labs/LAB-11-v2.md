@@ -377,7 +377,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
    - Encoding dropdown: Ensure that **UTF-8** is selected **(3)** (UTF-8 is the only JSON encoding supported at the time of writing.)
    - Event compression type dropdown: Ensure that **None** is selected **(4)**
- 
+
+       ![](./media/az11-7.png)
+     
 1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Edge Hub**.
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
@@ -387,6 +389,8 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Format: Ensure that **Line separated** is selected **(3)**
    - Encoding: Ensure that **UTF-8** is selected (UTF-8 is the only JSON encoding supported at the time of writing.) **(4)**
 
+      ![](./media/az11-6.png)
+     
 1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
 
     ```sql
@@ -400,9 +404,151 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     HAVING Avg(machine.temperature) > 25
     ```
 
-      Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
+   ![](./media/az11-5.png)
+
+   Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
 
    > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
 
-#### Task 4: Configure Storage Account Settings
+#### Task 4: Deploy the Stream Analytics Job
 
+1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+
+1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click Add, and then select **Azure Stream Analytics Module**.
+
+      ![](./media/az11-4.png)
+
+1. On the **Edge deployment** window, select the **subscription (1)**, select the **edge job(2)** we created earlier and click on **Save (3)**.
+
+      ![](./media/az11-3.png)
+
+   > **Note**: The job may take upto 5-7 minutes to come up, please refresh the page for it to appear. The job may already be selected, yet the **Save** button is disabled - just open the **Edge job** dropdown again and select the **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** job again. The **Save** button should then become enabled.
+
+1. Once the Edge package has been successfully published, notice that the new ASA module is listed under the **IoT Edge Modules** section
+
+1. Under **IoT Edge Modules**, click **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**.
+
+    This is the Steam Analytics module that was just added to your Edge device.
+
+1. On the **Update IoT Edge Module** pane, notice that the **Image URI** points to a standard Azure Stream Analytics image.
+
+    ```text
+    mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.14
+    ```
+
+    This is the same image used for every ASA job that gets deployed to an IoT Edge Device.
+
+    > **Note**:  The version number at the end of the **Image URI** that is configured will reflect the current latest version when you created the Stream Analytics Module.
+
+1. Leave all values as their defaults, and close the **IoT Edge Custom Modules** pane.
+
+1. On the **Set modules on device: sensor-th-0067** pane, click **Next: Routes >**.
+
+    Notice that the existing routing is displayed.
+
+1. Replace the default route defined with the following three routes:
+
+    * Route 1
+        * NAME: `telemetryToCloud`
+        * VALUE: `FROM /messages/modules/tempsensor/* INTO $upstream`
+    * Route 2
+        * NAME: `alertsToReset`
+        * VALUE: `FROM /messages/modules/asa-az220-training-{your-id}/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`
+    * Route 3
+        * NAME: `telemetryToAsa`
+        * VALUE: `FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-{your-id}/inputs/temperature")`
+
+    The routes being defined are as follows:
+
+    * The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
+    * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
+    * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
+
+1. At the bottom of the **Set modules on device: sensor-th-0067** blade, click **Review + create**.
+
+1. On the **Review + create** tab, notice that the **Deployment Manifest** JSON is now updated with the Stream Analytics module and the routing definition that was just configured.
+
+1. Notice the JSON configuration for the **tempsensor** Simulated Temperature Sensor module:
+
+    ```json
+    "tempsensor": {
+        "settings": {
+            "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor",
+            "createOptions": ""
+        },
+        "type": "docker",
+        "version": "1.0",
+        "status": "running",
+        "restartPolicy": "always"
+    },
+    ```
+
+1. Notice the JSON configuration for the routes that were previously configured, and how they are configured in the JSON Deployment definition:
+
+    ```json
+    "$edgeHub": {
+        "properties.desired": {
+            "routes": {
+                "telemetryToCloud": "FROM /messages/modules/tempsensor/* INTO $upstream",
+                "alertsToReset": "FROM /messages/modules/asa-az220-training-CP122619/* INTO BrokeredEndpoint(\\\"/modules/tempsensor/inputs/control\\\")",
+                "telemetryToAsa": "FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint(\\\"/modules/asa-az220-training-CP122619/inputs/temperature\\\")"
+            },
+            "schemaVersion": "1.0",
+            "storeAndForwardConfiguration": {
+                "timeToLiveSecs": 7200
+            }
+        }
+    },
+    ```
+
+1. At the bottom of the blade, click **Create**.
+
+#### Task 5: View Data
+
+1. Go back to the **Cloud Shell** session where you're connected to the **IoT Edge Device** over **SSH**.
+
+    If it is closed or timed out, reconnect. Run the **SSH** command and login as before.
+
+1. At the command prompt, to view a list of the modules deployed to the device, enter the following command:
+
+    ```bash
+    iotedge list
+    ```
+
+    It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
+
+    ```bash
+    demouser@vm-az220-training-edge0001-{your-id}:~$ iotedge list
+    NAME               STATUS           DESCRIPTION      CONFIG
+    asa-az220-training-CP1119  running          Up a minute      mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.5
+    edgeAgent          running          Up 6 hours       mcr.microsoft.com/azureiotedge-agent:1.0
+    edgeHub            running          Up 4 hours       mcr.microsoft.com/azureiotedge-hub:1.0
+    tempsensor         running          Up 4 hours       mcr.microsoft.com/azureiotedge-simulated-temperature-sensor
+    ```
+
+    > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
+
+1. At the command prompt, to watch the telemetry being sent from the Edge device by the **tempsensor** module, enter the following command:
+
+    ```bash
+    iotedge logs tempsensor
+    ```
+
+    > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
+
+1. Take a minute to observe the output.
+
+    While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query.
+
+    Output of this event will look similar to the following:
+
+    ```bash
+    11/14/2019 22:26:44 - Send Json Event : {"machine":{"temperature":231.599999999999959,"pressure":1.0095600761599359},"ambient":{"temperature":21.430643635304012,"humidity":24},"timeCreated":"2019-11-14T22:26:44.7904425Z"}
+    11/14/2019 22:26:45 - Send Json Event : {"machine":{"temperature":531.999999999999957,"pressure":1.0099208337508767},"ambient":{"temperature":20.569532965342297,"humidity":25},"timeCreated":"2019-11-14T22:26:45.2901801Z"}
+    Received message
+    Received message Body: [{"command":"reset"}]
+    Received message MetaData: {"MessageId":null,"To":null,"ExpiryTimeUtc":"0001-01-01T00:00:00","CorrelationId":null,"SequenceNumber":0,"LockToken":"e0e778b5-60ff-4e5d-93a4-ba5295b995941","EnqueuedTimeUtc":"0001-01-01T00:00:00","DeliveryCount":0,"UserId":null,"MessageSchema":null,"CreationTimeUtc":"0001-01-01T00:00:00","ContentType":"application/json","InputName":"control","ConnectionDeviceId":"sensor-th-0067","ConnectionModuleId":"asa-az220-training-CP1119","ContentEncoding":"utf-8","Properties":{},"BodyStream":{"CanRead":true,"CanSeek":false,"CanWrite":false,"CanTimeout":false}}
+    Resetting temperature sensor..
+    11/14/2019 22:26:45 - Send Json Event : {"machine":{"temperature":320.4,"pressure":0.99945886361358849},"ambient":{"temperature":20.940019742324957,"humidity":26},"timeCreated":"2019-11-14T22:26:45.7931201Z"}
+    ```
+   
