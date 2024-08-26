@@ -552,3 +552,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     11/14/2019 22:26:45 - Send Json Event : {"machine":{"temperature":320.4,"pressure":0.99945886361358849},"ambient":{"temperature":20.940019742324957,"humidity":26},"timeCreated":"2019-11-14T22:26:45.7931201Z"}
     ```
    
+## Summary
+In this lab, you have configured the Lab Prerequisites , created and configured an IoT Edge VM, added Edge Module to Edge Device and deployed Azure Stream Analytics as IoT Edge Module/
+
+### You have successfully completed the lab
