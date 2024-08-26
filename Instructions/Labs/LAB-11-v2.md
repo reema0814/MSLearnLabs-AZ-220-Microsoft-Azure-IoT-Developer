@@ -235,3 +235,94 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
       > **Note**: This JSON configures the Edge Module by setting the desired properties of its module twin.
 
       ![](./media/az11-19.png)
+
+1. On the **Set modules on device: sensor-th-0067** blade, at the bottom of the blade, click **Next: Routes >**.
+
+1. Provide the following details and click on **Review + create (3)**:
+
+    * Name: **route (1)**
+    * Value: **`FROM /messages/* INTO $upstream` (2)**
+
+    This route will send all messages from all modules on the IoT Edge Device to IoT Hub
+
+      ![](./media/az11-18.png)
+
+1. At the bottom of the blade, to finish setting the modules for the device, click **Create**.
+
+1. On the **sensor-th-0067** blade, under **Modules**, notice that **tempsensor** is now listed.
+
+    > **Note**: You may have to click **Refresh** to see the module listed for the first time.
+
+    You may notice that the RUNTIME STATUS for **tempsensor** is not reported.
+
+     ![](./media/az11-17.png)
+
+1. At the top of the blade, click **Refresh**.
+
+1. Notice that the **RUNTIME STATUS** for the **tempsensor** module is now set to **running**.
+
+    If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
+
+#### Task 2: Confirm module deployment
+
+1. Open a Cloud Shell session (if it is not still open).
+
+    If you are no longer connected to the **vm-az220-training-edge0001-{your-id}** virtual machine, connect using SSH as your did 
+    earlier in this lab. The SSH command should be available in Notepad.
+
+1. At the Cloud Shell command prompt, to list the modules currently running on the IoT Edge Device, enter the following command:
+
+    ```bash
+    iotedge list
+    ```
+
+      ![](./media/az11-16.png)
+   
+1. The output of the command look similar to the following.
+
+    ```bash
+    demouser@vm-az220-training-edge0001-{your-id}:~$ iotedge list
+    NAME             STATUS           DESCRIPTION      CONFIG
+    edgeHub          running          Up a minute      mcr.microsoft.com/azureiotedge-hub:1.1
+    edgeAgent        running          Up 26 minutes    mcr.microsoft.com/azureiotedge-agent:1.1
+    tempsensor       running          Up 34 seconds    mcr.microsoft.com/azureiotedge-simulated-temperature-sensor
+    ```
+
+    Notice that **tempsensor** is listed as one of the running modules.
+
+1. To view the module logs, enter the following command:
+
+    ```bash
+    iotedge logs tempsensor
+    ```
+
+    The output of the command looks similar to the following:
+
+    ```bash
+    demouser@vm-az220-training-edge0001-{your-id}:~$ iotedge logs tempsensor
+    11/14/2019 18:05:02 - Send Json Event : {"machine":{"temperature":41.199999999999925,"pressure":1.0182182583425192},"ambient":{"temperature":21.460937846433808,"humidity":25},"timeCreated":"2019-11-14T18:05:02.8765526Z"}
+    11/14/2019 18:05:03 - Send Json Event : {"machine":{"temperature":41.599999999999923,"pressure":1.0185790159334602},"ambient":{"temperature":20.51992724976499,"humidity":26},"timeCreated":"2019-11-14T18:05:03.3789786Z"}
+    11/14/2019 18:05:03 - Send Json Event : {"machine":{"temperature":41.999999999999922,"pressure":1.0189397735244012},"ambient":{"temperature":20.715225311096397,"humidity":26},"timeCreated":"2019-11-14T18:05:03.8811372Z"}
+    ```
+
+    The **iotedge logs** command can be used to view the module logs for any of the Edge modules.
+
+      ![](./media/az11-15.png)
+   
+### Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
+
+Now that the tempSensor module is deployed and running on the IoT Edge device, we can add a Stream Analytics module that can process messages on the IoT Edge device before sending them on to the IoT Hub.
+
+#### Task 1: Create Azure Storage Account
+
+1. Search for **storage account** and select it.
+
+   ![](./media/az11-12.png)
+
+1. Click on **Create**.
+
+   ![](./media/az11-14.png)
+
+1. In the create a storage account page, provide the following:
+
+   
