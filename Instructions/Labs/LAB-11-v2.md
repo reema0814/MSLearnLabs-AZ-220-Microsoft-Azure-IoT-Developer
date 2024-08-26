@@ -217,7 +217,7 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
    ![](./media/az11-45.png)
 
-1. Click on Module Twin Settings (1), to specify the desired properties for the module twin, enter the following **JSON (2)** and click on **Add (3)**:
+1. Click on **Module Twin Settings (1)**, to specify the desired properties for the module twin, enter the following **JSON (2)** and click on **Add (3)**:
 
     ```json
     {
