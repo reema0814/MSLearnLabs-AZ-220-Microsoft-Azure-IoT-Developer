@@ -462,7 +462,7 @@ To test the direct method, you will need to start the apps in the correct order.
 
     Notice the output similar to the following:
 
-      ![](./media/az15-015.png)
+      ![](./media/az-15-015.png)
 
 1. Now check the console output for the **CheeseCaveDevice** device app, you should see that the fan has been turned on.
 
