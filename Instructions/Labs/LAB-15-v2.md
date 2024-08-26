@@ -580,8 +580,8 @@ To test the code that manages device twin desired property changes, you will sta
 
 1. Check the console output and confirm that the device twin synchronized correctly.
 
-    ![](./media/az15-18.png)
+    ![](./media/az-15-18.png)
 
     If you let the fan do its work, you should eventually see red alerts turn off (unless the fan fails)
 
-    ![](./media/az15-19.png)
+    ![](./media/az-15-19.png)
