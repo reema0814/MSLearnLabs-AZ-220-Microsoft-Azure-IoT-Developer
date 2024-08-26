@@ -58,7 +58,7 @@ In this lab, you will complete the following:
    
 ### Exercise 2: Create and configure an IoT Edge VM
 
-### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
+#### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
 
 1. On the Azure portal toolbar, to open the **Azure Cloud Shell**, click **Cloud Shell**.
 
@@ -102,7 +102,7 @@ In this lab, you will complete the following:
     az extension update --name azure-iot
     ```
 
-### Task 2: Provision IoT Edge VM
+#### Task 2: Provision IoT Edge VM
 
 1. In the **Custom deployment** page, under **Project details**, enter the following details:
 
@@ -129,7 +129,7 @@ In this lab, you will complete the following:
 
    ![](./media/az11-28.png)
 
-### Task 3: Connect to the VM
+#### Task 3: Connect to the VM
 
 1. If Cloud Shell is not still open, click **Cloud Shell**.
 
@@ -192,7 +192,7 @@ When a new module instance is created by the IoT Edge runtime, it gets a corresp
 
 In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Edge module, and deploy it to run on the IoT Edge Device.
 
-### Task 1: Configure module for deployment
+#### Task 1: Configure module for deployment
 
 1. Search for **IoT Hub** and select it.
 
