@@ -462,7 +462,7 @@ To test the direct method, you will need to start the apps in the correct order.
 
     Notice the output similar to the following:
 
-      ![](./media/az15-15.png)
+      ![](./media/az15-015.png)
 
 1. Now check the console output for the **CheeseCaveDevice** device app, you should see that the fan has been turned on.
 
@@ -488,3 +488,100 @@ There is some overlap between the functionality of device twins and direct metho
 In this exercise, you will enable some code in the back-end service app, to show device twin synchronization in operation (the device code for twin synchronization is already added and has been covered in earlier labs).
 
 #### Task 1: Enable Code To Use Device Twins To Synchronize Device Properties
+
+1. Return to the Visual Studio Code instance that is running the **CheeseCaveOperator** back-end app.
+
+1. If the app is still running, place input focus on the terminal and press **CTRL+C** to exit the app.
+
+1. Ensure that the **Program.cs** is open.
+
+1. Near the top of the file, notice that a global variable for a **RegistryManager** instance is already defined:
+
+    ```csharp
+    private static RegistryManager registryManager;
+    ```
+
+    The **RegistryManager** class encapsulates some of the IoT Hub Service REST APIs that include operations on the device identity registry, querying device twins, and import/export jobs. In this exercise, it will be used to update a device twin.
+
+1. In the **Main** method, locate the **A registry manager is used to access the digital twins** comment line within the code.
+
+1. To enable the functionality that creates the registry manager instance and sets the twin properties, uncomment the following code lines:
+
+    ```csharp
+    registryManager = RegistryManager.CreateFromConnectionString(serviceConnectionString);
+    SetTwinProperties().Wait();
+    ```
+
+      ![](./media/az15-16.png)
+   
+    Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
+
+    The **SetTwinProperties** method creates a piece of JSON that defines tags and properties that will be added to the device twin, and then updates the twin. The next part of the method demonstrates how a query can be performed to list the devices where the **cheeseCave** tag is set to "CheeseCave1". This query requires that the connection has the **Registry read** permission.
+
+    If you are interested, you can find the **SetTwinProperties** method further down in the Program.cs file.
+
+1. On the **File** menu, to save the Program.cs file, click **Save**.
+
+#### Task 2: Enable Code to Synchronize Device Twin Settings for the Device
+
+1. Return to the Visual Studio Code instance that contains the **CheeseCaveDevice** app.
+
+1. If the app is still running, place input focus on the terminal and press **CTRL+C** to exit the app.
+
+1. Ensure that the **Program.cs** file is open in the Code Editor pane.
+
+1. In the **Main** method, locate the **Get the device twin to report the initial desired properties** comment line within the code.
+
+1. To register the desired property changed handler, uncomment the following code lines:
+
+    ```csharp
+    Twin deviceTwin = deviceClient.GetTwinAsync().GetAwaiter().GetResult();
+
+    ConsoleHelper.WriteGreenMessage("Initial twin desired properties: " + deviceTwin.Properties.Desired.ToJson());
+
+    deviceClient.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
+    ```
+
+      ![](./media/az15-17.png)
+
+1. Locate the **OnDesiredPropertyChanged is the handler that is invoked when a desired property changes in the device twin** comment line within the code.
+
+1. Take a minute to review the OnDesiredPropertyChanged code.
+
+    This code defines the handler that is invoked when a desired property changes in the device twin. Notice that new values are then reported back to the IoT Hub to confirm the change.
+
+1. Press `Ctrl+S` to save.
+
+    > **Note**:  Now you have added support for device twins to your app, you can reconsider having explicit variables such as **desiredHumidity**. You could use the variables in the device twin object instead.
+
+#### Task 3: Test the Device Twins
+
+To test the code that manages device twin desired property changes, you will start the apps in the correct order, device application first and then back-end application.
+
+1. Switch to the instance of Visual Studio Code that contains the **CheeseCaveDevice** device app.
+
+1. To start the **CheeseCaveDevice** device app, open a Terminal pane and then enter a `dotnet run` command.
+
+    It will begin writing to the terminal, and telemetry messages will be displayed.
+
+    ```bash
+    dotnet run
+    ```
+
+1. Switch to the instance of Visual Studio Code that contains the **CheeseCaveOperator** back-end app.
+
+1. To start the **CheeseCaveOperator** back-end app, open a Terminal pane and then enter a `dotnet run` command.
+
+    ```bash
+    dotnet run
+    ```
+
+1. Switch back to the instance of Visual Studio Code that contains the **CheeseCaveDevice** device app.
+
+1. Check the console output and confirm that the device twin synchronized correctly.
+
+    ![](./media/az15-18.png)
+
+    If you let the fan do its work, you should eventually see red alerts turn off (unless the fan fails)
+
+    ![](./media/az15-19.png)
