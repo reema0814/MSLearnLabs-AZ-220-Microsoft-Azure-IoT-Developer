@@ -587,3 +587,8 @@ To test the code that manages device twin desired property changes, you will sta
     If you let the fan do its work, you should eventually see red alerts turn off (unless the fan fails)
 
     ![](./media/az-15-20.png)
+
+## Summary
+In this lab, you have configured the Lab Prerequisites, reviewed Code to Send and Receive Telemetry, completed a Second App to Receive Telemetry, included Code to Invoke a Direct Method and implemented the Device Twin functionality.
+
+### You have successfully completed the lab
