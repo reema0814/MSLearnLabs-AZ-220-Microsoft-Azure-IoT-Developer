@@ -30,5 +30,77 @@ In this lab, you will complete the following:
 
 1. Search for Resource Groups and select .
 
-1. Select Deployments under the Settings tab in the left pane.
+1. Select **Deployments** under the **Settings** tab in the left pane.
+
+      ![](./media/az11-38.png)
+
+1. Select the existing deployment, click on **Outputs** and copy the **Connection string**.
+
+      ![](./media/az11-39.png)
+
+1. Search for **Iot Hub** and select it.
    
+1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge** under **Device Management** tab in the left pane.
+
+1. Click on **+ Add IoT Edge Device**.
+
+1. Provide the name as **sensor-th-0067 (1)** and click on **Save (2)**.
+
+      ![](./media/az11-32.png)
+
+1. Navigate to **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Devices (1)** and select **sensor-th-0067 (2)**. 
+
+      ![](./media/az11-31.png)
+
+1. Copy the **Primary connection string** in a notepad for future use.
+
+      ![](./media/az11-30.png)
+   
+### Exercise 2: Create and configure an IoT Edge VM
+
+### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
+
+1. On the Azure portal toolbar, to open the **Azure Cloud Shell**, click **Cloud Shell**.
+
+   The Cloud Shell button is to the right of the search field and has an icon that appears to represent a command prompt.
+
+   A Cloud Shell window will open near the bottom of the display screen.
+
+      ![](./media/az11-37.png)
+
+1. Click on **Bash** when prompted.
+
+      ![](./media/az11-36.png)
+
+1. Select the checkbox for **Mount Storage account (1)**, select the existing **subscription (2)** and click on **Apply (3)**.
+
+      ![](./media/az11-35.png)
+
+1. Select **I want to create a storage account (1)** and click on **Next (2)**.
+
+      ![](./media/az11-34.png)
+
+1. In the create a storage account page:
+
+   - Subscription: **Select the default subscription (1)**
+   - Resource Group: **Select the existing resource group (2)**
+   - Region: Select **EAST US (3)**
+   - Storage Account Name: **Provide the name as stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
+   - File Share: **Provide the name as fileshare220 (5)**
+
+        ![](./media/az11-33.png)
+
+
+1. At the command prompt, use the following command to install Azure CLI extension for IoT
+
+    ``` bash
+    az extension add --name azure-iot
+    ```
+   
+1. At the command prompt, verify that the Azure CLI extension for IoT is installed and up-to-date, enter the following command:
+
+    ``` bash
+    az extension update --name azure-iot
+    ```
+
+1. 
