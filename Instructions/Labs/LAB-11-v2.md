@@ -215,7 +215,7 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
       > **Note**: This image is a published image on Docker Hub that is provided by the Azure product group to support this testing scenario.
 
-   ![](./media/az11-20.png)
+   ![](./media/az11-45.png)
 
 1. Click on Module Twin Settings (1), to specify the desired properties for the module twin, enter the following **JSON (2)** and click on **Add (3)**:
 
