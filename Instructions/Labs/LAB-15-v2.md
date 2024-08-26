@@ -273,4 +273,47 @@ In this task, you will begin work on the back-end app that will be used to recei
 
     If an event is received, then binary body data is converted to a string and written to the console - of course, in the "real-world" the JSON would likely be deserialized and so on. The event data properties are then iterated and, in this case, checked to see if a value is true - in the current scenario, this represents an alert. Should an alert be found, it is written to the console.
 
+#### Task 3: Test your Code to Receive Telemetry
+
+This test is important, checking whether your back-end app is picking up the telemetry being sent out by your simulated device. Remember your device app is still running, and sending telemetry.
+
+1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**.
+
+      ![](./media/az15-51.png)
+
+1. To run the **CheeseCaveOperator** back-end app in the terminal, enter the following command:
+
+    ```bash
+    dotnet run
+    ```
+
+   This command will run the **Program.cs** file in the current folder.
+
+1. Take a minute to observe the output to the Terminal.
+
+    You should quickly see console output, and the app will display telemetry message data almost immediately if it connects to IoT Hub successfully.
+
+    If not, carefully check your IoT Hub service connection string, noting that this string should be the service connection string, and not any other:
+
+    ![](./media/az15-10.png)
+
+    > **Note**:  Green text is used to show things are working as they should and red text when bad stuff is happening. If you don't get a screen similar to this image, start by checking your device connection string.
+
+1. Leave this app running for a moment longer.
+
+1. With both apps running, verify that the telemetry displayed by the Operator app is in sync with the telemetry sent by the Device app.
+
+    Visually compare the telemetry that is being sent with the telemetry that is being received.
+
+    * Is there an exact data match?
+    * Is there much of a delay between when data is sent and when it is received?
+
+1. Once you have verified the telemetry data, stop the running apps and close the Terminal pane in both instances of VS Code, but do not close the Visual Studio Code windows.
+
+1. You can press **CTRL+C** in the Terminal pane to stop the apps.
+
+    You now have an app that can send telemetry from a device, and a back-end app acknowledging receipt of the data. In the next            Exercise you will begin work on the steps that handle the control side - what to do when issues arise with the data.
+
+
+  
 
