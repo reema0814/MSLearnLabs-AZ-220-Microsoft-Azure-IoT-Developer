@@ -488,3 +488,5 @@ Development of the **objectcountingmodule** custom IoT Edge Module is now comple
 ## Summary
 
 In this lab, you have deployed a azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
+
+## You have successfully completed this Lab!!
