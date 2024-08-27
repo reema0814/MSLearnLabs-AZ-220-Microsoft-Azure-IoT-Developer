@@ -51,7 +51,7 @@ In this lab, you will complete the following:
 
 ### Task 1: Configure Lab Prerequisites
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-rg**.
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
    ![](../media2/v2img1.png)
 
