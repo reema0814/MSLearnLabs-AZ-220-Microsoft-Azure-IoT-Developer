@@ -190,7 +190,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. At the bottom of the blade, **Review + create**, and then click **Create**.
 
-    ![](media/iot18.png)
+    ![](media/2lab1.png)
 
 1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
 
