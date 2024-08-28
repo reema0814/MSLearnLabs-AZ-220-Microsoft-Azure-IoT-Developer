@@ -1,4 +1,4 @@
-# Lab 02: Getting Started with Azure IoT Services
+# Lab 01: Getting Started with Azure IoT Services
 
 # Introduction to IoT and Azure IoT Services
 
