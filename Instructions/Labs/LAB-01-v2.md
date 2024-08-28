@@ -41,7 +41,7 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
     ![](media/create.png)
 
-1. In the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **iot hub** and click on it.
+1. In the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
 
     ![](media/hub.png)
 
@@ -49,19 +49,13 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
     ![](media/createiot.png)
     
-1. On the **IoT hub** blades **Basics** tab, in the **Subscription** dropdown, select the available Subscription **(1)**.
- 
-1. Select your **Resource group(2)** from the drop down menu.
+1. On the **IoT hub** blades **Basics** tab, provide the following details.
 
-1. Enter the **IoT hub name**: **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
-      
-    > **Note**:  Azure will ensure that the name you enter is unique. If the name that you enter is not unique, Azure will display a message below the name field as a warning. If you see the warning message, you should update your unique ID. Try appending your unique ID with '**00**', or '**01**', or '**02**, 'etc. as necessary to achieve a globally unique name.
-
-    > **Note**: Some resource names do not allow extended characters like the dash (-) or underscore (_), so stick with numeric digits when updating your unique ID.
-
-1. **Region** : **<inject key="Region" enableCopy="false"/>** 
-
-1. Select the **Tier** as **Free(5)** from the drop down.
+   - Subscription: **Select the default Subscription (1)**.
+   - Resource group: **Select the Existing Resource group (2)**.
+   - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
+   - Region : **eastus(4)**
+   - Tier :**Free(5)** 
 
     ![](media/randc.png)
 
