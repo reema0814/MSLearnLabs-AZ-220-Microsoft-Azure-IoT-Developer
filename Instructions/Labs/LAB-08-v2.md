@@ -1,4 +1,4 @@
-# Setup an IoT Edge Gateway
+# Lab 08: Setup an IoT Edge Gateway
 
 ## Lab Scenario
 
