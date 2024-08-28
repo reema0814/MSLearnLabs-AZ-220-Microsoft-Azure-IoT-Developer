@@ -1,0 +1,13 @@
+[
+  {
+    "Name": "AZ-220-Microsoft-Azure-IoT-Developer",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/stage/Instructions/Labs/LAB-03-v2.md",
+        "Order": 1
+      }
+    ]
+  }
+]
