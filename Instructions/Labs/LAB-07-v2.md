@@ -1,4 +1,4 @@
-# Lab 11: Introduction to Azure IoT Edge
+# Lab 07: Introduction to Azure IoT Edge
 
 ## Introduction to Azure IoT Edge
 
