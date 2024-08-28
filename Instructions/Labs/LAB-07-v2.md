@@ -28,16 +28,14 @@ In this lab, you will complete the following:
 
 ### Exercise 1: Configure Lab Prerequisites
 
-1. Search for Resource Groups and select .
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-1. Select **Deployments** under the **Settings** tab in the left pane.
+      ![](../media2/v2img1.png)
 
-      ![](./media/az11-38.png)
+1. Navigate to the **Environment** tab in the Lab guide and copy the **Connection string**.
 
-1. Select the existing deployment, click on **Outputs** and copy the **Connection string**.
-
-      ![](./media/az11-39.png)
-
+      ![](./media/constrng.png)
+   
 1. Search for **Iot Hub** and select it.
 
       ![](./media/az11-50.png)
@@ -82,13 +80,13 @@ In this lab, you will complete the following:
 
       ![](./media/az11-34.png)
 
-1. In the create a storage account page:
+1. In the create a storage account page, provide the following details and click on **Create**.
 
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
    - Region: Select **EAST US (3)**
-   - Storage Account Name: **Provide the name as stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
-   - File Share: **Provide the name as fileshare220 (5)**
+   - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
+   - File Share: Provide the name as **fileshare220 (5)**
 
         ![](./media/az11-33.png)
 
@@ -115,7 +113,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
-   - Region: Select **EAST US (3)**
+   - Region: Select **Select the default region (3)**
    - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
    - Device Connection string: Paste the **connection string** you copied earlier in your notepad **(5)**
    - Virtual Machine Size: **Standard_DS1_v2 (6)**
@@ -141,6 +139,8 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 1. If Cloud Shell is not still open, click **Cloud Shell**.
 
 1. At the Cloud Shell command prompt, paste the **Public SSH** command that you noted earlier, and then press **Enter**.
+
+   > **Note**: paste the copied command from **ssh** leave SSH:
 
 1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**.
 
@@ -274,7 +274,7 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
 1. Open a Cloud Shell session (if it is not still open).
 
-    If you are no longer connected to the **vm-az220-training-edge0001-{your-id}** virtual machine, connect using SSH as your did 
+    If you are no longer connected to the **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** virtual machine, connect using SSH as your did 
     earlier in this lab. The SSH command should be available in Notepad.
 
 1. At the Cloud Shell command prompt, to list the modules currently running on the IoT Edge Device, enter the following command:
