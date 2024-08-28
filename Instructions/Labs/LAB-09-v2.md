@@ -1,6 +1,6 @@
-Lab 09: Integrate IoT Hub with Event Grid'
+# Lab 09: Integrate IoT Hub with Event Grid'
 
-# Integrate IoT Hub with Event Grid
+## Integrate IoT Hub with Event Grid
 
 ## Lab Scenario
 
