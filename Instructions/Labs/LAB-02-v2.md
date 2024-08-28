@@ -631,14 +631,6 @@ In this task, you will be testing the application that you have built in the pre
 
     > **Note**:  If the command outputs a **Malformed Token** or other error message, then make sure the **Primary Connection String** value is configured correctly as the value of the **connectionString** variable.
 
-    If you receive additional error messages, you can verify that you constructed your code correctly by referring to completed solution code that is available for reference in the **Final** folder for this lab. This **Final** folder is included with the lab resources files that you downloaded to the virtual machine environment before starting the lab. The folder path is:
-
-    >
-    > * Allfiles
-    >   * Labs
-    >      * LAB_AK_04-connect-iot-device-to-azure
-    >        * Final
-
 1. Observe the message string output displayed in the Terminal.
 
     Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values, and displaying message string output in the console.
