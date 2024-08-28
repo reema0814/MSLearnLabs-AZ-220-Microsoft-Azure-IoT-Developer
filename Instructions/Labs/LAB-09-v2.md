@@ -1,4 +1,4 @@
-# Develop, Deploy, and debug a custom module on Azure IoT Edge with VS Code
+# Lab 09: Develop, Deploy, and debug a custom module on Azure IoT Edge with VS Code
 
 ## Lab Scenario
 
