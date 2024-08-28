@@ -1,4 +1,4 @@
-# Lab 16: Automate IoT Device Management with Azure IoT Hub
+# Lab 11: Automate IoT Device Management with Azure IoT Hub
 
 ## Lab Overview
 
