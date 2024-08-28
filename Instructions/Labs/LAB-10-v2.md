@@ -1,4 +1,4 @@
-# Lab 15: Remotely monitor and control devices with Azure IoT Hub
+# Lab 10: Remotely monitor and control devices with Azure IoT Hub
 
 ## Remotely monitor and control devices with Azure IoT Hub
 
