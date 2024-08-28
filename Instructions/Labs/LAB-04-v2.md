@@ -1,4 +1,4 @@
-# Device Message Routing
+# Lab 04: Device Message Routing
 
 ## Overview
 
