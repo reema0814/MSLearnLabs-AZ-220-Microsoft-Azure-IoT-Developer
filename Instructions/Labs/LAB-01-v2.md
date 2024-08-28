@@ -49,7 +49,7 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
     ![](media/createiot.png)
     
-1. On the **IoT hub** blades **Basics** tab, provide the following details and click on **Next:Networking>**.
+1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
 
    - Subscription: **Select the default Subscription (1)**.
    - Resource group: **Select the Existing Resource group (2)**.
@@ -185,7 +185,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
     ![](media/1lab5.png)
 
-1.click on **dps-az220-training-cah281216**.
+1. click on **dps-az220-training-cah281216**.
 
     ![](media/1lab6.png)
 
