@@ -418,7 +418,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
 
-1. Navigate to Set modules tab
+1. Navigate to **Set modules** tab.
 
    ![](./media/edge5.png)
   
