@@ -1,6 +1,6 @@
-# Getting Started with Your AZ-220: Microsoft Azure-IoT Developer Workshop
+# Getting Started with Your AZ-220: Microsoft Azure IoT Developer Workshop
  
-Welcome to your AZ-220: Microsoft Azure-IoT Developer Workshop workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+Welcome to your AZ-220: Microsoft Azure IoT Developer Workshop workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
