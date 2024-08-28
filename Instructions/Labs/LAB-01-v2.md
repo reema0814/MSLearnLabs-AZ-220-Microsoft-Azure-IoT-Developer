@@ -185,7 +185,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
     ![](media/1lab5.png)
 
-1. click on **dps-az220-training-cah281216**.
+1. Click on **dps-az220-training-cah281216**.
 
     ![](media/1lab6.png)
 
