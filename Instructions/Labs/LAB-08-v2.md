@@ -98,6 +98,13 @@ In a production scenario, you will want to open only the minimum number of ports
 
 In this task, you will configure the Network Security Group (NSG) that secures access to the Azure IoT Edge Gateway from the Internet. The necessary ports for MQTT, AMQP, and HTTPS communications will be opened so that the downstream IoT device(s) can communicate with the gateway using all three of the communication ports.
 
+1. Open a new tab in the VM and navigate to the following address:
+
+   [![Deploy to Azure](
+https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FCloudLabs-MOC%2FMSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer%2Fstage%2FAllfiles%2FARM%2Flab12a.json)
+
+1. In the **Custom deployment** page, under **Project details**, enter the following details:
+
 1. On the All resources tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/lab12img10.png)
