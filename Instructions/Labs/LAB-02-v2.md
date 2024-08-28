@@ -1,4 +1,4 @@
-# Connect an IoT Device to Azure
+# Lab:02 Connect an IoT Device to Azure
 
 ## Overview 
 
