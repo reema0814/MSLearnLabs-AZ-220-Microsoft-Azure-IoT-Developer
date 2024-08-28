@@ -1,4 +1,4 @@
-# Explore and analyze time stamped data with Time Series Insights
+# Lab 06: Explore and analyze time stamped data with Time Series Insights
 
 ## Overview
 
