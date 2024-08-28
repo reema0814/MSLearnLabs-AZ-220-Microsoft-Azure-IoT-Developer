@@ -1,4 +1,4 @@
-# Individual Enrollment of a Device in DPS
+# Lab 03: Individual Enrollment of a Device in DPS
 
 ## Overview
 
