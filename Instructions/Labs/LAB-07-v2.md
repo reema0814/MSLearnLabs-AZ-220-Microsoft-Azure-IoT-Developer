@@ -140,8 +140,8 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. At the Cloud Shell command prompt, paste the **Public SSH** command that you noted earlier, and then press **Enter**.
 
-   > **Note**: paste the copied command from **ssh** leave SSH:
-
+   > **Note**: Paste the command, omitting **SSH:**
+   
 1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**.
 
       This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer         to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
