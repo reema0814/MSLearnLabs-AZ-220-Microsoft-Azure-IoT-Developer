@@ -31,16 +31,12 @@ In this lab, you will complete the following:
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
       ![](../media2/v2img1.png)
-
-1. Navigate to the **Environment** tab in the Lab guide and copy the **Connection string**.
-
-      ![](./media/constrng.png)
    
-1. Search for **Iot Hub** and select it.
+1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
-      ![](./media/az11-50.png)
-   
-1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
+      ![](./media/edge10.png)
+      
+1. click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
       ![](./media/az11-41.png)
 
@@ -55,7 +51,11 @@ In this lab, you will complete the following:
 1. Copy the **Primary connection string** in a notepad for future use.
 
       ![](./media/az11-30.png)
-   
+
+1. Navigate to the **Environment** tab in the VM and copy the **Connection string** in a notepad for later use.
+
+      ![](./media/constrng.png)
+
 ### Exercise 2: Create and configure an IoT Edge VM
 
 #### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
@@ -113,7 +113,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
-   - Region: Select **Select the default region (3)**
+   - Region: **Select the default region (3)**
    - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
    - Device Connection string: Paste the **connection string** you copied earlier in your notepad **(5)**
    - Virtual Machine Size: **Standard_DS1_v2 (6)**
@@ -203,8 +203,12 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
 1. Search for **IoT Hub** and select it.
 
+      ![](./media/az11-50.png)
+
 1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
 
+      ![](./media/edge12.png)
+   
 1. Scroll to the bottom of the **sensor-th-0067** blade.Scroll down to find the **Modules (1)** section and notice the list of the modules currently configured for the device.
 
       Currently, the IoT Edge device is configured with only the Edge Agent ($edgeAgent) and Edge Hub ($edgeHub) modules that are part 
@@ -330,7 +334,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
    - Storage Account Name: Provide the name as **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
-   - Region: Select **Select the default region (4)**
+   - Region: **Select the default region (4)**
    - Performance: **Standard (5)**
    - **Redundancy**: **Locally-redundant storage (LRS) (6)** 
    - Click on **Review + create (7)**
@@ -352,7 +356,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing resource group (2)**
    - Name: **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
-   - Region: Select **Select the default region (4)**
+   - Region: **Select the default region (4)**
    - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
       
      ![](./media/edge4.png)
@@ -502,7 +506,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
     It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
 
-   ![](./media/edge8.png)
+   ![](./media/edge11.png)
 
     > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
 
