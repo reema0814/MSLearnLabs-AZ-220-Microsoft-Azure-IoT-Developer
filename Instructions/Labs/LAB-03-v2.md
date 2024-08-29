@@ -34,11 +34,11 @@ In this task, you wil create an individual enrollment in the Device Provisioning
 
 1. In the Azure portal navigate to the resource group **az220-did**. and select the **dps-az220-training-did** from the resource list.
 
-   ![](../media2/lab5img2.png)
+   ![](./media2/lab5img2.png)
 
 1. On the left-side menu under **Settings**, click **Manage enrollments**(1). And select **Individual enrollments**(2) and click on **+ Add individual enrollment**(3).
 
-   ![](../media2/lab5img1.png)
+   ![](./media2/lab5img1.png)
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
@@ -47,7 +47,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
     - click on **Next: IoT hubs** **(4)**.
 
-    ![](../media2/lab5img3.png) 
+    ![](./media2/lab5img3.png) 
 
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
@@ -56,7 +56,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     - **Allocation policy** : select **Evenly weighted distribution** **(2)**.
     - click on **Next: Device settings >** **(3)**.
 
-    ![](../media2/lab5img4.png) 
+    ![](./media2/lab5img4.png) 
 
 
 1. On the **Add Enrollment** blade under **Device settings**, add the below json data in **Desired properties** input box. 
@@ -73,7 +73,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
         }
     }
     ```
-    ![](../media2/lab5img5.png)
+    ![](./media2/lab5img5.png)
 
     This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
@@ -85,7 +85,7 @@ In this task, you will be reviewing the enrollment created and obtain the keys f
 
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **individual enrollments**.
 
-    ![](../media2/lab5img6.png)
+    ![](./media2/lab5img6.png)
 
     As you may recall, you will be using the enrollment record to obtain the Authentication keys.
 
@@ -95,7 +95,7 @@ In this task, you will be reviewing the enrollment created and obtain the keys f
 
 1. Copy the **Primary Key** and **Secondary Key** values for this device enrollment, and then save them to a file for later reference.
 
-   ![](../media2/lab5img10.png)
+   ![](./media2/lab5img10.png)
 
 ## Exercise 2: Configure Simulated Device
 
@@ -113,17 +113,17 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click **Copy to clipboard**.
 
-   ![](../media2/lab5img11.png)
+   ![](./media2/lab5img11.png)
 
 1. Open **Visual Studio Code**.
 
-   ![](../media2/v2img8.png)
+   ![](./media2/v2img8.png)
 
 1. On the **File** menu, click **Open Folder** and then navigate to `C:\Allfiles\Labs\05-Individual Enrollment of a Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
 
 1. Open integrated Terminal in **Visual studio code**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
 
-   ![](../media2/lab5img13.png)
+   ![](./media2/lab5img13.png)
 
     ```cmd/sh
     dotnet restore
@@ -323,7 +323,7 @@ In this task you will build the dotnet project and run to send the telemetry dat
 
 1. Ensure that you have your code project open in Visual Studio Code. Open *New Terminal**.
 
-   ![](../media2/lab5img13.png)
+   ![](./media2/lab5img13.png)
 
 1. In the Terminal pane, ensure the command prompt shows the directory path for the `Program.cs` file.
 
@@ -373,15 +373,15 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-   ![](../media2/v2img16.png)
+   ![](./media2/v2img16.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
-   ![](../media2/v2img17.png)
+   ![](./media2/v2img17.png)
 
 1. select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
 
-   ![](../media2/v2img18.png)
+   ![](./media2/v2img18.png)
 
 1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
 
@@ -403,23 +403,23 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Open the Azure portal (if it is not already open), and then navigate to your **Azure IoT Hub** service.
 
-   ![](../media2/lab5img14.png)
+   ![](./media2/lab5img14.png)
 
 1. On the IoT Hub blade, on the left-side menu under **Device Management**, click **Devices**. Under **DEVICE ID**, click **sensor-thl-1000**.
 
-   ![](../media2/lab5img15.png)
+   ![](./media2/lab5img15.png)
 
     > **IMPORTANT**: Make sure you select the device that you are using for this lab.
 
 1. On the **sensor-thl-1000** device blade, at the top of the blade, click **Device Twin**.
 
-   ![](../media2/lab5img16.png)
+   ![](./media2/lab5img16.png)
 
     The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
 1. Locate the JSON for the `properties.desired` object.
 
-   ![](../media2/lab5img17.png)
+   ![](./media2/lab5img17.png)
 
     This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
 
@@ -490,11 +490,11 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments**.
 
-   ![](../media2/lab5img6.png)
+   ![](./media2/lab5img6.png)
 
 1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click **Delete**
 
-   ![](../media2/lab5img7.png)
+   ![](./media2/lab5img7.png)
 
 1. At the top of the blade, click **Delete**.
 
@@ -502,7 +502,7 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On the **Remove enrollment** prompt, click **Yes**.
 
-   ![](../media2/lab5img8.png)
+   ![](./media2/lab5img8.png)
 
     The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
 

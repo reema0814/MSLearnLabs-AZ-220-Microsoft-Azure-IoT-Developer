@@ -32,39 +32,39 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. on the **Docker Subscription Service Agreement**, select **Accept**.
 
-   ![](../media2/lab13img2.png)
+   ![](./media2/lab13img2.png)
 
 1. On **Welcome to Docker** pane click on **skip** from top right corner.
 
-   ![](../media2/lab13img3.png)
+   ![](./media2/lab13img3.png)
 
 1. In the **docker desktop** page ensure that status is **Engine running**.
 
-   ![](../media2/lab13img4.png)
+   ![](./media2/lab13img4.png)
 
 1. close the docker desktop, continue with further steps.
 
 1. Open Visual Studio Code from desktop.
 
-   ![](../media2/v2img8.png)
+   ![](./media2/v2img8.png)
 
 1. Firstly you have to download some extensions, that you will be using in this lab.
 
 1. Navigate to **Extensions** pane from left side tool bar and search for **Azure IoT Hub**. Click on **Install**.
 
-   ![](../media2/lab13img5.png)
+   ![](./media2/lab13img5.png)
 
 1. Follow same steps for **Azure IoT Edge** and **C#**.
 
-   ![](../media2/lab13img6.png)
+   ![](./media2/lab13img6.png)
 
-   ![](../media2/lab13img7.png)
+   ![](./media2/lab13img7.png)
 
 1. Wait untill all these extensions installed successfully and continue with further steps.
 
 1. Open **New Terminal** in Visual Studio Code, which will open the integrated terminal.
 
-   ![](../media2/v2img13.png)
+   ![](./media2/v2img13.png)
 
 1. At the terminal, to install the package manager for Python (Pip), enter the following commands:
 
@@ -93,15 +93,15 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 1. On the Azure Portal, use the search bar to search **container registries**. click on **container registries**.
 
-   ![](../media2/lab13img9.png)
+   ![](./media2/lab13img9.png)
 
 1. On the **Container registries** blade, click **Create**.
 
-   ![](../media2/lab13img10.png)
+   ![](./media2/lab13img10.png)
 
 1. On the **Create container registry** blade,under **resource group** ensure the correct resource group is selected. provide **Registry name** as **acraz220training<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create**.
 
-   ![](../media2/lab13img11.png)
+   ![](./media2/lab13img11.png)
 
 ### Task 2: Connect Docker to the container registry
 
@@ -109,7 +109,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**, click **Enable**.
 
-   ![](../media2/lab13img12.png)
+   ![](./media2/lab13img12.png)
 
 1. Make a record of the following values, paste it in a notepad. You will be using this values further in this lab:
 
@@ -139,15 +139,15 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 1. Open Visual Studio Code.
 
-   ![](../media2/v2img8.png)
+   ![](./media2/v2img8.png)
 
 1. On the **View** menu, to open the Visual Studio Command Palette, click **Command Palette**.
 
-   ![](../media2/lab13img13.png)
+   ![](./media2/lab13img13.png)
 
 1. At the command prompt, type **Azure IoT Edge: New**, and then click **Azure IoT Edge: New IoT Edge Solution**.
 
-   ![](../media2/lab13img14.png)
+   ![](./media2/lab13img14.png)
 
 1. Browse to the folder where you want to create the new solutions, and then click **Select folder**.
 
@@ -206,23 +206,23 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier.
 
-   ![](../media2/lab13img15.png)
+   ![](./media2/lab13img15.png)
 
 1. Save the updated **.env** file.
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, ensure that the **image** is mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
-   ![](../media2/lab13img22.png)
+   ![](./media2/lab13img22.png)
 
     >**Note**: You can use the same image name from the below configurations and paste it here.
 
 1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** or later in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
-   ![](../media2/lab13img21.png)
+   ![](./media2/lab13img21.png)
 
 1. In Visual Studio Code, on the **View** menu, click **Command Palette**
 
-   ![](../media2/lab13img13.png)
+   ![](./media2/lab13img13.png)
 
 1. At the command prompt, type **Azure IoT Edge: Set Default** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution**.
 
@@ -236,21 +236,21 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 1. In the Azure Portal, on your Resource group tile, to open your IoT hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](../media2/lab13img16.png)
+   ![](./media2/lab13img16.png)
 
 1. On the left side navigation menu, under **Security settings**, click **Shared access policies**. In the list of policies, click **iothubowner**.  copy the value for **Primary connection string**.
 
-   ![](../media2/lab13img17.png)
+   ![](./media2/lab13img17.png)
 
     >**Note**: Record this value, as you will need it below.
 
 1. On the left side navigation menu, under **Device management**, click **IoT Edge**. Click **Add an IoT Edge device**.
 
-   ![](../media2/lab13img18.png)
+   ![](./media2/lab13img18.png)
 
 1. On the **Create a device** blade, under **Device ID**,  enter **SimulatedDevice**. Leave all other settings as default, click on **save**.
 
-   ![](../media2/lab13img19.png)
+   ![](./media2/lab13img19.png)
 
 ### Task 2: Configure the test module
 
@@ -258,7 +258,7 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
 
-   ![](../media2/lab13img1.png)
+   ![](./media2/lab13img1.png)
 
     This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
 
@@ -282,7 +282,7 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
 
-   ![](../media2/lab13img1.png)
+   ![](./media2/lab13img1.png)
 
 1. Observe the build process reporting in your TERMINAL window.
 
@@ -366,7 +366,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 1. Navigate back to **Visual Studio Code**. and open **New Terminal**.
 
-   ![](../media2/v2img13.png)
+   ![](./media2/v2img13.png)
 
 1. On the terminal, run commands to tag and push the image to **Azure Container Registries**.
 
@@ -376,7 +376,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
    docker images
    ```
 
-   ![](../media2/lab13img23.png)
+   ![](./media2/lab13img23.png)
 
 1. Run the following command to tag the image.
 
@@ -402,11 +402,11 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 1. On your Resource group tile, to open your Azure Container Registry (ACR) service, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
  
-   ![](../media2/lab13img24.png)
+   ![](./media2/lab13img24.png)
 
 1. On the left side navigation menu, under **Services**, Under **Repositories**, select **objectcountingmodule** and click on **1.4** which is the tag that we have provided.
 
-   ![](../media2/lab13img26.png)
+   ![](./media2/lab13img26.png)
 
 1. Save a copy of the values for the **Repository** and **Tag** properties.
 
@@ -430,21 +430,21 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 1. Navigate to your Azure IoT Hub resource.
 
-   ![](../media2/lab13img16.png)
+   ![](./media2/lab13img16.png)
 
 1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge**. On the **IoT Edge** pane, click **Add an IoT Edge device**.
 
-   ![](../media2/lab13img27.png)
+   ![](./media2/lab13img27.png)
 
 1. On the **Create a device** blade, under **Device ID**, enter **objectcountingdevice**. click **Save**.
 
 1. On the **IoT Edge** pane, under **Device ID**, click **objectcountingdevice**.
 
-   ![](../media2/lab13img28.png)
+   ![](./media2/lab13img28.png)
 
 1. At the top of the **objectcountingdevice** blade, click **Set Modules**.
 
-   ![](../media2/lab13img29.png)
+   ![](./media2/lab13img29.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **Container Registry Settings**, enter the following values:
 
@@ -455,20 +455,20 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
     > **Note**: The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
 
-    ![](../media2/lab13img30.png)
+    ![](./media2/lab13img30.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **IoT Edge Modules**, click **Add**, and then click **IoT Edge Module**.
 
-   ![](../media2/lab13img31.png)
+   ![](./media2/lab13img31.png)
 
 1. On the **Add IoT Edge Module** pane, under **IoT Edge Module Name**, enter **objectcountingmodule** **(1)**. Under **Image URI** **(2)** paste the image URI you have copied earlier. Click on **Add** **(3)**.
 
-   ![](../media2/lab13img32.png)
+   ![](./media2/lab13img32.png)
 
 
 1. On the **Set modules on device: objectcountingdevice** blade, at the bottom of the blade, click **Next: Routes >**.
 
-   ![](../media2/lab13img33.png)
+   ![](./media2/lab13img33.png)
 
 1. On the **Routes** tab, add the following two routes:
 
@@ -477,7 +477,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
     | `AllMessagesToObjectCountingModule` | `FROM /* INTO BrokeredEndpoint("/modules/objectcountingmodule/inputs/input1")` |
     | `ObjectCountingModuleToIoTHub` | `FROM /messages/modules/objectcountingmodule/outputs/* INTO $upstream` |
 
-    ![](../media2/lab13img34.png)
+    ![](./media2/lab13img34.png)
 
 1. At the bottom of the blade, click **Next: Review + create >**.
 
