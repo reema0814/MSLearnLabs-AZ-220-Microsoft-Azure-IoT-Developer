@@ -81,11 +81,11 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 #### Task 2: Configure Your Logic App
 
-1. On your resource group tile, click the link to the Logic App resource that was just deployed.
+1. Navigate to your Resource group **az220rg**, click on the newly created Logic App resource that was just deployed.
 
     If the **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/>** Logic app is not displayed, refresh the resource group tile.
 
-1. On the **Logic App** blade, navigate to the **Logic Apps Designer**, click on **Logic app designer** under the **Development Tools** section and click on **Add a Trigger**.
+1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
 
     ![](media/9lab7.png)
 
@@ -97,8 +97,8 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. On the **When a HTTP request is received** trigger, under the **Request Body JSON Schema** textbox, click the **Use sample payload to generate schema** link.
 
-
     ![](media/9lab9.png)
+   
 
     > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
 
