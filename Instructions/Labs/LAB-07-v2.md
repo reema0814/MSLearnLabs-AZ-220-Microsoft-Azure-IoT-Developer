@@ -266,11 +266,11 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
     You may notice that the RUNTIME STATUS for **tempsensor** is not reported.
 
-     ![](./media/az11-17.png)
-
 1. At the top of the blade, click **Refresh**.
 
 1. Notice that the **RUNTIME STATUS** for the **tempsensor** module is now set to **running**.
+
+     ![](./media/az11-17.png)
 
     If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
 
@@ -454,7 +454,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Leave all values as their defaults, and close the **IoT Edge Custom Modules** pane.
 
-1. On the **Set modules on device: sensor-th-0067** pane, click **Next: Routes >**.
+1. On the **Set modules on device: sensor-th-0067 (1)** pane, click **Next: Routes > (2)**.
 
     Notice that the existing routing is displayed.
 
