@@ -35,37 +35,37 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
 1. In the Azure Portal, navigate to your resource group. Under resources select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-    ![](../media2/lab10img1.png)
+    ![](./media2/lab10img1.png)
 
 2. On the IoT Hub lefy hand menu, select **Built-in-endpoints**. Create a new consumer group **adxevents**.
 
-   ![](../media2/lab10img9.png)
+   ![](./media2/lab10img9.png)
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
 1. On the **New** blade, in the **Search the Marketplace** textbox, enter **Azure Data Explorer**. In the search results, click **Azure Data Explorer**. On the **Azure Data Explorer** blade, click **Create**.
 
-   ![](../media2/lab10img4.png)
+   ![](./media2/lab10img4.png)
 
 1. On the **Create an Azure Data Explorer Cluster** blade, ensure that correct **Resource group** is selected. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />**. and also select the workload as **Dev/test**. Click on **Review + create**.
 
-   ![](../media2/lab10img5.png)
+   ![](./media2/lab10img5.png)
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
-   ![](../media2/lab10img6.png)
+   ![](./media2/lab10img6.png)
 
 1. On the **Azure Data Explorer Database**, provide the database name as **db-az220-<inject key="DeploymentID" enableCopy="false" />** and click on **Create**. 
 
-   ![](../media2/lab10img7.png)
+   ![](./media2/lab10img7.png)
 
 1. On the **Azure Data Explorer** overview pane and under **Data ingestion**, click on **Create
 
-   ![](../media2/lab10img8.png)
+   ![](./media2/lab10img8.png)
 
 1. 
 
-   ![](../media2/lab10img1.png)
+   ![](./media2/lab10img1.png)
 
 1. In the **IoT Hub name** dropdown, select **iot-az220-training-{your-id}**.
 
