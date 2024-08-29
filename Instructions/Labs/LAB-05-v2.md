@@ -40,33 +40,29 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. In the search results, click **Logic App**.
 
-     ![](media/9lab1.png)
+      ![](media/9lab1.png)
 
 1. Select the **Logic App** from below results.
 
-     ![](media/9lab2.png)
+      ![](media/9lab2.png)
 
 1. On the **Logic App** blade, click **Create**.
 
-     ![](media/9lab3.png)
+      ![](media/9lab3.png)
 
 1. Under the **Create Logic App** select **Consumption** and click on **Select**.
 
-     ![](media/9lab4.png)
+      ![](media/9lab4.png)
 
 1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** provide the following information and click on **Review + create**.
 
-1. Subscription: **Select the default Subscription (1)**.
+   - Subscription: **Select the default Subscription (1)**.
+   - Resource group: **Select the existing  Resource group (2)**.
+   - Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
+   - Region : **eastus (4)**
+   - Enable Log Analytics:  Set to **No (5)**.
 
-1. Resource group: **Select the existing  Resource group (2)**.
-
-1. Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
-
-1. Region : **eastus (4)**
-
-1. Enable Log Analytics:  Set to **No (5)**.
-
-    ![](media/9lab5.png)
+        ![](media/9lab5.png)
 
 1. Click on **Create**.
 
@@ -76,7 +72,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. Here you can see the newly created Logic app.
 
-    ![](media/9lab6.png)
+      ![](media/9lab6.png)
 
 #### Task 2: Configure Your Logic App
 
@@ -86,20 +82,19 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
 
-    ![](media/9lab7.png)
+      ![](media/9lab7.png)
 
 1. On the **Add a trigger** section, Search for **When a HTTP request is received(1)** and select it from the results **(2)**.
 
-    ![](media/9lab8.png)
+      ![](media/9lab8.png)
 
 1. Notice that the visual designer opens with the **When a HTTP request is received** trigger selected. Click the trigger to open the details.
 
 1. On the **When a HTTP request is received** trigger, under the **Request Body JSON Schema** textbox, click the **Use sample payload to generate schema** link.
 
-    ![](media/9lab9.png)
-   
+      ![](media/9lab9.png)   
 
-     > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
+      > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
 
 1. Use a copy-and-paste operation to add the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
@@ -149,7 +144,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     }]
     ```
 
-      > **NOTE**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
+      > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
       ![](media/9lab10.png)
 
@@ -159,23 +154,23 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. Below the **When a HTTP request is received** trigger, click **+(1)** and select **Add an action(2)**.
 
-     ![](media/9lab12.png)
+      ![](media/9lab12.png)
 
 1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
 
 1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
-     ![](media/9lab13.png)
+      ![](media/9lab13.png)
 
-    > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+      > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Outlook.com** connector, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
-     ![](media/9lab14.png)
+      ![](media/9lab14.png)
 
      > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
-     ![](media/az70011.png)
+      ![](media/az70011.png)
 
 1. When prompted sign in with your credentials.
 
