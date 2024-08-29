@@ -156,7 +156,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```
    ![](../media2/vs2.png)
 
-1. In Visual Studio Code, on the **File** menu, click **Open Folder**.
+1. In Visual Studio Code, on the **Explorer** menu, click **Open Folder**.
 
    ![](../media2/v2img11.png)
 
@@ -626,7 +626,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 In this task, you will be testing the application that you have built in the previous tasks.
 
-1. In the Visual Studio Code Explorer pane, on the **View** menu, click **Terminal**.
+1. In the Visual Studio Code Explorer pane, on the **Terminal** menu, click **New Terminal**.
 
    ![](../media2/v2img13.png)
 
