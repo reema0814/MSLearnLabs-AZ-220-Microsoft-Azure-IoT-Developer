@@ -338,6 +338,11 @@ Test your logic app by creating a new device to trigger an event notification em
 
 1. Once you've added a few devices to your IoT hub, check your email to see which ones triggered the logic app.
 
+1. Copy the link, paste it in a browser's private window and sign with your Username and Password available in the VM's Environment tab.
+   
+    ```text
+    https://outlook.office365.com/mail/
+    ```
     ![](media/az-5-6.png)
 
 ## Summary
