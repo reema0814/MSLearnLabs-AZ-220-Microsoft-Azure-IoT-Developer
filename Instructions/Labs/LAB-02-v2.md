@@ -120,9 +120,9 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
    ![](../media2/v2img8.png)
 
-1. Select **Terminal(1)** and click on **New Terminal(2)** from the menu.
+1. Select **Terminal** and click on **New Terminal** from the menu.
 
-   ![](../media2/vs1.png)
+   ![](../media2/az-5-7.png)
 
 1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
 
@@ -158,7 +158,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
 1. In Visual Studio Code, on the **Explorer** menu, click **Open Folder**.
 
-   ![](../media2/v2img11.png)
+   ![](../media2/az-5-8.png)
 
 1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
@@ -669,7 +669,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-   ![](../media2/v2img16.png)
+   ![](../media2/az-5-9.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
