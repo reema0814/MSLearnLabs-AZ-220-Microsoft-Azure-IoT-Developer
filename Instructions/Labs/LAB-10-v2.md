@@ -454,15 +454,15 @@ To test the direct method, you will need to start the apps in the correct order.
 1. To start the **CheeseCaveOperator** back-end app, open a Terminal pane and then enter a `dotnet run` command.
 
 
-    ```bash
-    dotnet run
-    ```
+      ```bash
+      dotnet run
+      ```
     
-      > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app.
+     > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app.
 
-    The CheeseCaveOperator back-end app will immediately call the direct method.
+      The CheeseCaveOperator back-end app will immediately call the direct method.
 
-    Notice the output similar to the following:
+      Notice the output similar to the following:
 
       ![](./media/az-15-015.png)
 
