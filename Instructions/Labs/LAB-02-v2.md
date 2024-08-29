@@ -36,7 +36,7 @@ In this exercise, you will open your IoT Hub in the Azure portal, add a new IoT 
 
 In this task, you will create a device in the IoT Hub.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/v2img1.png)
 
@@ -92,7 +92,7 @@ In this task, you will get the device connection string from the Azure Portal.
 
     The values are obfuscated by default, but you can click the "eye" icon on the right of each field to toggle between showing and hiding the values.
 
-1. To the right of the **Primary Connection String** field, click **Copy**.
+1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a text editor such as notepad for later use.
 
    ![](../media2/v2img7.png)
 
@@ -157,7 +157,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
    ![](../media2/v2img11.png)
 
-1. In the **Open Folder** dialog, navigate to the location where you created the **CaveDevice** directory.
+1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
 1. In the list of folders, click **CaveDevice**, and then click **Select Folder**.
 
@@ -668,8 +668,9 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
    ![](../media2/v2img18.png)
 
-1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
+1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name which looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
+   
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
     ```
