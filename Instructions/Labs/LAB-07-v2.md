@@ -34,7 +34,7 @@ In this lab, you will complete the following:
    
 1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
-      ![](./media/edge10.png)
+      ![](./media/az11-70.png)
       
 1. Click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
