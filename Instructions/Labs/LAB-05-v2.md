@@ -160,31 +160,30 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
 
-    ![](media/9lab11.png)
+   ![](media/9lab11.png)
 
 1. Below the **When a HTTP request is received** trigger, click **+(1)** and select **Add an action(2)**.
 
-
-    ![](media/9lab12.png)
+   ![](media/9lab12.png)
 
 1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
 
 1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
 
-    ![](media/9lab13.png)
+   ![](media/9lab13.png)
 
-    > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+   > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Outlook.com** connector, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
 
-    ![](media/9lab14.png)
+   ![](media/9lab14.png)
 
-    > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
+   > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
 
-    ![](media/az70011.png)
+   ![](media/az70011.png)
 
 1. When prompted sign in with your credentials.
 
