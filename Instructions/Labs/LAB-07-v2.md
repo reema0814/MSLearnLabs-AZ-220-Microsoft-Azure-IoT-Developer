@@ -36,7 +36,7 @@ In this lab, you will complete the following:
 
       ![](./media/edge10.png)
       
-1. click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
+1. Click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
       ![](./media/az11-41.png)
 
@@ -120,7 +120,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
    - Ubuntu OS Version: 18.04-LTS **(7)**
    - Admin Username: Provide the name as **demouser (8)**
    - Authentication Type: Select **Password (9)**
-   - Admin Password Or Key: Provide the password as Password!223 **(10)**
+   - Admin Password Or Key: Provide the password as **Password!123** **(10)**
    - Allow SSH: **True (11)**
    - Click on **Review + Create (12)**
 
@@ -146,7 +146,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
       This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer         to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
    
-1. When prompted to enter the password, enter **Password!223**.
+1. When prompted to enter the password, enter **Password!123**.
 
    > **Note**: The password characters that you enter will not be displayed on screen.
 
