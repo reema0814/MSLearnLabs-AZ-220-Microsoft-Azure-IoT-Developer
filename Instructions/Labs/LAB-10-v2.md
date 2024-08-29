@@ -53,7 +53,9 @@ In this lab, you will complete the following:
 
 ### Exercise 1: Configure Lab Prerequisites
 
-1. Search for Resource Groups and select .
+1. On the Azure portal, naviagate to Resource groups and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+
+    ![](../media2/v2img1.png)
 
 1. Select **Deployments** under the Settings tab in the left pane and select the **existing deployment (2)**.
 
@@ -81,7 +83,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-1. Navigate to `C:\Users\demouser\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
+1. Navigate to `C:\Users\azureuser\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
