@@ -120,7 +120,9 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
    ![](../media2/v2img8.png)
 
-1. Select **Terminal** and click on **New Terminal** from the menu.
+1. Select **Terminal(1)** and click on **New Terminal(2)** from the menu.
+
+   ![](../media2/vs1.png)
 
 1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
 
@@ -152,6 +154,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```bash
     dotnet restore
     ```
+   ![](../media2/vs2.png)
 
 1. In Visual Studio Code, on the **File** menu, click **Open Folder**.
 
@@ -160,6 +163,8 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
 1. In the list of folders, click **CaveDevice**, and then click **Select Folder**.
+
+      ![](../media2/vs3.png)
 
     The EXPLORER pane of Visual Studio Code should now list two C# project files:
 
@@ -307,6 +312,9 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     Notice that as well as specifying **System**, you are also declaring other namespaces that the code will be using, such as **System.Text** for encoding strings, **System.Threading.Tasks** for asynchronous tasks, and the namespaces for the two packages you added earlier.
 
+
+   ![](../media2/vs6.png)
+
     > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
 
 1. Locate the **// INSERT variables below here** comment, and then position the cursor on a blank line below the comment.
@@ -340,6 +348,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```csharp
     private readonly static string connectionString = "HostName=iot-az220-training-dm200420.azure-devices.net;DeviceId=sensor-th-0001;SharedAccessKey=hfavUmFgoCPA9feWjyfTx23SUHr+dqG9X193ctdEd90=";
     ```
+
+   ![](../media2/vs7.png)
 
 1. Locate the **// INSERT Main method below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -652,6 +662,8 @@ In this task, you will be testing the application that you have built in the pre
 
     > **Note**: Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
 
+   ![](../media2/vs5.png)
+
 ### Task 5: Verify Telemetry Stream sent to Azure IoT Hub
 
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
@@ -674,6 +686,12 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
     ```
+
+    > **Note**: If prompted **Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
+    
+    > **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
+Continue? (y/n) -> y**
+
 
     You should see messages displayed that are similar to the following:
 
