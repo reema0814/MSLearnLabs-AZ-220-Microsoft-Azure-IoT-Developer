@@ -50,17 +50,17 @@ In this exercise, you will use the Azure portal to create and configure your IoT
    - Resource group: **Select the Existing Resource group (2)**.
    - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
    - Region : **eastus(4)**
-   - Tier :**Free(5)** 
+   - Tier :**Standard(5)** 
 
-    ![](media/1lab16.png)
+    ![](media/toi1.png)
 
 1. Ensure the **Minimum TLS Version** is set to **1.0** and then click on **Next:Management>**.
 
     ![](media/1lab17.png)
 
-1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **2** and click on **Review + create**.
+1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**.
 
-    ![](media/1lab18.png)
+    ![](media/toi2.png)
 
 1. Click on **Create**.
 
