@@ -22,7 +22,7 @@ In this lab, you will complete the following activities:
 
 The following resources will be created:
 
-![Lab 10 Architecture](media/LAB_AK_10-architecture.png)
+![Lab 10 Architecture](./media2/ADX-arch.png)
 
 In this lab, you will complete the following activities:
 
