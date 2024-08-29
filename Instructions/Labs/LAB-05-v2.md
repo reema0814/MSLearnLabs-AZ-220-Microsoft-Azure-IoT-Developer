@@ -34,10 +34,8 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-
-    ![](media/create.png)
-
-
+    ![](media/1lab11.png)
+   
 1. On the **Create a resource** blade, in the **Search services and marketplace** box, enter **logic app**
 
 1. In the search results, click **Logic App**.
