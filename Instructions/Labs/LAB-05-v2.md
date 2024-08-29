@@ -62,7 +62,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
    - Region : **eastus (4)**
    - Enable Log Analytics:  Set to **No (5)**.
 
-        ![](media/9lab5.png)
+        ![](media/az-5-1.png)
 
 1. Click on **Create**.
 
@@ -80,6 +80,8 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
     If the **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/>** Logic app is not displayed, refresh the resource group tile.
 
+      ![](media/az-5-2.png)
+
 1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
 
       ![](media/9lab7.png)
@@ -94,7 +96,9 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
       ![](media/9lab9.png)   
 
-      > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
+      > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
+      
+      > **Note**: In the JSON replace the **id, subscription ID, resource group name, hub name** with the actual values. 
 
 1. Use a copy-and-paste operation to add the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
@@ -146,7 +150,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
       > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
-      ![](media/9lab10.png)
+      ![](media/az-5-5.png)
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
@@ -160,7 +164,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
-      ![](media/9lab13.png)
+      ![](media/az-lab-3.png)
 
       > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
@@ -182,7 +186,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
        ![](media/9lab16.png)
 
-     If prompted to **stay signed in**, you can click **No**.
+1. If prompted to **stay signed in**, you can click **No**.
 
 1. If prompted to Let this app access your info? (1 of 1 apps) select **Accept**.
 
@@ -205,7 +209,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     Device ID: {deviceID}
     Connection state: {connectionState}
     ```
-    ![](media/9lab29.png)
+    ![](media/az-5-4.png)
 
 1. Take a moment to examine the message body that you just entered.
 
@@ -267,19 +271,19 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 1. On the Create Event Subscription blade, in the **Name** field, enter **MyDeviceCreateEvent(1)**
 
-1. Ensure that the **EventSchema** field is set to **Event Grid Schema(2)**.
+      - Name: Enter **MyDeviceCreateEvent(1)**
 
-1. Under the **TOPIC DETAILS** section, in the **System Topic Name** field, enter **device-creation(3)**.
+      -  Ensure that the **EventSchema** field is set to **Event Grid Schema(2)**.
 
-    This section is informational and read-only
+      - Under the **TOPIC DETAILS** section, in the **System Topic Name** field, enter **device-creation(3)**.
 
-1. Under **EVENT TYPES**, open the **Filter to Event Types** dropdown, and then de-select all of the choices except **Device Created(4)**.
+      -  Under **EVENT TYPES**, open the **Filter to Event Types** dropdown, and then de-select all of the choices except **Device Created(4)**.
 
-1. Under **ENDPOINT DETAILS**, open the **Endpoint Type** dropdown, and then click **Web Hook(5)**.
+      - Under **ENDPOINT DETAILS**, open the **Endpoint Type** dropdown, and then click **Web Hook(5)**.
 
-1. Under **ENDPOINT DETAILS**, click on **Configure an endpoint(6)**.
+      - Under **ENDPOINT DETAILS**, click on **Configure an endpoint(6)**.
 
-1. In the **Select Web Hook** pane, under **Subscriber Endpoint**, paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**.
+      - In the **Select Web Hook** pane, under **Subscriber Endpoint**, paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**.
 
     > **Important**: Do not click Create!
 
@@ -333,6 +337,8 @@ Test your logic app by creating a new device to trigger an event notification em
     ![](media/9lab25.png)
 
 1. Once you've added a few devices to your IoT hub, check your email to see which ones triggered the logic app.
+
+    ![](media/az-5-6.png)
 
 ## Summary
 
