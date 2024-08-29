@@ -688,7 +688,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     
     > **Note**: If prompted **Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
     
-    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
+    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0 
 Continue? (y/n) -> y**
     
    You should see messages displayed that are similar to the following:
