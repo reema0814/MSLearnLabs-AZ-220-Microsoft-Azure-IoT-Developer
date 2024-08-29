@@ -313,7 +313,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     Notice that as well as specifying **System**, you are also declaring other namespaces that the code will be using, such as **System.Text** for encoding strings, **System.Threading.Tasks** for asynchronous tasks, and the namespaces for the two packages you added earlier.
 
 
-   ![](../media2/vs6.png)
+    ![](../media2/vs6.png)
 
     > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
 
@@ -690,7 +690,8 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > **Note**: If prompted **Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
     
     > **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
-Continue? (y/n) -> y**
+      Continue? (y/n) -> y**
+
 
 
     You should see messages displayed that are similar to the following:
