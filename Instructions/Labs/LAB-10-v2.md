@@ -83,7 +83,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-1. Navigate to `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
+1. Navigate to `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
