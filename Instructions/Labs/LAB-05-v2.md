@@ -34,26 +34,25 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-    ![](media/1lab11.png)
+      ![](media/1lab11.png)
    
 1. On the **Search services and marketplace** box, enter **logic app**
 
 1. In the search results, click **Logic App**.
 
-    ![](media/9lab1.png)
+     ![](media/9lab1.png)
 
 1. Select the **Logic App** from below results.
 
-    ![](media/9lab2.png)
+     ![](media/9lab2.png)
 
 1. On the **Logic App** blade, click **Create**.
 
-    ![](media/9lab3.png)
+     ![](media/9lab3.png)
 
 1. Under the **Create Logic App** select **Consumption** and click on **Select**.
 
-    ![](media/9lab4.png)
-
+     ![](media/9lab4.png)
 
 1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** provide the following information and click on **Review + create**.
 
@@ -100,7 +99,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     ![](media/9lab9.png)
    
 
-    > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
+     > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
 
 1. Use a copy-and-paste operation to add the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
@@ -150,60 +149,53 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     }]
     ```
 
-    > **NOTE**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
+      > **NOTE**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
-    ![](media/9lab10.png)
-
+      ![](media/9lab10.png)
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
-
-   ![](media/9lab11.png)
+      ![](media/9lab11.png)
 
 1. Below the **When a HTTP request is received** trigger, click **+(1)** and select **Add an action(2)**.
 
-   ![](media/9lab12.png)
+     ![](media/9lab12.png)
 
 1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
 
 1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
+     ![](media/9lab13.png)
 
-   ![](media/9lab13.png)
-
-   > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+    > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Outlook.com** connector, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
+     ![](media/9lab14.png)
 
-   ![](media/9lab14.png)
+     > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
-   > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
-
-
-   ![](media/az70011.png)
+     ![](media/az70011.png)
 
 1. When prompted sign in with your credentials.
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
         ![](media/9lab15.png)
-
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-     ![](media/9lab16.png)
+       ![](media/9lab16.png)
 
-If prompted to **stay signed in**, you can click **No**.
+     If prompted to **stay signed in**, you can click **No**.
 
 1. If prompted to Let this app access your info? (1 of 1 apps) select **Accept**.
 
 1. On the **Send an email (V2)** action, in the **To** field, enter an email address **(1)** to send email messages to.
 
-    For the purposes of this lab, you will provide an email address where you can receive the email notification. You can enter the Outlook.com account used for this connector, or another email account that is easy for you to access.
+   For the purposes of this lab, you will provide an email address where you can receive the email notification. You can enter the Outlook.com account used for this connector, or another email account that is easy for you to access.
 
-    The Outlook.com account that was authenticated in the step above will be used to send the emails.
-
+     The Outlook.com account that was authenticated in the step above will be used to send the emails.
 
 1. In the **Subject** field, enter **IoT Hub alert:(2)**
 
