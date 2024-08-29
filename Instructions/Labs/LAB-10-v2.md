@@ -186,7 +186,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. On the **File (1)** menu, click **Open Folder (2)**.
 
-1. In the **Open Folder** dialog, navigate to the **Final** folder for lab 15.
+1. In the **Open Folder** dialog, navigate to the `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
 
     > **NOTE**: Be sure to open the **Final** folder. You do not want the project in the Starter folder.
 
