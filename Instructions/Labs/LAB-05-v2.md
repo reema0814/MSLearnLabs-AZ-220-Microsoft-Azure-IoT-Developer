@@ -36,7 +36,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
     ![](media/1lab11.png)
    
-1. On the **Create a resource** blade, in the **Search services and marketplace** box, enter **logic app**
+1. On the **Search services and marketplace** box, enter **logic app**
 
 1. In the search results, click **Logic App**.
 
@@ -55,21 +55,21 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     ![](media/9lab4.png)
 
 
-1. On the **Basics** tab, under **Create Logic App (Multi-tenant)**, select the **Subscription(1)** that you are using for this lab.
+1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** provide the following information and click on **Review + create**.
 
-1. **Resource group** : Select your Resource group from the drop down menu **(2)**
+1. Subscription: **Select the default Subscription (1)**.
 
-1. In the **Name** field, enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
+1. Resource group: **Select the existing  Resource group (2)**.
 
-1. **Region** : **<inject key="Region" enableCopy="false"/> (4)**
+1. Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
 
-1. Leave **Enable Log Analytics** set to **No(5)**.
+1. Region : **eastus (4)**
+
+1. Enable Log Analytics:  Set to **No (5)**.
 
     ![](media/9lab5.png)
 
-1. Click **Review + create**.
-
-1. On the **Review + create** tab, click **Create**.
+1. Click on **Create**.
 
     > **Note**:  It will take a minute or two for the Logic App deployment to complete.
 
