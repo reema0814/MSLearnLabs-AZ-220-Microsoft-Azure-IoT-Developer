@@ -1,4 +1,4 @@
-# Lab 06: Explore and analyze time stamped data with Time Series Insights
+# Lab 06: Explore and analyze time stamped data with Azure Data Explorer.
 
 ## Overview
 
@@ -27,51 +27,45 @@ The following resources will be created:
 In this lab, you will complete the following activities:
 
 
-## Exercise 1: Setup Time Azure Data Explorer
+## Exercise 1: Setup Azure Data Explorer
 
 Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series.
 
 In this exercise, you will setup Azure Data Explorer integration with Azure IoT Hub.
 
-1. In your Azure portal window, navigate to your Dashboard.
+1. In the Azure Portal, navigate to your resource group. Under resources select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+
+    ![](../media2/lab10img1.png)
+
+2. On the IoT Hub lefy hand menu, select **Built-in-endpoints**. Create a new consumer group **adxevents**.
+
+   ![](../media2/lab10img9.png)
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-1. On the **New** blade, in the **Search the Marketplace** textbox, enter **time series insights**
+1. On the **New** blade, in the **Search the Marketplace** textbox, enter **Azure Data Explorer**. In the search results, click **Azure Data Explorer**. On the **Azure Data Explorer** blade, click **Create**.
 
-    +++time series insights+++
+   ![](../media2/lab10img4.png)
 
-1. In the search results, click **Time Series Insights**.
+1. On the **Create an Azure Data Explorer Cluster** blade, ensure that correct **Resource group** is selected. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />**. and also select the workload as **Dev/test**. Click on **Review + create**.
 
-1. On the **Time Series Insights** blade, click **Create**.
+   ![](../media2/lab10img5.png)
 
-1. On the **Create Time Series Insights environment** blade, in the **Subscription** dropdown, select the subscription that you are using for this lab.
+1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
-1. In the **Resource group** dropdown, click **@lab.CloudResourceGroup(ResourceGroup1).Name**.
+   ![](../media2/lab10img6.png)
 
-1. In the **Environment name** field, enter **tsi-az220-training-{your-id}**
+1. On the **Azure Data Explorer Database**, provide the database name as **db-az220-<inject key="DeploymentID" enableCopy="false" />** and click on **Create**. 
 
-    +++tsi-az220-training-{your-id}+++
+   ![](../media2/lab10img7.png)
 
-    > **Note**: Remember to replace **{your-id}** with your unique ID value.
+1. On the **Azure Data Explorer** overview pane and under **Data ingestion**, click on **Create
 
-1. In the **Location** dropdown, select the Azure region used by your resource group.
+   ![](../media2/lab10img8.png)
 
-1. In the **Tier** field, ensure that the **Gen1 (S1)** pricing tier is selected and that **Capacity** is set to **1**.
+1. 
 
-1. At the bottom of the blade, click **Next: Event Source**.
-
-1. Under the **EVENT SOURCE DETAILS** section, ensure that **Create an event source?** is set to **Yes**.
-
-1. Ensure that **Source type** is set to **IoT Hub**.
-
-1. In the **Name** field, enter **iot-az220-training-{your-id}**
-
-    +++iot-az220-training-{your-id}+++
-
-    > **Note**: Remember to replace **{your-id}** with your unique ID value.
-
-1. in the **Subscription** dropdown, ensure the subscription that you are using for this lab is selected.
+   ![](../media2/lab10img1.png)
 
 1. In the **IoT Hub name** dropdown, select **iot-az220-training-{your-id}**.
 
