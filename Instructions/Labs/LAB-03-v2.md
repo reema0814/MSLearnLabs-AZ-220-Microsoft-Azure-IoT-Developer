@@ -162,13 +162,11 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 ### Task 2: Add the provisioning code
 
-In this task, you will be adding the code to the dotnet project for provisioning.
-
-In this task, you will implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
+In this task, you will be adding the code to the dotnet project for provisioning and also implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
 
 1. Take a minute to scan through the code in the **Program.cs** file.
 
-    The overall layout of the **ContainerDevice** application is similar to the **CaveDevice** application that you created in Lab 4. Notice that both applications include the following:
+   The overall layout of the **ContainerDevice** application is similar to the **CaveDevice** application that you created in Lab 4. Notice that both applications include the following:
 
     * Using statements
     * Namespace definition
