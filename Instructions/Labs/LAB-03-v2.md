@@ -47,7 +47,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
     - Click on **Next: IoT hubs** **(4)**.
 
-    ![](../media2/az-3-3.png)
+      ![](../media2/az-3-3.png)
    
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
@@ -56,7 +56,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     - **Allocation policy** : select **Evenly weighted distribution** **(2)**.
     - Click on **Next: Device settings >** **(3)**.
 
-    ![](../media2/az-3-4.png)
+      ![](../media2/az-3-4.png)
    
 
 1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
