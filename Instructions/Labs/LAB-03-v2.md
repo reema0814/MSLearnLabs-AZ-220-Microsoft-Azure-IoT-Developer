@@ -158,7 +158,7 @@ In this task, you will be creating the simulating device using the dotnet projec
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
 
 
-      ![](../media2/az-3-11.png)    
+    ![](../media2/az-3-11.png)    
 
 ### Task 2: Add the provisioning code
 
@@ -407,7 +407,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > **Note**: After entering the command If prompted **The command requires the extension azure-iot. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
     
     > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
-Continue? (y/n) -> y**
+Continue? (y/n) -> y.**
 
 
 1. Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
