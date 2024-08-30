@@ -33,7 +33,7 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-      ![](../media2/v2img1.png)
+      ![](./media/v2img1.png)
    
 1. On the All resources tile, to open your IoT hub, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
