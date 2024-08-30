@@ -158,7 +158,7 @@ In this task, you will be creating the simulating device using the dotnet projec
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
 
 
-     ![](../media2/az-3-11.png)    
+   ![](../media2/az-3-11.png)    
 
 ### Task 2: Add the provisioning code
 
