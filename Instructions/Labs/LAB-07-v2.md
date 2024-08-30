@@ -34,9 +34,9 @@ In this lab, you will complete the following:
    
 1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
-      ![](./media/edge10.png)
+      ![](./media/az11-70.png)
       
-1. click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
+1. Click on **Iot Edge (1)** under **Device Management** tab in the left pane. Click on **+ Add IoT Edge Device (2)**.
 
       ![](./media/az11-41.png)
 
@@ -115,12 +115,12 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
    - Resource Group: **Select the existing resource group (2)**
    - Region: **Select the default region (3)**
    - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
-   - Device Connection string: Paste the **connection string** you copied earlier in your notepad **(5)**
+   - Device Connection string: Paste the **device primary connection string** you copied earlier in your notepad **(5)**
    - Virtual Machine Size: **Standard_DS1_v2 (6)**
    - Ubuntu OS Version: 18.04-LTS **(7)**
    - Admin Username: Provide the name as **demouser (8)**
    - Authentication Type: Select **Password (9)**
-   - Admin Password Or Key: Provide the password as Password!223 **(10)**
+   - Admin Password Or Key: Provide the password as **Password!123** **(10)**
    - Allow SSH: **True (11)**
    - Click on **Review + Create (12)**
 
@@ -146,7 +146,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
       This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer         to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
    
-1. When prompted to enter the password, enter **Password!223**.
+1. When prompted to enter the password, enter **Password!123**.
 
    > **Note**: The password characters that you enter will not be displayed on screen.
 
@@ -266,11 +266,11 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
     You may notice that the RUNTIME STATUS for **tempsensor** is not reported.
 
-     ![](./media/az11-17.png)
-
 1. At the top of the blade, click **Refresh**.
 
 1. Notice that the **RUNTIME STATUS** for the **tempsensor** module is now set to **running**.
+
+     ![](./media/az11-17.png)
 
     If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
 
@@ -454,7 +454,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Leave all values as their defaults, and close the **IoT Edge Custom Modules** pane.
 
-1. On the **Set modules on device: sensor-th-0067** pane, click **Next: Routes >**.
+1. On the **Set modules on device: sensor-th-0067 (1)** pane, click **Next: Routes > (2)**.
 
     Notice that the existing routing is displayed.
 
@@ -524,7 +524,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
     Output of this event will look similar to the following:
 
-   ![](./media/edge9.png)
+      ![](./media/az11-91.png)
    
 ## Summary
 In this lab, you have configured the Lab Prerequisites , created and configured an IoT Edge VM, added Edge Module to Edge Device and deployed Azure Stream Analytics as IoT Edge Module/
