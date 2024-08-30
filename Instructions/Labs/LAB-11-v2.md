@@ -53,7 +53,7 @@ In this lab, you will complete the following:
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-   ![](../media2/v2img1.png)
+   ![](./media/v2img1.png)
 
 1. In the **az220-rg** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
@@ -71,7 +71,7 @@ In this lab, you will complete the following:
 
 1. Open **Visual Studio Code** from the desktop.
 
-      ![](../media2/v2img8.png)
+      ![](./media/v2img8.png)
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
