@@ -47,96 +47,138 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab10img4.png)
 
-1. On the **Create an Azure Data Explorer Cluster** blade, ensure that correct **Resource group** is selected. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />**. and also select the workload as **Dev/test**. Click on **Review + create**.
+1. On the **Create an Azure Data Explorer Cluster** blade, Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />** and also select the workload as **Dev/test**. Click on **Next : Scale >**
 
-   ![](./media2/lab10img5.png)
+   ![](./media2/lab10img11.png)
+
+1. In the **Scale** tab, leave settings to default. Click on **Next : Configurations >**.
+
+1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion**. Click on **Review + create** and click on **Create** on next pane.
+
+   ![](./media2/lab06img2.png)
+
+   >**Note**: This may take few minutes to get deployed.
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
    ![](./media2/lab10img6.png)
 
-1. On the **Azure Data Explorer Database**, provide the database name as **db-az220-<inject key="DeploymentID" enableCopy="false" />** and click on **Create**. 
+1. On the **Azure Data Explorer Database**, provide the database name as **streamingdata** and click on **Create**. 
 
-   ![](./media2/lab10img7.png)
+   ![](./media2/lab06img3.png)
 
-1. On the **Azure Data Explorer** overview pane and under **Data ingestion**, click on **Create
+1. Navigate to **Databases** from left hand menu, verify that **streamingdata** database is created.
 
-   ![](./media2/lab10img8.png)
+   ![](./media2/lab06img4.png)
 
-1. 
+1. Select **Query** from left hand menu.
 
-   ![](./media2/lab10img1.png)
+   ![](./media2/lab06img5.png)
 
-1. In the **IoT Hub name** dropdown, select **iot-az220-training-{your-id}**.
+1. On the **Query** pane, run the following KQL script to create a table named **Telemetry**. click on **Run**.
 
-1. In the **IoT Hub access policy name** dropdown, click **iothubowner**.
+    ```
+    .create table Telemetry (
+    messageId: int,
+    deviceId: string,
+    temperature:decimal,
+    humidity:decimal,
+    temperatureAlert: string,
+    IotHubDeviceId: string,
+    IotHubEnqueuedTime: datetime
+    )
+    ```
 
-    In a production environment, it's best practice to create a new _Access Policy_ within Azure IoT Hub to use for configuring Time Series Insights (TSI) access. This will enable the security of TSI to be managed independently of any other services connected to the same Azure IoT Hub.  You are not doing that here for convenience reasons.
+   ![](./media2/lab06img6.png)
 
-1. To the right of the **IoT Hub consumer group** dropdown, click **New**.
+1. After running the script successfully, replace the script with the following to create a JSON Mapping.
 
-    The IoT Hub consumer group dropdown will convert to a text entry field so that you can enter a value.
+   ```
+   .alter table Telemetry policy streamingingestion enable
 
-1. In the **IoT Hub consumer group** box, enter **tsievents** and then click **Add**.
+   .create table Telemetry ingestion json mapping "JsonTelemetryMapping"
+    '['
+        '{"Column": "messageId", "Properties": {"Path": "$.messageId"}},'
+        '{"Column": "deviceId", "Properties": {"Path": "$.deviceId"}},'
+        '{"Column": "temperature", "Properties": {"Path": "$.temperature"}},'
+        '{"Column": "humidity", "Properties": {"Path": "$.humidity"}},'
+        '{"Column": "temperatureAlert", "Properties": {"Path": "$.Properties.temperatureAlert"}},'
+        '{ "column" : "IotHubDeviceId", "Properties":{"Path":"$.iothub-connection-device-id"}},'
+        '{"Column": "IotHubEnqueuedTime", "Properties": {"Path": "$.iothub-enqueuedtime"}}'
+    ']'
+   ```
+    ![](./media2/lab06img7.png)
 
-    +++tsievents+++
+1. After running the script successfully, navigate back to **Databases** pane and click on **Streamingdata** database.
 
-    This will add a new _Consumer Group_ to use for this Event Source. The Consumer Group needs to be used exclusively for this Event Source, as there can only be a single active reader from a given Consumer Group at a time.
+   ![](./media2/lab06img8.png)
 
-1. Under the **Start options** section, in the **Start time** dropdown, ensure that **Beginning now (default)** is selected.
+1. In the **streamingdata** page, select **Data connection** under settings.
 
-1. Under the **TIMESTAMP** section, leave the **Property Name** blank.
+   ![](./media2/lab06img9.png)
 
-1. At the bottom of the blade, click **Review + create**.
+1. Select **+ Add data connection**, in the dropdown click on **IoT Hub**.
 
-    > **Note**: If you are returned immediately to the *Event Source* pane, double check that you clicked **Add** to the right of the **IoT Hub consumer group** field - you cannot create the TSI resource until you have created the consumer group.
+   ![](./media2/lab06img10.png)
 
-1. Notice the alert message informing you that Time Series Insights will no longer be supported after March 2025.
+1. In the **create data connection** page, select **Event system properties** dropdown.
 
-1. At the bottom of the blade, click **Review + create**, and then click **OK**.
+   ![](./media2/lab06img13.png)
 
-1. Once your Time Series Insights deployment is complete, navigate back to your dashboard.
+1. In the menu, select **iothub-enqueuedtime** and **iothub-connection-device-id** as shown. Click on **Apply**.
 
-1. Refresh your resource group tile, and then click **tsi-az220-training-{your-id}**.
+   ![](./media2/lab06img11.png)
 
-    You may need to resize your dashboard to see all of your resources.
+1. In the **create data connection** page, provide the following details:
 
-    > **Note**: You gave the **Time Series Insights environment** resource the name **tsi-az220-training-{your-id}**. You should also see the *Time Series Insights event source* that you created, but for now you want to have the TSI environment opened.
+   - **Data connection name** : give as **iothubconnection** **(1)**.
+   - Ensure the subscription is selected.
+   - **IoT Hub** : select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** **(2)**.
+   - **Shared Access Policy** : select **iothubowner** **(3)** from dropdown.
+   - **Consumer group** : select the group **adxevents** **(4)** that you created before.
+   - Ensure the **Event system properties** **(5)** selected as shown. 
+   - Under **Table name** : select the table **Telemetry** **(6)** from dropdown.
+   - **Data format** : choose **JSON** **(7)**.
+   - **Mapping name** : select **JsonTelemetryMapping** **(8)** that you created using script.
+   - Click on **Create** **(9)**.
 
-1. On the **Time Series Insights environment** blade, on the left-side menu under **Settings**, click **Event Sources**.
+     ![](./media2/lab06img12.png)
 
-1. On the **Event Sources** pane, notice the **iot-az220-training-{your-id}** Event Source in the list.
+1. Wait till the connection is created. It may take some time, try to refresh the page untill you see the connection.
 
-    This is the event source that you configured when the TSI resource was created.
-
-1. To view the event source details, click **iot-az220-training-{your-id}**.
-
-    Notice that the configuration of the event source matches what you specified when the Time Series Insights resource was created.
+   ![](./media2/lab06img14.png)
 
 ## Exercise 2: Run Simulated IoT Devices
 
 In this exercise, you will run the simulated devices so that they start sending telemetry events to Azure IoT Hub.
 
-1. In your virtual machine environment, use the **Start** menu to open **Visual Studio Code**.
+1. In the Azure portal, navigate to your resource group and select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-    > **Tip**: You may find it helpful to maximize the Visual Studio Code window.
+   ![](./media2/lab06img18.png)
+
+1. In the IoT Hub pane, select **Devices** from the left menu under device management. select the device **sensor-thl-container-0001**.
+
+   ![](./media2/lab06img19.png)
+
+1. On the device page, copy the **Primary connection string** and note it down. You will be using this further in this exercise.
+
+   ![](./media2/lab06img20.png)
+
+1. Follow the same steps for other two devices.
+
+1. Open **Visual Studio Code** from the desktop.
+
+   ![](./media2/lab06img15.png)
 
 1. On the **File** menu, click **Open Folder**.
 
-1. In the **Open Folder** dialog, navigate to the lab 10 Starter folder.
+   ![](./media2/lab06img16.png)
 
-    Before starting the lab instructions, you downloaded a copy of the GitHub repository containing lab resources to the lab virtual machine environment. The folder structure includes the following folder path:
+1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter\ContainerSimulation` and click on **select folder**.
 
-    * Allfiles
-        * Labs
-            * 10-Explore and analyze time stamped data with Time Series Insights
-                * Starter
+1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**
 
-    > **Note**: If you have trouble locating the **Allfiles** folder, check your Windows **Desktop** folder.
-
-1. In the **Open Folder** dialog, click **ContainerSimulation**, and then click **Select Folder**.
-
-    If prompted, load the C# extension and/or perform a restore.
+   ![](./media2/lab06img17.png)
 
 1. In the EXPLORER pane, to open the Program.cs file, click **Program.cs**.
 
@@ -154,7 +196,9 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. On the **File** menu, click **Save**.
 
-1. On the **View** menu, click **Terminal**.
+1. Open **New terminal** in **Visual Studio Code**
+
+   ![](./media2/lab09img3.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
 
@@ -197,63 +241,36 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 In this exercise, you will get a quick introduction to working with time series data using Azure Data Explorer.
 
-1. Switch to the window containing your Azure portal and navigate to your Dashboard.
+1. In the Azure Portal, navigate to your resource group and select **adx-az220-<inject key="DeploymentID" enableCopy="false" />** Azure Data Explorer Cluster.
 
-    If needed, log in to the Azure portal using your Azure account credentials.
+   ![](./media2/lab06img21.png)
 
-1. On your Resource group tile, click **tsi-az220-training-{your-id}**.
+1. In the Azure Data Explorer page select **Databases** from left hand menu. Click on **streamingdata** database.
 
-1. On the **Time Series Insights environment** blade, at the top of the **Overview** pane, click **Go to TSI Explorer**.
+   ![](./media2/lab06img24.png)
 
-    This will open the **Time Series Insights Explorer** in a new browser tab.
+1. In the **streamingdata** page select **Data connection** from left menu, under settings. Select the **Health(symbol)** as shown.
 
-1. On the left-side menu, ensure that **Analyze** is selected.
+   ![](./media2/lab06img25.png)
 
-    You can expand the navigation menu to display the button names. The two options are "Analyze" and "Model". Choose Analyze.
+1. Check the Graph, observe the **Events recived** and **Events processed** data.
 
-    Collapse the navigation menu to ensure that you can see the query edit area on the left side of the page.
+   ![](./media2/lab06img26.png)
 
-1. To begin to edit a query, click **Add new query**.
+1. Navigate back to Azure Data Explorer pane and select **Query** and run the following query to visualize the data that is streamed.
 
-1. In the left-side pane, under **Query 1**, open the **MEASURE** dropdown, and then click **temperature**.
+    ```
+    Telemetry
+    | summarize count() by bin(temperature, 2 )
+    | render columnchart
+    ```
 
-1. Open the **SPLIT BY** dropdown, and then click **iothub-connection-device-id**.
+   ![](./media2/lab06img22.png)
 
-    When you run the query, this will split the graph to show the telemetry from each of the IoT Devices separately on the graph.
+1. Wait till the query succeeded, check the histogram created to visualize data.
 
-1. One the menu bar just above the data graph, click **Settings**.
- 
-1. On the settings dialog, click **Auto refresh** and configure the display to refresh the most recent 30 minutes of data every 15 seconds.
+   ![](./media2/lab06img23.png)
 
-1. Notice that the graph displays the **temperature** sensor event data from the IoT Devices within Azure IoT Hub in a _Line Chart_.
-
-1. Notice the list of Device IDs to the left of the graph.
-
-    Hovering the mouse over a specific Device ID will highlight it's data on the graph display.
-
-1. Take a moment to examine the temperature data (graphs) for the telemetry streaming into the system from the three simulated devices.
-
-1. To add a second query to the display, click **Add new query**.
-
-1. Under **Query 2**, set the **MEASURE** dropdown to **humidity**, and then set the **SPLIT BY** dropdown to **iothub-connection-device-id**.
-
-    Notice that there are now two graphs displayed. The top graph shows **temperature** while the lower graph shows **humidity**, both using their own Y-axis scale.
-
-1. Position your mouse pointer over one of the graph lines.
-
-    Notice that when you hover the mouse cursor over the graph, a popup will display the details for a point on the graph. The popup displays the minimum (**min**), average (**avg**), and maximum (**max**) values for the data points in the graph (over the short time represented by that point). The time range associated with the selected data point is displayed along the time axis at the bottom of the display.
-
-1. Along the top of the graph area, notice the options that you can use to control graph settings.
-
-1. Click **Settings**, and then change the Interval setting to 15 seconds.
-
-    Notice how the appearance of the data changes as you increase the interval.
-
-1. Take a minute to explore the other chart settings options.
-
-1. Once you have completed exploring the data, switch to the Visual Studio Code window.
-
-1. In Visual Studio Code, stop the container simulator app by pressing **CTRL+C** in the terminal.
 
 ## Summary
 

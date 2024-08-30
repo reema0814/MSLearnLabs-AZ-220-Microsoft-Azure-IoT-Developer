@@ -48,7 +48,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. Open Visual Studio Code from desktop.
 
-   ![](./media2/v2img8.png)
+   ![](./media2/lab09img1updated.png)
 
 1. Open **New Terminal** in Visual Studio Code, which will open the integrated terminal.
 
@@ -79,7 +79,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 ### Task 1: Create the container registry
 
-1. On the Azure Portal, use the search bar to search **container registries**. click on **container registries**.
+1. On the Azure Portal, search **container registries**. Click on **container registries**.
 
    ![](./media2/lab13img9.png)
 
@@ -87,23 +87,21 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
    ![](./media2/lab13img10.png)
 
-1. On the **Create container registry** blade,under **resource group** ensure the correct resource group is selected. provide **Registry name** as **acraz220training<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create**. and click on **Create**.
+1. On the **Create container registry** blade,under **resource group**select your resource group. Provide **Registry name** as **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create** and click on **Create**.
 
-   ![](./media2/lab13img11.png)
+   ![](./media2/lab09img2updated.png)
 
 ### Task 2: Connect Docker to the container registry
 
 1. From the resources tab of your resource group, open your container registry, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**,check the box to enable it.
-
-   ![](./media2/lab13img12.png)
-
-1. Make a record of the following values, paste it in a notepad. You will be using this values further in this lab:
+1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**,check the box to enable it. Make a record of the following values, paste it in a notepad. You will be using this values further in this lab:
 
     * **Login server**
     * **Username**
     * **password**
+
+      ![](./media2/lab13img12.png)
 
 1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then enter the following command:
 
@@ -190,7 +188,7 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier.
 
-   ![](./media2/lab13img15.png)
+   ![](./media2/lab09img3updated.png)
 
 1. Save the updated **.env** file.
 
@@ -295,7 +293,7 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
    ![](./media2/lab0912.png)
 
-1. On the **Getting started** pane, select **Mount storage account** and select the subscription and click on **Apply**.
+1. On the **Getting started** pane, select **Mount storage account** **(1)** and select the **subscription** **(2)** and click on **Apply** **(3)**.
 
    ![](./media2/lab09img13.png)
 
@@ -303,7 +301,7 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
    ![](./media2/lab09img14.png)
 
-1. In the **Create storage account** page, select the **Resource group** and **Region** same as the resource group. Under **Storage account name** give name as **stoaz220<inject key="DeploymentID" enableCopy="true" />** and under **File share** give name as **cloudshell**. Click on **Create**. 
+1. In the **Create storage account** page, select the **Resource group** **(1)** and **Region** **(2)** same as the resource group. Under **Storage account name** give name as **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** and under **File share** give name as **cloudshell** **(4)**. Click on **Create** **(5)**. 
 
    ![](./media2/lab09img15.png)
 
