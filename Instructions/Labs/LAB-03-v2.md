@@ -83,9 +83,9 @@ In this task, you wil create an individual enrollment in the Device Provisioning
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **individual enrollments**.
+1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments, click on **individual enrollments(2)**.
 
-    ![](../media2/lab5img6.png)
+    ![](../media2/az-3-17.png)
 
     As you may recall, you will be using the enrollment record to obtain the Authentication keys.
 
@@ -113,17 +113,27 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click on **Copy to clipboard**.
 
-   ![](../media2/lab5img11.png)
+   ![](../media2/az-3-6.png)
 
 1. Open **Visual Studio Code**.
 
    ![](../media2/v2img8.png)
 
-1. On the **File** menu, click **Open Folder** and then navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
+1. On the **File** menu, click **Open Folder**.
 
-1. Open integrated Terminal in **Visual studio code** click on **Terminal(1) and then **New Terminal(2)**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+   ![](../media2/az-3-7.png)
+   
+1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
 
-   ![](../media2/lab5img13.png)
+   ![](../media2/az-3-8.png)
+
+1. If the pop up appears clieck on **Yes, I trust the authors**.
+
+   ![](../media2/az-3-9.png)
+
+1. Open integrated Terminal in **Visual studio code** click on **Terminal(1)** and then **New Terminal(2)**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+
+   ![](../media2/az-3-10.png)
 
     ```cmd/sh
     dotnet restore
@@ -146,6 +156,9 @@ In this task, you will be creating the simulating device using the dotnet projec
     > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
     >
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
+
+
+   ![](../media2/az-3-11.png)    
 
 ### Task 2: Add the provisioning code
 
@@ -321,9 +334,9 @@ In this exercise, you will run the Simulated Device and verify that it's sending
 
 In this task you will build the dotnet project and run to send the telemetry data.
 
-1. Ensure that you have your code project open in Visual Studio Code. Open *New Terminal**.
+1. Ensure that you have your code project open in Visual Studio Code. click on **Terminal** and then **New Terminal**.
 
-   ![](../media2/lab5img13.png)
+   ![](../media2/az-3-12.png)
 
 1. In the Terminal pane, ensure the command prompt shows the directory path for the `Program.cs` file.
 
@@ -373,7 +386,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-   ![](../media2/v2img16.png)
+   ![](../media2/az-5-9.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
@@ -386,12 +399,14 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
     ```cmd/sh
-    az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
+    az iot hub monitor-events --hub-name {IoTHubName} 
     ```
 
     _Be sure to replace the **{IoTHubName}** placeholder with the name of your Azure IoT Hub._
 
 1. Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
+
+   ![](../media2/az-3-20.png)
 
     Continue to leave the simulated device application running for the next task.
 
@@ -407,19 +422,19 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** an then click on **sensor-thl-1000(2)** under **DEVICE ID**,
 
-   ![](../media2/lab5img15.png)
+   ![](../media2/az-3-14.png)
 
     > **IMPORTANT**: Make sure you select the device that you are using for this lab.
 
 1. On the **sensor-thl-1000** device blade, at the top of the blade, click **Device Twin**.
 
-   ![](../media2/lab5img16.png)
+   ![](../media2/az-3-15.png)
 
     The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
 1. Locate the JSON for the `properties.desired` object.
 
-   ![](../media2/lab5img17.png)
+   ![](../media2/az-3-16.png)
 
     This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
 
@@ -490,11 +505,11 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments(2)**.
 
-   ![](../media2/lab5img6.png)
+   ![](../media2/az-3-17.png)
 
 1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click **Delete**
 
-   ![](../media2/lab5img7.png)
+   ![](../media2/az-3-18.png)
 
 1. At the top of the blade, click **Delete**.
 
@@ -521,6 +536,8 @@ In this task you will delete the device from the IoT hub device management.
     > **IMPORTANT**: Make sure you select the device representing the simulated device that you used for this lab.
 
 1. At the top of the blade, click **Delete**.
+
+   ![](../media2/az-3-19.png)
 
 1. On the **Are you certain you wish to delete selected device(s)** prompt, click **Yes**.
 
