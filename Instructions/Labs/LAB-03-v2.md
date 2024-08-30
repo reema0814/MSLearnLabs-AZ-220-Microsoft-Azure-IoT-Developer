@@ -34,29 +34,29 @@ In this task, you wil create an individual enrollment in the Device Provisioning
 
 1. In the Azure portal navigate to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
 
-   ![](../media2/lab5img2.png)
+   ![](../media2/az-3-1.png)
 
 1. On the left-side menu under **Settings**, click on **Manage enrollments(1)** then navigate to **Individual enrollments(2)** and click on **+ Add individual enrollment(3)**.
 
-   ![](../media2/lab5img1.png)
+   ![](../media2/az-3-2.png)
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
     - **Attestation** : choose **Symmetric Key** **(1)** from dropdown.
     - **Registration ID** : **sensor-thl-1000** **(2)**. 
     - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
-    - click on **Next: IoT hubs** **(4)**.
+    - Click on **Next: IoT hubs** **(4)**.
 
-    ![](../media2/lab5img3.png)
+    ![](../media2/az-3-3.png)
    
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
     - **Target IoT hubs** : select your **IoT hub** **(1)** from dropdown.
     - **Allocation policy** : select **Evenly weighted distribution** **(2)**.
-    - click on **Next: Device settings >** **(3)**.
+    - Click on **Next: Device settings >** **(3)**.
 
-    ![](../media2/lab5img4.png) 
+    ![](../media2/az-3-4.png) 
 
 
 1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
@@ -73,7 +73,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
         }
     }
     ```
-    ![](../media2/lab5img5.png)
+    ![](../media2/az-3-5.png)
 
     This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
@@ -383,7 +383,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
    ![](../media2/v2img18.png)
 
-1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
+1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
@@ -405,7 +405,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
    ![](../media2/lab5img14.png)
 
-1. On the IoT Hub blade, on the left-side menu under **Device Management**, click **Devices**. Under **DEVICE ID**, click **sensor-thl-1000**.
+1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** an then click on **sensor-thl-1000(2)** under **DEVICE ID**,
 
    ![](../media2/lab5img15.png)
 
@@ -484,11 +484,11 @@ In this task, you will be deleteing the device from the enrollments
 
     If you have more than one Azure account, be sure that you are logged in with the account that is tied to the subscription that you will be using for this course.
 
-1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-{your-id}**.
+1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left-side menu under **Settings**, click **Manage enrollments**.
+1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments**.
+1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments(2)**.
 
    ![](../media2/lab5img6.png)
 
@@ -512,9 +512,9 @@ In this task you will delete the device from the IoT hub device management.
 
 1. In the Azure portal, navigate back to your Dashboard.
 
-1. On your Resource group tile, to open your Azure IoT Hub blade, click **iot-az220-training-{your-id}**.
+1. On your Resource group tile, to open your Azure IoT Hub blade, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left-side menu under **Explorers**, click **IoT devices**.
+1. On the left-side menu under **Device management**, click on **Devices**.
 
 1. To the left of **sensor-thl-1000**, click the checkbox.
 
