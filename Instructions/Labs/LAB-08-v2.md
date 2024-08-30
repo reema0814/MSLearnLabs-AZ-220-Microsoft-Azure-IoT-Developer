@@ -115,11 +115,11 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](../media2/lab12img11.png)
 
-1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883**. Leave all other settings at the default, and then click **Add**.
+1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883 (1)** and name as **MQTT (2)**. Leave all other settings at the default, and then click **Add**.
 
    ![](../media2/lab12img12.png)
 
-1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, add two more rules with the following values:
+1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port**:
 
     | Destination port ranges | Protocol | Name |
     | :--- | :--- | :--- |
@@ -309,7 +309,7 @@ In this task, you will explore the IoT edge configuration inside your vm.
 1. To verify the IoT Edge runtime has connected, run the following command:
 
     ```bash
-    sudo iotedge check
+    sudo iotedge check --verbose
     ```
 
     This runs a number of checks and displays the results. For this lab, ignore the **Configuration checks** warnings/errors. The **Connectivity checks** should succeed and be similar to:
@@ -400,7 +400,7 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
    ![](../media2/lab12img1.png)
 
-1. On the **iot-az220-training-{your-id}** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**
+1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**
 
    ![](../media2/lab12img14.png)
 
