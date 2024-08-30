@@ -36,18 +36,13 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
 #### Task 1: Use the Azure portal to create a IoT Hub with required property settings
 
-   
-1. On the Azure portal menu, click **+ Create a resource**.
-
-    ![](media/create.png)
-
-1. In the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
+1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
 
     ![](media/hub.png)
 
 1. To begin the process of creating your new IoT Hub, click **Create**.
 
-    ![](media/createiot.png)
+    ![](media/1lab20.png)
     
 1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
 
@@ -55,17 +50,17 @@ In this exercise, you will use the Azure portal to create and configure your IoT
    - Resource group: **Select the Existing Resource group (2)**.
    - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
    - Region : **eastus(4)**
-   - Tier :**Free(5)** 
+   - Tier :**Standard(5)** 
 
-    ![](media/1lab1.png)
+    ![](media/toi1.png)
 
 1. Ensure the **Minimum TLS Version** is set to **1.0** and then click on **Next:Management>**.
 
-    ![](media/1lab2.png)
+    ![](media/1lab17.png)
 
-1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **2** and click on **Review + create**.
+1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**.
 
-    ![](media/1lab3.png)
+    ![](media/toi2.png)
 
 1. Click on **Create**.
 
@@ -155,7 +150,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-    ![](media/create.png)
+    ![](media/1lab11.png)
 
 1. In the Search textbox, type **device provisioning service(1)** and then press Enter.
 
@@ -174,7 +169,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
    - Name: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
    - Region: **eastus(4)**
 
-    ![](media/2lab1.png)
+    ![](media/1lab19.png)
 
 1. Click on **Create**.
 1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
@@ -215,13 +210,17 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 #### Task 1: Explore the Device Provisioning Service Overview information
 
-1. On your Azure dashboard, click on the three lines **(1)** at the top left corner and select **All resources(2)**
+1. On your Azure dashboard, search and select the **Resource group**.
 
-    ![](media/iot22.png)
+    ![](media/1lab13.png)
+   
+1. Select the Resource group **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-1. On the All resources tile, click **dps-az220-training-cah281216**
+    ![](media/1lab14.png)   
 
-    ![](media/iott23.png)
+1. Click on **dps-az220-training-cah281216**
+
+    ![](media/1lab15.png)
 
     * [Azure IoT Hub Device Provisioning Service Documentation](https://docs.microsoft.com/en-us/azure/iot-dps/)
     * [Learn more about IoT Hub Device Provisioning Service](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps)
@@ -283,4 +282,3 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 In this lab, you have created a Azure IoT Hub and explored its features, then created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
 
 ### You have successfully completed the lab
-
