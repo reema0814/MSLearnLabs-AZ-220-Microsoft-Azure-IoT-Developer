@@ -124,11 +124,11 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
 
-      ![](./media/az8-17.png)
+      ![](./media/az8-20.png)
 
 1. Navigate to **Overview (1)** and click on **Go to resource group (2)**.
 
-      ![](./media/az8-18.png)
+      ![](./media/az8-19.png)
    
 1. On the All resources tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
 
