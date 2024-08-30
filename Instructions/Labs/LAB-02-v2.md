@@ -36,21 +36,21 @@ In this exercise, you will open your IoT Hub in the Azure portal, add a new IoT 
 
 In this task, you will create a device in the IoT Hub.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media2/v2img1.png)
+   ![](../media2/v2img1.png)
 
 1. On the resources tile, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
-   ![](./media2/v2img2.png)
+   ![](../media2/v2img2.png)
 
 1. On the left-side menu of your IoT Hub blade, under **Device management**, click **Devices**.
 
-   ![](./media2/v2img3.png)
+   ![](../media2/v2img3.png)
 
 1. On the **Devices** pane, click **Add Device**.
 
-   ![](./media2/v2img4.png)
+   ![](../media2/v2img4.png)
 
 1. In the **Create a Device** page, enter the following details:
 
@@ -66,13 +66,13 @@ In this task, you will create a device in the IoT Hub.
 
    - To add this device record to the IoT Hub, click **Save** **(6)**
 
-     ![](./media2/v2img5.png)
+     ![](../media2/v2img5.png)
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
     > **TIP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
-   ![](./media2/v2img6.png)
+   ![](../media2/v2img6.png)
 
 ### Task 2: Get the Device Connection String
 
@@ -82,7 +82,7 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. On the **IoT devices** pane of your IoT Hub, under **DEVICE ID**, click **sensor-th-0001**.
 
-   ![](./media2/v2img6.png)
+   ![](../media2/v2img6.png)
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
@@ -92,9 +92,9 @@ In this task, you will get the device connection string from the Azure Portal.
 
     The values are obfuscated by default, but you can click the "eye" icon on the right of each field to toggle between showing and hiding the values.
 
-1. To the right of the **Primary Connection String** field, click **Copy**.
+1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a text editor such as notepad for later use.
 
-   ![](./media2/v2img7.png)
+   ![](../media2/v2img7.png)
 
     > **Note**: You will need to use the Primary Connection String value later in the lab, so you may want to save it to an accessible location (perhaps by pasting the value into a text editor such as Notepad).
 
@@ -118,9 +118,11 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
  
 1. Open **Visual Studio Code** editor from the desktop.
 
-   ![](./media2/v2img8.png)
+   ![](../media2/v2img8.png)
 
 1. Select **Terminal** and click on **New Terminal** from the menu.
+
+   ![](../media2/az-5-7.png)
 
 1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
 
@@ -152,21 +154,24 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```bash
     dotnet restore
     ```
+   ![](../media2/vs2.png)
 
-1. In Visual Studio Code, on the **File** menu, click **Open Folder**.
+1. In Visual Studio Code, on the **Explorer** menu, click **Open Folder**.
 
-   ![](./media2/v2img11.png)
+   ![](../media2/az-5-8.png)
 
-1. In the **Open Folder** dialog, navigate to the location where you created the **CaveDevice** directory.
+1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
 1. In the list of folders, click **CaveDevice**, and then click **Select Folder**.
+
+      ![](../media2/vs3.png)
 
     The EXPLORER pane of Visual Studio Code should now list two C# project files:
 
     * CaveDevice.csproj
     * Program.cs
 
-      ![](./media2/v2img12.png)
+      ![](../media2/v2img12.png)
 
       > **Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
 
@@ -229,13 +234,13 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
 
-   ![](./media2/v2img13.png)
+   ![](../media2/v2img13.png)
 
      This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
-   ![](./media2/v2img14.png)
+   ![](../media2/v2img14.png)
 
     The Terminal command prompt includes the current directory path. The commands that you enter are run at the current location, so be sure that you are located in the **CaveDevice** folder.
 
@@ -247,7 +252,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. Notice that **Hello World!** is displayed.
 
-   ![](./media2/v2img15.png)
+   ![](../media2/v2img15.png)
 
     After a moment, you should see **Hello World!** displayed on the line directly below the **dotnet run** command that you entered.
 
@@ -307,6 +312,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     Notice that as well as specifying **System**, you are also declaring other namespaces that the code will be using, such as **System.Text** for encoding strings, **System.Threading.Tasks** for asynchronous tasks, and the namespaces for the two packages you added earlier.
 
+   ![](../media2/vs6.png)
+
     > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
 
 1. Locate the **// INSERT variables below here** comment, and then position the cursor on a blank line below the comment.
@@ -340,6 +347,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```csharp
     private readonly static string connectionString = "HostName=iot-az220-training-dm200420.azure-devices.net;DeviceId=sensor-th-0001;SharedAccessKey=hfavUmFgoCPA9feWjyfTx23SUHr+dqG9X193ctdEd90=";
     ```
+
+   ![](../media2/vs7.png)
 
 1. Locate the **// INSERT Main method below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -617,9 +626,9 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 In this task, you will be testing the application that you have built in the previous tasks.
 
-1. In the Visual Studio Code Explorer pane, on the **View** menu, click **Terminal**.
+1. In the Visual Studio Code Explorer pane, on the **Terminal** menu, click **New Terminal**.
 
-   ![](./media2/v2img13.png)
+   ![](../media2/v2img13.png)
 
 1. In the Terminal view, at the command prompt, enter the following command:
 
@@ -652,29 +661,37 @@ In this task, you will be testing the application that you have built in the pre
 
     > **Note**: Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
 
+   ![](../media2/vs5.png)
+
 ### Task 5: Verify Telemetry Stream sent to Azure IoT Hub
 
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-   ![](./media2/v2img16.png)
+   ![](../media2/az-5-9.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
-   ![](./media2/v2img17.png)
+   ![](../media2/v2img17.png)
 
 1. select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
 
-   ![](./media2/v2img18.png)
+   ![](../media2/v2img18.png)
 
-1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
+1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name which looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
+   
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
     ```
-
-    You should see messages displayed that are similar to the following:
+    
+    > **Note**: If prompted **Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
+    
+    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0 
+Continue? (y/n) -> y**
+    
+   You should see messages displayed that are similar to the following:
 
     ```cmd/sh
     Starting event monitor, filtering on device: sensor-th-0001, use ctrl-c to stop...
@@ -701,6 +718,5 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 In this exercise, you have created a simulator using c# to simulate telemetry data and send to IoT Hub and verified it.
 
 ### You have successfully completed the lab !!
-
 
 
