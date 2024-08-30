@@ -30,7 +30,7 @@ In this lab, you will complete the following:
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-      ![](../media2/v2img1.png)
+      ![](./media/v2img1.png)
    
 1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
