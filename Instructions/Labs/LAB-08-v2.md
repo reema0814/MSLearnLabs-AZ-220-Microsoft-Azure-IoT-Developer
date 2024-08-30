@@ -31,8 +31,10 @@ In this exercise, you will deploy an Ubuntu Server VM and configure it as an IoT
 
 In this task, you will use Azure IoT Hub to create a new IoT Edge device identity that you will use for the IoT Edge Transparent Gateway (your IoT Edge VM).
 
-1. On the Azure portal menu, navigate to the resource group **rg-az220**.
+1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
+      ![](../media2/v2img1.png)
+   
 1. On the All resources tile, to open your IoT hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/lab12img1.png)
@@ -41,21 +43,21 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](../media2/lab12img3.png)
 
-1. On the **Create a device** blade, in the **Device ID** field, enter **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**, leave other setting as default and click on **save**.
+1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />**, leave other setting as default and click on **save**.
 
    ![](../media2/lab12img4.png)
 
-1. Under **Device ID**, click **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
+1. Under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/lab12img5.png)
 
-1. On the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**.
+1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**.
 
    ![](../media2/lab12img6.png)
 
-1. Save the **Primary Connection String** value for your IoT Edge gateway device to your text file.
+1. Save the **Primary Connection String** value in a notepad for future use.
 
-1. On the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** blade, scroll down and notice that the list of **Modules** is limited to **\$edgeAgent** and **\$edgeHub**.
+1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, scroll down and notice that the list of **Modules** is limited to **\$edgeAgent** and **\$edgeHub**.
 
    ![](../media2/lab12img7.png)
 
