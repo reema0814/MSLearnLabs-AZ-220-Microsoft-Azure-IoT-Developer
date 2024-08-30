@@ -71,7 +71,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Open **Visual Studio Code** from the desktop.
 
-      ![](../media2/v2img8.png)
+      ![](./media/v2img8.png)
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
