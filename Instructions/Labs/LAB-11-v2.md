@@ -75,7 +75,9 @@ In this lab, you will complete the following:
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-1. Navigate to `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\16-Automate IoT Device Management with Azure IoT Hub\Final` and select the **fwupdatedevice** folder.
+      ![](./media/open.png)
+
+1. Navigate to `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage\Allfiles\Labs\16-Automate IoT Device Management with Azure IoT Hub\Final` and select the **fwupdatedevice** folder.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
@@ -153,7 +155,7 @@ In this lab, you will complete the following:
         sensor-th-0155: Current firmware version: 1.0.0
     ```
 
-    Once this information is displayed, the simulated device app enters a holding pattern, waiting for a device twin update that will trigger a firmware update.
+    Once this information is displayed, the simulated device app enters a holding pattern, waiting for a device twin update that will trigger a firmware update. Keep it running.
 
       ![](./media/automate.png)
 
