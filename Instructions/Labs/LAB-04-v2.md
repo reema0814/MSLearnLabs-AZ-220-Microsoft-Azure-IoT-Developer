@@ -421,7 +421,7 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
    - Under **Subscription**, ensure that the subscription you used to create the IoT Hub earlier is selected.
 
-   - Under **IoT Hub**, ensure that your **iot-az220-training-{your-id}** IoT hub is selected.
+   - Under **IoT Hub**, ensure that your **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** IoT hub is selected.
 
    - Under **Consumer group**, ensure that **$Default** is selected.
 
