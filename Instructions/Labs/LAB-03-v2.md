@@ -418,7 +418,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Open the Azure portal (if it is not already open), and then navigate to your **Azure IoT Hub** service.
 
-   ![](../media2/lab5img14.png)
+   ![](../media2/az-3-21.png)
 
 1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** an then click on **sensor-thl-1000(2)** under **DEVICE ID**,
 
@@ -501,6 +501,8 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
+   ![](../media2/az-3-1.png)
+
 1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
 
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments(2)**.
@@ -528,6 +530,8 @@ In this task you will delete the device from the IoT hub device management.
 1. In the Azure portal, navigate back to your Dashboard.
 
 1. On your Resource group tile, to open your Azure IoT Hub blade, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+
+     ![](../media2/az-3-21.png)
 
 1. On the left-side menu under **Device management**, click on **Devices**.
 
