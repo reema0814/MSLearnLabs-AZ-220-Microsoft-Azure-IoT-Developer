@@ -386,7 +386,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
 
     ```cmd/sh
-    az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-0001
+    az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-1000
     ```
 
     _Be sure to replace the **{IoTHubName}** placeholder with the name of your Azure IoT Hub._
