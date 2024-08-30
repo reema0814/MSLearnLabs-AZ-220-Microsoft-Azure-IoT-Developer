@@ -71,7 +71,7 @@ In this lab, you will complete the following:
 
 1. Open **Visual Studio Code** from the desktop.
 
-   ![](../media2/v2img8.png)
+      ![](../media2/v2img8.png)
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
@@ -81,14 +81,14 @@ In this lab, you will complete the following:
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-   ![](./media/iot4.png)
+      ![](./media/az11-80.png)
 
 1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
    - FWUpdateDevice.csproj
    - Program.cs
 
-      ![](./media/az22023.png)
+      ![](./media/az11-81.png)
 
 1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
 
@@ -132,7 +132,7 @@ In this lab, you will complete the following:
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. The folder location shown within the command prompt should show the FWUpdateDevice project folder.
 
-   ![](./media/az25.png)
+      ![](./media/az25.png)
 
 1. To run the FWUpdateDevice app, enter the following command:
 
@@ -163,7 +163,7 @@ In this lab, you will complete the following:
 
 1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Devices (1)** under the Device management tab in the left pane and select **sensor-th-0155 (2)**.
 
-   ![](./media/iot2.png)
+      ![](./media/iot2.png)
 
 1. Click on **Device twin** and review the contents of the device twin file.
 
@@ -175,11 +175,11 @@ In this lab, you will complete the following:
 
 1. Navigate back to **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** blade, click on **Configurations + Deployments (1)**, click on + Add and select **Device Twin Configuration (2)**.
 
-   ![](./media/iot8.png)
+      ![](./media/iot8.png)
 
 1. In the **Name and Label** tab, provide the name as **firmwareupdate (1)** and click on **Next: Twins Settings > (2)**
 
-   ![](./media/iot9.png)
+      ![](./media/iot9.png)
 
 1. Under the **Twin Setting**s tab, in the **Device Twin Property** field, enter **properties.desired.firmware (1)**. In the **Device Twin Property Content (2)** field, replace the existing contents with the following and click on **Next: Target Devices> (3)**:
 
@@ -200,7 +200,7 @@ In this lab, you will complete the following:
     deviceId='sensor-th-0155'
     ```
 
-   ![](./media/iot11.png)
+     ![](./media/iot11.png)
 
 1. On the **Metrics** tab, under **METRIC NAME**, enter **fwupdated (1)**. 1. Under **METRIC CRITERIA (2)**, enter the following and click on **Next: Review + Create> (3)**:
 
@@ -223,5 +223,3 @@ In this lab, you will complete the following:
 In this lab, you have configured Lab Prerequisites, examined code for a simulated device that implements firmware update and tested firmware update on a single device.
 
 ### You have successfully completed the lab
-
-   
