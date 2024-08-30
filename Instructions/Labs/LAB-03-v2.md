@@ -24,7 +24,7 @@ In this lab, you will perform:
 
 ![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
 
-### Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
+## Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
 
 In this exercise, you will create a new individual enrollment for a device within the Device Provisioning Service (DPS) using _symmetric key attestation_. You will also configure the initial device state within the enrollment. After saving your enrollment, you will go back in and obtain the auto-generated attestation Keys that get created when the enrollment is saved.
 
@@ -248,7 +248,7 @@ In this task, you will be adding the code to the dotnet project for provisioning
 
     Notice that the default value for the delay is set to **1** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
 
-#### Task 3: Integrate Device Twin Properties
+### Task 3: Integrate Device Twin Properties
 
 In order to use the device twin properties (from Azure IoT Hub) on a device, you need to create the code that accesses and applies the device twin properties. In this case, you want to update your simulated device code to read the telemetryDelay device twin Desired Property, and then assign that value to the corresponding **telemetryDelay** variable in your code. You also want to update the device twin Reported Property (maintained by IoT Hub) to have a record of the delay time that is currently implemented on our device.
 
@@ -323,11 +323,11 @@ In this task, you will be using the protal to change the device twin peroperties
 
     Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
-### Exercise 3: Test the Simulated Device
+## Exercise 3: Test the Simulated Device
 
 In this exercise, you will run the Simulated Device and verify that it's sending sensor telemetry to Azure IoT Hub. You will also change the rate at which telemetry is sent to Azure IoT Hub by updating the telemetryDelay device twin property for the simulated device within Azure IoT Hub.
 
-#### Task 1: Build and run the device
+### Task 1: Build and run the device
 
 In this task you will build the dotnet project and run to send the telemetry data.
 
