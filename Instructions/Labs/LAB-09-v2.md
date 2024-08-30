@@ -28,39 +28,27 @@ In this lab, you will complete the following activities:
 
 In this exercise, you will ensure docker engine is running and install the Azure IoT EdgeHub Dev Tool.
 
-1. Open **Docker Desktop** from start menu by searching.
+1. Open **Docker Desktop** from the Desktop.
 
-1. on the **Docker Subscription Service Agreement**, select **Accept**.
+   ![](./media2/lab09img1.png)
+
+1. On the **Docker Subscription Service Agreement**, select **Accept** and click on **finish** in the next pane.
 
    ![](./media2/lab13img2.png)
 
-1. On **Welcome to Docker** pane click on **skip** from top right corner.
+1. In **Welcome to Docker** pane click on **skip** to skip all the panes.
 
    ![](./media2/lab13img3.png)
 
-1. In the **docker desktop** page ensure that status is **Engine running**.
+1. Wait for sometime in the  **docker desktop**, ensure that **Engine running** status as shown.
 
    ![](./media2/lab13img4.png)
 
-1. close the docker desktop, continue with further steps.
+1. Close the docker desktop, continue with further steps.
 
 1. Open Visual Studio Code from desktop.
 
    ![](./media2/v2img8.png)
-
-1. Firstly you have to download some extensions, that you will be using in this lab.
-
-1. Navigate to **Extensions** pane from left side tool bar and search for **Azure IoT Hub**. Click on **Install**.
-
-   ![](./media2/lab13img5.png)
-
-1. Follow same steps for **Azure IoT Edge** and **C#**.
-
-   ![](./media2/lab13img6.png)
-
-   ![](./media2/lab13img7.png)
-
-1. Wait untill all these extensions installed successfully and continue with further steps.
 
 1. Open **New Terminal** in Visual Studio Code, which will open the integrated terminal.
 
@@ -99,7 +87,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
    ![](./media2/lab13img10.png)
 
-1. On the **Create container registry** blade,under **resource group** ensure the correct resource group is selected. provide **Registry name** as **acraz220training<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create**.
+1. On the **Create container registry** blade,under **resource group** ensure the correct resource group is selected. provide **Registry name** as **acraz220training<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create**. and click on **Create**.
 
    ![](./media2/lab13img11.png)
 
@@ -107,7 +95,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 1. From the resources tab of your resource group, open your container registry, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**, click **Enable**.
+1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**,check the box to enable it.
 
    ![](./media2/lab13img12.png)
 
@@ -117,7 +105,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
     * **Username**
     * **password**
 
-1. Open a command prompt, and then enter the following command:
+1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then enter the following command:
 
     ```cmd/sh
     docker login <loginserver>
@@ -137,11 +125,7 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 ### Task 1: Create the solution
 
-1. Open Visual Studio Code.
-
-   ![](./media2/v2img8.png)
-
-1. On the **View** menu, to open the Visual Studio Command Palette, click **Command Palette**.
+1. In the **Visual Studio Code** open, select  **View** menu, to open the Visual Studio Command Palette, click **Command Palette**.
 
    ![](./media2/lab13img13.png)
 
@@ -149,7 +133,7 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
    ![](./media2/lab13img14.png)
 
-1. Browse to the folder where you want to create the new solutions, and then click **Select folder**.
+1. Browse to the folder `C:\Labfiles`, and then click **Select folder**.
 
 1. When prompted for a solution name, enter **EdgeSolution**
 
@@ -163,7 +147,7 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 1. When prompted for name of the Docker image repository for the module, update the placeholder value as follows:
 
-    Replace the "localhost:5000" part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training{your-id}.azurecr.io**
+    Replace the "localhost:5000" part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training<inject key="DeploymentID" enableCopy="false" />.azurecr.io**
 
     This will be the Docker repository where the IoT Edge Module docker image will be published.
 
@@ -305,35 +289,31 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 1. At the top of the portal window, to open the Azure Cloud Shell, click **Cloud Shell**.
 
-    The Cloud Shell button has an icon that appears to represent a command prompt.
+    ![](./media2/lab09img11.png)
 
-    A Cloud Shell window will open near the bottom of the display screen.
+1. On the **Welcome to Azure Cloud Shell** pane, click on **Bash**.
 
-    > **Note**: If the cloud shell has not been configured, follow these steps:
+   ![](./media2/lab0912.png)
 
-    1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
+1. On the **Getting started** pane, select **Mount storage account** and select the subscription and click on **Apply**.
 
-    1. Under **Subscription**, ensure the correct subscription is displayed.
+   ![](./media2/lab09img13.png)
 
-    1. To specify storage options, click **Show advanced settings**.
+1. On the **Mount storage account** pane select **I want to create a storage account** and click on **Next**.
 
-    1. Under **Resource group**, ensure **Use existing** is selected and the **@lab.CloudResourceGroup(ResourceGroup1).Name** is shown.
+   ![](./media2/lab09img14.png)
 
-    1. Under **Storage account**, select **Create new** and enter the following: **stoaz220{your-id}**.
+1. In the **Create storage account** page, select the **Resource group** and **Region** same as the resource group. Under **Storage account name** give name as **stoaz220<inject key="DeploymentID" enableCopy="true" />** and under **File share** give name as **cloudshell**. Click on **Create**. 
 
-    1. Under **File share**, select **Create new** and enter the following **cloudshell**.
-
-    1. To finish to configuration of the cloud shell, click **Create storage**.
-
-    After about 30-60 seconds, the Cloud Shell command prompt should appear.
+   ![](./media2/lab09img15.png)
 
 1. At the Cloud Shell command prompt, to monitor the messages being sent to Azure IoT Hub from the **SimulatedDevice** running in the IoT Edge Simulator on your local machine, enter the following command:
 
     ```cmd/sh
-    az iot hub monitor-events --hub-name "iot-az220-training-{your-id}"
+    az iot hub monitor-events --hub-name "iot-az220-training-<DeploymentID>"
     ```
 
-    Be sure to replace the **{your-id}** value with your unique ID when providing the name of your Azure IoT Hub service.
+    Be sure to replace the **<DeploymentID>** value with <inject key="DeploymentID" enableCopy="true" />.
 
 1. Observe the output displayed in the Cloud Shell.
 
@@ -341,20 +321,7 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
     The output should look similar to the following:
 
-    ```json
-    {
-        "event": {
-            "origin": "SimulatedDevice",
-            "payload": "{\"machine\":{\"temperature\":88.003809452058647,\"pressure\":8.6333453806142764},\"ambient\":{\"temperature\":21.090260561364826,\"humidity\":24},\"timeCreated\":\"2019-12-09T15:16:32.402965Z\"}"
-        }
-    }
-    {
-        "event": {
-            "origin": "SimulatedDevice",
-            "payload": "{\"machine\":{\"temperature\":88.564600328362815,\"pressure\":8.6972329488008278},\"ambient\":{\"temperature\":20.942187817041848,\"humidity\":25},\"timeCreated\":\"2019-12-09T15:16:37.4355705Z\"}"
-        }
-    }
-    ```
+    ![](./media2/lab09img10.png)
 
 1. Close the **Cloud Shell** window.
 
@@ -363,6 +330,8 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 In this exercise, you will build and publish the custom IoT Edge Module into the Azure Container Registry (ACR) service. Once published to ACR, the custom module will then be made available to be deployed to any IoT Edge Device.
 
 ### Task 1:  Publish module to the Azure Container Registry
+
+In this task, you will use Docker commands to tag and publish the image to container registry.
 
 1. Navigate back to **Visual Studio Code**. and open **New Terminal**.
 
@@ -408,22 +377,18 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
    ![](./media2/lab13img26.png)
 
-1. Save a copy of the values for the **Repository** and **Tag** properties.
-
-    To copy the values, you can click on the **Copy to clipboard** button located to the right of the displayed values.
-
-    You will need the Repository and Tag names to pull down this specific version of the Docker image for the custom IoT Edge Module to run in an IoT Edge Device.
+1. Save a copy of the Image URI.
 
     The format of the Docker image Repository and Tag names combined will be in the following format:
 
     ```text
-    <repository-name>:<tag>
+    <registry-name>/<repository-name>:<tag>
     ```
 
-    Here's an example of a full Docker image name for the **objectcountingmodule** IoT Edge Module:
+    Here's an example of a full Docker image URI for the **objectcountingmodule** IoT Edge Module:
 
     ```text
-    objectcountingmodule:0.0.1-amd64
+    acraz220training1440646/objectcountingmodule:1.4
     ```
 
 ### Task 2: Configure an IoT Edge device to use the module
