@@ -24,7 +24,7 @@ In this lab, you will perform:
 
 ![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
 
-### Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
+## Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
 
 In this exercise, you will create a new individual enrollment for a device within the Device Provisioning Service (DPS) using _symmetric key attestation_. You will also configure the initial device state within the enrollment. After saving your enrollment, you will go back in and obtain the auto-generated attestation Keys that get created when the enrollment is saved.
 
@@ -32,34 +32,34 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 In this task, you wil create an individual enrollment in the Device Provisioning Service.
 
-1. In the Azure portal navigate to the resource group **az220-did**. and select the **dps-az220-training-did** from the resource list.
+1. In the Azure portal navigate to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
 
-   ![](./media2/lab5img2.png)
+   ![](../media2/az-3-1.png)
 
-1. On the left-side menu under **Settings**, click **Manage enrollments**(1). And select **Individual enrollments**(2) and click on **+ Add individual enrollment**(3).
+1. On the left-side menu under **Settings**, click on **Manage enrollments(1)** then navigate to **Individual enrollments(2)** and click on **+ Add individual enrollment(3)**.
 
-   ![](./media2/lab5img1.png)
+   ![](../media2/az-3-2.png)
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
     - **Attestation** : choose **Symmetric Key** **(1)** from dropdown.
     - **Registration ID** : **sensor-thl-1000** **(2)**. 
     - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
-    - click on **Next: IoT hubs** **(4)**.
+    - Click on **Next: IoT hubs** **(4)**.
 
-    ![](./media2/lab5img3.png) 
-
+      ![](../media2/az-3-3.png)
+   
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
     - **Target IoT hubs** : select your **IoT hub** **(1)** from dropdown.
     - **Allocation policy** : select **Evenly weighted distribution** **(2)**.
-    - click on **Next: Device settings >** **(3)**.
+    - Click on **Next: Device settings >** **(3)**.
 
-    ![](./media2/lab5img4.png) 
+      ![](../media2/az-3-4.png)
+   
 
-
-1. On the **Add Enrollment** blade under **Device settings**, add the below json data in **Desired properties** input box. 
+1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
 
     The final JSON will be like the following:
 
@@ -73,29 +73,29 @@ In this task, you wil create an individual enrollment in the Device Provisioning
         }
     }
     ```
-    ![](./media2/lab5img5.png)
+    ![](../media2/az-3-5.png)
 
     This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
-1. click on **Review + create** and select **create** after validation is successfull.
+1. Click on **Review + create** and select **create** after validation is successfull.
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **individual enrollments**.
+1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments, click on **individual enrollments(2)**.
 
-    ![](./media2/lab5img6.png)
+    ![](../media2/az-3-17.png)
 
     As you may recall, you will be using the enrollment record to obtain the Authentication keys.
 
-1. Under **REGISTRATION ID**, click **sensor-thl-1000**.
+1. Under **Registration ID**, click on **sensor-thl-1000**.
 
     This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
 1. Copy the **Primary Key** and **Secondary Key** values for this device enrollment, and then save them to a file for later reference.
 
-   ![](./media2/lab5img10.png)
+   ![](../media2/lab5img10.png)
 
 ## Exercise 2: Configure Simulated Device
 
@@ -109,21 +109,31 @@ The simulated device that you create in this exercise represents an IoT device t
 
 In this task, you will be creating the simulating device using the dotnet project.
 
-1. On the left-side menu of the **dps-az220-training-{your-id}** blade, click **Overview**.
+1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview**.
 
-1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click **Copy to clipboard**.
+1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click on **Copy to clipboard**.
 
-   ![](./media2/lab5img11.png)
+   ![](../media2/az-3-6.png)
 
 1. Open **Visual Studio Code**.
 
-   ![](./media2/v2img8.png)
+   ![](../media2/v2img8.png)
 
-1. On the **File** menu, click **Open Folder** and then navigate to `C:\Allfiles\Labs\05-Individual Enrollment of a Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
+1. On the **File** menu, click **Open Folder**.
 
-1. Open integrated Terminal in **Visual studio code**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+   ![](../media2/az-3-7.png)
+   
+1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
 
-   ![](./media2/lab5img13.png)
+   ![](../media2/az-3-8.png)
+
+1. If the pop up appears clieck on **Yes, I trust the authors**.
+
+   ![](../media2/az-3-9.png)
+
+1. Open integrated Terminal in **Visual studio code** click on **Terminal(1)** and then **New Terminal(2)**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+
+   ![](../media2/az-3-10.png)
 
     ```cmd/sh
     dotnet restore
@@ -141,21 +151,21 @@ In this task, you will be creating the simulating device using the dotnet projec
 
     This variable represents the **Registration ID** value for the individual enrollment that you created in the Device Provisioning Service.
 
-1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you saved.
+1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task2.
 
     > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
     >
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
 
+    ![](../media2/az-3-11.png)    
+
 ### Task 2: Add the provisioning code
 
-In this task, you will be adding the code to the dotnet project for provisioning.
-
-In this task, you will implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
+In this task, you will be adding the code to the dotnet project for provisioning and also implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
 
 1. Take a minute to scan through the code in the **Program.cs** file.
 
-    The overall layout of the **ContainerDevice** application is similar to the **CaveDevice** application that you created in Lab 4. Notice that both applications include the following:
+   The overall layout of the **ContainerDevice** application is similar to the **CaveDevice** application that you created in Lab 4. Notice that both applications include the following:
 
     * Using statements
     * Namespace definition
@@ -238,7 +248,7 @@ In this task, you will implement the code that provisions the device via DPS and
 
     Notice that the default value for the delay is set to **1** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
 
-#### Task 3: Integrate Device Twin Properties
+### Task 3: Integrate Device Twin Properties
 
 In order to use the device twin properties (from Azure IoT Hub) on a device, you need to create the code that accesses and applies the device twin properties. In this case, you want to update your simulated device code to read the telemetryDelay device twin Desired Property, and then assign that value to the corresponding **telemetryDelay** variable in your code. You also want to update the device twin Reported Property (maintained by IoT Hub) to have a record of the delay time that is currently implemented on our device.
 
@@ -313,17 +323,17 @@ In this task, you will be using the protal to change the device twin peroperties
 
     Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
-### Exercise 3: Test the Simulated Device
+## Exercise 3: Test the Simulated Device
 
 In this exercise, you will run the Simulated Device and verify that it's sending sensor telemetry to Azure IoT Hub. You will also change the rate at which telemetry is sent to Azure IoT Hub by updating the telemetryDelay device twin property for the simulated device within Azure IoT Hub.
 
-#### Task 1: Build and run the device
+### Task 1: Build and run the device
 
 In this task you will build the dotnet project and run to send the telemetry data.
 
-1. Ensure that you have your code project open in Visual Studio Code. Open *New Terminal**.
+1. Ensure that you have your code project open in Visual Studio Code. click on **Terminal** and then **New Terminal**.
 
-   ![](./media2/lab5img13.png)
+   ![](../media2/az-3-12.png)
 
 1. In the Terminal pane, ensure the command prompt shows the directory path for the `Program.cs` file.
 
@@ -373,25 +383,33 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
 
-   ![](./media2/v2img16.png)
+   ![](../media2/az-5-9.png)
 
 1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
 
-   ![](./media2/v2img17.png)
+   ![](../media2/v2img17.png)
 
 1. select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
 
-   ![](./media2/v2img18.png)
+   ![](../media2/v2img18.png)
 
-1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name:
+1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
     ```cmd/sh
-    az iot hub monitor-events --hub-name {IoTHubName} --device-id sensor-th-1000
+    az iot hub monitor-events --hub-name {IoTHubName} 
     ```
 
     _Be sure to replace the **{IoTHubName}** placeholder with the name of your Azure IoT Hub._
 
-1. Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
+    > **Note**: After entering the command
+    > - If prompted **The command requires the extension azure-iot. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
+    > - If prompted **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
+Continue? (y/n) -> y.**
+
+
+   Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
+
+   ![](../media2/az-3-20.png)
 
     Continue to leave the simulated device application running for the next task.
 
@@ -403,23 +421,23 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Open the Azure portal (if it is not already open), and then navigate to your **Azure IoT Hub** service.
 
-   ![](./media2/lab5img14.png)
+   ![](../media2/az-3-21.png)
 
-1. On the IoT Hub blade, on the left-side menu under **Device Management**, click **Devices**. Under **DEVICE ID**, click **sensor-thl-1000**.
+1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** an then click on **sensor-thl-1000(2)** under **DEVICE ID**,
 
-   ![](./media2/lab5img15.png)
+   ![](../media2/az-3-14.png)
 
     > **IMPORTANT**: Make sure you select the device that you are using for this lab.
 
 1. On the **sensor-thl-1000** device blade, at the top of the blade, click **Device Twin**.
 
-   ![](./media2/lab5img16.png)
+   ![](../media2/az-3-15.png)
 
     The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
 1. Locate the JSON for the `properties.desired` object.
 
-   ![](./media2/lab5img17.png)
+   ![](../media2/az-3-16.png)
 
     This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
 
@@ -484,17 +502,19 @@ In this task, you will be deleteing the device from the enrollments
 
     If you have more than one Azure account, be sure that you are logged in with the account that is tied to the subscription that you will be using for this course.
 
-1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-{your-id}**.
+1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left-side menu under **Settings**, click **Manage enrollments**.
+   ![](../media2/az-3-1.png)
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments**.
+1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
 
-   ![](./media2/lab5img6.png)
+1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments(2)**.
+
+   ![](../media2/az-3-17.png)
 
 1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click **Delete**
 
-   ![](./media2/lab5img7.png)
+   ![](../media2/az-3-18.png)
 
 1. At the top of the blade, click **Delete**.
 
@@ -502,7 +522,7 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On the **Remove enrollment** prompt, click **Yes**.
 
-   ![](./media2/lab5img8.png)
+   ![](../media2/lab5img8.png)
 
     The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
 
@@ -512,15 +532,19 @@ In this task you will delete the device from the IoT hub device management.
 
 1. In the Azure portal, navigate back to your Dashboard.
 
-1. On your Resource group tile, to open your Azure IoT Hub blade, click **iot-az220-training-{your-id}**.
+1. On your Resource group tile, to open your Azure IoT Hub blade, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left-side menu under **Explorers**, click **IoT devices**.
+     ![](../media2/az-3-21.png)
+
+1. On the left-side menu under **Device management**, click on **Devices**.
 
 1. To the left of **sensor-thl-1000**, click the checkbox.
 
     > **IMPORTANT**: Make sure you select the device representing the simulated device that you used for this lab.
 
 1. At the top of the blade, click **Delete**.
+
+   ![](../media2/az-3-19.png)
 
 1. On the **Are you certain you wish to delete selected device(s)** prompt, click **Yes**.
 
