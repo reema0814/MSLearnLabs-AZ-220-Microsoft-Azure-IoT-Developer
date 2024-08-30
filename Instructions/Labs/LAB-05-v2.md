@@ -34,44 +34,37 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-
-    ![](media/create.png)
-
-
-1. On the **Create a resource** blade, in the **Search services and marketplace** box, enter **logic app**
+      ![](media/1lab11.png)
+   
+1. On the **Search services and marketplace** box, enter **logic app**
 
 1. In the search results, click **Logic App**.
 
-    ![](media/9lab1.png)
+      ![](media/9lab1.png)
 
 1. Select the **Logic App** from below results.
 
-    ![](media/9lab2.png)
+      ![](media/9lab2.png)
 
 1. On the **Logic App** blade, click **Create**.
 
-    ![](media/9lab3.png)
+      ![](media/9lab3.png)
 
 1. Under the **Create Logic App** select **Consumption** and click on **Select**.
 
-    ![](media/9lab4.png)
+      ![](media/9lab4.png)
 
+1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** provide the following information and click on **Review + create**.
 
-1. On the **Basics** tab, under **Create Logic App (Multi-tenant)**, select the **Subscription(1)** that you are using for this lab.
+   - Subscription: **Select the default Subscription (1)**.
+   - Resource group: **Select the existing  Resource group (2)**.
+   - Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
+   - Region : **eastus (4)**
+   - Enable Log Analytics:  Set to **No (5)**.
 
-1. **Resource group** : Select your Resource group from the drop down menu **(2)**
+        ![](media/az-5-1.png)
 
-1. In the **Name** field, enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
-
-1. **Region** : **<inject key="Region" enableCopy="false"/> (4)**
-
-1. Leave **Enable Log Analytics** set to **No(5)**.
-
-    ![](media/9lab5.png)
-
-1. Click **Review + create**.
-
-1. On the **Review + create** tab, click **Create**.
+1. Click on **Create**.
 
     > **Note**:  It will take a minute or two for the Logic App deployment to complete.
 
@@ -79,30 +72,33 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. Here you can see the newly created Logic app.
 
-    ![](media/9lab6.png)
+      ![](media/9lab6.png)
 
 #### Task 2: Configure Your Logic App
 
-1. On your resource group tile, click the link to the Logic App resource that was just deployed.
+1. Navigate to your Resource group **az220rg**, click on the newly created Logic App resource that was just deployed.
 
     If the **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/>** Logic app is not displayed, refresh the resource group tile.
 
-1. On the **Logic App** blade, navigate to the **Logic Apps Designer**, click on **Logic app designer** under the **Development Tools** section and click on **Add a Trigger**.
+      ![](media/az-5-2.png)
 
-    ![](media/9lab7.png)
+1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
+
+      ![](media/9lab7.png)
 
 1. On the **Add a trigger** section, Search for **When a HTTP request is received(1)** and select it from the results **(2)**.
 
-    ![](media/9lab8.png)
+      ![](media/9lab8.png)
 
 1. Notice that the visual designer opens with the **When a HTTP request is received** trigger selected. Click the trigger to open the details.
 
 1. On the **When a HTTP request is received** trigger, under the **Request Body JSON Schema** textbox, click the **Use sample payload to generate schema** link.
 
+      ![](media/9lab9.png)   
 
-    ![](media/9lab9.png)
-
-    > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub).
+      > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
+      
+      > **Note**: In the JSON replace the **id, subscription ID, resource group name, hub name** with the actual values. 
 
 1. Use a copy-and-paste operation to add the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
@@ -152,61 +148,53 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     }]
     ```
 
-    > **NOTE**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
+      > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
-
-    ![](media/9lab10.png)
+      ![](media/az-5-5.png)
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
-
-    ![](media/9lab11.png)
+      ![](media/9lab11.png)
 
 1. Below the **When a HTTP request is received** trigger, click **+(1)** and select **Add an action(2)**.
 
-
-    ![](media/9lab12.png)
+      ![](media/9lab12.png)
 
 1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
 
-1. In the list of Actions, scroll down to the Send options, and then click **Send an email (V2)**.
+1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
+      ![](media/az-lab-3.png)
 
-    ![](media/9lab13.png)
-
-    > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+      > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Outlook.com** connector, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
+      ![](media/9lab14.png)
 
-    ![](media/9lab14.png)
+     > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
-    > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
-
-
-    ![](media/az70011.png)
+      ![](media/az70011.png)
 
 1. When prompted sign in with your credentials.
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
         ![](media/9lab15.png)
-
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-     ![](media/9lab16.png)
+       ![](media/9lab16.png)
 
-If prompted to **stay signed in**, you can click **No**.
+1. If prompted to **stay signed in**, you can click **No**.
 
 1. If prompted to Let this app access your info? (1 of 1 apps) select **Accept**.
 
 1. On the **Send an email (V2)** action, in the **To** field, enter an email address **(1)** to send email messages to.
 
-    For the purposes of this lab, you will provide an email address where you can receive the email notification. You can enter the Outlook.com account used for this connector, or another email account that is easy for you to access.
+   For the purposes of this lab, you will provide an email address where you can receive the email notification. You can enter the Outlook.com account used for this connector, or another email account that is easy for you to access.
 
-    The Outlook.com account that was authenticated in the step above will be used to send the emails.
-
+     The Outlook.com account that was authenticated in the step above will be used to send the emails.
 
 1. In the **Subject** field, enter **IoT Hub alert:(2)**
 
@@ -221,7 +209,7 @@ If prompted to **stay signed in**, you can click **No**.
     Device ID: {deviceID}
     Connection state: {connectionState}
     ```
-    ![](media/9lab29.png)
+    ![](media/az-5-4.png)
 
 1. Take a moment to examine the message body that you just entered.
 
@@ -231,7 +219,7 @@ If prompted to **stay signed in**, you can click **No**.
 
     ![](media/9lab26.png)
 
-1. Type the value in the search rext box and select it from the drop down.
+1. Type **eventType** search rext box and select it from the drop down.
 
     ![](media/9lab27.png)
 
@@ -247,9 +235,9 @@ If prompted to **stay signed in**, you can click **No**.
 
 1. At the top of the designer, to save all changes to the Logic App Workflow, click **Save** .
 
-1. To expand the _When a HTTP request is received_ trigger, click **When a HTTP request is received(1)**.
+1. To expand the _When a HTTP request is received_ trigger, click on **When a HTTP request is received(1)**.
 
-1. Copy the value for the **HTTP POST URL(2)** that is displayed.
+1. Copy and paste the value for the **HTTP POST URL(2)** in the text editor such as notepad.
 
     The **HTTP POST URL** will look similar to the following:
 
@@ -271,7 +259,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 1. Navigate back to your Azure portal dashboard.
 
-1. On your resource group tile, to navigate to your IoT Hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
+1. Navigate to your resource group **az220rg** and click on the Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![](media/9lab19.png)
 
@@ -283,19 +271,19 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 1. On the Create Event Subscription blade, in the **Name** field, enter **MyDeviceCreateEvent(1)**
 
-1. Ensure that the **EventSchema** field is set to **Event Grid Schema(2)**.
+      - Name: Enter **MyDeviceCreateEvent(1)**
 
-1. Under the **TOPIC DETAILS** section, in the **System Topic Name** field, enter **device-creation(3)**.
+      -  Ensure that the **EventSchema** field is set to **Event Grid Schema(2)**.
 
-    This section is informational and read-only
+      - Under the **TOPIC DETAILS** section, in the **System Topic Name** field, enter **device-creation(3)**.
 
-1. Under **EVENT TYPES**, open the **Filter to Event Types** dropdown, and then de-select all of the choices except **Device Created(4)**.
+      -  Under **EVENT TYPES**, open the **Filter to Event Types** dropdown, and then de-select all of the choices except **Device Created(4)**.
 
-1. Under **ENDPOINT DETAILS**, open the **Endpoint Type** dropdown, and then click **Web Hook(5)**.
+      - Under **ENDPOINT DETAILS**, open the **Endpoint Type** dropdown, and then click **Web Hook(5)**.
 
-1. Under **ENDPOINT DETAILS**, click **Configure an endpoint(6)**.
+      - Under **ENDPOINT DETAILS**, click on **Configure an endpoint(6)**.
 
-1. In the **Select Web Hook** pane, under **Subscriber Endpoint**, paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**.
+      - In the **Select Web Hook** pane, under **Subscriber Endpoint**, paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**.
 
     > **Important**: Do not click Create!
 
@@ -303,11 +291,11 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
     ![](media/9lab21.png)
 
-1. At the top of the pane, click **Filters** .
+1. At the top of the pane, click on **Filters** .
 
     You will be using filters to filter for specific devices.
 
-1. Under **ADVANCED FILTERS**, click **Add new filter(1)**, and then fill in the fields with these values:
+1. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
 
     * **Key**: Enter `Subject` **(2)**
 
@@ -317,7 +305,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
     We will use this value to filter for device events associated with the Cheese Cave temperature and humidity sensors.
 
-1. To save the event subscription, click **Create(5)**.
+1. To save the event subscription, click on **Create(5)**.
 
     ![](media/9lab22.png)
 
@@ -325,14 +313,14 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 Test your logic app by creating a new device to trigger an event notification email.
 
-1. In your Azure portal, if needed, navigate to your IoT Hub blade.
+1. On your Azure portal, Navigate to your Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
 
-1. On the left side navigation menu, under **Device Management**, click **Devices(1)**.
+1. On the left side navigation menu, under **Device Management**, click on **Devices(1)**.
 
-1. At the top of the IoT devices blade, click **+ New(2)**.
+1. At the top of the IoT devices blade, click on **+ Add Device(2)**.
     ![](media/9lab23.png)
 
-1. In the **Device ID** field, enter **sensor-th-0050**
+1. In the **Device ID** field, enter **sensor-th-0050.**
 
 1. Leave all other fields at the defaults, and then click **Save**.
 
@@ -350,10 +338,16 @@ Test your logic app by creating a new device to trigger an event notification em
 
 1. Once you've added a few devices to your IoT hub, check your email to see which ones triggered the logic app.
 
+1. Copy the link, paste it in a browser's private window and sign with your Username and Password available in the VM's Environment tab.
+   
+    ```text
+    https://outlook.office365.com/mail/
+    ```
+    ![](media/az-5-6.png)
+
 ## Summary
 
 In this lab, you have created an Azure Logic App to automatically send emails based on IoT events. You have configured an Azure IoT Hub event subscription to trigger the Logic App and set up new IoT devices to generate events that activate the workflow.
 
 
 ### You have successfully completed the lab
-
