@@ -12,10 +12,10 @@ The cost associated with packaging and shipping cheese is significant. To maximi
 
 The conveyor belt system is a critical link in this process and is visually monitored to ensure that the workflow is progressing at maximum efficiency. The system has three operator controlled speeds: stopped, slow, and fast. Naturally, the number of packages being delivered at the low speed is less than at the higher speed. However, there are a number of other factors to consider:
 
-* the vibration level of the conveyor belt system is much lower at the slow speed
-* high vibration levels can cause packages to fall from the conveyor
-* high vibration levels are known to accelerate wear-and-tear of the system
-* when vibration levels exceed a threshold limit, the conveyor belt must be stopped to allow for inspection (to avoid more serious failures)
+* The vibration level of the conveyor belt system is much lower at the slow speed
+* High vibration levels can cause packages to fall from the conveyor
+* High vibration levels are known to accelerate wear-and-tear of the system
+* When vibration levels exceed a threshold limit, the conveyor belt must be stopped to allow for inspection (to avoid more serious failures)
 
 In addition to maximizing throughput, your automated IoT solution will implement a form of preventive maintenance based on vibration levels, which will be used to detect early warning signs before serious system damage occurs.
 
@@ -45,10 +45,10 @@ During your initial prototype phase, you will implement a single IoT device that
 
 In this exercise, you will:
 
-* open the simulated device project
-* update the connection string for your simulated device and review the project code
-* test your simulated device connection and telemetry communications
-* ensure that telemetry is arriving at your IoT hub
+* Open the simulated device project
+* Update the connection string for your simulated device and review the project code
+* Test your simulated device connection and telemetry communications
+* Ensure that telemetry is arriving at your IoT hub
 
 ### Task 1: Open your simulated device project
 
@@ -60,16 +60,16 @@ In this task, you will be opening the Simulated device project using visual stud
 
 1. In Visual Studio Code, on the **File** menu, click **Open Folder**.
 
-1. In the **Open Folder** dialog, navigate to `C:\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\07-Device Message Routing\Starter\VibrationDevice` and click on select folder.
+1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\07-Device Message Routing\Starter\VibrationDevice` and click on **select folder.**
 
     You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
     * Program.cs
     * VibrationDevice.csproj
 
-1. In the **EXPLORER** pane, click **Program.cs**.
+1. In the **EXPLORER** pane, click **Program.cs(1)**.
 
-1. On the **Terminal** menu, click **New Terminal**.
+1. On the **Terminal(2)** menu, click **New Terminal(3)**.
 
    ![](../media2/lab5img13.png)
 
@@ -104,11 +104,11 @@ In this task, you will be reviewing your code and also configure it with connect
 
 The simulated device app that you will build in this task simulates an IoT device that is monitoring the conveyor belt. The app will simulate sensor readings and report vibration sensor data every two seconds.
 
-1. On your Resources tile of your resource group, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. On your Resources tile of your resource group, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](../media2/lab7img8.png)
 
-1. On the IoT hub blade, under **Device management**, click **Devices**. On the Devices page, click **+ Add Device**.
+1. On the IoT hub blade, under **Device management**, click on **Devices(1)** and then click on **+ Add Device(2)**.
 
    ![](../media2/lab7img1.png)
 
@@ -116,7 +116,7 @@ The simulated device app that you will build in this task simulates an IoT devic
 
    ![](../media2/lab7img2.png)
 
-1. On the Devices page, under **Device ID**, click **sensor-v-3000**.
+1. On the Devices page, under **Device ID**, click on **sensor-v-3000**.
 
 1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value, click **Copy**.
 
@@ -126,7 +126,7 @@ The simulated device app that you will build in this task simulates an IoT devic
 
 1. Navigate back to your IoT hub blade.
 
-1. On the left side menu, under **Security settings**, click **Shared access policies**.
+1. On the left side menu, under **Security settings**, click on **Shared access policies**.
 
    ![](../media2/lab7img4.png)
 
