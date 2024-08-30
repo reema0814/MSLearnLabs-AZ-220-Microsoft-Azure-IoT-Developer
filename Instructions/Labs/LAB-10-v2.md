@@ -53,13 +53,7 @@ In this lab, you will complete the following:
 
 ### Exercise 1: Configure Lab Prerequisites
 
-1. Search for Resource Groups and select .
-
-1. Select **Deployments** under the Settings tab in the left pane and select the **existing deployment (2)**.
-
-      ![](./media/az-15-02.png)
-
-1. Click on the **Outputs (1)** from the left pane and copy the following values:
+1. Navigate to the **Environment (1)** Details tab in your VM and copy the following values:
 
    - **deviceConnectionString (2)**
    - **eventHubsCompatibleEndpoint (3)**
@@ -67,7 +61,7 @@ In this lab, you will complete the following:
    - **iotHubSasKey (5)**
    - **serviceConnectionString (6)**
 
-        ![](./media/az15-1.png)
+        ![](./media/az15-34.png)
 
 ### Exercise 2: Review Code to Send and Receive Telemetry
 
@@ -81,18 +75,20 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-1. Navigate to `C:\Users\demouser\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
+     ![](./media/open.png)
+
+1. Navigate to `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-      ![](./media/az15-2.png)
+      ![](./media/az15-33.png)
 
 1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
      - CheeseCaveDevice.csproj
      - Program.cs
 
-         ![](./media/az15-3.png)
+         ![](./media/az15-32.png)
 
 1. To open the code file, click **Program.cs**.
 
@@ -184,7 +180,9 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. On the **File (1)** menu, click **Open Folder (2)**.
 
-1. In the **Open Folder** dialog, navigate to the **Final** folder for lab 15.
+   ![](./media/open.png)
+
+1. In the **Open Folder** dialog, navigate to the `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
 
     > **NOTE**: Be sure to open the **Final** folder. You do not want the project in the Starter folder.
 
@@ -194,7 +192,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-      ![](./media/az15-8.png)
+      ![](./media/az15-31.png)
 
 #### Task 2: Enable the telemetry receiver code
 
@@ -451,16 +449,15 @@ To test the direct method, you will need to start the apps in the correct order.
 
 1. To start the **CheeseCaveOperator** back-end app, open a Terminal pane and then enter a `dotnet run` command.
 
-
     ```bash
     dotnet run
     ```
     
       > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app.
 
-    The CheeseCaveOperator back-end app will immediately call the direct method.
+      The CheeseCaveOperator back-end app will immediately call the direct method.
 
-    Notice the output similar to the following:
+      Notice the output similar to the following:
 
       ![](./media/az-15-015.png)
 
