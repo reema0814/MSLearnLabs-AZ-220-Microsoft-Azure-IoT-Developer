@@ -32,11 +32,11 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 In this task, you wil create an individual enrollment in the Device Provisioning Service.
 
-1. In the Azure portal navigate to the resource group **az220-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
+1. In the Azure portal navigate to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
 
    ![](../media2/lab5img2.png)
 
-1. On the left-side menu under **Settings**, click **Manage enrollments**(1). And select **Individual enrollments**(2) and click on **+ Add individual enrollment**(3).
+1. On the left-side menu under **Settings**, click on **Manage enrollments(1)** then navigate to **Individual enrollments(2)** and click on **+ Add individual enrollment(3)**.
 
    ![](../media2/lab5img1.png)
 
@@ -59,7 +59,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     ![](../media2/lab5img4.png) 
 
 
-1. On the **Add Enrollment** blade under **Device settings**, add the below json data in **Desired properties** input box. 
+1.  Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
 
     The final JSON will be like the following:
 
@@ -77,19 +77,19 @@ In this task, you wil create an individual enrollment in the Device Provisioning
 
     This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
-1. click on **Review + create** and select **create** after validation is successfull.
+1. Click on **Review + create** and select **create** after validation is successfull.
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **individual enrollments**.
+1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **individual enrollments**.
 
     ![](../media2/lab5img6.png)
 
     As you may recall, you will be using the enrollment record to obtain the Authentication keys.
 
-1. Under **REGISTRATION ID**, click **sensor-thl-1000**.
+1. Under **Registration ID**, click on **sensor-thl-1000**.
 
     This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
@@ -109,9 +109,9 @@ The simulated device that you create in this exercise represents an IoT device t
 
 In this task, you will be creating the simulating device using the dotnet project.
 
-1. On the left-side menu of the **dps-az220-training-{your-id}** blade, click **Overview**.
+1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview**.
 
-1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click **Copy to clipboard**.
+1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click on **Copy to clipboard**.
 
    ![](../media2/lab5img11.png)
 
@@ -119,9 +119,9 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](../media2/v2img8.png)
 
-1. On the **File** menu, click **Open Folder** and then navigate to `C:\Allfiles\Labs\05-Individual Enrollment of a Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
+1. On the **File** menu, click **Open Folder** and then navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
 
-1. Open integrated Terminal in **Visual studio code**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+1. Open integrated Terminal in **Visual studio code** click on **Terminal(1) and then **New Terminal(2)**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
 
    ![](../media2/lab5img13.png)
 
@@ -141,7 +141,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
     This variable represents the **Registration ID** value for the individual enrollment that you created in the Device Provisioning Service.
 
-1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you saved.
+1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task2.
 
     > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
     >
