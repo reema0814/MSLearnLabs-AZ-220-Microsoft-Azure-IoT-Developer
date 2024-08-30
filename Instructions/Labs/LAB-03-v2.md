@@ -401,9 +401,9 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
     _Be sure to replace the **{IoTHubName}** placeholder with the name of your Azure IoT Hub._
 
-    > **Note**: After entering the command If prompted **The command requires the extension azure-iot. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
-    
-    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
+    > **Note**: After entering the command
+    > - If prompted **The command requires the extension azure-iot. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
+    > - If prompted **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
 Continue? (y/n) -> y.**
 
 
