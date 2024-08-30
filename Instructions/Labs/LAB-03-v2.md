@@ -47,8 +47,8 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
     - click on **Next: IoT hubs** **(4)**.
 
-    ![](../media2/lab5img3.png) 
-
+    ![](../media2/lab5img3.png)
+   
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
@@ -59,7 +59,7 @@ In this task, you wil create an individual enrollment in the Device Provisioning
     ![](../media2/lab5img4.png) 
 
 
-1.  Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
+1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
 
     The final JSON will be like the following:
 
