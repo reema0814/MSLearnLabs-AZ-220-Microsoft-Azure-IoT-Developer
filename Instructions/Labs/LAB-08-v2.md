@@ -166,11 +166,11 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
-### Exercise 2: Download Device CA Certificate
+## Exercise 2: Download Device CA Certificate
 
 In this exercise, you will explore the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** Virtual Machine that you just created and download the generated test certificates to the cloud shell.
 
-#### Task 1: Connect to the VM
+### Task 1: Connect to the VM
 
 In this task, you will verify that your Linux VM (IoT edge) device is deployed successfully.
 
