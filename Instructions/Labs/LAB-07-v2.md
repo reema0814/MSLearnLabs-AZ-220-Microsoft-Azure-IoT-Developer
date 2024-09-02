@@ -51,10 +51,6 @@ In this lab, you will complete the following:
 
       ![](./media/az11-30.png)
 
-1. Navigate to the **Environment** tab in the VM and copy the **Connection string** in a notepad for later use.
-
-      ![](./media/constrng.png)
-
       <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
 
 ### Exercise 2: Create and configure an IoT Edge VM
@@ -118,7 +114,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
    - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
    - Device Connection string: Paste the **device primary connection string** you copied earlier in your notepad **(5)**
    - Virtual Machine Size: **Standard_DS1_v2 (6)**
-   - Ubuntu OS Version: 18.04-LTS **(7)**
+   - Ubuntu OS Version: **18.04-LTS (7)**
    - Admin Username: Provide the name as **demouser (8)**
    - Authentication Type: Select **Password (9)**
    - Admin Password Or Key: Provide the password as **Password!123** **(10)**
