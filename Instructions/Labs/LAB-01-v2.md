@@ -183,6 +183,14 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 1. Click on **Create**.
 1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
 
+
+<validation step="8cec2de1-1475-4740-8c14-a8712f80cfd5" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 #### Task 2: Link your IoT Hub and Device Provisioning Service.
 
 1. On the Azure dashboard you can see the list of both your **IoT Hub(2)** and **DPS resources(1)**.
