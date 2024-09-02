@@ -721,7 +721,7 @@ Continue? (y/n) -> y**
              "payload": "{\"temperature\":29.202181296051563,\"humidity\":69.13840303623043}"
          }
      }
-    ```
+     ```
 
 1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl-C** in the Azure Cloud Shell and Visual Studio Code windows.
 
