@@ -18,11 +18,11 @@ The following resources will be created:
 
 ## Lab Objectives
 
-In this lab, you will complete the following activities:
+In this lab, you will complete the following:
 
-* Create a Logic App that sends an email
-* Configure an Azure IoT Hub Event Subscription
-* Create new devices to trigger the Logic App
+- Exercise 1: Create HTTP Web Hook Logic App that sends an email
+- Exercise 2: Configure Azure IoT Hub Event Subscription
+- Exercise 3: Test Your Logic App with New Devices
 
 ### Exercise 1: Create HTTP Web Hook Logic App that sends an email
 
