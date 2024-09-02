@@ -437,7 +437,7 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
    
 1. On the **Set an Edge device as a parent device** blade, under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, and then click **OK (2)**.
 
-      ![](./media/lab12img17.png)
+      ![](./media/az8-22.png)
 
 1. On the **Create a device** blade, to create the IoT Device identity for the downstream device, click **Save**.
 
@@ -594,8 +594,6 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     > **Information**: You can learn more about the **X509Store** class [here](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509store?view=netcore-3.1).
 
 1. On the **Terminal** menu, click **New Terminal**.
-
-     ![](./media/az15-50.png)
 
 1. At the TERMINAL command prompt, enter the following command:
 
