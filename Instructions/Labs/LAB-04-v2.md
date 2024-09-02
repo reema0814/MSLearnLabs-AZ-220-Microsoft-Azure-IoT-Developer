@@ -365,6 +365,8 @@ In this task, you will verify that the data is properly archived or not by looki
 
     ![](./media/lab7img21.png)
 
+    >**Note**: It may take some time for the folder to appear.
+
     Under your IoT hub folder, you will see folders for the Partition, then numeric values for the Year, Month, and Day. The final folder represents the Hour, listed in UTC time. The Hour folder will contain a number of Block Blobs that contain your logging message data.
 
 1. Click the Block Blob for the data with the earliest time stamp.
