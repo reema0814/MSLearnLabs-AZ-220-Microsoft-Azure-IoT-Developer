@@ -640,7 +640,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 In this task, you will be testing the application that you have built in the previous tasks.
 
-1. In the Visual Studio Code Explorer pane, on the **Terminal** menu, click **New Terminal**.
+1. In the Visual Studio Code Explorer pane, on the **Terminal** menu, click on **New Terminal**.
 
     ![](./media/v2img13.png)
 
@@ -705,9 +705,9 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0 
 Continue? (y/n) -> y**
     
-   You should see messages displayed that are similar to the following:
+    You should see messages displayed that are similar to the following:
 
-   ```cmd/sh
+    ```cmd/sh
      Starting event monitor, filtering on device: sensor-th-0001, use ctrl-c to stop...
      {
          "event": {
@@ -721,7 +721,7 @@ Continue? (y/n) -> y**
              "payload": "{\"temperature\":29.202181296051563,\"humidity\":69.13840303623043}"
          }
      }
-   ```
+    ```
 
 1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl-C** in the Azure Cloud Shell and Visual Studio Code windows.
 
