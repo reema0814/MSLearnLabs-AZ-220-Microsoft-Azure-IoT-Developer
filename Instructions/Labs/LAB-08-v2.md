@@ -142,7 +142,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
       ![](./media/lab12img12.png)
 
-1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port**:
+1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
 
     | Destination port ranges | Protocol | Name |
     | :--- | :--- | :--- |
@@ -173,30 +173,30 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     A Cloud Shell window will open near the bottom of the display screen.
 
-    > **Note**: If the cloud shell has not been configured, follow these steps:
+      ![](./media/az11-37.png)
 
-1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
+1. Click on **Bash** when prompted.
 
-1. Under **Subscription**, ensure the correct subscription is displayed.
+      ![](./media/az11-36.png)
 
-1. To specify storage options, click **Show advanced settings**.
+1. Select the checkbox for **Mount Storage account (1)**, select the existing **subscription (2)** and click on **Apply (3)**.
 
-1. Under **Resource group**, ensure **Use existing** is selected and the **rg-az220** is shown.
+      ![](./media/az11-35.png)
 
-1. Under **Storage account**, select **Create new** and enter the following: **stoaz220{your-id}**.
+1. Select **I want to create a storage account (1)** and click on **Next (2)**.
 
-        +++stoaz220{your-id}+++
+      ![](./media/az11-34.png)
 
-        > **Note**: Be sure to replace **{your-id}** with your unique ID value.
+1. In the create a storage account page, provide the following details and click on **Create (6)**.
 
-1. Under **File share**, select **Create new** and enter the following: **cloudshell**
+   - Subscription: **Select the default subscription (1)**
+   - Resource Group: **Select the existing resource group (2)**
+   - Region: Select **EAST US (3)**
+   - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
+   - File Share: Provide the name as **cloudshell (5)**
 
-        +++cloudshell+++
-
-1. To finish to configuration of the Cloud Shell, click **Create storage**.
-
-        > **Note**: It can take 30+ seconds for the Cloud Shell to configure and open for the first time.
- 
+       ![](./media/az8-6.png)
+    
 1. In the upper left corner of the Cloud Shell window, ensure that **Bash** is selected as the environment option.
 
     > **Note**: Both *Bash* and *PowerShell* interfaces for the Azure Cloud Shell support the use of **OpenSSL**.
@@ -211,7 +211,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
 
-1. When prompted to enter the password, enter the administrator password that you created when the Edge Gateway VM was provisioned.
+1. When prompted to enter the password, enter the administrator password `Password!123` that you created when the Edge Gateway VM was provisioned.
 
     > **Note**: The typed characters will not be displayed on screen as you enter the password. 
 
@@ -229,7 +229,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
     nslookup {Public FQDN of your VM}
     ```
 
-    > **Note**: You should have saved the fully qualified domain name (FQDN) for your VM earlier in this lab. If not, you can find the public IP address and FQDN (DNS name) on the Overview page for your virtual machine resource in the Azure portal.
+    > **Note**: Replace the value of FQDN which you had copied earlier.
 
     The output from the nslookup command will be similar to:
 
