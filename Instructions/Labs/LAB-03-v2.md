@@ -127,7 +127,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](./media/az-3-8.png)
 
-1. If the pop up appears clieck on **Yes, I trust the authors**.
+1. If the pop up appears click on **Yes, I trust the authors**.
 
    ![](./media/az-3-9.png)
 
