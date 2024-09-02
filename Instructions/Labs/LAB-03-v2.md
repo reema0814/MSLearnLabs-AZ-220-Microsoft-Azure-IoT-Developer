@@ -30,9 +30,9 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 ### Task 1: Create the enrollment
 
-In this task, you wil create an individual enrollment in the Device Provisioning Service.
+In this task, you will create an individual enrollment in the Device Provisioning Service.
 
-1. In the Azure portal navigate to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
+1. On the Azure portal, navigate to the resource group and select **az220rg-<inject key="DeploymentID" enableCopy="false" />**. and select the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** from the resource list.
 
    ![](./media/az-3-1.png)
 
