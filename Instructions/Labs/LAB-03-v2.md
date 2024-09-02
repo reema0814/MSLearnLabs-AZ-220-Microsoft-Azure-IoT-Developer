@@ -411,7 +411,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 Continue? (y/n) -> y.**
 
 
-   Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
+    Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
 
     ![](./media/az-3-20.png)
 
