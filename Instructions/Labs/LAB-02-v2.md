@@ -92,7 +92,7 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. On the **IoT devices** pane of your IoT Hub, under **DEVICE ID**, click on **sensor-th-0001**.
 
-   ![](./media/v2img6.png)
+    ![](./media/v2img6.png)
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
@@ -104,7 +104,7 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a text editor such as notepad for later use.
 
-   ![](./media/v2img7.png)
+    ![](./media/v2img7.png)
 
     > **Note**: You will need to use the Primary Connection String value later in the lab, so you may want to save it to an accessible location (perhaps by pasting the value into a text editor such as Notepad).
 
