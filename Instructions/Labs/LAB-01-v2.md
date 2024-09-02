@@ -71,6 +71,15 @@ In this exercise, you will use the Azure portal to create and configure your IoT
     ![](media/iott9.png)
 
 
+<validation step="44532bdc-58b8-4478-82e2-9031fec98358" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+
 ### Exercise 2: Examine the IoT Hub Service
 
 IoT Hub is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your Azure IoT services and your connected devices.
