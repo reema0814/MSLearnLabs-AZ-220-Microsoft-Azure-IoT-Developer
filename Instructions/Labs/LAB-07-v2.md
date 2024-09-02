@@ -461,23 +461,23 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       
 1. Replace the default route defined with the following three routes and click on **Review + create. Replace the <DID> with the Deployment ID used in the lab.
 
-    * Route 1
+      * Route 1
         * NAME: **`telemetryToCloud`** **(1)**
         * VALUE: **`FROM /messages/modules/tempsensor/* INTO $upstream`**  **(2)**
-    * Route 2
+      * Route 2
         * NAME: **`alertsToReset`** **(3)**
         * VALUE: **`FROM /messages/modules/asa-az220-training-asa-az220-<DID>* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
-    * Route 3
+      * Route 3
         * NAME: **`telemetryToAsa`** **(5)**
         * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-asa-az220-training-<DID>/inputs/temperature")`** **(6)**
 
-        The routes being defined are as follows:
+            The routes being defined are as follows:
 
-         * The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
-         * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
-         * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
+            * The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
+            * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
+            * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
 
-              ![](./media/az11-42.png)
+                ![](./media/az11-42.png)
       
 1. On the **Review + create** tab, notice that the **Deployment Manifest** JSON is now updated with the Stream Analytics module and the routing definition that was just configured.
 
@@ -503,7 +503,8 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     iotedge list
     ```
 
-      It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
+      It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it 
+      in the list output by this command.
 
       ![](./media/edge11.png)
 
@@ -519,7 +520,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Take a minute to observe the output.
 
-      While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query.
+      While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream 
+      Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream 
+      Analytics job query.
 
       Output of this event will look similar to the following:
 
