@@ -389,7 +389,7 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
 
     > **Note**: If Cloud Shell was already open and you are still connected to the Edge device, use an **exit** command to close the SSH session.
 
-1. At the Cloud Shell command prompt, to download the **/tmp/lab12** directory from the **vm-az220-training-gw0001-** virtual machine to the **Cloud Shell** storage, enter the following commands:
+1. At the Cloud Shell command prompt, to download the **/tmp/lab12** directory from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine to the **Cloud Shell** storage, enter the following commands:
 
     ```bash
     mkdir lab12
