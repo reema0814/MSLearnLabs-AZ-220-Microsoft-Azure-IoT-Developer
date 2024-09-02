@@ -25,7 +25,7 @@ namespace ContainerDevice
 
         private const string GlobalDeviceEndpoint = "global.azure-devices-provisioning.net";
 
-        private static int telemetryDelay = 1;
+        private static int telemetryDelay = 2;
 
         private static DeviceClient deviceClient;
 
