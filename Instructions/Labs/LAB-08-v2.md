@@ -159,7 +159,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 ### Exercise 2: Download Device CA Certificate
 
-In this exercise, you will explore the **vm-az220-training-gw0001-{your-id}** Virtual Machine that you just created and download the generated test certificates to the cloud shell.
+In this exercise, you will explore the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** Virtual Machine that you just created and download the generated test certificates to the cloud shell.
 
 #### Task 1: Connect to the VM
 
@@ -220,7 +220,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
     The command prompt will now look similar to the following:
 
     ``` bash
-    username@vm-az220-training-gw0001-{your-id}:~$
+    username@vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />:~$
     ```
 
 1. To determine the virtual machine's public IP address, enter the following command:
@@ -238,13 +238,15 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
     Address:        127.0.0.53#53
 
     Non-authoritative answer:
-    Name:   vm-az220-training-gw0001-{your-id}.{your location}.cloudapp.azure.com
+    Name:   vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />.{your location}.cloudapp.azure.com
     Address: 168.61.181.131
     ```
 
+      ![](./media/az8-7.png)
+   
     The public IP of the VM is the final **Address** value - in this case **168.61.181.131**.
 
-    > **Note**: If the nslookup command is unable to display the public IP address of the VM, open the vm-az220-training-gw0001-{your-id} virtual machine in the portal to find and record the value of the public IP address. 
+    > **Note**: If the nslookup command is unable to display the public IP address of the VM, open the vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" /> virtual machine in the portal to find and record the value of the public IP address. 
 
     > **Important**: Make a note of this IP address - you will need it later. The IP Address will usually change every time the VM is restarted.
 
@@ -269,8 +271,6 @@ In this task, you will explore the IoT edge configuration inside your vm.
     ```bash
     iotedge --version
     ```
-
-    The version installed at the time of writing is **iotedge 1.2.9**
 
 1. To view the IoT Edge configuration, enter the following command:
 
@@ -382,7 +382,7 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
 
     > **Note**: If Cloud Shell was already open and you are still connected to the Edge device, use an **exit** command to close the SSH session.
 
-1. At the Cloud Shell command prompt, to download the **/tmp/lab12** directory from the **vm-az220-training-gw0001-{your-id}** virtual machine to the **Cloud Shell** storage, enter the following commands:
+1. At the Cloud Shell command prompt, to download the **/tmp/lab12** directory from the **vm-az220-training-gw0001-** virtual machine to the **Cloud Shell** storage, enter the following commands:
 
     ```bash
     mkdir lab12
