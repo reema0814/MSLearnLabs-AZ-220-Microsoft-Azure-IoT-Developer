@@ -354,13 +354,13 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    
 1. In the New Stream Analytics Job, provide the following under the **Basics** tab and click on **Next (6)**:
 
-   - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing resource group (2)**
-   - Name: **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
-   - Region: **Select the default region (4)**
-   - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
+      - Subscription: **Select the default subscription (1)**
+      - Resource Group: **Select the existing resource group (2)**
+      - Name: **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
+      - Region: **Select the default region (4)**
+       - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
       
-      ![](./media/edge4.png)
+           ![](./media/edge4.png)
 
 1. Under the storage tab, select the **Add storage account** check box then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** from the drop down and click on **Review + create (2)**
 
@@ -374,31 +374,29 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. When you see the **Your deployment is complete** message, click **Go to resource**.
 
-    You should now be on the Overview pane of your new Stream Analytics job.
-
 1. On the left side navigation menu, under **Job topology**, click **Inputs (1)**. Under **+ Add Input (1)**, select **Edge Hub (2)**.
 
       ![](./media/az11-8.png)
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
-   - Input alias: **temperature (1)**
-   - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
-   - Encoding dropdown: Ensure that **UTF-8** is selected **(3)** (UTF-8 is the only JSON encoding supported at the time of writing.)
-   - Event compression type dropdown: Ensure that **None** is selected **(4)**
+      - Input alias: **temperature (1)**
+      - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
+      - Encoding dropdown: Ensure that **UTF-8** is selected **(3)** (UTF-8 is the only JSON encoding supported at the time of writing.)
+      - Event compression type dropdown: Ensure that **None** is selected **(4)**
 
-        ![](./media/az11-7.png)
+           ![](./media/az11-7.png)
      
 1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Edge Hub**.
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
-   - Output alias: **alert (1)**
-   - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
-   - Format: Ensure that **Line separated** is selected **(3)**
-   - Encoding: Ensure that **UTF-8** is selected (UTF-8 is the only JSON encoding supported at the time of writing.) **(4)**
+      - Output alias: **alert (1)**
+      - Event serialization format dropdown: Ensure that **JSON** is selected **(2)**
+      - Format: Ensure that **Line separated** is selected **(3)**
+      - Encoding: Ensure that **UTF-8** is selected (UTF-8 is the only JSON encoding supported at the time of writing.) **(4)**
 
-        ![](./media/az11-6.png)
+           ![](./media/az11-6.png)
      
 1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
 
