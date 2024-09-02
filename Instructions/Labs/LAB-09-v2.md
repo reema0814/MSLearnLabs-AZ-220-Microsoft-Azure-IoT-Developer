@@ -465,8 +465,6 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
-Development of the **objectcountingmodule** custom IoT Edge Module is now complete. Your IoT Edge Device is registered, the modules are specified, and the routes are configured. The **objectcountingmodule** is ready to be deployed once an associated IoT Edge Device is connected to your Azure IoT hub.
-
 <validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
