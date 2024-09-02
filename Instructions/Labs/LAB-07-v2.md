@@ -55,7 +55,7 @@ In this lab, you will complete the following:
 
       ![](./media/constrng.png)
 
-      <validation step="3c498b1b-2858-4f66-b788-5b5fb8b47cc4" />
+      <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
 
 ### Exercise 2: Create and configure an IoT Edge VM
 
