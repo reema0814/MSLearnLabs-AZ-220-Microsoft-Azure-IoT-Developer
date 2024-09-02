@@ -185,7 +185,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     * CaveDevice.csproj
     * Program.cs
 
-      ![](./media/v2img12.png)
+      ![](./media/az-2-2.png)
 
       > **Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
 
