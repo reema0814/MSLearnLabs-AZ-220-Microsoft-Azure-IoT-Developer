@@ -348,7 +348,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Search for **Stream Analytics** and select **Stream Analytics jobs**.
 
-   ![](./media/az11-11.png)
+      ![](./media/az11-11.png)
 
 1. Click on **Create**.
    
@@ -410,12 +410,12 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     GROUP BY TumblingWindow(second,15)
     HAVING Avg(machine.temperature) > 25
     ```
-
+    
       ![](./media/az11-5.png)
 
-   Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
+      Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
 
-   > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
+      > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
 
 #### Task 4: Deploy the Stream Analytics Job
 
@@ -433,7 +433,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       ![](./media/az11-3.png)
 
-   > **Note**: The job may take upto 5-7 minutes to come up, please refresh the page for it to appear. The job may already be selected, yet the **Save** button is disabled - just open the **Edge job** dropdown again and select the **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** job again. The **Save** button should then become enabled.
+      > **Note**: The job may take upto 5-7 minutes to come up, please refresh the page for it to appear. The job may already be selected, yet the **Save** button is disabled - just open the **Edge job** dropdown again and select the **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** job again. The **Save** button should then become enabled.
 
 1. Once the Edge package has been successfully published, notice that the new ASA module is listed under the **IoT Edge Modules** section
 
@@ -447,15 +447,15 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.14
     ```
 
-    This is the same image used for every ASA job that gets deployed to an IoT Edge Device.
+      This is the same image used for every ASA job that gets deployed to an IoT Edge Device.
 
-    > **Note**:  The version number at the end of the **Image URI** that is configured will reflect the current latest version when you created the Stream Analytics Module.
+      > **Note**:  The version number at the end of the **Image URI** that is configured will reflect the current latest version when you created the Stream Analytics Module.
 
 1. Leave all values as their defaults, and close the **IoT Edge Custom Modules** pane.
 
 1. On the **Set modules on device: sensor-th-0067 (1)** pane, click **Next: Routes > (2)**.
 
-    Notice that the existing routing is displayed.
+      Notice that the existing routing is displayed.
 
       ![](./media/az11-1.png)
       
@@ -466,28 +466,28 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
         * VALUE: **`FROM /messages/modules/tempsensor/* INTO $upstream`**  **(2)**
     * Route 2
         * NAME: **`alertsToReset`** **(3)**
-        * VALUE: **`FROM /messages/modules/asa-az220-training-{your-id}/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
+        * VALUE: **`FROM /messages/modules/asa-az220-training-asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
     * Route 3
         * NAME: **`telemetryToAsa`** **(5)**
-        * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-{your-id}/inputs/temperature")`** **(6)**
+        * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>/inputs/temperature")`** **(6)**
 
-    The routes being defined are as follows:
+        The routes being defined are as follows:
 
-    * The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
-    * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
-    * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
+         * The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
+         * The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
+         * The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
 
-         ![](./media/az11-42.png)
+              ![](./media/az11-42.png)
       
 1. On the **Review + create** tab, notice that the **Deployment Manifest** JSON is now updated with the Stream Analytics module and the routing definition that was just configured.
 
 1. Notice the JSON configuration for the **tempsensor** Simulated Temperature Sensor module:
 
-     ![](./media/edge7.png)
+      ![](./media/edge7.png)
 
 1. Notice the JSON configuration for the routes that were previously configured, and how they are configured in the JSON Deployment definition:
 
-     ![](./media/edge6.png)
+      ![](./media/edge6.png)
 
 1. At the bottom of the blade, click **Create**.
 
@@ -503,11 +503,11 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     iotedge list
     ```
 
-    It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
+      It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
 
       ![](./media/edge11.png)
 
-    > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
+      > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
 
 1. At the command prompt, to watch the telemetry being sent from the Edge device by the **tempsensor** module, enter the following command:
 
@@ -515,13 +515,13 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     iotedge logs tempsensor
     ```
 
-    > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
+      > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
 
 1. Take a minute to observe the output.
 
-    While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query.
+      While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query.
 
-    Output of this event will look similar to the following:
+      Output of this event will look similar to the following:
 
       ![](./media/az11-91.png)
 
