@@ -69,12 +69,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
     ```json
     {
-        "tags": {},
-        "properties": {
-            "desired": {
-                "telemetryDelay": "2"
-            }
-        }
+      "telemetryDelay": "2"
     }
     ```
     ![](./media/az-3-5.png)
