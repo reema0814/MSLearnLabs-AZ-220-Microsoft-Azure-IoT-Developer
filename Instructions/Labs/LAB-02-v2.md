@@ -16,7 +16,7 @@ To evaluate this asset monitoring solution prior to full scale implementation, y
 
 ## Lab Objectives
 
-In this task, you will perform these exercises:
+In this lab, you will perform these exercises:
 
  - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
  - Exercise 2: Create and Test a Simulated Device (C#)
@@ -40,15 +40,15 @@ In this task, you will create a device in the IoT Hub.
 
    ![](./media/v2img1.png)
 
-1. On the resources tile, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
+1. On the resources tile, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
    ![](./media/v2img2.png)
 
-1. On the left-side menu of your IoT Hub blade, under **Device management**, click **Devices**.
-
+1. On the left-side menu of your IoT Hub blade, click on **Devices** under **Device management.**
+   
    ![](./media/v2img3.png)
 
-1. On the **Devices** pane, click **Add Device**.
+1. On the **Devices** pane, click on **+ Add Device**.
 
    ![](./media/v2img4.png)
 
@@ -64,7 +64,7 @@ In this task, you will create a device in the IoT Hub.
 
    - Under **Parent device**, leave **No parent device** **(5)** as the value.
 
-   - To add this device record to the IoT Hub, click **Save** **(6)**
+   - To add this device record to the IoT Hub, click on **Save** **(6)**
 
      ![](./media/v2img5.png)
 
