@@ -250,7 +250,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     ![](./media/v2img13.png)
 
-   This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
+    This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
