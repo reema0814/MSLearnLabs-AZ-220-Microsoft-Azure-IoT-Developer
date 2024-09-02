@@ -503,21 +503,17 @@ In this exercise, you will perform the tasks necessary to deprovision the device
 
 In this task, you will be deleteing the device from the enrollments
 
-1. If necessary, log in to your Azure portal using your Azure account credentials.
-
-    If you have more than one Azure account, be sure that you are logged in with the account that is tied to the subscription that you will be using for this course.
-
-1. On your Resource group tile, to open your Device Provisioning Service, click **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. On your Resource group tile, to open your Device Provisioning Service, click on **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/az-3-1.png)
 
 1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
 
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click **Individual Enrollments(2)**.
+1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **Individual Enrollments(2)**.
 
    ![](./media/az-3-17.png)
 
-1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click **Delete**
+1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click on **Delete**
 
    ![](./media/az-3-18.png)
 
@@ -525,7 +521,7 @@ In this task, you will be deleteing the device from the enrollments
 
     > **Note**: Deleting the individual enrollment from DPS will permanently remove the enrollment. To temporarily disable the enrollment, you can set the **Enable entry** setting to **Disable** within the **Enrollment Details** for the individual enrollment.
 
-1. On the **Remove enrollment** prompt, click **Yes**.
+1. On the **Remove enrollment** prompt, click on **Yes**.
 
    ![](./media/lab5img8.png)
 
@@ -547,11 +543,11 @@ In this task you will delete the device from the IoT hub device management.
 
     > **IMPORTANT**: Make sure you select the device representing the simulated device that you used for this lab.
 
-1. At the top of the blade, click **Delete**.
+1. At the top of the blade, click on **Delete**.
 
    ![](./media/az-3-19.png)
 
-1. On the **Are you certain you wish to delete selected device(s)** prompt, click **Yes**.
+1. On the **Are you certain you wish to delete selected device(s)** prompt, click on **Yes**.
 
     > **Note**:  Deleting the device ID from IoT Hub will permanently remove the device registration. To temporarily disable the device from connecting to IoT Hub, you can set the **Enable connection to IoT Hub** to **Disable** within the properties for the device.
 
