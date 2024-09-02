@@ -43,6 +43,8 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
+   ![](./media2/lab06img1.png)
+
 1. On the **New** blade, in the **Search the Marketplace** textbox, enter **Azure Data Explorer**. In the search results, click **Azure Data Explorer**. On the **Azure Data Explorer** blade, click **Create**.
 
    ![](./media2/lab10img4.png)
@@ -162,32 +164,32 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. In the Azure portal, navigate to your resource group and select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media2/lab06img18.png)
+    ![](./media2/lab06img18.png)
 
 1. In the IoT Hub pane, select **Devices** from the left menu under device management. select the device **sensor-thl-container-0001**.
 
-   ![](./media2/lab06img19.png)
+    ![](./media2/lab06img19.png)
 
 1. On the device page, copy the **Primary connection string** and note it down. You will be using this further in this exercise.
 
-   ![](./media2/lab06img20.png)
+    ![](./media2/lab06img20.png)
 
 1. Follow the same steps for other two devices.
 
 1. Open **Visual Studio Code** from the desktop.
 
-   ![](./media2/lab06img15.png)
+    ![](./media2/lab06img15.png)
 
 1. On the **File** menu, click **Open Folder**.
 
-   ![](./media2/lab06img16.png)
+    ![](./media2/lab06img16.png)
 
 1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter\ContainerSimulation` and click on **select folder**.
 
 1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**
 
-   ![](./media2/lab06img17.png)
-
+    ![](./media2/lab06img17.png)
+ 
 1. In the EXPLORER pane, to open the Program.cs file, click **Program.cs**.
 
 1. Locate the variables used to assign the connections strings
@@ -206,7 +208,7 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. Open **New terminal** in **Visual Studio Code**
 
-   ![](./media2/lab09img3.png)
+    ![](./media2/lab09img3.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
 
@@ -251,19 +253,19 @@ In this exercise, you will get a quick introduction to working with time series 
 
 1. In the Azure Portal, navigate to your resource group and select **adx-az220-<inject key="DeploymentID" enableCopy="false" />** Azure Data Explorer Cluster.
 
-   ![](./media2/lab06img21.png)
+    ![](./media2/lab06img21.png)
 
 1. In the Azure Data Explorer page select **Databases** from left hand menu. Click on **streamingdata** database.
 
-   ![](./media2/lab06img24.png)
+    ![](./media2/lab06img24.png)
 
 1. In the **streamingdata** page select **Data connection** from left menu, under settings. Select the **Health(symbol)** as shown.
 
-   ![](./media2/lab06img25.png)
+    ![](./media2/lab06img25.png)
 
 1. Check the Graph, observe the **Events recived** and **Events processed** data.
 
-   ![](./media2/lab06img26.png)
+    ![](./media2/lab06img26.png)
 
 1. Navigate back to Azure Data Explorer pane and select **Query** and run the following query to visualize the data that is streamed.
 
@@ -273,11 +275,13 @@ In this exercise, you will get a quick introduction to working with time series 
     | render columnchart
     ```
 
-   ![](./media2/lab06img22.png)
+    ![](./media2/lab06img22.png)
+
+   >**Note**: If you are not able to see any output, wait for few minutes, refresh the page and try it again.
 
 1. Wait till the query succeeded, check the histogram created to visualize data.
 
-   ![](./media2/lab06img23.png)
+    ![](./media2/lab06img23.png)
 
 
 ## Summary
