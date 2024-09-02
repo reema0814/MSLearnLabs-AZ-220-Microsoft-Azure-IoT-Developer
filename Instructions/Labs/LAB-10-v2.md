@@ -182,7 +182,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
    ![](./media/open.png)
 
-1. In the **Open Folder** dialog, navigate to the `C:\Az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
+1. In the **Open Folder** dialog, navigate to the `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
 
     > **NOTE**: Be sure to open the **Final** folder. You do not want the project in the Starter folder.
 
