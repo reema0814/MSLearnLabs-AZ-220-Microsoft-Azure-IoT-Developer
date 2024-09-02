@@ -481,7 +481,7 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
    - To create the output, click **Save**, and then wait for the output to be created.
 
-     ![](../media/lab7img31.png)
+     ![](./media/lab7img31.png)
 
 ### Task 4: Create the Stream Analytics Job Query
 
@@ -538,7 +538,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. On the page displaying file details for the json file, click **Download**.
 
-   ![](../media/az-4-11.png)   
+   ![](./media/az-4-11.png)   
 
 1. Open the downloaded file in **Visual Studio Code**, and review the JSON data.
 
