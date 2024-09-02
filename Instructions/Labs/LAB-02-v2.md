@@ -200,7 +200,7 @@ As noted above, the application currently consists of two files:
 
 In this task, you will use Visual Studio Code to review the contents and purpose of the two application files.
 
-1. In the **EXPLORER** pane, to open the application project file, click **CaveDevice.csproj**.
+1. In the **EXPLORER** pane, to open the application project file, click on **CaveDevice.csproj**.
 
     The **CaveDevice.csproj** file should now be opened in the code editor pane.
 
@@ -232,7 +232,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     > **Tip**: You can learn more about NuGet [here](https://docs.microsoft.com/en-us/nuget/what-is-nuget).
 
-1. In the **EXPLORER** pane, click **Program.cs**.
+1. In the **EXPLORER** pane, click on **Program.cs**.
 
     The **Program.cs** file should now be opened in the code editor pane.
 
@@ -248,13 +248,13 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
 
-   ![](./media/v2img13.png)
+    ![](./media/v2img13.png)
 
-     This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
+   This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
-   ![](./media/v2img14.png)
+    ![](./media/v2img14.png)
 
     The Terminal command prompt includes the current directory path. The commands that you enter are run at the current location, so be sure that you are located in the **CaveDevice** folder.
 
@@ -266,7 +266,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. Notice that **Hello World!** is displayed.
 
-   ![](./media/v2img15.png)
+    ![](./media/v2img15.png)
 
     After a moment, you should see **Hello World!** displayed on the line directly below the **dotnet run** command that you entered.
 
