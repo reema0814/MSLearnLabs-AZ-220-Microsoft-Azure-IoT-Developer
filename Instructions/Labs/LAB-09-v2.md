@@ -79,6 +79,8 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 ### Task 1: Create the container registry
 
+In this task, you will create a Container Registry from Azure Portal.
+
 1. On the Azure Portal, search **container registries**. Click on **container registries**.
 
    ![](./media2/lab13img9.png)
@@ -92,6 +94,8 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
    ![](./media2/lab09img2updated.png)
 
 ### Task 2: Connect Docker to the container registry
+
+In this task, you will be connecting your Docker to Container Registry.
 
 1. From the resources tab of your resource group, open your container registry, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -132,6 +136,8 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 In this exercise, you will create an Azure IoT Edge Solution that contains a custom Azure IoT Edge Module written in C#.
 
 ### Task 1: Create the solution
+
+In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. In the **Visual Studio Code** open, select  **View** menu, to open the Visual Studio Command Palette, click **Command Palette**.
 
@@ -184,6 +190,8 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 ### Task 2: Configure the solution
 
+In this task, you will be setting up your username and password in the solution.
+
 1. In the **Explorer** pane, to open the .env file, click **.env**.
 
     The .env file is located in the root directory of the IoT Edge Solution. This is where the username and password are configured for accessing your Docker registry.
@@ -226,6 +234,8 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 ### Task 1: Create a test IoT Edge device
 
+In this task, you will test the IoT Edge device.
+
 1. In the Azure Portal, on your Resource group tile, to open your IoT hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media2/lab13img16.png)
@@ -245,6 +255,8 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
    ![](./media2/lab13img19.png)
 
 ### Task 2: Configure the test module
+
+In this task, you will be configuring the module using the connection string of device.
 
 1. Switch to the **Visual Studio Code** instance containing your IoT Edge solution.
 
@@ -271,6 +283,8 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
     Now when you build and run the module in the IoT Edge Simulator, it will run as expected.
 
 ### Task 3: Build and run the module
+
+In this task, you will build the solution and run it as IoT Edge device which send telemetry data.
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
 
@@ -348,6 +362,8 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 ### Task 1:  Publish module to the Azure Container Registry
 
+In this task, you will push the image to container registry.
+
 In this task, you will use Docker commands to tag and publish the image to container registry.
 
 1. Navigate back to **Visual Studio Code**. and open **New Terminal**.
@@ -409,6 +425,8 @@ In this task, you will use Docker commands to tag and publish the image to conta
     ```
 
 ### Task 2: Configure an IoT Edge device to use the module
+
+In this task, you will configure the IoT edge device and also set the IoT Edge Module. 
 
 1. Navigate to your Azure IoT Hub resource.
 
