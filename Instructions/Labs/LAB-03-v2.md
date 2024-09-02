@@ -46,9 +46,9 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
-    - **Attestation** : choose **Symmetric Key** **(1)** from dropdown.
-    - **Registration ID** : **sensor-thl-1000** **(2)**. 
-    - **Reprovision policy** : select **Reprovision device and migrate current state** **(3)**.
+    - **Attestation** : Choose **Symmetric Key** **(1)** from dropdown.
+    - **Registration ID** : Enter **sensor-thl-1000** **(2)**. 
+    - **Reprovision policy** : Select **Reprovision device and migrate current state** **(3)**.
     - Click on **Next: IoT hubs** **(4)**.
 
       ![](./media/az-3-3.png)
@@ -56,8 +56,8 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
-    - **Target IoT hubs** : select your **IoT hub** **(1)** from dropdown.
-    - **Allocation policy** : select **Evenly weighted distribution** **(2)**.
+    - **Target IoT hubs** : Select your **IoT hub** **(1)** from dropdown.
+    - **Allocation policy** : Select **Evenly weighted distribution** **(2)**.
     - Click on **Next: Device settings >** **(3)**.
 
       ![](./media/az-3-4.png)
@@ -97,7 +97,7 @@ In this task, you will be reviewing the enrollment created and obtain the keys f
 
     This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
-1. Copy the **Primary Key** and **Secondary Key** values for this device enrollment, and then save them to a file for later reference.
+1. Copy the **Primary Key** and **Secondary Key** values for this device enrollment, and then paste them in any text editor such as notepad for later use.
 
    ![](./media/lab5img10.png)
 
@@ -115,7 +115,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview**.
 
-1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope**, and then click on **Copy to clipboard**.
+1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope** then click on **Copy to clipboard** and then paste it in any text editor such as Notepad for later use.
 
    ![](./media/az-3-6.png)
 
@@ -127,7 +127,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](./media/az-3-7.png)
    
-1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice`. and click on **select folder**.
+1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice` press Enter and then click on **Select folder**.
 
    ![](./media/az-3-8.png)
 
@@ -135,15 +135,17 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](./media/az-3-9.png)
 
-1. Open integrated Terminal in **Visual studio code** click on **Terminal(1)** and then **New Terminal(2)**. At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
+1. Open integrated Terminal in **Visual studio code** click on **Terminal(1)** and then **New Terminal(2).**
 
    ![](./media/az-3-10.png)
+   
+1.  At the Terminal command prompt, to restore all the application NuGet packages, enter the following command:
 
     ```cmd/sh
     dotnet restore
     ```
 
-1. In the Visual Studio Code **explorer** pane, click **Program.cs**.
+1. In the Visual Studio Code **explorer** pane, click on **Program.cs**.
 
 1. In the code editor, near the top of the Program class, locate the **dpsIdScope** variable.
 
@@ -155,7 +157,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
     This variable represents the **Registration ID** value for the individual enrollment that you created in the Device Provisioning Service.
 
-1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task2.
+1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
     > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
     >
@@ -323,7 +325,7 @@ In this task, you will be using the protal to change the device twin peroperties
 
     Notice, this code reuses the **OnDesiredPropertyChanged** method that was already created for handling _OnDesiredPropertyChanged_ events. This helps keep the code that reads the device twin desired state properties and configures the device at startup in a single place. The resulting code is simpler and easier to maintain.
 
-1. On the Visual Studio Code **File** menu, click **Save**.
+1. On the Visual Studio Code **File** menu, click on **Save**.
 
     Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
@@ -410,10 +412,9 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > - If prompted **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
 Continue? (y/n) -> y.**
 
-
     Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
 
-    ![](./media/az-3-20.png)
+     ![](./media/az-3-20.png)
 
     Continue to leave the simulated device application running for the next task.
 
