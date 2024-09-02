@@ -138,9 +138,9 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
       ![](./media/lab12img11.png)
 
-1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883 (1)** and name as **MQTT (2)**. Leave all other settings at the default, and then click **Add**.
+1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883 (1)** and **Protocol** as  **TCP** **(2)** and **Name** as **MQTT (3)**. Leave all other settings at the default, and then click **Add (4)**.
 
-      ![](./media/lab12img12.png)
+      ![](./media2/lab08updatedimg1.png)
 
 1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
 
@@ -461,7 +461,7 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. Under **Device ID**, click **sensor-th-0072**.
 
-      ![](./media/lab12img18.png)
+      ![](./media2/lab08updatedimg2.png)
 
 1. On the IoT Device summary pane, to the right of the **Primary Connection String** field, click **Copy**.
 
