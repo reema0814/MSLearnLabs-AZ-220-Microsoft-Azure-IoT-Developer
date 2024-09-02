@@ -214,7 +214,6 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
@@ -378,7 +377,6 @@ In this task, you will verify that the data is properly archived or not by looki
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
