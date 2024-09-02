@@ -275,13 +275,13 @@ In this exercise, you will get a quick introduction to working with time series 
     | render columnchart
     ```
 
-     ![](./media2/lab06img22.png)
-
-      >**Note**: If you are not able to see any output, wait for few minutes, refresh the page and try it again.
+    ![](./media2/lab06img22.png)
 
 1. Wait till the query succeeded, check the histogram created to visualize data.
 
     ![](./media2/lab06img23.png)
+
+    >**Note**: If you are not able to see any result, wait for few minutes and refresh the page, till the results are shown.
 
 ## Summary
 
