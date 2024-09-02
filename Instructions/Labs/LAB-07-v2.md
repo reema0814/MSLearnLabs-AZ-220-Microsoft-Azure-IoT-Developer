@@ -25,7 +25,6 @@ In this lab, you will complete the following:
 - Exercise 3: Add Edge Module to Edge Device
 - Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
 
-
 ### Exercise 1: Configure Lab Prerequisites
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
@@ -55,6 +54,8 @@ In this lab, you will complete the following:
 1. Navigate to the **Environment** tab in the VM and copy the **Connection string** in a notepad for later use.
 
       ![](./media/constrng.png)
+
+      <validation step="3c498b1b-2858-4f66-b788-5b5fb8b47cc4" />
 
 ### Exercise 2: Create and configure an IoT Edge VM
 
@@ -193,6 +194,8 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
     √ container on the IoT Edge module network can connect to IoT Hub MQTT port - OK
     ```
 
+      <validation step="191f1b2a-c39d-46d1-9bc4-8d667d71674a" />
+
 ### Exercise 3: Add Edge Module to Edge Device
 
 When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub, and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
@@ -314,7 +317,9 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
     The **iotedge logs** command can be used to view the module logs for any of the Edge modules.
 
       ![](./media/az11-15.png)
-   
+
+      <validation step="fca9d004-2423-4636-826d-89abf367549e" />
+  
 ### Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
 
 Now that the tempSensor module is deployed and running on the IoT Edge device, we can add a Stream Analytics module that can process messages on the IoT Edge device before sending them on to the IoT Hub.
@@ -525,6 +530,8 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     Output of this event will look similar to the following:
 
       ![](./media/az11-91.png)
+
+      <validation step="01b8b6ba-8df5-4f54-8dd8-559f82617e96" />
    
 ## Summary
 In this lab, you have configured the Lab Prerequisites , created and configured an IoT Edge VM, added Edge Module to Edge Device and deployed Azure Stream Analytics as IoT Edge Module/
