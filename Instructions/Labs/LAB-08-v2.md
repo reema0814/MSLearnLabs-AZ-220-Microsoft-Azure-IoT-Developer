@@ -537,7 +537,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
 1. On the Visual Studio Code **File** menu, click **Open Folder**.
 
-   ![](./media2/lab06img16.png)
+    ![](./media2/lab06img16.png)
 
 1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**.
 
