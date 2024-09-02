@@ -46,7 +46,7 @@ In this exercise, you will use the Azure portal to create and configure your IoT
 
    - Subscription: **Select the default Subscription (1)**.
    - Resource group: **Select the Existing Resource group (2)**.
-   - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
+   - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)**
    - Region : **eastus(4)**
    - Tier :**Standard(5)** 
 
