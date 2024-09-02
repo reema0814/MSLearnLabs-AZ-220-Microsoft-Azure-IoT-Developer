@@ -81,7 +81,7 @@ In this lab, you will complete the following:
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-      ![](./media/az11-80.png)
+      ![](./media/az16-70.png)
 
 1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
