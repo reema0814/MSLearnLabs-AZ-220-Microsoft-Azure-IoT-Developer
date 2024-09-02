@@ -117,7 +117,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
     This pane can be used to add, modify, and delete devices registered to your hub.
 
 
-1. On the left-side menu, near the top, click **Activity log**
+1. On the left-side menu, near the top, click on **Activity log**
 
     As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. 
 
@@ -247,7 +247,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 #### Task 2: View features of Device Provisioning Service using the navigation menu
 
 
-1. On the left-side menu, near the top, click **Activity log**
+1. On the left-side menu, near the top, click on **Activity log**
 
     As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. You can also define queries that help with routine tasks. Very handy.
 
