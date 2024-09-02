@@ -117,6 +117,16 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
     You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
 
+<validation step="50eea306-3342-453b-9f11-b1721b9ac260" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+
 ## Exercise 3: Create Custom Edge Module in C#
 
 In this exercise, you will create an Azure IoT Edge Solution that contains a custom Azure IoT Edge Module written in C#.
@@ -323,6 +333,15 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 1. Close the **Cloud Shell** window.
 
+<validation step="976bf7db-9c4f-4611-9bfc-f4c533696c10" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 ## Exercise 5: Deploy the IoT Edge Solution
 
 In this exercise, you will build and publish the custom IoT Edge Module into the Azure Container Registry (ACR) service. Once published to ACR, the custom module will then be made available to be deployed to any IoT Edge Device.
@@ -447,6 +466,16 @@ In this task, you will use Docker commands to tag and publish the image to conta
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
 Development of the **objectcountingmodule** custom IoT Edge Module is now complete. Your IoT Edge Device is registered, the modules are specified, and the routes are configured. The **objectcountingmodule** is ready to be deployed once an associated IoT Edge Device is connected to your Azure IoT hub.
+
+<validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 
 ## Summary
 
