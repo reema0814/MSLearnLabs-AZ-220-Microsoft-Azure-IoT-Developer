@@ -81,7 +81,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-      ![](./media/az15-33.png)
+      ![](./media/az15-35.png)
 
 1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
@@ -106,7 +106,7 @@ In this exercise, you will be completing the simulated device app (for the senso
     dotnet build
     ```
 
-      ![](./media/az15-5.png)
+      ![](./media/az15-36.png)
 
 #### Task 2: Configure connection and review code
 
@@ -180,7 +180,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. On the **File (1)** menu, click **Open Folder (2)**.
 
-   ![](./media/open.png)
+    ![](./media/open.png)
 
 1. In the **Open Folder** dialog, navigate to the `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
 
@@ -192,7 +192,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. Click on **Yes, i trust the authors** when prompted.
 
-      ![](./media/az15-31.png)
+      ![](./media/az15-37.png)
 
 #### Task 2: Enable the telemetry receiver code
 
