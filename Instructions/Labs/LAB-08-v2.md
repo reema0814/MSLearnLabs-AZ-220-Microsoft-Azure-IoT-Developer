@@ -198,13 +198,13 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
 1. In the create a storage account page, provide the following details and click on **Create (6)**.
 
-   - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing resource group (2)**
-   - Region: Select **EAST US (3)**
-   - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
-   - File Share: Provide the name as **cloudshell (5)**
+    - Subscription: **Select the default subscription (1)**
+    - Resource Group: **Select the existing resource group (2)**
+    - Region: Select **EAST US (3)**
+    - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
+    - File Share: Provide the name as **cloudshell (5)**
 
-       ![](./media/az8-6.png)
+      ![](./media/az8-6.png)
     
 1. In the upper left corner of the Cloud Shell window, ensure that **Bash** is selected as the environment option.
 
