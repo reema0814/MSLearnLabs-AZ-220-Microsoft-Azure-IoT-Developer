@@ -90,7 +90,7 @@ In order for a device to connect to an IoT Hub, it needs to establish a connecti
 
 In this task, you will get the device connection string from the Azure Portal.
 
-1. On the **IoT devices** pane of your IoT Hub, under **DEVICE ID**, click on **sensor-th-0001**.
+1. On the **IoT devices** pane of your IoT Hub, under **Device ID**, click on **sensor-th-0001**.
 
     ![](./media/v2img6.png)
 
@@ -134,7 +134,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     ![](./media/az-5-7.png)
 
-1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands:
+1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands after the last command hit enter.
 
     ```
     New-Item -Path "C:\CaveDevice" -ItemType "Directory"
@@ -166,13 +166,13 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```
     ![](./media/vs2.png)
 
-1. In Visual Studio Code, on the **Explorer** menu, click **Open Folder**.
+1. In Visual Studio Code, on the **Explorer** menu, click on **Open Folder**.
 
     ![](./media/az-5-8.png)
 
 1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
-1. In the list of folders, click **CaveDevice**, and then click **Select Folder**.
+1. In the list of folders, click **CaveDevice**, and then click on **Select Folder**.
 
       ![](./media/vs3.png)
 
