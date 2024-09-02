@@ -174,11 +174,11 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
 1. In the list of folders, click **CaveDevice**, and then click on **Select Folder**.
 
-      ![](./media/vs3.png)
+    ![](./media/vs3.png)
 
 1. If the pop up appears click on **Yes, I trust the authors**.
 
-   ![](./media/az-3-9.png)
+    ![](./media/az-3-9.png)
 
     The EXPLORER pane of Visual Studio Code should now list two C# project files:
 
