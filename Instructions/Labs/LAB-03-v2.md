@@ -424,17 +424,17 @@ In this task, you will be changing the twin property and will verify that device
 
 With the simulated device running, the `telemetryDelay` configuration can be updated by editing the device twin Desired State within Azure IoT Hub. This can be done by configuring the Device in the Azure IoT Hub within the Azure portal.
 
-1. Open the Azure portal (if it is not already open), and then navigate to your **Azure IoT Hub** service.
+1. Open the Azure portal (if it is not already open), and then navigate to your Azure IoT Hub service **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
    ![](./media/az-3-21.png)
 
-1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** an then click on **sensor-thl-1000(2)** under **DEVICE ID**,
+1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** and then click on **sensor-thl-1000(2)** under **Device ID**,
 
    ![](./media/az-3-14.png)
 
     > **IMPORTANT**: Make sure you select the device that you are using for this lab.
 
-1. On the **sensor-thl-1000** device blade, at the top of the blade, click **Device Twin**.
+1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**.
 
    ![](./media/az-3-15.png)
 
@@ -450,7 +450,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
     The value includes the quotes ("").
 
-1. At the top of the **Device twin** blade, click **Save**
+1. At the top of the **Device twin** blade, click on **Save**
 
     The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
 
