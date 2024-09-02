@@ -362,7 +362,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     private readonly static string connectionString = "HostName=iot-az220-training-dm200420.azure-devices.net;DeviceId=sensor-th-0001;SharedAccessKey=hfavUmFgoCPA9feWjyfTx23SUHr+dqG9X193ctdEd90=";
     ```
 
-   ![](./media/vs7.png)
+    ![](./media/vs7.png)
 
 1. Locate the **// INSERT Main method below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -642,7 +642,7 @@ In this task, you will be testing the application that you have built in the pre
 
 1. In the Visual Studio Code Explorer pane, on the **Terminal** menu, click **New Terminal**.
 
-   ![](./media/v2img13.png)
+    ![](./media/v2img13.png)
 
 1. In the Terminal view, at the command prompt, enter the following command:
 
@@ -675,7 +675,7 @@ In this task, you will be testing the application that you have built in the pre
 
     > **Note**: Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
 
-   ![](./media/vs5.png)
+    ![](./media/vs5.png)
 
 ### Task 5: Verify Telemetry Stream sent to Azure IoT Hub
 
@@ -707,7 +707,7 @@ Continue? (y/n) -> y**
     
    You should see messages displayed that are similar to the following:
 
-     ```cmd/sh
+   ```cmd/sh
      Starting event monitor, filtering on device: sensor-th-0001, use ctrl-c to stop...
      {
          "event": {
@@ -721,7 +721,7 @@ Continue? (y/n) -> y**
              "payload": "{\"temperature\":29.202181296051563,\"humidity\":69.13840303623043}"
          }
      }
-     ```
+   ```
 
 1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl-C** in the Azure Cloud Shell and Visual Studio Code windows.
 
