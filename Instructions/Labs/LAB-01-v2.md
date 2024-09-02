@@ -87,7 +87,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 #### Task 1: Explore the IoT Hub Overview information
 
-1. Open your Azure dashboard.
+1. If the IOt Hub blade is not opened, open your Azure dashboard.
 
 1. Search and select **IoT Hub** from the Azure dashboard.
 
@@ -110,7 +110,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 #### Task 2: View features of IoT Hub using the left-side menu
 
-1. On the IoT Hub blade,from the left navigation menu,under **Device management**, click **Devices**
+1. On the IoT Hub blade,from the left navigation menu,click on **Device** under **Device management.**
 
     ![](media/device.png)
 
@@ -123,7 +123,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
     ![](media/iott13.png)
 
-1. On the left-side menu, under **Hub settings**, click **Built-in endpoints**
+1. On the left-side menu, under **Hub settings**, click on **Built-in endpoints**
 
     IoT Hub exposes "endpoints" that enable external connections. Essentially, an endpoint is anything connected to or communicating with your IoT Hub. You should see that your hub already has endpoints defined, including the following:
 
@@ -132,11 +132,11 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
     ![](media/endpoint.png)
 
-1. On the left-side menu, under **Hub settings**, click **Message routing**
+1. On the left-side menu, under **Hub settings**, click on **Message routing**
 
     The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
 
-1. At the top of the **Message routing** pane, click **Custom endpoints**.
+1. At the top of the **Message routing** pane, click on **Custom endpoints**.
 
     ![](media/iot15.png)
 
@@ -161,20 +161,20 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. In the Search textbox, type **device provisioning service(1)** and then press Enter.
 
-1. On the **Marketplace** blade, click **IoT Hub Device Provisioning Service(2)** search result.
+1. On the **Marketplace** blade, click on **IoT Hub Device Provisioning Service(2)** search result.
 
     ![](media/iot16.png)
 
-1. To begin the process of creating your new DPS instance, click **Create**.
+1. To begin the process of creating your new DPS instance, click on **Create**.
 
     ![](media/iot29.png)
 
 1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.
 
    - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing Resource group(2)**
-   - Name: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(3)**
-   - Region: **eastus(4)**
+   - Resource Group: **Select the existing Resource group (2)**
+   - Name: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)**
+   - Region: **eastus (4)**
 
     ![](media/1lab19.png)
 
