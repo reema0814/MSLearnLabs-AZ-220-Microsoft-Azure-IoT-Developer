@@ -324,11 +324,11 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Search for **storage account** and select it.
 
-   ![](./media/az11-12.png)
+      ![](./media/az11-12.png)
 
 1. Click on **Create**.
 
-   ![](./media/az11-14.png)
+      ![](./media/az11-14.png)
 
 1. In the create a storage account page, provide the following:
 
@@ -340,7 +340,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - **Redundancy**: **Locally-redundant storage (LRS) (6)** 
    - Click on **Review + create (7)**
 
-     ![](./media/edge3.png)
+        ![](./media/edge3.png)
 
 1. Click on **Create**.
 
@@ -360,11 +360,11 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Region: **Select the default region (4)**
    - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
       
-     ![](./media/edge4.png)
+      ![](./media/edge4.png)
 
 1. Under the storage tab, select the **Add storage account** check box then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** from the drop down and click on **Review + create (2)**
 
-    ![](./media/az11-9.png)
+      ![](./media/az11-9.png)
    
 1. At the bottom of the blade, click **Create**.
 
@@ -378,7 +378,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. On the left side navigation menu, under **Job topology**, click **Inputs (1)**. Under **+ Add Input (1)**, select **Edge Hub (2)**.
 
-     ![](./media/az11-8.png)
+      ![](./media/az11-8.png)
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
@@ -387,7 +387,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Encoding dropdown: Ensure that **UTF-8** is selected **(3)** (UTF-8 is the only JSON encoding supported at the time of writing.)
    - Event compression type dropdown: Ensure that **None** is selected **(4)**
 
-       ![](./media/az11-7.png)
+        ![](./media/az11-7.png)
      
 1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Edge Hub**.
 
@@ -398,7 +398,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    - Format: Ensure that **Line separated** is selected **(3)**
    - Encoding: Ensure that **UTF-8** is selected (UTF-8 is the only JSON encoding supported at the time of writing.) **(4)**
 
-      ![](./media/az11-6.png)
+        ![](./media/az11-6.png)
      
 1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
 
@@ -413,7 +413,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     HAVING Avg(machine.temperature) > 25
     ```
 
-   ![](./media/az11-5.png)
+      ![](./media/az11-5.png)
 
    Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
 
@@ -425,7 +425,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Navigate to **Set modules** tab.
 
-   ![](./media/edge5.png)
+      ![](./media/edge5.png)
   
 1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click **Add**, and then select **Azure Stream Analytics Module**.
 
@@ -485,11 +485,11 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Notice the JSON configuration for the **tempsensor** Simulated Temperature Sensor module:
 
-   ![](./media/edge7.png)
+     ![](./media/edge7.png)
 
 1. Notice the JSON configuration for the routes that were previously configured, and how they are configured in the JSON Deployment definition:
 
-   ![](./media/edge6.png)
+     ![](./media/edge6.png)
 
 1. At the bottom of the blade, click **Create**.
 
@@ -507,7 +507,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
     It can take a minute for the new Stream Analytics module to be deployed to the IoT Edge Device. Once it's there, you will see it in the list output by this command.
 
-   ![](./media/edge11.png)
+      ![](./media/edge11.png)
 
     > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
 
