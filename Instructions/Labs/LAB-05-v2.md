@@ -38,7 +38,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
    
 1. On the **Search services and marketplace** box, enter **logic app**
 
-1. In the search results, click **Logic App**.
+1. In the search results, select **Logic App**.
 
       ![](media/9lab1.png)
 
@@ -59,7 +59,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
    - Subscription: **Select the default Subscription (1)**.
    - Resource group: **Select the existing  Resource group (2)**.
    - Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
-   - Region : **eastus (4)**
+   - Region : **Select the default region (4)**
    - Enable Log Analytics:  Set to **No (5)**.
 
         ![](media/az-5-1.png)
@@ -251,6 +251,8 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. Save the URL for future reference in the notepad or in any other text editor.
 
+      <validation step="a35059f4-513a-43b9-8c82-28b61dd53339" />
+
 ### Exercise 2: Configure Azure IoT Hub Event Subscription
 
 Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub.
@@ -344,6 +346,8 @@ Test your logic app by creating a new device to trigger an event notification em
     https://outlook.office365.com/mail/
     ```
     ![](media/az-5-6.png)
+
+      <validation step="95ed4346-5887-405f-be41-8a58ea461960" />
 
 ## Summary
 
