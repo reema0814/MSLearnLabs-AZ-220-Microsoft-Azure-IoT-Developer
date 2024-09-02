@@ -156,7 +156,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
-      ![](./media/az-lab-3.png)
+      ![](media/az5-4.png)
 
       > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
@@ -205,12 +205,11 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
 1. To replace the values, click on the the **Dynamic Content** icon shown in the below image.
 
-      ![](media/az5-6.png)
+      ![](media/az5-5.png)
 
 1. Type **eventType (1)** search box and **select (2)** it .
 
       ![](media/az5-3.png)
-
 
 1. Repeat the same step by replacing the **curly-braces entries** with the actual **Dynamic content values**.
 
@@ -218,9 +217,11 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
     When you have completed this step you should see a message body that is similar to the following:
 
-      ![](media/9lab17.png)
+      ![](media/az5-6.png)
 
 1. At the top of the designer, to save all changes to the Logic App Workflow, click on **Save** .
+
+     ![](media/az5-7.png)
 
 1. To expand the _When a HTTP request is received_ trigger, click on **When a HTTP request is received(1)**. Copy the value for the **HTTP POST URL(2)** in a notepad.
 
@@ -242,11 +243,11 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
    
 1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
-      ![](media/9lab19.png)
+      ![](media/az5-2.png)
 
 1. On the **IoT Hub** blade, on the left side navigation menu, select **Events (1)**. On the **Events** pane, at the top, click **+ Event Subscription (2)**.
 
-      ![](media/9lab20.png)
+      ![](media/az5-1.png)
 
 1. On the Create Event Subscription blade, in the **Name** field, enter **MyDeviceCreateEvent(1)**
 
@@ -268,7 +269,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
     You could save the event subscription here, and receive notifications for every device that is created in your IoT hub. However, for this lab we will use the optional fields to filter for specific devices.
 
-    ![](media/9lab21.png)
+      ![](media/az5-8.png)
 
 1. At the top of the pane, click on **Filters** .
 
@@ -313,15 +314,15 @@ Test your logic app by creating a new device to trigger an event notification em
 
     ![](media/9lab25.png)
 
-1. Once you've added a few devices to your IoT hub, check your email to see which ones triggered the logic app.
-
-1. Copy the link, paste it in a browser's private window and sign with your Username and Password available in the VM's Environment tab.
+1. Copy the following link in a private window and sign with your **Username** and **Password** available in the VM's Environment tab.
    
     ```text
     https://outlook.office365.com/mail/
     ```
-    ![](media/az-5-6.png)
+    ![](media/az5-9.png)
 
+     > **Note**: You can see that only the devices starting with **sensor-th** have been triggered, as this is the configuration we set up in our event subscription.
+   
       <validation step="95ed4346-5887-405f-be41-8a58ea461960" />
 
 ## Summary
