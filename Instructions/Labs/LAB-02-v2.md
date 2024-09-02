@@ -50,7 +50,7 @@ In this task, you will create a device in the IoT Hub.
 
 1. On the **Devices** pane, click on **+ Add Device**.
 
-   ![](./media/v2img4.png)
+   ![](./media/az-2-1.png)
 
 1. In the **Create a Device** page, enter the following details:
 
