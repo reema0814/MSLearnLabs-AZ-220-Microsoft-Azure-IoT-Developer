@@ -400,7 +400,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
      
 1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
 
-    ```sql
+      ```sql
     SELECT
         'reset' AS command
     INTO
@@ -409,7 +409,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
         temperature TIMESTAMP BY timeCreated
     GROUP BY TumblingWindow(second,15)
     HAVING Avg(machine.temperature) > 25
-    ```
+      ```
     
       ![](./media/az11-5.png)
 
@@ -443,9 +443,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. On the **Update IoT Edge Module** pane, notice that the **Image URI** points to a standard Azure Stream Analytics image.
 
-    ```text
-    mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.14
-    ```
+      ```text
+       mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.14
+      ```
 
       This is the same image used for every ASA job that gets deployed to an IoT Edge Device.
 
@@ -459,17 +459,17 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       ![](./media/az11-1.png)
       
-1. Replace the default route defined with the following three routes and click **Review + create (7)**.:
+1. Replace the default route defined with the following three routes and click on **Review + create. Replace the <DID> with the Deployment ID used in the lab.
 
     * Route 1
         * NAME: **`telemetryToCloud`** **(1)**
         * VALUE: **`FROM /messages/modules/tempsensor/* INTO $upstream`**  **(2)**
     * Route 2
         * NAME: **`alertsToReset`** **(3)**
-        * VALUE: **`FROM /messages/modules/asa-az220-training-asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>/* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
+        * VALUE: **`FROM /messages/modules/asa-az220-training-asa-az220-<DID>* INTO BrokeredEndpoint("/modules/tempsensor/inputs/control")`** **(4)**
     * Route 3
         * NAME: **`telemetryToAsa`** **(5)**
-        * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>/inputs/temperature")`** **(6)**
+        * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-asa-az220-training-<DID>/inputs/temperature")`** **(6)**
 
         The routes being defined are as follows:
 
@@ -495,7 +495,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Go back to the **Cloud Shell** session where you're connected to the **IoT Edge Device** over **SSH**.
 
-    If it is closed or timed out, reconnect. Run the **SSH** command and login as before.
+      If it is closed or timed out, reconnect. Run the **SSH** command and login as before.
 
 1. At the command prompt, to view a list of the modules deployed to the device, enter the following command:
 
