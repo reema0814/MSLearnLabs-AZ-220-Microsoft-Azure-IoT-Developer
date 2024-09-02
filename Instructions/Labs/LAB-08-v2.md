@@ -33,33 +33,33 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-      ![](./media/v2img1.png)
+   ![](./media/v2img1.png)
    
 1. On the All resources tile, to open your IoT hub, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-      ![](./media/lab12img1.png)
+   ![](./media/lab12img1.png)
 
 1. On the **IoT Hub** blade, on the left-side menu under **Device management**, click **IoT Edge**. On the IoT Edge pane, click **Add an IoT Edge device**
 
-      ![](./media/lab12img3.png)
+   ![](./media/lab12img3.png)
 
 1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, leave other setting as default and click on **save (2)**.
 
-      ![](./media/az8-1.png)
+   ![](./media/az8-1.png)
 
 1. Under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />**.
 
-      ![](./media/az8-2.png)
+   ![](./media/az8-2.png)
  
 1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**.
 
-      ![](./media/az8-15.png)
+   ![](./media/az8-15.png)
 
 1. Save the **Primary Connection String** value in a notepad for future use.
 
 1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, scroll down and notice that the list of **Modules (1)** is limited to **\$edgeAgent** and **\$edgeHub**. At the top of the blade, click **Set Modules (2)**.
 
-      ![](./media/az8-3.png)
+   ![](./media/az8-3.png)
 
 1. At the top of the **Set module on device** blade, click **Routes**.
 
@@ -68,9 +68,9 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
     * **NAME**: `route`
     * **VALUE**: `FROM /messages/* INTO $upstream`
 
-         ![](./media/lab12img9.png)
+      ![](./media/lab12img9.png)
 
-    The `FROM /messages/*` part of the message route will match any device-to-cloud message sent by a module through some or no output, or by a leaf device. Then, the `INTO $upstream` tells the route to send those messages to the Azure IoT Hub.
+      The `FROM /messages/*` part of the message route will match any device-to-cloud message sent by a module through some or no output, or by a leaf device. Then, the `INTO $upstream` tells the route to send those messages to the Azure IoT Hub.
 
 1. At the bottom of the blade, click **Review + create**.
 
@@ -116,7 +116,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
    - Allow SSH: **True (11)**
    - Click on **Review + Create (12)**
 
-        ![](./media/az8-16.png)
+     ![](./media/az8-16.png)
 
 1. Once validation is passed, click on **Create**.
 
@@ -124,23 +124,23 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
 
-      ![](./media/az8-20.png)
+   ![](./media/az8-20.png)
 
 1. Navigate to **Overview (1)** and click on **Go to resource group (2)**.
 
-      ![](./media/az8-19.png)
+   ![](./media/az8-19.png)
    
 1. On the All resources tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
-
-      ![](./media/lab12img10.png)
+ 
+   ![](./media/lab12img10.png)
 
 1. On the **Network security group** blade, on the left-side menu under **Settings**, click **Inbound security rules**. At the top of the **Inbound security rules** pane, click on **Add**.
 
-      ![](./media/lab12img11.png)
+   ![](./media/lab12img11.png)
 
 1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883 (1)** and **Protocol** as  **TCP** **(2)** and **Name** as **MQTT (3)**. Leave all other settings at the default, and then click **Add (4)**.
 
-      ![](./media2/lab08updatedimg1.png)
+   ![](./media2/lab08updatedimg1.png)
 
 1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
 
@@ -176,25 +176,23 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
 1. Verify that the IoT Edge virtual machine has been deployed successfully.
 
-    ![](./media/lab12img13.png)
+   ![](./media/lab12img13.png)
 
 1. On the Azure portal toolbar, to open the Azure Cloud Shell, click **Cloud Shell**.
 
-    A Cloud Shell window will open near the bottom of the display screen.
-
-      ![](./media/az11-37.png)
+   ![](./media/az11-37.png)
 
 1. Click on **Bash** when prompted.
 
-      ![](./media/az11-36.png)
+   ![](./media/az11-36.png)
 
 1. Select the checkbox for **Mount Storage account (1)**, select the existing **subscription (2)** and click on **Apply (3)**.
 
-      ![](./media/az11-35.png)
+   ![](./media/az11-35.png)
 
 1. Select **I want to create a storage account (1)** and click on **Next (2)**.
 
-      ![](./media/az11-34.png)
+   ![](./media/az11-34.png)
 
 1. In the create a storage account page, provide the following details and click on **Create (6)**.
 
@@ -441,19 +439,19 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. On your Azure dashboard, to open your IoT Hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-      ![](./media/lab12img1.png)
+   ![](./media/lab12img1.png)
 
 1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**
 
-      ![](./media/lab12img14.png)
+   ![](./media/lab12img14.png)
 
 1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072 (1)**. Under **Parent device**, click **Set a parent device (2).
 
-      ![](./media/az8-9.png)
+   ![](./media/az8-9.png)
    
 1. On the **Set an Edge device as a parent device** blade, under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, and then click **OK (2)**.
 
-      ![](./media/az8-22.png)
+   ![](./media/az8-22.png)
 
 1. On the **Create a device** blade, to create the IoT Device identity for the downstream device, click **Save** **(3)**.
 
@@ -461,11 +459,11 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. Under **Device ID**, click **sensor-th-0072**.
 
-      ![](./media2/lab08updatedimg2.png)
+   ![](./media2/lab08updatedimg2.png)
 
 1. On the IoT Device summary pane, to the right of the **Primary Connection String** field, click **Copy**.
 
-     ![](./media/lab12img19.png)
+   ![](./media/lab12img19.png)
 
 1. Save the Primary Connection String value of your leaf IoT device in your notepad for future use.
 
@@ -537,7 +535,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
 1. On the Visual Studio Code **File** menu, click **Open Folder**.
 
-    ![](./media2/lab06img16.png)
+   ![](./media2/lab06img16.png)
 
 1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**.
 
@@ -571,7 +569,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     private readonly static string connectionString = "HostName=iot-az220-training-abc201119.azure-devices.net;DeviceId=sensor-th-0072;SharedAccessKey=ygNT/WqWs2d8AbVD9NAlxcoSS2rr628fI7YLPzmBdgE=;GatewayHostName=vm-az220-training-gw0001-{your-id}";
     ```
 
-   ![](./media2/lab08updatedimg3.png)
+     ![](./media2/lab08updatedimg3.png)
 
 1. Press `Ctrl+S` to save.
 
