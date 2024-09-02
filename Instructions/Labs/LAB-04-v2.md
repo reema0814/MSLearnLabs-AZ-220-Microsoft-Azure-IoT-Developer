@@ -254,11 +254,11 @@ In this task, you will creating a routes using the message routing tab in the Az
 
 1. On the left-hand menu, under **Hub settings**, click **Message routing**. Ensure that the **Routes** tab is selected.
 
-   ![](./media/lab7img10.png)
+    ![](./media/lab7img10.png)
 
 1. To add a new route, click **+ Add**.
 
-   ![](./media/lab7img11.png)
+    ![](./media/lab7img11.png)
 
 1. On the **Add a route** blade,
 
@@ -266,7 +266,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     - Endpoint name: **vibrationLoggingRoute(2)** 
     - To display a list of Storage accounts associated with your subscription, click on **Pick a container(3)** under Azure Storage Container.
 
-   ![](./media/az-4-7.png)
+    ![](./media/az-4-7.png)
 
     A list of the storage accounts already present in the Azure Subscription is listed. At this point you could select an existing storage account and container, however, for this lab you will create a new one.
 
@@ -280,7 +280,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     - Account kind: **StorageV2 (general purpose v2) (2)**
     - Performance: Ensure that **Standard** is selected.
       
-   ![](./media/lab7img12.png)
+    ![](./media/lab7img12.png)
 
 1. Wait until the request is validated and the storage account deployment has completed.
 
@@ -294,29 +294,29 @@ In thi stask, you will create a storage account and a container for route.
 
 1. On the **Storage accounts** blade, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/lab7img13.png)
+    ![](./media/lab7img13.png)
 
     The **Containers** blade should appear. Since this is a new storage account, there are no containers listed.
 
 1. To create a container, click **+ Container**.
    
-   ![](./media/lab7img14.png)
+    ![](./media/lab7img14.png)
 
     The **New container** dialog should now be displayed.
 
 1. On the **New container** dialog, under **Name** enter **vibrationcontainer** and then click on **Create** to create the Container.
 
-   ![](./media/lab7img15.png)
-
+    ![](./media/lab7img15.png)
+ 
 1. To choose this container for your solution, click **vibrationcontainer**, and then click **Select**.
 
-   ![](./media/lab7img16.png)
+    ![](./media/lab7img16.png)
 
 1. Now on the **Add a route** page verify **Endpoint type(1)**, **Endpoint name(2)**, **Azure storage container(3)** and then click on **Create + next**.
 
-   ![](./media/lab7img17.png)
+    ![](./media/lab7img17.png)
 
-    Notice that the **Endpoint** is now populated.
+      Notice that the **Endpoint** is now populated.
 
 ### Task 3: Define the routing query
 
@@ -335,7 +335,7 @@ In this task, you will define a route for storage account.
 
     This query ensures that only messages with the **sensorID** application property set to **VSLog** will be routed to the storage endpoint.
 
-   ![](./media/lab7img18.png)
+    ![](./media/lab7img18.png)
 
 1. To create this route, click on **Create + skip enrichments**.
 
@@ -343,7 +343,7 @@ In this task, you will define a route for storage account.
 
 1. Once you see your new route listed on the **Message routing** pane, navigate back to your Azure portal Dashboard.
 
-   ![](./media/az-4-8.png)   
+    ![](./media/az-4-8.png)   
 
 ### Task 4: Verify Data Archival
 
@@ -355,21 +355,21 @@ In this task, you will verify that the data is properly archived or not by looki
 
 1. On your Resources tile, to open you Storage account blade, click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/lab7img19.png)
-
+    ![](./media/lab7img19.png)
+ 
 1. On the left-side menu of your **vibrationstore<inject key="DeploymentID" enableCopy="false" />** blade, click on **Storage browser(1)** under **vibrationstore<inject key="DeploymentID" enableCopy="false" />** then click on **Blob containers(2)** and then click on **vibrationcontainer(3)**
 
-   ![](./media/az-4-14.png)
+    ![](./media/az-4-14.png)
 
 1. In the right-hand pane, under **NAME**, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**, and then use clicks to navigate down into the hierarchy.
 
-   ![](./media/lab7img21.png)
+    ![](./media/lab7img21.png)
 
     Under your IoT hub folder, you will see folders for the Partition, then numeric values for the Year, Month, and Day. The final folder represents the Hour, listed in UTC time. The Hour folder will contain a number of Block Blobs that contain your logging message data.
 
 1. Click the Block Blob for the data with the earliest time stamp.
 
-   ![](./media/lab7img22.png)
+    ![](./media/lab7img22.png)
 
     The .avro files use a naming pattern of **{num}.avro** (i.e. **22.avro**).
 
@@ -400,15 +400,15 @@ In thi task, you will create a stream analytics job in the Azure portal.
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-   ![](./media/lab7img24.png)
+    ![](./media/lab7img24.png)
 
 1. On the **New** blade, in the **Search the Marketplace** textbox, type **stream analytics** and then click **Stream Analytics job**.
 
 1. On the **Stream Analytics job** blade, click **Create**.
 
-   ![](./media/lab7img25.png)
+    ![](./media/lab7img25.png)
 
-    The **New Stream Analytics job** pane is displayed.
+     The **New Stream Analytics job** pane is displayed.
 
 1. On the **New Stream Analytics job** pane, provide the following details and then click on **Review + create**.
 
@@ -417,7 +417,7 @@ In thi task, you will create a stream analytics job in the Azure portal.
     - Name: **vibrationJob(3)**
     - Region: **eastus(4)**
 
-   ![](./media/az-4-9.png)
+     ![](./media/az-4-9.png)
 
 1. Wait for the **Your deployment is complete** message, and then click **Go to resource**.
 
@@ -427,13 +427,13 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
 1. On your Stream Analytics Job blade, on the left-side menu under **Job topology**, click **Inputs**.
 
-   ![](./media/lab7img27.png)
+    ![](./media/lab7img27.png)
 
-    The **Inputs** pane will be displayed.
+     The **Inputs** pane will be displayed.
 
 1. On the **Inputs** pane, click on **+ Add input(1)** and then select **IoT Hub(2)**.
 
-   ![](./media/az-4-15.png)
+    ![](./media/az-4-15.png)
 
 1. On the **IoT Hub - New input** pane, under **Input alias**, enter **vibrationInput**
 
@@ -467,7 +467,7 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
 1. To create an output, on the left-side menu under **Job topology**, click on **Outputs(1)**. On the **Outputs** pane, click on **+ Add output(2)** and then select **Blob storage/ADLS Gen2(3)**.
 
-   ![](./media/az-4-18.png)
+    ![](./media/az-4-18.png)
 
 1. On the **Blob storage/ADLS Gen2 - New output** pane, under **Output alias**, enter **vibrationOutput**.
 
@@ -505,7 +505,7 @@ In this task, you will create query in Stream Analytics.
 
 1. To edit the query, on the left-side menu under **Job topology**, click **Query**.
 
-   ![](./media/lab7img32.png)
+    ![](./media/lab7img32.png)
 
 1. In the query editor pane, replace the existing query with the query below:
 
@@ -536,9 +536,9 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. In the **Start job** pane, leave the **Job output start time** set to **Now**, and then click **Start**.
 
-   ![](./media/lab7img33.png)
+    ![](./media/lab7img33.png)
 
-    It can take a few moments for the job to start.
+     It can take a few moments for the job to start.
 
 1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -546,23 +546,23 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. On the **Overview** pane of your Storage account, select the **Monitoring** section. Under **Key metrics**, adjacent to **Show data for last**, change the time range to **1 hour**.
 
-   ![](./media/lab7img34.png)
+    ![](./media/lab7img34.png)
 
 1. On the left-side menu, click on **Storage browser(1)**. In **Storage browser**, under **vibrationstore<inject key="DeploymentID" enableCopy="false" />**, click on **Blob containers(2)**  then click on  **vibrationcontainer(3)** and then select the json file **(4)**
 
-   ![](./media/az-4-10.png)
+    ![](./media/az-4-10.png)
 
 1. On the page displaying file details for the json file, click **Download**.
 
-   ![](./media/az-4-11.png)   
+    ![](./media/az-4-11.png)   
 
 1. Open the downloaded file in **Visual Studio Code**, and review the JSON data.
 
 1. If **Do you wanr to allow untrusted files in the workspace** pop up appears then click on **Open.**
 
-   ![](./media/az-4-12.png)   
+    ![](./media/az-4-12.png)   
 
-    The data in your json file should appear similar to the following:
+     The data in your json file should appear similar to the following:
 
     ```json
     {"vibration":-0.025974767991863323,"EventProcessedUtcTime":"2021-10-22T22:03:10.8624609Z","PartitionId":3,"EventEnqueuedUtcTime":"2021-10-22T22:02:09.1180000Z","IoTHub":{"MessageId":null,"CorrelationId":null,"ConnectionDeviceId":"sensor-v-3000","ConnectionDeviceGenerationId":"637705296662649188","EnqueuedTime":"2021-10-22T22:02:08.7900000Z"}}
@@ -571,7 +571,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
     {"vibration":0.99447803871677132,"EventProcessedUtcTime":"2021-10-22T22:03:10.9718423Z","PartitionId":3,"EventEnqueuedUtcTime":"2021-10-22T22:02:15.2910000Z","IoTHub":{"MessageId":null,"CorrelationId":null,"ConnectionDeviceId":"sensor-v-3000","ConnectionDeviceGenerationId":"637705296662649188","EnqueuedTime":"2021-10-22T22:02:15.2120000Z"}}
     ```
 
-   ![](./media/az-4-13.png)
+    ![](./media/az-4-13.png)
    
 1. In Visual Studio Code, close the document containing your json data.
 
@@ -579,11 +579,11 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. On your Resources tile, click **vibrationJob**.
 
-   ![](./media/lab7img36.png)
+    ![](./media/lab7img36.png)
 
 1. On the **vibrationJob** blade, click on **Stop job**, and then click **Yes**.
 
-   ![](./media/lab7img37.png)
+    ![](./media/lab7img37.png)
 
 1. Switch to the Visual Studio Code window.
 
