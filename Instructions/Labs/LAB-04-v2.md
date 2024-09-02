@@ -345,9 +345,9 @@ In this task, you will verify that the data is properly archived or not by looki
 
    ![](./media/lab7img19.png)
 
-1. On the left-side menu of your **vibrationstore<inject key="DeploymentID" enableCopy="false" />** blade, click on **Storage browser** under **vibrationstore<inject key="DeploymentID" enableCopy="false" />** then click on **Blob containers** and then click on **vibrationcontainer**
+1. On the left-side menu of your **vibrationstore<inject key="DeploymentID" enableCopy="false" />** blade, click on **Storage browser(1)** under **vibrationstore<inject key="DeploymentID" enableCopy="false" />** then click on **Blob containers(2)** and then click on **vibrationcontainer(3)**
 
-   ![](./media/lab7img20.png)
+   ![](./media/az-4-14.png)
 
 1. In the right-hand pane, under **NAME**, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**, and then use clicks to navigate down into the hierarchy.
 
@@ -411,9 +411,9 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
     The **Inputs** pane will be displayed.
 
-1. On the **Inputs** pane, click **+ Add input**, and then click **IoT Hub**.
+1. On the **Inputs** pane, click on **+ Add input(1)** and then select **IoT Hub(2)**.
 
-   ![](./media/lab7img28.png)
+   ![](./media/az-4-15.png)
 
 1. On the **IoT Hub - New input** pane, under **Input alias**, enter **vibrationInput**
 
@@ -445,9 +445,9 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
 In this task, you will create a output in the Stream Analytics in the Portal.
 
-1. To create an output, on the left-side menu under **Job topology**, click on **Outputs**. On the **Outputs** pane, click on **+ Add output** and then click on **Blob storage/ADLS Gen2**.
+1. To create an output, on the left-side menu under **Job topology**, click on **Outputs(1)**. On the **Outputs** pane, click on **+ Add output(2)** and then select **Blob storage/ADLS Gen2(3)**.
 
-   ![](./media/lab7img30.png)
+   ![](./media/az-4-18.png)
 
 1. On the **Blob storage/ADLS Gen2 - New output** pane, under **Output alias**, enter **vibrationOutput**.
 
