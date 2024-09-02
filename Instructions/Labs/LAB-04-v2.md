@@ -66,6 +66,10 @@ In this task, you will be opening the Simulated device project using visual stud
 
    ![](./media/az-4-1.png)
 
+1. If the pop up appears click on **Yes, I trust the authors**.
+
+   ![](./media/az-3-9.png)
+
     You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
     * Program.cs
