@@ -393,11 +393,11 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
    ![](./media/v2img17.png)
 
-1. select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
+1. Select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
 
    ![](./media/v2img18.png)
 
-1. run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. Run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
     ```cmd/sh
     az iot hub monitor-events --hub-name {IoTHubName} 
@@ -413,7 +413,7 @@ Continue? (y/n) -> y.**
 
    Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
 
-   ![](./media/az-3-20.png)
+    ![](./media/az-3-20.png)
 
     Continue to leave the simulated device application running for the next task.
 
