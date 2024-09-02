@@ -199,9 +199,9 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
     ![](media/1lab6.png)
 
-1. On the **Device Provisioning Service** blade, under **Settings**, click on **Linked IoT hubs(1)**.
+1. On the **Device Provisioning Service** blade, click on **Linked IoT hubs(1)** under **Settings.**
 
-1. At the top of the blade, click **+ Add(2)**.
+1. At the top of the blade, click on **+ Add(2)**.
 
 1. On the **Add link to IoT hub** blade, ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
 
@@ -233,7 +233,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
     ![](media/1lab14.png)   
 
-1. Click on **dps-az220-training-cah281216**
+1. Click on **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"></inject>**
 
     ![](media/1lab15.png)
 
@@ -253,32 +253,32 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
     ![](media/iott24.png)
 
-1. On the left-side menu, under **Settings**, click **Quick Start**.
+1. On the left-side menu, click on **Quick Start** under **Settings.** 
 
     This pane lists the steps to start using the Iot Hub Device Provisioning Service, links to documentation and shortcuts to other blades for configuring DPS.
 
     ![](media/iott25.png)
 
-1. On the left-side menu, under **Settings**, click **Shared access policies**.
+1. On the left-side menu, click on **Shared access policies** under **Settings.**
 
     This pane provides management of access policies, lists the existing policies and the associated permissions.
 
     ![](media/iott26.png)
 
-1. On the left-side menu, under **Settings**, click **Linked IoT hubs**.
+1. On the left-side menu, click on **Linked IoT hubs** under **Settings.**
 
     Here you can see the linked IoT Hub from earlier. The Device Provisioning Service can only provision devices to IoT hubs that have been linked to it. Linking an IoT hub to an instance of the Device Provisioning service gives the service read/write permissions to the IoT hub's device registry; with the link, a Device Provisioning service can register a device ID and set the initial configuration in the device twin. 
 
     ![](media/iott27.png)
 
 
-1. On the left-side menu, under **Settings**, click **Certificates(1)**.
+1. On the left-side menu, click on **Certificates(1)** under **Settings.**
 
     ![](media/1lab7.png)
 
     Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
 
-1. On the left-side menu, under **Settings**, click **Manage enrollments(2)**.
+1. On the left-side menu, click on **Manage enrollments(2)** under **Settings.**
 
     Here you can manage the enrollment groups and individual enrollments.
 
