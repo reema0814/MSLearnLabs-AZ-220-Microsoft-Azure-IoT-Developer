@@ -5,8 +5,12 @@
     "BaseURL": "https://github.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/stage-rowancollege/Instructions/Labs/LAB-04-v2.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/stage-rowancollege/Instructions/Labs/LabIntro.md",
         "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/stage-rowancollege/Instructions/Labs/LAB-04-v2.md",
+        "Order": 2
       }
     ]
   }
