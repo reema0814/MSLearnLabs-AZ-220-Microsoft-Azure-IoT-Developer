@@ -72,7 +72,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
       "telemetryDelay": "2"
     }
     ```
-    ![](./media/az-3-5.png)
+    ![](./media2/lab03updatedimg1.png)
 
     This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
