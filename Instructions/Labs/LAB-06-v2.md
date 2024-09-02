@@ -148,6 +148,14 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img14.png)
 
+<validation step="455aeeef-964f-40a5-90ed-6fc8d87479c7" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 ## Exercise 2: Run Simulated IoT Devices
 
 In this exercise, you will run the simulated devices so that they start sending telemetry events to Azure IoT Hub.
