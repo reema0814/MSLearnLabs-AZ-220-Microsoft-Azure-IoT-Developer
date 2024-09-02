@@ -502,10 +502,10 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       ```bash
       iotedge list
       ```
+       
+      > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
 
       ![](./media/edge11.png)
-
-      > **Note**: If the Stream Analytics module does not show up in the list, wait a minute or two, then try again. It can take a minute for the module deployment to be updated on the IoT Edge Device.
 
 1. At the command prompt, to watch the telemetry being sent from the Edge device by the **tempsensor** module, enter the following command:
 
