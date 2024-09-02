@@ -499,9 +499,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. At the command prompt, to view a list of the modules deployed to the device, enter the following command:
 
-    ```bash
-    iotedge list
-    ```
+      ```bash
+      iotedge list
+      ```
 
       ![](./media/edge11.png)
 
@@ -509,9 +509,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. At the command prompt, to watch the telemetry being sent from the Edge device by the **tempsensor** module, enter the following command:
 
-    ```bash
-    iotedge logs tempsensor
-    ```
+      ```bash
+      iotedge logs tempsensor
+      ```
 
       > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
 
