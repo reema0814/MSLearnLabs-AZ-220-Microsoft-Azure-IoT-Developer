@@ -252,8 +252,6 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
     ```
 
       ![](./media/az8-7.png)
-   
-    The public IP of the VM is the final **Address** value - in this case **168.61.181.131**.
 
     > **Note**: If the nslookup command is unable to display the public IP address of the VM, open the vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" /> virtual machine in the portal to find and record the value of the public IP address. 
 
