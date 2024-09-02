@@ -36,7 +36,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
       ![](media/1lab11.png)
    
-1. On the **Search services and marketplace** box, enter **logic app**
+1. On the **Search services and marketplace** box, enter **logic app**.
 
 1. In the search results, select **Logic App**.
 
@@ -94,7 +94,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
       
       > **Note**: In the JSON replace the **id, subscription ID, resource group name, hub name** with the actual values. 
 
-1. Use a copy-and-paste operation to add the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
+1. Copy the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
     ```json
     [{
@@ -143,8 +143,6 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
     ```
 
       > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
-
-      ![](media/az-5-5.png)
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
@@ -205,29 +203,26 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
     You may have realized that the **curly-braces entries** are intended to represent dynamic content. You will need to replace these placeholder entries with the actual Dynamic content values.
 
-1. To replace the values, click on the field you want replace and select the marked icon shown in the below image.
+1. To replace the values, click on the the **Dynamic Content** icon shown in the below image.
 
-    ![](media/9lab26.png)
+      ![](media/az5-6.png)
 
-1. Type **eventType** search rext box and select it from the drop down.
+1. Type **eventType (1)** search box and **select (2)** it .
 
-    ![](media/9lab27.png)
+      ![](media/az5-3.png)
 
-    In the next step you will replace each placeholder value with the corresponding Dynamic content value.
 
-1. For each dynamic content placeholder, delete the entry and then replace it with the corresponding Dynamic content field.
+1. Repeat the same step by replacing the **curly-braces entries** with the actual **Dynamic content values**.
 
-    When you add the first dynamic content value, because the input data schema is for an array, the Logic Apps Designer will automatically change the e-mail action to be nested inside of a **For each** action. When this happens, the **Send an email (V2)** action will collapse. To reopen your email message, click **Send an email (V2)**, and then continue editing the message body.
+      > **Note**: When you add the first dynamic content value, because the input data schema is for an array, the Logic Apps Designer will automatically change the e-mail action to be nested inside of a **For each** action. When this happens, the **Send an email (V2)** action will collapse. To reopen your email message, click **Send an email (V2)**, and then continue editing the message body.
 
     When you have completed this step you should see a message body that is similar to the following:
 
-    ![](media/9lab17.png)
+      ![](media/9lab17.png)
 
-1. At the top of the designer, to save all changes to the Logic App Workflow, click **Save** .
+1. At the top of the designer, to save all changes to the Logic App Workflow, click on **Save** .
 
-1. To expand the _When a HTTP request is received_ trigger, click on **When a HTTP request is received(1)**.
-
-1. Copy and paste the value for the **HTTP POST URL(2)** in a notepad.
+1. To expand the _When a HTTP request is received_ trigger, click on **When a HTTP request is received(1)**. Copy the value for the **HTTP POST URL(2)** in a notepad.
 
       ![](media/9lab18.png)
 
