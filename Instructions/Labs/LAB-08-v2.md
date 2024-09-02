@@ -425,23 +425,19 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. On your Azure dashboard, to open your IoT Hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/lab12img1.png)
+      ![](./media/lab12img1.png)
 
 1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**
 
-   ![](./media/lab12img14.png)
+      ![](./media/lab12img14.png)
 
-1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072**
+1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072 (1)**. Under **Parent device**, click **Set a parent device (2)** and click on **Save (3)**.
 
-   ![](./media/lab12img15.png)
+      ![](./media/az8-9.png)
+   
+1. On the **Set an Edge device as a parent device** blade, under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, and then click **OK (2)**.
 
-1. Under **Parent device**, click **Set a parent device**.
-
-   ![](./media/lab12img16.png)
-
-1. On the **Set an Edge device as a parent device** blade, under **Device ID**, click **vm-az220-training-gw0001-{your-id}**, and then click **OK**.
-
-   ![](./media/lab12img17.png)
+      ![](./media/lab12img17.png)
 
 1. On the **Create a device** blade, to create the IoT Device identity for the downstream device, click **Save**.
 
@@ -449,13 +445,13 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. Under **Device ID**, click **sensor-th-0072**.
 
-   ![](./media/lab12img18.png)
+      ![](./media/lab12img18.png)
 
 1. On the IoT Device summary pane, to the right of the **Primary Connection String** field, click **Copy**.
 
-   ![](./media/lab12img19.png)
+     ![](./media/lab12img19.png)
 
-1. Save the Primary Connection String value of your leaf IoT device to your text file for later reference.
+1. Save the Primary Connection String value of your leaf IoT device in your notepad for future use.
 
     Be sure to note that this connection string is for the sensor-th-0072 leaf device.
 
@@ -481,12 +477,7 @@ In this task, you will configure the connection between a pre-built downstream d
 
     The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
 
-    * Allfiles
-        * Labs
-            * 12-Setup an IoT Edge Gateway
-                * Starter
-
-    > **Note**: If you have trouble finding the Allfiles folder, check your Windows Desktop folder.
+      `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
 
     > **Important**: Make sure the file has that exact name. Rename the file after copying it if necessary.
 
@@ -502,7 +493,7 @@ In this task, you will add the required entry to the hosts file.
 
 1. On the **File** menu, click **Open File**.
 
-1. Navigate to the following folder location: **c:\\Windows\\System32\\Drivers\\etc\\**, and then open the **hosts** file.
+1. Navigate to the following folder location: `C:\Windows\System32\Drivers\etc\`, and then open the **hosts** file.
 
     > **Note**: the **hosts** file has no extension.
 
@@ -536,10 +527,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
     The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
 
-    * Allfiles
-        * Labs
-            * 12-Setup an IoT Edge Gateway
-                * Starter
+      `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
 
     You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
 
@@ -549,7 +537,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
     Take a minute to review the code.
 
-1. Locate the declaration for the **connectionString** variable, and then replace the placeholder value with the Primary Connection String for the **sensor-th-0072** IoT device.
+1. Locate the declaration for the **connectionString** variable, and then replace the placeholder value with the **Primary Connection String** for the **sensor-th-0072** IoT device.
 
 1. Append the assigned **connectionString** value with a **GatewayHostName** property, and then set the value of GatewayHostName to the name of your IoT Edge gateway device.
 
@@ -575,7 +563,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     private readonly static string connectionString = "HostName=iot-az220-training-abc201119.azure-devices.net;DeviceId=sensor-th-0072;SharedAccessKey=ygNT/WqWs2d8AbVD9NAlxcoSS2rr628fI7YLPzmBdgE=;GatewayHostName=vm-az220-training-gw0001-{your-id}";
     ```
 
-1. On the **File** menu, click **Save**.
+1. Press `Ctrl+S` to save.
 
 1. Scroll down to locate the **Main** method, and then take a minute to review the code.
 
@@ -606,6 +594,8 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     > **Information**: You can learn more about the **X509Store** class [here](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509store?view=netcore-3.1).
 
 1. On the **Terminal** menu, click **New Terminal**.
+
+     ![](./media/az15-50.png)
 
 1. At the TERMINAL command prompt, enter the following command:
 
