@@ -6,7 +6,7 @@ Welcome to your AZ-220: Microsoft Azure IoT Developer Workshop workshop! We've p
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
  
-   ![](../media/labguide.png)
+   ![](./media/labguide.png)
 
 ### Virtual Machine & Lab Guide
  
