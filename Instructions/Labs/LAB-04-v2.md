@@ -591,6 +591,14 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. At the Terminal command prompt, to exit the device simulator app, press **CTRL-C**.
 
+<validation step="16dcb93f-8112-4954-949e-39fae6826bf7" />
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
 ## Summary 
 
 In this lab, You've traced the message data processes from the device app, to the IoT hub, and then through both an IoT hub route and Azure Stream Analytics job all the way to a Blob storage container. Great progress!
