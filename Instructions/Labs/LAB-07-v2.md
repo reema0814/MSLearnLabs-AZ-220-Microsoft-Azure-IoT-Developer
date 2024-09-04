@@ -1,5 +1,7 @@
 # Lab 07: Introduction to Azure IoT Edge
 
+### Estimated Duration: 120 minuts
+
 ## Lab Scenario
 
 To encourage local consumers in a global marketplace, Contoso has partnered with local artisans to produce cheese in new regions around the globe.
@@ -23,7 +25,7 @@ In this lab, you will complete the following:
 
 ![Lab 11 Architecture](media/LAB_AK_11-architecture.png)
 
-### Exercise 1: Configure Lab Prerequisites
+## Exercise 1: Configure Lab Prerequisites
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
@@ -51,9 +53,9 @@ In this lab, you will complete the following:
 
       <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
 
-### Exercise 2: Create and configure an IoT Edge VM
+## Exercise 2: Create and configure an IoT Edge VM
 
-#### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
+### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
 
 1. On the Azure portal toolbar, to open the **Azure Cloud Shell**, click **Cloud Shell**.
 
@@ -93,7 +95,7 @@ In this lab, you will complete the following:
     az extension update --name azure-iot
     ```
 
-#### Task 2: Provision IoT Edge VM
+### Task 2: Provision IoT Edge VM
 
 1. Open a new tab in the VM and navigate to the following address:
    
@@ -127,7 +129,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media/az11-28.png)
 
-#### Task 3: Connect to the VM
+### Task 3: Connect to the VM
 
 1. If Cloud Shell is not still open, click **Cloud Shell**.
 
@@ -188,13 +190,13 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
       <validation step="191f1b2a-c39d-46d1-9bc4-8d667d71674a" />
 
-### Exercise 3: Add Edge Module to Edge Device
+## Exercise 3: Add Edge Module to Edge Device
 
 When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub, and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
 
 In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Edge module, and deploy it to run on the IoT Edge Device.
 
-#### Task 1: Configure module for deployment
+### Task 1: Configure module for deployment
 
 1. Search for **IoT Hub** and select it.
 
@@ -260,7 +262,7 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
     > **Note**: If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
 
-#### Task 2: Confirm module deployment
+### Task 2: Confirm module deployment
 
 1. Open a Cloud Shell session (if it is not still open).
 
@@ -300,11 +302,11 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
       <validation step="fca9d004-2423-4636-826d-89abf367549e" />
   
-### Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
+## Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
 
 Now that the tempSensor module is deployed and running on the IoT Edge device, we can add a Stream Analytics module that can process messages on the IoT Edge device before sending them on to the IoT Hub.
 
-#### Task 1: Create Azure Storage Account
+### Task 1: Create Azure Storage Account
 
 1. Search for **storage account** and select it.
 
@@ -328,7 +330,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Click on **Create**.
 
-#### Task 2: Create an Azure Stream Analytics job
+### Task 2: Create an Azure Stream Analytics job
 
 1. Search for **Stream Analytics** and select **Stream Analytics jobs**.
 
@@ -352,7 +354,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    
 1. At the bottom of the blade, click **Create**. It can take a few moments to for this resource to be deployed.
 
-#### Task 3: Configure Azure Stream Analytics Job
+### Task 3: Configure Azure Stream Analytics Job
 
 1. When you see the **Your deployment is complete** message, click **Go to resource**.
 
@@ -397,7 +399,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
 
-#### Task 4: Deploy the Stream Analytics Job
+### Task 4: Deploy the Stream Analytics Job
 
 1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
 
@@ -459,7 +461,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. At the bottom of the blade, click **Create**.
 
-#### Task 5: View Data
+### Task 5: View Data
 
 1. Go back to the **Cloud Shell** session where you're connected to the **IoT Edge Device** over **SSH**.
 
