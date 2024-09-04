@@ -1,7 +1,5 @@
 # Lab 10: Remotely monitor and control devices with Azure IoT Hub
 
-## Remotely monitor and control devices with Azure IoT Hub
-
 ## Lab Scenario
 
 Contoso is proud of its award-winning cheeses and is careful to maintain the perfect temperature and humidity during the entire manufacturing process, but conditions during the aging process have always received special attention.
@@ -18,24 +16,7 @@ Contoso has tasked you with implementing an automated system that keeps the cave
 
 In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors, and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
 
-### Simplified Lab Conditions
-
-The frequency of telemetry output is an important consideration in production solutions. A temperature sensor in a refrigeration unit may only need to report once a minute, whereas an acceleration sensor on an aircraft may have to report ten times per second. In some cases, the frequency at which telemetry must be sent is dependent on current conditions. For example, if the temperature in our cheese cave scenario tends to drop quickly at night, you may benefit from having more frequent sensor readings beginning two hours before sunset. Of course the requirement to change the frequency of telemetry does not need to be part of a predictable pattern, the events that drive our need to change IoT device settings can be unpredictable.
-
-To keep things simple in this lab, we will make the following assumptions:
-
-* The device will send telemetry (temperature and humidity values) to the IoT Hub every few seconds. Although this frequency is unrealistic for a cheese cave, it is great for a lab environment when we need to see changes frequently, not every 15 minutes.
-* The air processing system is a fan that can be in one of three states: On, Off, or Failed.
-  * The fan is initialized to the Off state.
-  * Electrical power to the fan is controlled (On/Off) using a direct method on the IoT device.
-  * Device Twin desired property values are used to set the desired state of the fan. The desired property values will override any default settings for the fan/device.
-  * Temperature can be controlled by turning the fan On/Off (turning the fan On will lower the temperature)
-
-Coding in this lab is broken down into three parts: sending and receiving telemetry, invoking and running a direct method, setting and reading device twin properties.
-
-You will start by writing two apps: one for a device to send telemetry, and one for a back-end service (that will run in the cloud) to receive the telemetry.
-
-The following resources will be created:
+## Architecture Diagram
 
 ![Lab 15 Architecture](media/LAB_AK_15-architecture.png)
 
@@ -63,11 +44,11 @@ In this lab, you will complete the following:
 
         ![](./media/az15-34.png)
 
-### Exercise 2: Review Code to Send and Receive Telemetry
+## Exercise 2: Review Code to Send and Receive Telemetry
 
 In this exercise, you will be completing the simulated device app (for the sensor-th-0055 device) that sends telemetry to your IoT Hub.
 
-#### Task 1: Open a simulated device that generates telemetry
+### Task 1: Open a simulated device that generates telemetry
 
 1. Open **Visual Studio Code** from the desktop.
 
@@ -91,9 +72,7 @@ In this exercise, you will be completing the simulated device app (for the senso
          ![](./media/az15-32.png)
 
 1. To open the code file, click **Program.cs**.
-
-   Take a minute to review the code. The simulated device code uses Symmetric Key authentication, sends both telemetry and logging         messages to the IoT hub, and simulates the implementation of sensors to generate telemetry values.
-
+   
       ![](./media/az15-4.png)
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. Notice that the directory path is indicated as part of the command prompt.
@@ -108,39 +87,17 @@ In this exercise, you will be completing the simulated device app (for the senso
 
       ![](./media/az15-36.png)
 
-#### Task 2: Configure connection and review code
+### Task 2: Configure connection and review code
 
 The simulated device app that you will build in this task simulates an IoT device that monitors temperature and humidity. The app will simulate sensor readings and communicate sensor data every two seconds.
 
-1. In visual studio code, open **Program.cs**. Replace the assigned placeholder value (including the angle braces) with the device connection string that you saved earlier. This is the only change that you need to implement before sending telemetry to the IoT Hub.
-
+1. In visual studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the device **connection string** that you saved earlier.
+   
       ![](./media/az15-6.png)
 
 1. Press `Ctrl + S` to save.
 
-1. Take a moment to review the structure of the application.
-
-    Notice that the application structure is similar to that used in previous labs:
-
-    - Using statements
-    - Namespace definition
-      - Program class - responsible for connecting to Azure IoT and sending telemetry
-      - CheeseCaveSimulator class - (replaces EnvironmentSensor) rather than just generating telemetry, this class also simulates a running cheese cave environment that is impacted by the operation of a cooling fan.
-      - ConsoleHelper - a class that encapsulates writing different colored text to the console
-
-1. Review the **Main** method.
-
-   The **Main** method is used to establish a connection to your IoT hub. You may have noticed that it will be used to integrate the device twin property changes, and in this case, you will also be integrating a direct method.
-
-1. Take a brief look at the **SendDeviceToCloudMessagesAsync** method.
-
-    Notice that it is very similar to previous versions you have created in earlier labs.
-
-1. Take a look at the **CheeseCaveSimulator** class.
-
-   This is an evolution of the **EnvironmentSensor** class used in earlier labs. The primary difference is the introduction of a fan -  if the fan is **On**, the temperature and humidity will gradually move towards the desired values, whereas is the fan is **Off** (or **Failed**), then the temperature and humidity values will move towards the ambient values. Of interest is the fact that there is a 1% chance that fan will be set to the **Failed** state when the temperature is read.
-
-#### Task 3: Test your Code to Send Telemetry
+### Task 3: Test your Code to Send Telemetry
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**.
 
@@ -152,11 +109,9 @@ The simulated device app that you will build in this task simulates an IoT devic
     dotnet run
     ```
 
-   This command will run the **Program.cs** file in the current folder.
+    > **Note**: This command will run the **Program.cs** file in the current folder.
 
 1. Notice the output being sent to the Terminal.
-
-    You should quickly see console output, similar to the following:
 
       ![](./media/az15-7.png)
 
@@ -164,19 +119,15 @@ The simulated device app that you will build in this task simulates an IoT devic
 
 1. Leave this app running.
 
-    You need to be sending telemetry to IoT Hub later in this lab.
-
-### Exercise 3: Complete a Second App to Receive Telemetry
+## Exercise 3: Complete a Second App to Receive Telemetry
 
 Now that you have your (simulated) cheese cave device sending telemetry to your IoT Hub, you need to complete a back-end app that can connect to IoT Hub and "listen" for that telemetry. Eventually, this back-end app will be used to automate the control of the temperature in the cheese cave.
 
-#### Task 1: Complete an app to receive telemetry
+### Task 1: Complete an app to receive telemetry
 
 In this task, you will begin work on the back-end app that will be used to receive telemetry from the IoT Hub Event Hub endpoint.
 
 1. Open an additional instance of Visual Studio Code.
-
-    Since your simulated device app is running in the Visual Studio Code window that you already have open, you need a new instance of Visual Studio Code for the back-end app.
 
 1. On the **File (1)** menu, click **Open Folder (2)**.
 
@@ -187,8 +138,6 @@ In this task, you will begin work on the back-end app that will be used to recei
     > **NOTE**: Be sure to open the **Final** folder. You do not want the project in the Starter folder.
 
 1. Click **CheeseCaveOperator**, and then click **Select Folder**.
-
-    The CheeseCaveOperator application that has been prepared for you is a simple console application that includes a couple of NuGet package libraries and some comments that will be used guide you through the process of building your code. You will need to add code blocks to the project before you are able to run the application.
 
 1. Click on **Yes, i trust the authors** when prompted.
 
@@ -271,7 +220,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
     If an event is received, then binary body data is converted to a string and written to the console - of course, in the "real-world" the JSON would likely be deserialized and so on. The event data properties are then iterated and, in this case, checked to see if a value is true - in the current scenario, this represents an alert. Should an alert be found, it is written to the console.
 
-#### Task 3: Test your Code to Receive Telemetry
+### Task 3: Test your Code to Receive Telemetry
 
 This test is important, checking whether your back-end app is picking up the telemetry being sent out by your simulated device. Remember your device app is still running, and sending telemetry.
 
@@ -284,8 +233,6 @@ This test is important, checking whether your back-end app is picking up the tel
     ```bash
     dotnet run
     ```
-
-   This command will run the **Program.cs** file in the current folder.
 
 1. Take a minute to observe the output to the Terminal.
 
@@ -312,7 +259,7 @@ This test is important, checking whether your back-end app is picking up the tel
 
     You now have an app that can send telemetry from a device, and a back-end app acknowledging receipt of the data. In the next            Exercise you will begin work on the steps that handle the control side - what to do when issues arise with the data.
 
-### Exercise 4: Include Code to Invoke a Direct Method
+## Exercise 4: Include Code to Invoke a Direct Method
 
 Calls from the back-end app to invoke direct methods can include multiple parameters as part of the payload. Direct methods are typically used to turn features of the device off and on, or specify settings for the device.
 
@@ -326,7 +273,7 @@ The device app contains the functional code for the direct method. The function 
 
 In this Exercise, you will update your device app by adding the code for a direct method that will simulate turning on the fan in the cheese cave. Next, you will add code to the back-end service app to invoke this direct method.
 
-#### Task 1: Enable Code to Define a Direct Method in the Device App
+### Task 1: Enable Code to Define a Direct Method in the Device App
 
 1. Return to the Visual Studio Code instance that contains your **CheeseCaveDevice** application.
 
@@ -344,7 +291,7 @@ In this Exercise, you will update your device app by adding the code for a direc
 
       ![](./media/az15-11.png)
 
-    Notice that the **SetFanState** direct method handler is also set up by this code. As you can see, the **SetMethodHandlerAsync** method of deviceClient takes the remote method name **"SetFanState"** as an argument, along with the actual local method to call, and a user context object (in this case null).
+    > **Note**: Notice that the **SetFanState** direct method handler is also set up by this code. As you can see, the **SetMethodHandlerAsync** method of deviceClient takes the remote method name **"SetFanState"** as an argument, along with the actual local method to call, and a user context object (in this case null).
 
 1. Locate the **Handle the direct method call** comment line within the code.
 
@@ -352,35 +299,7 @@ In this Exercise, you will update your device app by adding the code for a direc
 
     `  ![](./media/az15-12.png)
 
-    This is the method that runs on the device when the associated remote method, also called **SetFanState**, is invoked via the IoT Hub. Notice that in addition to receiving a **MethodRequest** instance, it also receives the **userContext** object that was defined when the direct message callback was registered (in this case it will be null).
-
-    The first line of this method determines whether the cheese cave fan is currently in a **Failed** state - the assumption made by the cheese cave simulator is that once the fan has failed, any subsequent command will automatically fail. Therefore, a JSON string is created with the **result** property set to **Fan Failed**. A new **MethodResponse** object is then constructed, with the result string encoded into a byte array and an HTTP status code - in this instance, **400** is used which, in the context of a REST API means a generic client-side error has occurred. As direct method callbacks are required to return a **Task\<MethodResponse\>**, a new task is created and returned.
-
-    > **Information**: You can learn more about how HTTP Status Codes are used within REST APIs [here](https://restfulapi.net/http-status-codes/).
-
-    If the fan state is not **Failed**, the code then proceeds to process the data sent as part of the method request. The **methodRequest.Data** property contains the data in the form of a byte array, so it is first converted to a string. In this scenario, the following two values are expected (including the quotes):
-
-    * "On"
-    * "Off"
-
-    It is assumed that the received data maps to members of the **StateEnum** :
-
-    ```csharp
-    internal enum StateEnum
-    {
-        Off,
-        On,
-        Failed
-    }
-    ```
-
-    In order to parse the data, the quotes must first be removed and then the **Enum.Parse** method is used to find a matching enum value. Should this fail (the data needs to match exactly), an exception is thrown, which is caught below. Notice that the exception handler creates and returns a similar error method response to the one created for the fan failed state.
-
-    If a matching value is found in the **StateEnum**, the cheese cave simulator **UpdateFan** method is called. In this case, the method merely sets the **FanState** property to the supplied value - a real-world implementation would interact with the fan to change the state and determine if the state change was successful. However, in this scenario, success is assumed and the appropriate **result** and **MethodResponse** are created and returned - this time using the HTTP Status code **200** to indicate success.
-
-  You have now completed the coding that is required on the device side. Next, you need to add code to the back-end Operator        application that will invoke the direct method.
-
-#### Task 2: Add Code to Call Your Direct Method
+### Task 2: Add Code to Call Your Direct Method
 
 1. Return to the Visual Studio Code instance that contains the **CheeseCaveOperator** application.
 
@@ -393,8 +312,6 @@ In this Exercise, you will update your device app by adding the code for a direc
     ```csharp
     private static ServiceClient serviceClient;
     ```
-
-    The **ServiceClient** is used to send messages to devices.
 
 1. Locate the **Create a ServiceClient to communicate with service-facing endpoint on your hub** comment line within the code.
 
@@ -409,21 +326,8 @@ In this Exercise, you will update your device app by adding the code for a direc
       ![](./media/az15-13.png)
 
 1. Press `Ctrl + S` to save.
-   
-    Notice how the **ServiceClient** connects using the **serviceConnectionString** defined earlier. The **InvokeMethod** is then called.
 
-    The **CloudToDeviceMethod** class encapsulates the information regarding the direct method - the method name, timeout, and payload. The **ServiceClient** instance created earlier is then used to invoke the direct method via the IoT Hub, returning a response object. A **response.Status** property value of **200** indicates success.
-
-    > **Information**: The **ServiceClient** class encapsulates interaction with the underlying Azure REST APIs. You can learn more about the underlying REST API for invoking direct methods here - [Understand and invoke direct methods from IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-direct-methods). You can also find the additional status codes documented:
-    > * 200 indicates successful execution of direct method;
-    > * 404 indicates that either device ID is invalid, or that the device was not online upon invocation of a direct method and for connectTimeoutInSeconds thereafter (use accompanied error message to understand the root cause);
-    > * 504 indicates gateway timeout caused by device not responding to a direct method call within responseTimeoutInSeconds.
-
-    This code is used to invoke the **SetFanState** direct method on the device app.
-
-  You have now completed the code changes to support the **SetFanState** direct method.
-
-#### Task 3: Test the direct method
+### Task 3: Test the direct method
 
 To test the direct method, you will need to start the apps in the correct order. You can't invoke a direct method that hasn't been registered!
 
@@ -453,11 +357,7 @@ To test the direct method, you will need to start the apps in the correct order.
     dotnet run
     ```
     
-      > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app.
-
-      The CheeseCaveOperator back-end app will immediately call the direct method.
-
-      Notice the output similar to the following:
+      > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app. The CheeseCaveOperator back-end app will immediately call the direct method.
 
       ![](./media/az-15-015.png)
 
@@ -465,11 +365,7 @@ To test the direct method, you will need to start the apps in the correct order.
 
       ![](./media/az15-14.png)
 
-You are now successfully monitoring and controlling a remote device. You have implemented a direct method on the device that can be invoked from the cloud. In the Contoso scenario, the direct method is used to turn on a fan, which will bring the environment in the cave to our desired settings. You should notice that the temperature and humidity readings reduce over time, eventually removing the alerts (unless the fan fails).
-
-But what if you want to remotely specify the desired settings for the cheese cave environment? Perhaps you want to set a particular target temperature for the cheese cave at a certain point in the aging process. You could specify desired settings with a direct method (which is a valid approach), or you could use another feature of IoT Hub that is designed for this purpose, device twins. In the next Exercise, you will work on implementing device twin properties within your solution.
-
-### Exercise 5: Implement the Device Twin functionality
+## Exercise 5: Implement the Device Twin functionality
 
 As a reminder, a device twin contains four types of information:
 
@@ -484,7 +380,7 @@ There is some overlap between the functionality of device twins and direct metho
 
 In this exercise, you will enable some code in the back-end service app, to show device twin synchronization in operation (the device code for twin synchronization is already added and has been covered in earlier labs).
 
-#### Task 1: Enable Code To Use Device Twins To Synchronize Device Properties
+### Task 1: Enable Code To Use Device Twins To Synchronize Device Properties
 
 1. Return to the Visual Studio Code instance that is running the **CheeseCaveOperator** back-end app.
 
@@ -498,8 +394,6 @@ In this exercise, you will enable some code in the back-end service app, to show
     private static RegistryManager registryManager;
     ```
 
-    The **RegistryManager** class encapsulates some of the IoT Hub Service REST APIs that include operations on the device identity registry, querying device twins, and import/export jobs. In this exercise, it will be used to update a device twin.
-
 1. In the **Main** method, locate the **A registry manager is used to access the digital twins** comment line within the code.
 
 1. To enable the functionality that creates the registry manager instance and sets the twin properties, uncomment the following code lines:
@@ -510,16 +404,12 @@ In this exercise, you will enable some code in the back-end service app, to show
     ```
 
       ![](./media/az15-16.png)
-   
-    Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
 
-    The **SetTwinProperties** method creates a piece of JSON that defines tags and properties that will be added to the device twin, and then updates the twin. The next part of the method demonstrates how a query can be performed to list the devices where the **cheeseCave** tag is set to "CheeseCave1". This query requires that the connection has the **Registry read** permission.
-
-    If you are interested, you can find the **SetTwinProperties** method further down in the Program.cs file.
+    > **Note**: Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
 
 1. Press `Ctrl+S` to save.
 
-#### Task 2: Enable Code to Synchronize Device Twin Settings for the Device
+### Task 2: Enable Code to Synchronize Device Twin Settings for the Device
 
 1. Return to the Visual Studio Code instance that contains the **CheeseCaveDevice** app.
 
@@ -545,13 +435,11 @@ In this exercise, you will enable some code in the back-end service app, to show
 
 1. Take a minute to review the OnDesiredPropertyChanged code.
 
-    This code defines the handler that is invoked when a desired property changes in the device twin. Notice that new values are then reported back to the IoT Hub to confirm the change.
-
 1. Press `Ctrl+S` to save.
 
     > **Note**:  Now you have added support for device twins to your app, you can reconsider having explicit variables such as **desiredHumidity**. You could use the variables in the device twin object instead.
 
-#### Task 3: Test the Device Twins
+### Task 3: Test the Device Twins
 
 To test the code that manages device twin desired property changes, you will start the apps in the correct order, device application first and then back-end application.
 
