@@ -1,5 +1,7 @@
 # Lab 02: Connect an IoT Device to Azure
 
+### Estimated Duration: 120 minutes
+
 ## Overview 
 
 In this lab, you will be creating a .NET Core console application that simulates the physical IoT device and sensors. Your simulated device will implement the IoT Device SDK and it will connect to IoT Hub just like a physical device would. Your simulated device will also communicate telemetry values using the same SDK resources used by a physical device, but the sensor readings will be generated values rather than real values read from temperature and humidity sensors.
@@ -14,17 +16,16 @@ Contoso has decided to launch an automated system that uses IoT devices to monit
 
 To evaluate this asset monitoring solution prior to full scale implementation, you will be connecting an IoT device (that includes temperature and humidity sensors) to IoT Hub.
 
-## Lab Objectives
-
-In this lab, you will perform these exercises:
-
- - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
- - Exercise 2: Create and Test a Simulated Device (C#)
-
 ## Architecure Diagram
 
 ![Lab 4 Architecture](media/LAB_AK_04-architecture.png)
 
+## Lab Objectives
+
+In this lab, you will complete the following:
+
+ - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
+ - Exercise 2: Create and Test a Simulated Device (C#)
 
 ## Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
 
