@@ -29,7 +29,7 @@ In this lab, you will complete the following:
 
       ![](./media/v2img1.png)
    
-1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
+1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** under the **Resources** tab.
 
       ![](./media/az11-70.png)
       
@@ -59,7 +59,7 @@ In this lab, you will complete the following:
 
       ![](./media/az11-37.png)
 
-1. Click on **Bash** when prompted.
+1. On the **Welcome to Azure Cloud Shell** pop up, click on **Bash**.
 
       ![](./media/az11-36.png)
 
@@ -102,26 +102,28 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. In the **Custom deployment** page, under **Project details**, enter the following details:
 
-   - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing resource group (2)**
-   - Region: **Select the default region (3)**
-   - Virtual Machine Name: Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
-   - Device Connection string: Paste the **device primary connection string** you copied earlier in your notepad **(5)**
-   - Virtual Machine Size: **Standard_DS1_v2 (6)**
-   - Ubuntu OS Version: **18.04-LTS (7)**
-   - Admin Username: Provide the name as **demouser (8)**
-   - Authentication Type: Select **Password (9)**
-   - Admin Password Or Key: Provide the password as **Password!123** **(10)**
-   - Allow SSH: **True (11)**
-   - Click on **Review + Create (12)**
+    | Settings | Values |
+    |  -- | -- |
+    | Subscription | **Select the default subscription (1)** |
+    | Resource Group | **Select the existing resource group (2)** |
+    | Region | **Select the default region (3)** |
+    | Virtual Machine Name | Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)** |
+    | Device Connection string | Paste the **device primary connection string** you copied earlier in your notepad **(5)** |
+    | Virtual Machine Size | **Standard_DS1_v2 (6)** |
+    | Ubuntu OS Version | **18.04-LTS (7)** |
+    | Admin Username | Provide the name as **demouser (8)** |
+    | Authentication Type | Select **Password (9)** |
+    | Admin Password Or Key | Provide the password as **Password!123** **(10)** |
+    | Allow SSH | **True (11)** |
+    | Click on | **Review + Create (12)** |
 
-     ![](./media/az11-29.png)
+      ![](./media/az11-29.png)
 
 1. Once validation is passed, click on **Create**.
 
-   > **Note**: Deployment can take as much as 5 minutes to complete.
+   > **Note**: Wait for the deployment to be completed. It will take approximately 5 minutes to complete.
 
-1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH**.
+1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
 
    ![](./media/az11-28.png)
 
@@ -202,18 +204,13 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
       ![](./media/edge12.png)
    
-1. Scroll to the bottom of the **sensor-th-0067** blade.Scroll down to find the **Modules (1)** section and notice the list of the modules currently configured for the device.
+1. Scroll to the bottom of the **sensor-th-0067** blade. Scroll down to find the **Modules (1)** section and notice the list of the modules currently configured for the device. At the top of the **sensor-th-0067** blade, click **Set Modules (2)**.
 
-      Currently, the IoT Edge device is configured with only the Edge Agent ($edgeAgent) and Edge Hub ($edgeHub) modules that are part 
-      of the IoT Edge Runtime.
-
-      At the top of the **sensor-th-0067** blade, click **Set Modules (2)**.
-
-   ![](./media/az11-22.png)
+    ![](./media/az11-22.png)
 
 1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click Add, and then select **IoT Edge Module**.
 
-   ![](./media/az11-21.png)
+    ![](./media/az11-21.png)
 
 1. On the Add IoT Edge Module pane, under IOT Edge Module Name, enter **tempsensor (1)**. Under Image URI, enter **mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0. (2)**
 
@@ -247,17 +244,13 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
     * Name: **route (1)**
     * Value: **`FROM /messages/* INTO $upstream` (2)**
 
-    This route will send all messages from all modules on the IoT Edge Device to IoT Hub
-
-      ![](./media/az11-18.png)
+        ![](./media/az11-18.png)
 
 1. At the bottom of the blade, to finish setting the modules for the device, click **Create**.
 
 1. On the **sensor-th-0067** blade, under **Modules**, notice that **tempsensor** is now listed.
 
-    > **Note**: You may have to click **Refresh** to see the module listed for the first time.
-
-    You may notice that the RUNTIME STATUS for **tempsensor** is not reported.
+    > **Note**: You may have to click **Refresh** to see the module listed for the first time. You may notice that the RUNTIME STATUS for **tempsensor** is not reported.
 
 1. At the top of the blade, click **Refresh**.
 
@@ -265,14 +258,13 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
      ![](./media/az11-17.png)
 
-    If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
+    > **Note**: If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
 
 #### Task 2: Confirm module deployment
 
 1. Open a Cloud Shell session (if it is not still open).
 
-    If you are no longer connected to the **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** virtual machine, connect using SSH as your did 
-    earlier in this lab. The SSH command should be available in Notepad.
+    > **Note**: If you are no longer connected to the **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** virtual machine, connect using SSH as your did earlier in this lab. The SSH command should be available in Notepad.
 
 1. At the Cloud Shell command prompt, to list the modules currently running on the IoT Edge Device, enter the following command:
 
@@ -282,7 +274,7 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
 
       ![](./media/az11-16.png)
    
-1. The output of the command look similar to the following.
+1. The output of the command look similar to the following. Notice that **tempsensor** is listed as one of the running modules.
 
     ```bash
     demouser@vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>:~$ iotedge list
@@ -291,8 +283,6 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
     edgeAgent        running          Up 26 minutes    mcr.microsoft.com/azureiotedge-agent:1.1
     tempsensor       running          Up 34 seconds    mcr.microsoft.com/azureiotedge-simulated-temperature-sensor
     ```
-
-    Notice that **tempsensor** is listed as one of the running modules.
 
 1. To view the module logs, enter the following command:
 
@@ -360,9 +350,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       ![](./media/az11-9.png)
    
-1. At the bottom of the blade, click **Create**.
-
-    It can take a few moments to for this resource to be deployed.
+1. At the bottom of the blade, click **Create**. It can take a few moments to for this resource to be deployed.
 
 #### Task 3: Configure Azure Stream Analytics Job
 
@@ -392,7 +380,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
            ![](./media/az11-6.png)
      
-1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**:
+1. On the left side navigation menu, under **Job topology**, click **Query (1)**. In the **Query** pane, replace the Default query with the **following (2)**. Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
 
       ```sql
     SELECT
@@ -406,8 +394,6 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       ```
     
       ![](./media/az11-5.png)
-
-      Verify that your query is entered correctly, and then, at the top of the query editor, click **Save query (3)**.
 
       > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
 
@@ -433,23 +419,17 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. Under **IoT Edge Modules**, click **asaaztraining**.
 
-    This is the Steam Analytics module that was just added to your Edge device.
-
 1. On the **Update IoT Edge Module** pane, notice that the **Image URI** points to a standard Azure Stream Analytics image.
 
       ```text
        mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.14
       ```
 
-      This is the same image used for every ASA job that gets deployed to an IoT Edge Device.
-
       > **Note**:  The version number at the end of the **Image URI** that is configured will reflect the current latest version when you created the Stream Analytics Module.
 
 1. Leave all values as their defaults, and close the **IoT Edge Custom Modules** pane.
 
 1. On the **Set modules on device: sensor-th-0067 (1)** pane, click **Next: Routes > (2)**.
-
-      Notice that the existing routing is displayed.
 
       ![](./media/az11-1.png)
       
@@ -465,13 +445,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
           * NAME: **`telemetryToAsa`** **(5)**
           * VALUE: **`FROM /messages/modules/tempsensor/* INTO BrokeredEndpoint("/modules/asa-az220-training-asa-az220-training-<DID>/inputs/temperature")`** **(6)**
 
-               The routes being defined are as follows:
-
-              - The **telemetryToCloud** route sends the all messages from the **tempsensor** module output to Azure IoT Hub.
-              - The **alertsToReset** route sends all alert messages from the Stream Analytics module output to the input of the **tempsensor** module.
-              - The **telemetryToAsa** route sends all messages from the **tempsensor** module output to the Stream Analytics module input.
-
-                   ![](./media/az11-42.png)
+            ![](./media/az11-42.png)
       
 1. On the **Review + create** tab, notice that the **Deployment Manifest** JSON is now updated with the Stream Analytics module and the routing definition that was just configured.
 
@@ -516,6 +490,6 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       <validation step="01b8b6ba-8df5-4f54-8dd8-559f82617e96" />
    
 ## Summary
-In this lab, you have configured the Lab Prerequisites , created and configured an IoT Edge VM, added Edge Module to Edge Device and deployed Azure Stream Analytics as IoT Edge Module/
+In this lab, you have configured the Lab Prerequisites , created and configured an IoT Edge VM, added Edge Module to Edge Device and deployed Azure Stream Analytics as IoT Edge Module.
 
 ### You have successfully completed the lab
