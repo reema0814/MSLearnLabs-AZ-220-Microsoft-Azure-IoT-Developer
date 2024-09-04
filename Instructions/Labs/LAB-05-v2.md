@@ -16,19 +16,14 @@ To generate an alert, you will push a device created event type to Event Grid wh
 
 In this lab, you will complete the following:
 
-- Exercise 1: Create HTTP Web Hook Logic App that sends an email
-- Exercise 2: Configure Azure IoT Hub Event Subscription
-- Exercise 3: Test Your Logic App with New Devices
+- Task 1: Create a Logic App resource in the Azure portal
+- Task 2: Configure Your Logic App
+- Task 3: Configure Azure IoT Hub Event Subscription
+- Task 4: Test Your Logic App with New Devices
   
 ## Architecture Diagram
 
 ![Lab 9 Architecture](media/LAB_AK_09-architecture.png)
-
-## Exercise 1: Create HTTP Web Hook Logic App that sends an email
-
-Azure Logic Apps is a cloud service that helps you schedule, automate, and orchestrate tasks, business processes, and workflows when you need to integrate apps, data, systems, and services across enterprises or organizations.
-
-In this exercise, you will create a new Azure Logic App that will be triggered via an HTTP Web Hook, then send an email using an Outlook.com email address.
 
 ### Task 1: Create a Logic App resource in the Azure portal
 
@@ -227,7 +222,7 @@ In this exercise, you will create a new Azure Logic App that will be triggered v
 
       <validation step="a35059f4-513a-43b9-8c82-28b61dd53339" />
 
-## Exercise 2: Configure Azure IoT Hub Event Subscription
+## Task 3: Configure Azure IoT Hub Event Subscription
 
 Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub.
 
@@ -275,7 +270,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
     ![](media/9lab22.png)
 
-## Exercise 3: Test Your Logic App with New Devices
+## Task 4: Test Your Logic App with New Devices
 
 Test your logic app by creating a new device to trigger an event notification email.
 
@@ -314,6 +309,5 @@ Test your logic app by creating a new device to trigger an event notification em
 ## Summary
 
 In this lab, you have created an Azure Logic App to automatically send emails based on IoT events. You have configured an Azure IoT Hub event subscription to trigger the Logic App and set up new IoT devices to generate events that activate the workflow.
-
 
 ### You have successfully completed the lab
