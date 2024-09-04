@@ -19,17 +19,6 @@ In this lab, you will complete the following:
 
 ### Exercise 1: Create an IoT Hub using the Azure portal
 
-The Azure IoT Hub is a fully managed service that enables reliable and secure bidirectional communications between IoT devices and Azure. The Azure IoT Hub service provides the following:
-
-* Establish bidirectional communication with billions of IoT devices
-* Multiple device-to-cloud and cloud-to-device communication options, including one-way messaging, file transfer, and request-reply methods.
-* Built-in declarative message routing to other Azure services.
-* A queryable store for device metadata and synchronized state information.
-* Secure communications and access control using per-device security keys or X.509 certificates.
-
-
-In this exercise, you will use the Azure portal to create and configure your IoT Hub.
-
 #### Task 1: Use the Azure portal to create a IoT Hub with required property settings
 
 1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
