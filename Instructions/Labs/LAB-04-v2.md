@@ -205,11 +205,6 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 
 <validation step="bd650436-fe95-498d-8865-1fdc920015e0" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Exercise 2: Create a Message Route to Azure Blob Storage
 
@@ -367,11 +362,6 @@ In this task, you will verify that the data is properly archived or not by looki
 
 <validation step="3b54d486-5079-4a03-9643-9e2f099478d8" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Exercise 3: Create an Azure Stream Analytics Job
 
@@ -583,11 +573,6 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 <validation step="16dcb93f-8112-4954-949e-39fae6826bf7" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Summary 
 
