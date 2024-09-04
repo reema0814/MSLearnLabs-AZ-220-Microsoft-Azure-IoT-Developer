@@ -1,5 +1,7 @@
 # Lab 04: Device Message Routing
 
+### Estimated Duration: 120 minutes
+
 ## Overview
 
 In this lab, you will begin by ensuring that your Azure subscription includes the required resources for this lab. You will then create a simulated device that sends vibration telemetry to your IoT hub. With your simulated data arriving at IoT hub, you will implement an IoT hub message route and Azure Stream Analytics job that can be used to process device messages (in both cases data will be delivered to a Blob storage container that is used to verify successful implementation).
