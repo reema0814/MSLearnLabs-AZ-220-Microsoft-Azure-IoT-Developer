@@ -334,9 +334,9 @@ In this exercise, you will run the Simulated Device and verify that it's sending
 
 In this task you will build the dotnet project and run to send the telemetry data.
 
-1. Ensure that you have your code project open in Visual Studio Code. click on **Terminal** and then **New Terminal**.
+1. Ensure that you have your code project open in Visual Studio Code. click on **Terminal(1)** and then **New Terminal(2)**.
 
-   ![](./media/az-3-12.png)
+   ![](./media/az-3-24.png)
 
 1. In the Terminal pane, ensure the command prompt shows the directory path for the `Program.cs` file.
 
