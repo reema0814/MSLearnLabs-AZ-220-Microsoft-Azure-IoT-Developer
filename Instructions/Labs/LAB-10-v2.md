@@ -1,5 +1,7 @@
 # Lab 10: Remotely monitor and control devices with Azure IoT Hub
 
+### Estimated Duration: 120 minutes
+
 ## Lab Scenario
 
 Contoso is proud of its award-winning cheeses and is careful to maintain the perfect temperature and humidity during the entire manufacturing process, but conditions during the aging process have always received special attention.
