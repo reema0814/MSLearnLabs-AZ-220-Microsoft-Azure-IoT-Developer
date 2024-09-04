@@ -1,6 +1,6 @@
 # Lab 07: Introduction to Azure IoT Edge
 
-### Estimated Duration: 120 minuts
+### Estimated Duration: 120 minutes
 
 ## Lab Scenario
 
@@ -23,7 +23,7 @@ In this lab, you will complete the following:
   
 ## Architecture Diagram
 
-![Lab 11 Architecture](media/LAB_AK_11-architecture.png)
+![Lab 11 Architecture](media/LAB_AK_11-architecture-1.png)
 
 ## Exercise 1: Configure Lab Prerequisites
 
@@ -31,7 +31,7 @@ In this lab, you will complete the following:
 
       ![](./media/v2img1.png)
    
-1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** under the **Resources** tab.
+1. Under the **Resources** tab, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
       ![](./media/az11-70.png)
       
