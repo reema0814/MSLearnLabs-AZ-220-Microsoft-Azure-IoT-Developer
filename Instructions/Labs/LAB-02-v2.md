@@ -158,15 +158,15 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```
     ![](./media/vs2.png)
 
-1. In Visual Studio Code, on the **Explorer** menu, click on **Open Folder**.
+1. In Visual Studio Code, on the **Explorer(1)** menu and then click on **Open Folder(2)**.
 
-    ![](./media/az-5-8.png)
+    ![](./media/az-5-81.png)
 
 1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
-1. In the list of folders, click **CaveDevice**, and then click on **Select Folder**.
+1. In the list of folders, click on **CaveDevice(1)** and then click on **Select Folder(2)**.
 
-    ![](./media/vs3.png)
+    ![](./media/az-2-cave.png)
 
 1. If the pop up appears click on **Yes, I trust the authors**.
 
@@ -318,7 +318,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     Notice that as well as specifying **System**, you are also declaring other namespaces that the code will be using, such as **System.Text** for encoding strings, **System.Threading.Tasks** for asynchronous tasks, and the namespaces for the two packages you added earlier.
 
-    ![](./media/vs6.png)
+    ![](./media/az-2-5.png)
 
     > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
 
