@@ -71,7 +71,7 @@ In this task, you will create a device in the IoT Hub.
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
-    > **NoteP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
+    > **Note**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
       ![](./media/az-2-41.png)
 
@@ -179,9 +179,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. In the **EXPLORER** pane, to open the application project file, click on **CaveDevice.csproj**.
 
-1. Take a minute to review the contents of the **CaveDevice.csproj** file.
-
-    Your file contents should be similar to the following:
+1. Take a minute to review the contents of the **CaveDevice.csproj** file. Your file contents should be similar to the following:
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
