@@ -1,7 +1,5 @@
 # Lab 07: Introduction to Azure IoT Edge
 
-## Introduction to Azure IoT Edge
-
 ## Lab Scenario
 
 To encourage local consumers in a global marketplace, Contoso has partnered with local artisans to produce cheese in new regions around the globe.
@@ -58,10 +56,6 @@ In this lab, you will complete the following:
 #### Task 1: Create an IoT Edge Device Identity in IoT Hub using Azure CLI
 
 1. On the Azure portal toolbar, to open the **Azure Cloud Shell**, click **Cloud Shell**.
-
-   The Cloud Shell button is to the right of the search field and has an icon that appears to represent a command prompt.
-
-   A Cloud Shell window will open near the bottom of the display screen.
 
       ![](./media/az11-37.png)
 
