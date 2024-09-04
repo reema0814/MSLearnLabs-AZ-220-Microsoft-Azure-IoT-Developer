@@ -247,7 +247,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
     As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. You can also define queries that help with routine tasks. Very handy.
 
-    ![](media/iott24.png)
+    ![](media/az-1-4.png)
 
 1. On the left-side menu, click on **Quick Start** under **Settings.** 
 
