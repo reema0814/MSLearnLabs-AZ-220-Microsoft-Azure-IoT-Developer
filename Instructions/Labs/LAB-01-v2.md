@@ -1,5 +1,7 @@
 # Lab 01: Getting Started with Azure IoT Services
 
+### Estimated Duration: 60 minutes
+
 ## Lab Scenario
 
 You are an Azure IoT Developer working for Contoso, a company that crafts and distributes gourmet cheeses.
@@ -8,7 +10,7 @@ You have been tasked with exploring Azure and the Azure IoT services that you wi
 
 ## Lab Objectives
 
-In this lab, you will create and examine an Azure IoT Hub and an IoT Hub Device Provisioning Service. The lab includes the following exercises:
+In this lab, you will complete the following:
 
 - Exercise 1: Create an IoT Hub using the Azure portal
 - Exercise 2: Examine the IoT Hub Service
