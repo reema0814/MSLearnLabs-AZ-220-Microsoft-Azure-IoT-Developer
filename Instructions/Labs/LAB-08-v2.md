@@ -1,5 +1,7 @@
 # Lab 08: Setup an IoT Edge Gateway
 
+### Estimated Duration: 120 minutes
+
 ## Lab Scenario
 
 This lab is theoretical and will walk you through how an IoT Edge device can be used as a gateway.
@@ -13,13 +15,14 @@ There are three patterns for using an IoT Edge device as a gateway: transparent,
 **Identity translation** - Devices that cannot connect to IoT Hub can connect to a gateway device, instead. The gateway provides IoT Hub identity and protocol translation on behalf of the downstream devices. The gateway is smart enough to understand the protocol used by the downstream devices, provide them identity, and translate IoT Hub primitives. Downstream devices appear in IoT Hub as first-class devices with twins and methods. A user can interact with the devices in IoT Hub and is unaware of the intermediate gateway device.
 
 ## Lab Objectives
+
 In this lab, you will perform:
 
  - Exercise 1: Deploy and configure a Linux VM  as an IoT Edge Gateway
  - Exercise 2: Download Device CA Certificate
  - Exercise 3: Create a Downstream Device
 
-The following resources will be created:
+## Architecture Diagram
 
 ![Lab 12 Architecture](media/LAB_AK_12-architecture.png)
 
@@ -51,22 +54,20 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/az8-2.png)
  
-1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**.
+1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**. Save the **Primary Connection String** value in a notepad for future use.
 
    ![](./media/az8-15.png)
-
-1. Save the **Primary Connection String** value in a notepad for future use.
 
 1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, scroll down and notice that the list of **Modules (1)** is limited to **\$edgeAgent** and **\$edgeHub**. At the top of the blade, click **Set Modules (2)**.
 
    ![](./media/az8-3.png)
 
-1. At the top of the **Set module on device** blade, click **Routes**.
+1. At the top of the **Set module on device** blade, click **Routes**. Under **Routes**, the editor displays a configured default route for the IoT Edge Device. At this time, it should be configured with a route that sends all messages from all modules to Azure IoT Hub. If the route configuration doesn't match this, then update it to match the following route:
 
-    Under **Routes**, the editor displays a configured default route for the IoT Edge Device. At this time, it should be configured with a route that sends all messages from all modules to Azure IoT Hub. If the route configuration doesn't match this, then update it to match the following route:
-
-    * **NAME**: `route`
-    * **VALUE**: `FROM /messages/* INTO $upstream`
+    | Setting | Value |
+    | --- | --- |
+    | NAME | `route` |
+    | VALUE | `FROM /messages/* INTO $upstream` |
 
       ![](./media/lab12img9.png)
 
@@ -103,18 +104,20 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. In the **Custom deployment** page, under **Project details**, enter the following details:
 
-   - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing resource group (2)**
-   - Region: **Select the default region (3)**
-   - Virtual Machine Name: Provide the name as **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** **(4)**
-   - Device Connection string: Paste the **device primary connection string** you copied earlier in your notepad **(5)**
-   - Virtual Machine Size: **Standard_DS1_v2 (6)**
-   - Ubuntu OS Version: 18.04-LTS **(7)**
-   - Admin Username: Provide the name as **demouser (8)**
-   - Authentication Type: Select **Password (9)**
-   - Admin Password Or Key: Provide the password as **Password!123** **(10)**
-   - Allow SSH: **True (11)**
-   - Click on **Review + Create (12)**
+    | Settings | Values |
+    |  -- | -- |
+    | Subscription | **Select the default subscription (1)** |
+    | Resource Group | **Select the existing resource group (2)** |
+    | Region | **Select the default region (3)** |
+    | Virtual Machine Name | Provide the name as **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** **(4)** |
+    | Device Connection string | Paste the **device primary connection string** you copied earlier in your notepad **(5)** |
+    | Virtual Machine Size | **Standard_DS1_v2 (6)** |
+    | Ubuntu OS Version | **18.04-LTS (7)** |
+    | Admin Username | Provide the name as **demouser (8)** |
+    | Authentication Type | Select **Password (9)** |
+    | Admin Password Or Key | Provide the password as **Password!123** **(10)** |
+    | Allow SSH | **True (11)** |
+    | Click | **Review + Create (12)** |
 
      ![](./media/az8-16.png)
 
@@ -195,11 +198,13 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
 1. In the create a storage account page, provide the following details and click on **Create (6)**.
 
-    - Subscription: **Select the default subscription (1)**
-    - Resource Group: **Select the existing resource group (2)**
-    - Region: Select **EAST US (3)**
-    - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
-    - File Share: Provide the name as **cloudshell (5)**
+    | Settings | Values |
+    |  -- | -- |
+    | Subscription | **Select the default subscription (1)** |
+    | Resource Group | **Select the existing resource group (2)** |
+    | Region | Select **EAST US (3)** |
+    | Storage Account Name | Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)** |
+    | File Share | Provide the name as **cloudshell (5)** |
 
       ![](./media/az8-6.png)
     
@@ -427,7 +432,7 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
-## Exercise 4: Create a Downstream Device
+## Exercise 3: Create a Downstream Device
 
 In this exercise, a downstream device will be created and connected to IoT Hub via the gateway.
 
