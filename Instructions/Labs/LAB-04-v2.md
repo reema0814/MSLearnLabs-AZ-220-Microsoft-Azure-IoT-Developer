@@ -589,6 +589,6 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 ## Summary 
 
-In this lab, You've traced the message data processes from the device app, to the IoT hub, and then through both an IoT hub route and Azure Stream Analytics job all the way to a Blob storage container. Great progress!
+In this lab, you began by writing code to generate vibration telemetry data. Next, you created a message route to direct this data to Azure Blob Storage. Finally, you set up an Azure Stream Analytics job to process and analyze the incoming telemetry data in real time.
 
 ## You have successfully completed the Lab!!
