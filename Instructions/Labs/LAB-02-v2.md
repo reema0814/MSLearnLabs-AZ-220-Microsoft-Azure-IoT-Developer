@@ -723,7 +723,7 @@ Continue? (y/n) -> y**
 
 ## Summary 
 
-In this lab, you first created an Azure IoT Hub Device ID. Next, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and then verified the data was successfully received.
+In this lab, intially you have created an Azure IoT Hub Device ID. Next, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and then verified the data was successfully received.
 
 ### You have successfully completed the lab !!
 
