@@ -41,7 +41,7 @@ You plan to implement features of IoT Hub that enable automatic device managemen
 
 ## Architecture Diagram
 
-![Lab 16 Architecture](media/LAB_AK_16-architecture.png)
+![Lab 16 Architecture](media/LAB_AK_16-architecture-1.png)
 
 ## Lab Objectives
 
