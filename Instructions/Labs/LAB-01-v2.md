@@ -227,7 +227,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
    
 1. Select the Resource group **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-    ![](media/1lab14.png)   
+    ![](media/az-1-5.png)   
 
 1. Click on **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"></inject>**
 
