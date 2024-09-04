@@ -130,9 +130,9 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     ![](./media/v2img8.png)
 
-1. Select **Terminal** and click on **New Terminal** from the menu.
+1. Select **Terminal(1)** and click on **New Terminal(2)** from the menu.
 
-    ![](./media/az-5-7.png)
+    ![](./media/az-5-71.png)
 
 1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands after the last command hit enter.
 
