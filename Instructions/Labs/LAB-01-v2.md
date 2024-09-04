@@ -272,6 +272,6 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 ## Summary
 
-In this lab, you have created a Azure IoT Hub and explored its features, then created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
+In this lab, you have created a Azure IoT Hub, explored its features, then created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
 
 ### You have successfully completed the lab
