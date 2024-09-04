@@ -72,7 +72,7 @@ In this task, you will create a device in the IoT Hub.
 
     > **TIP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
-   ![](./media/v2img6.png)
+   ![](./media/az-2-41.png)
 
 <validation step="3201069f-745a-4e51-aa22-bd5d492a066e" />
 
@@ -92,7 +92,7 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. On the **IoT devices** pane of your IoT Hub, under **Device ID**, click on **sensor-th-0001**.
 
-    ![](./media/v2img6.png)
+    ![](./media/az-2-41.png)
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
