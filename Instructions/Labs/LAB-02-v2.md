@@ -77,12 +77,6 @@ In this task, you will create a device in the IoT Hub.
 
 <validation step="3201069f-745a-4e51-aa22-bd5d492a066e" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
-
 
 ### Task 2: Get the Device Connection String
 
