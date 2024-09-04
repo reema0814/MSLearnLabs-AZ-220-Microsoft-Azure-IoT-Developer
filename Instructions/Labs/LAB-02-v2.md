@@ -42,7 +42,7 @@ In this task, you will create a device in the IoT Hub.
 
 1. On the resources tile, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
-   ![](./media/az-2-iot.png)
+   ![](./media/az-4-3.png)
 
 1. On the left-side menu of your IoT Hub blade, click on **Devices** under **Device management.**
    
