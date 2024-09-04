@@ -71,12 +71,11 @@ In this task, you will create a device in the IoT Hub.
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
-    > **TIP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
+    > **NoteP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
-   ![](./media/az-2-41.png)
+      ![](./media/az-2-41.png)
 
 <validation step="3201069f-745a-4e51-aa22-bd5d492a066e" />
-
 
 ### Task 2: Get the Device Connection String
 
@@ -90,29 +89,17 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
-    In addition to the device properties, notice that the device detail blade provides access to a number of device related functions (such as Direct Method and Device Twin) along the top of the blade.
-
 1. Notice that the key and connection string values are now populated.
 
-    The values are obfuscated by default, but you can click the "eye" icon on the right of each field to toggle between showing and hiding the values.
+1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a notepad for later use.
 
-1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a text editor such as notepad for later use.
-
-    ![](./media/v2img7.png)
-
-    > **Note**: You will need to use the Primary Connection String value later in the lab, so you may want to save it to an accessible location (perhaps by pasting the value into a text editor such as Notepad).
-
-    The connection string will be in the following format:
-
-    ```text
-    HostName={IoTHubName}.azure-devices.net;DeviceId=sensor-th-0001;SharedAccessKey={SharedAccessKey}
-    ```
+     ![](./media/v2img7.png)
 
 ## Exercise 2: Create and Test a Simulated Device (C#)
 
 In this exercise, you will create a simulated device application using Visual Studio Code and the Azure IoT Device SDKs. You will connect your device to Azure IoT Hub using the Device ID and Shared Access Key (Primary Connection String) that you created in the previous exercise. You will then test your secured device connection and communication to ensure that IoT Hub is receiving the simulated temperature and humidity values from your device as expected.
 
-> **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
+   > **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
 
 ### Task 1: Create the initial project
 
@@ -149,8 +136,6 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     > **Note**: The **Microsoft.Azure.Devices.Client** package contains the Azure IoT Device SDK for .NET and has the **Newtonsoft.Json** package as a dependency. The **Newtonsoft.Json** package contains APIs that aid in the creation and manipulation of JSON.
 
-    You will build and test your simulated device app in the next task.
-
 1. To ensure all of the application dependencies are downloaded, enter the following command
 
     ```bash
@@ -172,7 +157,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     ![](./media/az-3-9.png)
 
-    The EXPLORER pane of Visual Studio Code should now list two C# project files:
+1. The EXPLORER pane of Visual Studio Code should now list two C# project files:
 
     * CaveDevice.csproj
     * Program.cs
@@ -193,8 +178,6 @@ As noted above, the application currently consists of two files:
 In this task, you will use Visual Studio Code to review the contents and purpose of the two application files.
 
 1. In the **EXPLORER** pane, to open the application project file, click on **CaveDevice.csproj**.
-
-    The **CaveDevice.csproj** file should now be opened in the code editor pane.
 
 1. Take a minute to review the contents of the **CaveDevice.csproj** file.
 
@@ -222,11 +205,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     The **ItemGroup** specifies any external libraries that are required for the application. These particular references are for NuGet packages, and each package reference specifies the package name and the version. The **dotnet add package** commands (that you entered in the steps above) added these references to the project file and the **dotnet restore** command ensured that all of the dependencies were downloaded.
 
-    > **Tip**: You can learn more about NuGet [here](https://docs.microsoft.com/en-us/nuget/what-is-nuget).
-
 1. In the **EXPLORER** pane, click on **Program.cs**.
-
-    The **Program.cs** file should now be opened in the code editor pane.
 
 1. Take a minute to review the contents of the **Program.cs** file.
 
@@ -236,19 +215,13 @@ In this task, you will use Visual Studio Code to review the contents and purpose
      Console.WriteLine("Hello, World!");
     ```
 
-    This program simply writes "Hello World!" to the command line window. Even though there isn't much code here, there are still some things worth noting:
-
 1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
 
     ![](./media/v2img13.png)
 
-    This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
-
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
     ![](./media/v2img14.png)
-
-    The Terminal command prompt includes the current directory path. The commands that you enter are run at the current location, so be sure that you are located in the **CaveDevice** folder.
 
 1. To build and run the **CaveDevice** project, enter the following command:
 
