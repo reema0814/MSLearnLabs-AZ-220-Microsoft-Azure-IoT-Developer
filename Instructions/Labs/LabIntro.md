@@ -48,7 +48,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
 3. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
 
-   >**Note:** This extension can be applied once by the user. If you need additional time, please feel free to reach out to the [Spektra Support Team](labs-support@spektrasystems.com).
+   >**Note:** This extension can be applied twice by the user. If you need additional time, please feel free to reach out to the [Spektra Support Team](labs-support@spektrasystems.com).
 
 ## Let's Get Started with Azure Portal
  
