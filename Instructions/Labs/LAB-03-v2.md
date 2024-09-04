@@ -1,5 +1,7 @@
 # Lab 03: Individual Enrollment of a Device in DPS
 
+### Estimated Duration: 120 minutes
+
 ## Overview
 
 In this lab, you will begin by reviewing the lab prerequisites and you will run a script if needed to ensure that your Azure subscription includes the required resources. You will then create a new individual enrollment in DPS that uses Symmetric Key attestation and specifies an initial Device Twin State (telemetry rate) for the device. With the device enrollment saved, you will go back into the enrollment and get the auto-generated Primary and Secondary keys needed for device attestation. Next, you create a simulated device and verify that device connects successfully with IoT hub and that the initial device twin properties are applied by the device as expected. To finish up, you will complete a deprovisioning process that securely removes the device from your solution by both disenrolling and deregistering the device (from DPS and IoT hub respectively).
@@ -82,7 +84,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments, click on **individual enrollments(2)**.
+1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments then click on **Individual enrollments(2)**.
 
     ![](./media/az-3-17.png)
 
@@ -118,9 +120,9 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](./media/v2img8.png)
 
-1. On the **File** menu, click **Open Folder**.
+1. On the **File(1)** menu, click on **Open Folder(2)**.
 
-   ![](./media/az-3-7.png)
+   ![](./media/az-3-22.png)
    
 1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\05-Individual Enrollment of Device in DPS\Starter\ContainerDevice` press Enter and then click on **Select folder**.
 
@@ -144,21 +146,21 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. In the code editor, near the top of the Program class, locate the **dpsIdScope** variable.
 
-1. Update the value assigned to **dpsIdScope** using the ID Scope that you copied from the Device Provisioning Service.
+1. Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service.
 
     > **Note**: If you don't have the value of ID Scope available to you, you can find it on the Overview blade of the DPS service (in the Azure portal).
 
-1. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000**
+1. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**
 
     This variable represents the **Registration ID** value for the individual enrollment that you created in the Device Provisioning Service.
 
-1. Update the **individualEnrollmentPrimaryKey** and **individualEnrollmentSecondaryKey** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
+1. Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
     > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
     >
     > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
 
-    ![](./media/az-3-11.png)    
+    ![](./media/az-3-23.png)    
 
 ### Task 2: Add the provisioning code
 

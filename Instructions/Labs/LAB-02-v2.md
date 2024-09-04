@@ -1,5 +1,7 @@
 # Lab 02: Connect an IoT Device to Azure
 
+### Estimated Duration: 120 minutes
+
 ## Overview 
 
 In this lab, you will be creating a .NET Core console application that simulates the physical IoT device and sensors. Your simulated device will implement the IoT Device SDK and it will connect to IoT Hub just like a physical device would. Your simulated device will also communicate telemetry values using the same SDK resources used by a physical device, but the sensor readings will be generated values rather than real values read from temperature and humidity sensors.
@@ -14,17 +16,16 @@ Contoso has decided to launch an automated system that uses IoT devices to monit
 
 To evaluate this asset monitoring solution prior to full scale implementation, you will be connecting an IoT device (that includes temperature and humidity sensors) to IoT Hub.
 
-## Lab Objectives
-
-In this lab, you will perform these exercises:
-
- - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
- - Exercise 2: Create and Test a Simulated Device (C#)
-
 ## Architecure Diagram
 
 ![Lab 4 Architecture](media/LAB_AK_04-architecture.png)
 
+## Lab Objectives
+
+In this lab, you will complete the following:
+
+ - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
+ - Exercise 2: Create and Test a Simulated Device (C#)
 
 ## Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
 
@@ -70,19 +71,11 @@ In this task, you will create a device in the IoT Hub.
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
-    > **TIP**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
+    > **Note**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
-   ![](./media/az-2-41.png)
+      ![](./media/az-2-41.png)
 
 <validation step="3201069f-745a-4e51-aa22-bd5d492a066e" />
-
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
-
 
 ### Task 2: Get the Device Connection String
 
@@ -96,31 +89,17 @@ In this task, you will get the device connection string from the Azure Portal.
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
-    In addition to the device properties, notice that the device detail blade provides access to a number of device related functions (such as Direct Method and Device Twin) along the top of the blade.
-
 1. Notice that the key and connection string values are now populated.
 
-    The values are obfuscated by default, but you can click the "eye" icon on the right of each field to toggle between showing and hiding the values.
+1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a notepad for later use.
 
-1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a text editor such as notepad for later use.
-
-    ![](./media/v2img7.png)
-
-    > **Note**: You will need to use the Primary Connection String value later in the lab, so you may want to save it to an accessible location (perhaps by pasting the value into a text editor such as Notepad).
-
-    The connection string will be in the following format:
-
-    ```text
-    HostName={IoTHubName}.azure-devices.net;DeviceId=sensor-th-0001;SharedAccessKey={SharedAccessKey}
-    ```
+     ![](./media/v2img7.png)
 
 ## Exercise 2: Create and Test a Simulated Device (C#)
 
-The Azure IoT Device SDKs enable you to build apps that run on your IoT devices using the device client. Tools in the SDK will help you to establish secure connections as well as packaging messages and implementing communication with your IoT hub. The device SDK will also help you to receive messages, job, method, or device twin updates from your IoT hub.
-
 In this exercise, you will create a simulated device application using Visual Studio Code and the Azure IoT Device SDKs. You will connect your device to Azure IoT Hub using the Device ID and Shared Access Key (Primary Connection String) that you created in the previous exercise. You will then test your secured device connection and communication to ensure that IoT Hub is receiving the simulated temperature and humidity values from your device as expected.
 
-> **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
+   > **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
 
 ### Task 1: Create the initial project
 
@@ -157,8 +136,6 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     > **Note**: The **Microsoft.Azure.Devices.Client** package contains the Azure IoT Device SDK for .NET and has the **Newtonsoft.Json** package as a dependency. The **Newtonsoft.Json** package contains APIs that aid in the creation and manipulation of JSON.
 
-    You will build and test your simulated device app in the next task.
-
 1. To ensure all of the application dependencies are downloaded, enter the following command
 
     ```bash
@@ -166,21 +143,21 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```
     ![](./media/vs2.png)
 
-1. In Visual Studio Code, on the **Explorer** menu, click on **Open Folder**.
+1. In Visual Studio Code, on the **Explorer(1)** menu and then click on **Open Folder(2)**.
 
-    ![](./media/az-5-8.png)
+    ![](./media/az-5-81.png)
 
 1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
 
-1. In the list of folders, click **CaveDevice**, and then click on **Select Folder**.
+1. In the list of folders, click on **CaveDevice(1)** and then click on **Select Folder(2)**.
 
-    ![](./media/vs3.png)
+    ![](./media/az-2-cave.png)
 
 1. If the pop up appears click on **Yes, I trust the authors**.
 
     ![](./media/az-3-9.png)
 
-    The EXPLORER pane of Visual Studio Code should now list two C# project files:
+1. The EXPLORER pane of Visual Studio Code should now list two C# project files:
 
     * CaveDevice.csproj
     * Program.cs
@@ -202,11 +179,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
 1. In the **EXPLORER** pane, to open the application project file, click on **CaveDevice.csproj**.
 
-    The **CaveDevice.csproj** file should now be opened in the code editor pane.
-
-1. Take a minute to review the contents of the **CaveDevice.csproj** file.
-
-    Your file contents should be similar to the following:
+1. Take a minute to review the contents of the **CaveDevice.csproj** file. Your file contents should be similar to the following:
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -230,11 +203,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     The **ItemGroup** specifies any external libraries that are required for the application. These particular references are for NuGet packages, and each package reference specifies the package name and the version. The **dotnet add package** commands (that you entered in the steps above) added these references to the project file and the **dotnet restore** command ensured that all of the dependencies were downloaded.
 
-    > **Tip**: You can learn more about NuGet [here](https://docs.microsoft.com/en-us/nuget/what-is-nuget).
-
 1. In the **EXPLORER** pane, click on **Program.cs**.
-
-    The **Program.cs** file should now be opened in the code editor pane.
 
 1. Take a minute to review the contents of the **Program.cs** file.
 
@@ -244,19 +213,13 @@ In this task, you will use Visual Studio Code to review the contents and purpose
      Console.WriteLine("Hello, World!");
     ```
 
-    This program simply writes "Hello World!" to the command line window. Even though there isn't much code here, there are still some things worth noting:
-
 1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
 
     ![](./media/v2img13.png)
 
-    This will open the integrated Terminal at the bottom of the Visual Studio Code window. You will be using the Terminal window to compile and run your console application.
-
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
     ![](./media/v2img14.png)
-
-    The Terminal command prompt includes the current directory path. The commands that you enter are run at the current location, so be sure that you are located in the **CaveDevice** folder.
 
 1. To build and run the **CaveDevice** project, enter the following command:
 
@@ -326,7 +289,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     Notice that as well as specifying **System**, you are also declaring other namespaces that the code will be using, such as **System.Text** for encoding strings, **System.Threading.Tasks** for asynchronous tasks, and the namespaces for the two packages you added earlier.
 
-    ![](./media/vs6.png)
+    ![](./media/az-2-5.png)
 
     > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
 
@@ -729,7 +692,7 @@ Continue? (y/n) -> y**
 
 ## Summary 
 
-In this exercise, you have created a simulator using c# to simulate telemetry data and send to IoT Hub and verified it.
+In this lab, intially you have created an Azure IoT Hub Device ID. Next, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and then verified the data was successfully received.
 
 ### You have successfully completed the lab !!
 

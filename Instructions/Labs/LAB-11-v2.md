@@ -39,9 +39,9 @@ For you, this means two things:
 
 You plan to implement features of IoT Hub that enable automatic device management and device management at scale.
 
-The following resources will be created:
+## Architecture Diagram
 
-![Lab 16 Architecture](media/LAB_AK_16-architecture.png)
+![Lab 16 Architecture](media/LAB_AK_16-architecture-1.png)
 
 ## Lab Objectives
 
@@ -55,11 +55,11 @@ In this lab, you will complete the following:
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-   ![](./media/v2img1.png)
+    ![](./media/v2img1.png)
 
-1. In the **az220-rg** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
+1. In the **az220rg-inject key="DeploymentID" enableCopy="false"></inject>** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
-   ![](./media/iot1.png)
+    ![](./media/iot1.png)
 
 1. Click on **Devices (1)** under the **Device management** tab in the left pane and select **sensor-th-0155 (2)**.
 
@@ -92,9 +92,7 @@ In this lab, you will complete the following:
 
       ![](./media/az11-81.png)
 
-1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**.
-
-   Notice the referenced NuGet packages:
+1. In the EXPLORER pane, to open the project file, click **FWUpdateDevice.csproj**. Notice the referenced NuGet packages:
 
       - Microsoft.Azure.Devices.Client - Device SDK for Azure IoT Hub
       - Microsoft.Azure.Devices.Shared - Common code for Azure IoT Device and Service SDKs
@@ -103,32 +101,10 @@ In this lab, you will complete the following:
            ![](./media/az22022.png)
 
 1. Navigate to **Program.cs** and at the top of the code file, locate the code comment line that begins with **The device connection string**.
-
-    In this simple simulated device app, the device ID and the current firmware version will be tracked during the firmware update process.
-
+   
       > **Note**: You will supply the device connection string value as a parameter when you enter the command to run the app later in this lab.
 
       ![](./media/az22024.png)
-
-1. Scroll down to the bottom of the code file to locate the **Main** method.
-
-    > **Note**: Since this lab simulates both the device and the firmware update process rather than downloading actual firmware from the cloud to a physical device and rebooting, it can be helpful to review the code used to simulate the process.
-  
-    Notice that the Main method uses **s_deviceConnectionString** to create a **DeviceClient** instance that connects to IoT Hub. The deviceClient object can be passed between methods of the simulated device app so that the app is able to access and report device twin property updates.  
-
-    The **InitDevice** method simulates the bootup cycle of the device and reports the current firmware by updating the device twin via the **UpdateFWUpdateStatus** method.
-
-    After the device is initialized, the device twin property changed callback is configured.
-
-    The app then enters a loop, where it waits for a device twin update that will trigger the firmware update.
-
-1. Locate the **UpdateFWUpdateStatus** method and review the code:
-
-    This method creates a new **TwinCollection** instance, populates it with the provided values, and then updates the device twin.
-
-1. Locate the **OnDesiredPropertyChanged** method and review the code:
-
-    This method is invoked as the callback when a device twin update is received by the device. If a firmware update is detected, the **UpdateFirmware** method is called. This method simulates the download of the firmware, updating the firmware and then rebooting the device.
 
 ### Task 3: Test firmware update on a single device
 
@@ -146,7 +122,6 @@ In this lab, you will complete the following:
     >
     > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
 
-    After about 5-10 seconds you should see the initial output displayed in the Terminal pane.
 
 1. Review the contents of the Terminal pane.
 
@@ -157,8 +132,6 @@ In this lab, you will complete the following:
         sensor-th-0155: Current firmware version: 1.0.0
     ```
 
-    Once this information is displayed, the simulated device app enters a holding pattern, waiting for a device twin update that will trigger a firmware update. Keep it running.
-
       ![](./media/automate.png)
 
 1. Navigate back to `portal.azure.com`.
@@ -168,8 +141,6 @@ In this lab, you will complete the following:
       ![](./media/iot2.png)
 
 1. Click on **Device twin** and review the contents of the device twin file.
-
-    Notice the values of the desired and reported properties, and the update times listed.
 
       ![](./media/iot6.png)
 

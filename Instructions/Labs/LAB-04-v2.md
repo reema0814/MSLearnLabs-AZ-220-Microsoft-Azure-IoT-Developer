@@ -1,5 +1,7 @@
 # Lab 04: Device Message Routing
 
+### Estimated Duration: 120 minutes
+
 ## Overview
 
 In this lab, you will begin by ensuring that your Azure subscription includes the required resources for this lab. You will then create a simulated device that sends vibration telemetry to your IoT hub. With your simulated data arriving at IoT hub, you will implement an IoT hub message route and Azure Stream Analytics job that can be used to process device messages (in both cases data will be delivered to a Blob storage container that is used to verify successful implementation).
@@ -203,11 +205,6 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 
 <validation step="bd650436-fe95-498d-8865-1fdc920015e0" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Exercise 2: Create a Message Route to Azure Blob Storage
 
@@ -365,11 +362,6 @@ In this task, you will verify that the data is properly archived or not by looki
 
 <validation step="3b54d486-5079-4a03-9643-9e2f099478d8" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Exercise 3: Create an Azure Stream Analytics Job
 
@@ -425,31 +417,31 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
     ![](./media/az-4-15.png)
 
-1. On the **IoT Hub - New input** pane, under **Input alias**, enter **vibrationInput**
+1. On the **IoT Hub - New input** pane, under **Input alias**, enter **vibrationInput (1)**
 
    - Ensure that **Select IoT Hub from your subscriptions** is selected.
 
-   - Under **Subscription**, ensure that the subscription you used to create the IoT Hub earlier is selected.
+   - Under **Subscription**, ensure that the subscription you used to create the IoT Hub earlier is selected **(2.)**
 
-   - Under **IoT Hub**, ensure that your **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** IoT hub is selected.
+   - Under **IoT Hub**, ensure that your **iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> (3)** IoT hub is selected.
 
-   - Under **Consumer group**, ensure that **$Default** is selected.
+   - Under **Consumer group**, ensure that **$Default (4)** is selected.
 
-   - Under **Shared access policy name**, ensure that **iothubowner** is selected.
+   - Under **Shared access policy name**, ensure that **iothubowner (5)** is selected.
 
-   - Under **Endpoint**, ensure that **Messaging** is selected.
+   - Under **Endpoint**, ensure that **Messaging (6)** is selected.
 
-   - Leave **Partition key** blank.
+   - Leave **Partition key (7)** blank.
 
-   - Under **Event serialization format**, ensure that **JSON** is selected.
+   - Under **Event serialization format**, ensure that **JSON (8)** is selected.
 
-   - Under **Encoding**, ensure that **UTF-8** is selected.
+   - Under **Encoding**, ensure that **UTF-8 (9)** is selected.
 
-   - Under **Event compression type**, ensure **None** is selected.
+   - Under **Event compression type**, ensure **None (10)** is selected.
 
-   - To save the new input, click **Save**, and then wait for the input to be created.
+   - To save the new input, click **Save (11)**, and then wait for the input to be created.
 
-     ![](./media/lab7img29.png)
+     ![](./media/az-4-16.png)
 
 ### Task 3: Create the Stream Analytics Job Output
 
@@ -459,23 +451,23 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
     ![](./media/az-4-18.png)
 
-1. On the **Blob storage/ADLS Gen2 - New output** pane, under **Output alias**, enter **vibrationOutput**.
+1. On the **Blob storage/ADLS Gen2 - New output** pane, under **Output alias**, enter **vibrationOutput (1)**.
 
    - Ensure that **Select Blob storage/ADLS Gen2 from your subscriptions** is selected.
 
-   - Under **Subscription**, select the subscription you are using for this lab.
+   - Under **Subscription**, select the subscription you are using for this lab **(2)**.
 
-   - Under **Storage account**, ensure that **vibrationstore<inject key="DeploymentID" enableCopy="false" />** is selected.
+   - Under **Storage account**, ensure that **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (3)** is selected.
 
-   - Under **Container**, ensure that **Use existing** is selected and that **vibrationcontainer** is selected from the dropdown list.
+   - Under **Container**, ensure that **Use existing** is selected and that **vibrationcontainer (4)** is selected from the dropdown list.
 
-   - Under **Authentication Mode**, select **Connection string**
+   - Under **Authentication Mode**, select **Connection string (5)**
 
-   - Under **Event serialization format**, ensure that **JSON** is selected.
+   - Under **Event serialization format**, ensure that **JSON (6)** is selected.
 
-   - Under **Format**, ensure that **Line separated** is selected.
+   - Under **Format**, ensure that **Line separated (7)** is selected.
 
-   - Under **Encoding**, ensure that **UTF-8** is selected.
+   - Under **Encoding**, ensure that **UTF-8 (8)** is selected.
 
    - Leave the **Path pattern** blank.
 
@@ -485,9 +477,9 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
    - Under **Maximum time**, leave **Hours** and **Minutes** blank.
 
-   - To create the output, click **Save**, and then wait for the output to be created.
+   - To create the output, click **Save(9)**, and then wait for the output to be created.
 
-     ![](./media/lab7img31.png)
+     ![](./media/az-4-19.png)
 
 ### Task 4: Create the Stream Analytics Job Query
 
@@ -581,14 +573,9 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 <validation step="16dcb93f-8112-4954-949e-39fae6826bf7" />
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
 ## Summary 
 
-In this lab, You've traced the message data processes from the device app, to the IoT hub, and then through both an IoT hub route and Azure Stream Analytics job all the way to a Blob storage container. Great progress!
+In this lab, you began by writing code to generate vibration telemetry data. Next, you created a message route to direct this data to Azure Blob Storage. Finally, you set up an Azure Stream Analytics job to process and analyze the incoming telemetry data in real time.
 
 ## You have successfully completed the Lab!!
