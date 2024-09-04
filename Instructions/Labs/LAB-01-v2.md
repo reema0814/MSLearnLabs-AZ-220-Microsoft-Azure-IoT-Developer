@@ -10,13 +10,10 @@ You have been tasked with exploring Azure and the Azure IoT services that you wi
 
 In this lab, you will create and examine an Azure IoT Hub and an IoT Hub Device Provisioning Service. The lab includes the following exercises:
 
-* Create an IoT Hub using the Azure portal
-* Examine features of the IoT Hub service
-* Create a Device Provisioning Service and link it to your IoT Hub
-* Examine features of the Device Provisioning Service
-
-## Lab Instructions
-
+- Exercise 1: Create an IoT Hub using the Azure portal
+- Exercise 2: Examine the IoT Hub Service
+- Exercise 3: Create a Device Provisioning Service using the Azure portal
+- Exercise 4: Examine the Device Provisioning Service
 
 ### Exercise 1: Create an IoT Hub using the Azure portal
 
