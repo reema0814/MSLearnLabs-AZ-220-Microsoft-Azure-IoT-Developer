@@ -1,7 +1,11 @@
 # Getting Started with Your AZ-220: Microsoft Azure IoT Developer Workshop
  
 Welcome to your AZ-220: Microsoft Azure IoT Developer Workshop workshop! We've prepared a seamless environment for you to explore and learn about Azure services in IoT. Let's begin by making the most of this experience.
- 
+
+## Overview
+
+This hands-on lab will guide you through setting up Azure IoT services by starting with the creation of an Azure IoT Hub. You'll learn to connect an IoT device to Azure, perform individual enrollment in the Device Provisioning Service (DPS), and set up device message routing. The lab also covers integrating IoT Hub with Event Grid, exploring time-stamped data using Azure Data Explorer, and introduces Azure IoT Edge, where you'll set up an IoT Edge Gateway, develop, deploy, and debug a custom module using VS Code. Finally, you'll learn how to remotely monitor and control devices, and automate IoT device management with Azure IoT Hub.
+
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
