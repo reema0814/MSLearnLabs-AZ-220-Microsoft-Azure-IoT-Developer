@@ -17,9 +17,9 @@ In this lab, you will complete the following:
 - Exercise 3: Create a Device Provisioning Service using the Azure portal
 - Exercise 4: Examine the Device Provisioning Service
 
-### Exercise 1: Create an IoT Hub using the Azure portal
+## Exercise 1: Create an IoT Hub using the Azure portal
 
-#### Task 1: Use the Azure portal to create a IoT Hub with required property settings
+### Task 1: Use the Azure portal to create a IoT Hub with required property settings
 
 1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
 
@@ -49,8 +49,6 @@ In this lab, you will complete the following:
 
 1. Click on **Create**.
 
-    Deployment can take a minute or more to complete. 
-
 1. Once the Deployment is completed,Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
     ![](media/iott9.png)
@@ -58,15 +56,13 @@ In this lab, you will complete the following:
 
 <validation step="44532bdc-58b8-4478-82e2-9031fec98358" />
 
-
-### Exercise 2: Examine the IoT Hub Service
+## Exercise 2: Examine the IoT Hub Service
 
 IoT Hub is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your Azure IoT services and your connected devices.
 
-
 In this exercise, you will examine some of the features that IoT Hub provides.
 
-#### Task 1: Explore the IoT Hub Overview information
+### Task 1: Explore the IoT Hub Overview information
 
 1. If the IOt Hub blade is not opened, open your Azure dashboard.
 
@@ -80,27 +76,20 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 1. At the bottom of your IoT Hub blade **Overview** page, notice the **IoT Hub Usage** tile.
 
-
 1. To the right of the **IoT Hub Usage(1)** tile, notice the **Number of messages used(2)** tile and the **Device to cloud messages(3)** tile.
 
-    ![](media/iott11.png)
+- The **Device to cloud messages** tile provides a quick view of the incoming messages from your devices over time.
+- The **Number of messages used** tile can help you to keep track of the total number of messages used.
 
-    The **Device to cloud messages** tile provides a quick view of the incoming messages from your devices over time.
+     ![](media/iott11.png)
 
-    The **Number of messages used** tile can help you to keep track of the total number of messages used.
+### Task 2: View features of IoT Hub using the left-side menu
 
-#### Task 2: View features of IoT Hub using the left-side menu
-
-1. On the IoT Hub blade,from the left navigation menu,click on **Device** under **Device management.**
+1. On the IoT Hub blade,from the left navigation menu,click on **Device** under **Device management**. This pane can be used to add, modify, and delete devices registered to your hub.
 
     ![](media/device.png)
 
-    This pane can be used to add, modify, and delete devices registered to your hub.
-
-
-1. On the left-side menu, near the top, click on **Activity log**
-
-    As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. 
+1. On the left-side menu, near the top, click on **Activity log**. As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. 
 
     ![](media/az-1-6.png)
 
@@ -113,19 +102,13 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
     ![](media/endpoint.png)
 
-1. On the left-side menu, under **Hub settings**, click on **Message routing(1)**
+1. On the left-side menu, under **Hub settings**, click on **Message routing(1)**. The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
 
-    The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
-
-1. At the top of the **Message routing** pane, click on **Custom endpoints(2)**.
+1. At the top of the **Message routing** pane, click on **Custom endpoints(2)**.  Custom endpoints (such as Event Hubs and Storage) are often used within an IoT implementation.
 
     ![](media/az-1-1.png)
 
-    Custom endpoints (such as Event Hubs and Storage) are often used within an IoT implementation.
-
-    > **Note**:  This lab exercise is only intended to be an introduction to the IoT Hub service and get you more comfortable with the UI, so don't worry if you feel a bit overwhelmed at this point.
-
-### Exercise 3: Create a Device Provisioning Service using the Azure portal
+## Exercise 3: Create a Device Provisioning Service using the Azure portal
 
 The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub that enables zero-touch, just-in-time provisioning to the right IoT hub without requiring human intervention. The Device Provisioning Service provides the following:
 
@@ -134,7 +117,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 * Connecting devices to their owner's IoT solution based on sales transaction data (multitenancy)
 * Connecting devices to a particular IoT solution depending on use-case (solution isolation)
 
-#### Task 1: Use the Azure portal to a Device Provisioning Service with required property settings
+### Task 1: Use the Azure portal to a Device Provisioning Service with required property settings
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
@@ -160,10 +143,10 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
     ![](media/1lab19.png)
 
 1. Click on **Create**.
+   
 1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
 
 <validation step="8cec2de1-1475-4740-8c14-a8712f80cfd5" />
-
 
 #### Task 2: Link your IoT Hub and Device Provisioning Service.
 
@@ -184,24 +167,22 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
     - Ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
 
     - Open the IoT hub dropdown, and then select the **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(4)**.
-
-        This is the IoT Hub that you created in the previous exercise.
-
+      
     - In the Access Policy dropdown, select **iothubowner(5)**.
 
     - Click on **Save(6)**.
 
-    ![](media/az-1-7.png)
+        ![](media/az-1-7.png)
 
 1. Here you can see the newly created Linked IoT Hub.
 
     ![](media/iott21.png)
 
-### Exercise 4: Examine the Device Provisioning Service
+## Exercise 4: Examine the Device Provisioning Service
 
 The IoT Hub Device Provisioning Service is a helper service for IoT Hub that enables zero-touch, just-in-time provisioning to the right IoT hub without requiring human intervention, enabling customers to provision millions of devices in a secure and scalable manner.
 
-#### Task 1: Explore the Device Provisioning Service Overview information
+### Task 1: Explore the Device Provisioning Service Overview information
 
 1. On your Azure dashboard, search and select the **Resource group**.
 
@@ -215,54 +196,29 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
     ![](media/1lab15.png)
 
-    * [Azure IoT Hub Device Provisioning Service Documentation](https://docs.microsoft.com/en-us/azure/iot-dps/)
-    * [Learn more about IoT Hub Device Provisioning Service](https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps)
-    * [Device Provisioning concepts](https://docs.microsoft.com/en-us/azure/iot-dps/concepts-service)
-    * [Pricing and scale details](https://azure.microsoft.com/en-us/pricing/details/iot-hub/)
+### Task 2: View features of Device Provisioning Service using the navigation menu
 
-    When time permits, you can come back and explore these links.
-
-#### Task 2: View features of Device Provisioning Service using the navigation menu
-
-
-1. On the left-side menu, near the top, click on **Activity log**
-
-    As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. You can also define queries that help with routine tasks. Very handy.
+1. On the left-side menu, near the top, click on **Activity log**.
 
     ![](media/az-1-4.png)
 
-1. On the left-side menu, click on **Quick Start** under **Settings.** 
-
-    This pane lists the steps to start using the Iot Hub Device Provisioning Service, links to documentation and shortcuts to other blades for configuring DPS.
+1. On the left-side menu, click on **Quick Start** under **Settings**. This pane lists the steps to start using the Iot Hub Device Provisioning Service, links to documentation and shortcuts to other blades for configuring DPS.
 
     ![](media/iott25.png)
 
-1. On the left-side menu, click on **Shared access policies** under **Settings.**
-
-    This pane provides management of access policies, lists the existing policies and the associated permissions.
+1. On the left-side menu, click on **Shared access policies** under **Settings** This pane provides management of access policies, lists the existing policies and the associated permissions.
 
     ![](media/iott26.png)
 
-1. On the left-side menu, click on **Linked IoT hubs** under **Settings.**
-
-    Here you can see the linked IoT Hub from earlier. The Device Provisioning Service can only provision devices to IoT hubs that have been linked to it. Linking an IoT hub to an instance of the Device Provisioning service gives the service read/write permissions to the IoT hub's device registry; with the link, a Device Provisioning service can register a device ID and set the initial configuration in the device twin. 
+1. On the left-side menu, click on **Linked IoT hubs** under **Settings**. Here you can see the linked IoT Hub from earlier. The Device Provisioning Service can only provision devices to IoT hubs that have been linked to it. Linking an IoT hub to an instance of the Device Provisioning service gives the service read/write permissions to the IoT hub's device registry; with the link, a Device Provisioning service can register a device ID and set the initial configuration in the device twin. 
 
     ![](media/iott27.png)
 
-
-1. On the left-side menu, click on **Certificates(1)** under **Settings.**
+1. On the left-side menu, click on **Certificates(1)** under **Settings**. Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
 
     ![](media/1lab7.png)
 
-    Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
-
-1. On the left-side menu, click on **Manage enrollments(2)** under **Settings.**
-
-    Here you can manage the enrollment groups and individual enrollments.
-
-    Enrollment groups can be used for a large number of devices that share a desired initial configuration, or for devices all going to the same tenant. An enrollment group is a group of devices that share a specific attestation mechanism. Enrollment groups support both X.509 as well as symmetric. 
-
-    An individual enrollment is an entry for a single device that may register. 
+1. On the left-side menu, click on **Manage enrollments(2)** under **Settings**. Here you can manage the enrollment groups and individual enrollments. Enrollment groups can be used for a large number of devices that share a desired initial configuration, or for devices all going to the same tenant. An enrollment group is a group of devices that share a specific attestation mechanism. Enrollment groups support both X.509 as well as symmetric. An individual enrollment is an entry for a single device that may register. 
 
     ![](media/1lab8.png)
 
@@ -272,6 +228,6 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 ## Summary
 
-In this lab, you have created a Azure IoT Hub, explored its features, then created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
+In this lab, you have created a Azure IoT Hub, explored its features, created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
 
 ### You have successfully completed the lab
