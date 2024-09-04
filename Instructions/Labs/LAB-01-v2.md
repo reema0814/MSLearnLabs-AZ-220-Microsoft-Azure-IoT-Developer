@@ -199,17 +199,19 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. At the top of the blade, click on **+ Add(2)**.
 
-1. On the **Add link to IoT hub** blade, ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
+1. On the **Add link to IoT hub** blade,
 
-1. Open the IoT hub dropdown, and then select the **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(4)**.
+    - Ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
 
-    This is the IoT Hub that you created in the previous exercise.
+    - Open the IoT hub dropdown, and then select the **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(4)**.
 
-1. In the Access Policy dropdown, select **iothubowner(5)**.
+        This is the IoT Hub that you created in the previous exercise.
 
-1. Click on **Save(6)**.
+    - In the Access Policy dropdown, select **iothubowner(5)**.
 
-    ![](media/iott20.png)
+    - Click on **Save(6)**.
+
+    ![](media/az-1-7.png)
 
 1. Here you can see the newly created Linked IoT Hub.
 
