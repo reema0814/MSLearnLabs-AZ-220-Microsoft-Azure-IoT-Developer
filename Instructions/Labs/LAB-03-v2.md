@@ -84,7 +84,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments, click on **individual enrollments(2)**.
+1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments then click on **Individual enrollments(2)**.
 
     ![](./media/az-3-17.png)
 
