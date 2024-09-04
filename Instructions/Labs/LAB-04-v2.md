@@ -51,9 +51,9 @@ In this task, you will be opening the Simulated device project using visual stud
 
    ![](./media/v2img8.png)
 
-1. In Visual Studio Code, on the **File** menu, click on **Open Folder**.
+1. In Visual Studio Code, on the **File(1)** menu, click on **Open Folder(2)**.
 
-   ![](./media/az-3-7.png)
+   ![](./media/az-3-22.png)
 
 1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\07-Device Message Routing\Starter\VibrationDevice` and click on **Select folder.**
 
@@ -113,13 +113,13 @@ The simulated device app that you will build in this task simulates an IoT devic
 
    ![](./media/az-4-4.png)
 
-1. On the Create a device page, under **Device ID**, enter **sensor-v-3000**. click **Save**.
+1. On the Create a device page, under **Device ID**, enter **sensor-v-3000**. click on **Save**.
 
    ![](./media/lab7img2.png)
 
 1. On the Devices page, under **Device ID**, click on **sensor-v-3000**.
 
-1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value, click **Copy**.
+1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value, click on **Copy**.
 
    ![](./media/lab7img3.png)
 
@@ -149,8 +149,10 @@ The simulated device app that you will build in this task simulates an IoT devic
 
     > **Note**: This is the only change that you are required to make to this code.
 
-1. On the **File** menu, click **Save**.
-
+1. On the **File (1)** menu, click on **Save (2)**.
+   
+   ![](./media/az-4-20.png)
+   
     The updated device connection string must be saved before running the code. 
 
 ### Task 3: Test your code to send telemetry
