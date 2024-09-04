@@ -1,4 +1,4 @@
-# Lab 06: Explore and analyze time stamped data with Azure Data Explorer.
+# Lab 06: Explore and analyze time stamped data with Azure Data Explorer
 
 ## Overview
 
