@@ -81,7 +81,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 - The **Device to cloud messages** tile provides a quick view of the incoming messages from your devices over time.
 - The **Number of messages used** tile can help you to keep track of the total number of messages used.
 
-     ![](media/iott11.png)
+     ![](media/az-1-8.png)
 
 ### Task 2: View features of IoT Hub using the left-side menu
 
