@@ -117,7 +117,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
     As the name implies, this pane gives you access to a log that can be used to review activities and diagnose issues. 
 
-    ![](media/iott13.png)
+    ![](media/az-1-6.png)
 
 1. On the left-side menu, under **Hub settings**, click on **Built-in endpoints**
 
