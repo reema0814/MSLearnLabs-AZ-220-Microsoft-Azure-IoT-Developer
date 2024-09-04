@@ -24,9 +24,6 @@ The following resources will be created:
 
 ![Lab 10 Architecture](./media2/ADX-arch.png)
 
-In this lab, you will complete the following activities:
-
-
 ## Exercise 1: Setup Azure Data Explorer
 
 Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series.
@@ -37,7 +34,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
     ![](./media2/lab10img1.png)
 
-2. On the IoT Hub lefy hand menu, select **Built-in-endpoints**. Create a new consumer group **adxevents**.
+2. On the IoT Hub left hand menu, select **Built-in-endpoints**. Create a new consumer group **adxevents**.
 
    ![](./media2/lab10img9.png)
 
