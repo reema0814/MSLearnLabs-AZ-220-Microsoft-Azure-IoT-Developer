@@ -49,7 +49,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab10img4.png)
 
-1. On the **Create an Azure Data Explorer Cluster** blade, Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />** and also select the workload as **Dev/test**. Click on **Next : Scale >**
+1. On the **Create an Azure Data Explorer Cluster** blade, Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />** and also select the workload as **Dev/test**. Click on **Next : Scale >**.
 
    ![](./media2/lab10img11.png)
 
@@ -77,7 +77,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img5.png)
 
-1. On the **Query** pane, run the following KQL script to create a table named **Telemetry**. click on **Run**.
+1. On the **Query** pane, run the following KQL script to create a table named **Telemetry**. Click on **Run**.
 
     ```
     .create table Telemetry (
@@ -131,18 +131,19 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img11.png)
 
-1. In the **create data connection** page, provide the following details:
+1. In the **create data connection** page, provide the following details then click on **Create** **(9)**:
 
-   - **Data connection name** : give as **iothubconnection** **(1)**.
-   - Ensure the subscription is selected.
-   - **IoT Hub** : select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** **(2)**.
-   - **Shared Access Policy** : select **iothubowner** **(3)** from dropdown.
-   - **Consumer group** : select the group **adxevents** **(4)** that you created before.
-   - Ensure the **Event system properties** **(5)** selected as shown. 
-   - Under **Table name** : select the table **Telemetry** **(6)** from dropdown.
-   - **Data format** : choose **JSON** **(7)**.
-   - **Mapping name** : select **JsonTelemetryMapping** **(8)** that you created using script.
-   - Click on **Create** **(9)**.
+    | Setting | Value |
+    | --- | --- |
+    | Data connection name | **iothubconnection** **(1)**  |
+    | Subscription | **Default** |
+    | IoT Hub | **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** **(2)** |
+    | Shared Access Policy | **iothubowner** **(3)** |
+    | Consumer group | **adxevents** **(4)** |
+    | Event system properties | Select as shown **(5)** |
+    | Table name | **Telemetry** **(6)** |
+    | Data format | **JSON** **(7)** |
+    | Mapping name | **JsonTelemetryMapping** **(8)** |
 
      ![](./media2/lab06img12.png)
 
@@ -186,13 +187,13 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter\ContainerSimulation` and click on **select folder**.
 
-1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**
+1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**.
 
     ![](./media2/lab06img17.png)
  
 1. In the EXPLORER pane, to open the Program.cs file, click **Program.cs**.
 
-1. Locate the variables used to assign the connections strings
+1. Locate the variables used to assign the connections strings.
 
     ```csharp
     private readonly static string connectionStringTruck = "{Your Truck device connection string here}";
