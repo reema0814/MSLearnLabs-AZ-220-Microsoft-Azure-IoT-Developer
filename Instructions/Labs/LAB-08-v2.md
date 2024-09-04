@@ -42,7 +42,7 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/lab12img1.png)
 
-1. On the **IoT Hub** blade, on the left-side menu under **Device management**, click **IoT Edge**. On the IoT Edge pane, click **Add an IoT Edge device**
+1. On the **IoT Hub** blade, on the left-side menu under **Device management**, click **IoT Edge**. On the IoT Edge pane, click **Add an IoT Edge device**.
 
    ![](./media/lab12img3.png)
 
@@ -212,23 +212,17 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     > **Note**: Both *Bash* and *PowerShell* interfaces for the Azure Cloud Shell support the use of **OpenSSL**.
 
-1. At the Cloud Shell command prompt, paste the **ssh** command that you saved to your text editor, and then press **Enter**.
-
-    The command should look similar to the following:
+1. At the Cloud Shell command prompt, paste the **ssh** command that you saved to your text editor, and then press **Enter**. The command should look similar to the following:
 
     **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
 
-1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**.
-
-    This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
+1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
 
 1. When prompted to enter the password, enter the administrator password `Password!123` that you created when the Edge Gateway VM was provisioned.
 
     > **Note**: The typed characters will not be displayed on screen as you enter the password. 
 
-1. Once connected, the terminal will change to show the name of the Linux VM that you are connected to.
-
-    The command prompt will now look similar to the following:
+1. Once connected, the terminal will change to show the name of the Linux VM that you are connected to. The command prompt will now look similar to the following:
 
     ``` bash
     username@vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />:~$
@@ -404,9 +398,7 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
     >
     > `scp -r -p vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com:/tmp/lab12 .`
 
-1. Enter the Admin password for the VM when prompted.
-
-    Once the command has executed, it will have downloaded a copy of the **/tmp/lab12** directory with the certificate and key files over SSH to the Cloud Shell storage.
+1. Enter the Admin password for the VM when prompted. Once the command has executed, it will have downloaded a copy of the **/tmp/lab12** directory with the certificate and key files over SSH to the Cloud Shell storage.
 
 1. To verify that the files have been downloaded, enter the following commands:
 
@@ -444,11 +436,11 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
      ![](./media/lab12img1.png)
 
-1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**
+1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left-side menu under **Device management**, click **Devices**. To begin configuring a new IoT device, click **Add Device**.
 
      ![](./media/lab12img14.png)
 
-1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072 (1)**. Under **Parent device**, click **Set a parent device (2).
+1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072 (1)**. Under **Parent device**, click **Set a parent device (2)**.
 
      ![](./media/az8-9.png)
    
@@ -476,9 +468,7 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 In this task, you will configure the connection between a pre-built downstream device and your Edge gateway device.
 
-1. On the Azure portal toolbar, click **Cloud Shell**.
-
-    Ensure that the environment is set to **Bash**.
+1. On the Azure portal toolbar, click **Cloud Shell**. Ensure that the environment is set to **Bash**.
 
 1. At the Cloud Shell command prompt, to download the root CA X.509 certificate for the IoT Edge Gateway virtual machine, enter the following command:
 
@@ -490,9 +480,7 @@ In this task, you will configure the connection between a pre-built downstream d
 
     The Azure IoT Edge Gateway was previously configured in the **/etc/aziot/config.toml** file to use this root CA X.509 certificate for encrypting communications with any downstream devices connecting to the gateway. This X.509 certificate will need to be copied to the downstream devices so they can use it to encrypt communications with the gateway.
 
-1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located.
-
-    The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
+1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
 
       `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
 
@@ -540,9 +528,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
      ![](./media2/lab06img16.png)
 
-1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**.
-
-    The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
+1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
 
       `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice`
 
@@ -550,9 +536,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
     > **Note**: If you see messages to restore dotnet and/or load the C# extension, you can complete the installs.
 
-1. In the EXPLORER pane, click **Program.cs**.
-
-    Take a minute to review the code.
+1. In the EXPLORER pane, click **Program.cs**. Take a minute to review the code.
 
 1. Locate the declaration for the **connectionString** variable, and then replace the placeholder value with the **Primary Connection String** for the **sensor-th-0072** IoT device.
 
@@ -600,9 +584,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
      ![](./media/lab12img20.png)
 
-1. Once the simulated device is running, the console output will display the events being sent from the downstream leaf device to the parent IoT Edge gateway device.
-
-    The terminal output will look similar to the following:
+1. Once the simulated device is running, the console output will display the events being sent from the downstream leaf device to the parent IoT Edge gateway device. The terminal output will look similar to the following:
 
     ```text
     IoT Hub C# Simulated Cave Device. Ctrl-C to exit.
@@ -666,15 +648,11 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
     }
     ```
 
-1. Verify that the message data displayed by the leaf device in Visual Studio Code is being received by IoT hub as reflected in the Cloud Shell.
-
-    You have successfully configured an IoT Edge transparent gateway to support communication from a downstream leaf device in support of a simple device-side architecture.
+1. Verify that the message data displayed by the leaf device in Visual Studio Code is being received by IoT hub as reflected in the Cloud Shell. You have successfully configured an IoT Edge transparent gateway to support communication from a downstream leaf device in support of a simple device-side architecture.
 
     > **NOTE**: Once you have completed this lab and verified the event flow, exit the Cloud Shell and console application by pressing **CTRL+C**.
 
-1. Delete the Azure resources that you created during the lab.
-
-    If you have one or more Azure resource groups dedicated to this lab, it is recommended that you delete them before exiting the lab environment.
+1. Delete the Azure resources that you created during the lab. If you have one or more Azure resource groups dedicated to this lab, it is recommended that you delete them before exiting the lab environment.
 
     > **Note**: Resources that your created during this lab include an associated fee. If you are using your own Azure account, be sure to clean up your resources to minimize any charges.
 
