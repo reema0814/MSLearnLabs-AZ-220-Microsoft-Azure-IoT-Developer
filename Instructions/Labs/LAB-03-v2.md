@@ -60,7 +60,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
     - **Allocation policy** : Select **Evenly weighted distribution** **(2)**.
     - Click on **Next: Device settings >** **(3)**.
 
-      ![](./media/az-3-4.png)
+      ![](./media/az-3-41.png)
    
 
 1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
@@ -108,11 +108,11 @@ The simulated device that you create in this exercise represents an IoT device t
 
 In this task, you will be creating the simulating device using the dotnet project.
 
-1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview**.
+1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview(1)**.
 
-1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope** then click on **Copy to clipboard** and then paste it in any text editor such as Notepad for later use.
+1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope(2)** then click on **Copy to clipboard** and then paste it in any text editor such as Notepad for later use.
 
-   ![](./media/az-3-6.png)
+   ![](./media/az-3-61.png)
 
 1. Open **Visual Studio Code**.
 
@@ -550,6 +550,6 @@ Now that the Device Enrollment has been removed from the Device Provisioning Ser
 
 ## Summary
 
-In this lab, you have configured the enrollment in the Device Provision Service and built a device which sends the telemetry data to the IoT hub and also tested the device by changing configurations. also deprovisioned device at last.
+In this lab, you have configured the enrollment in the Device Provision Service, built a device which sends the telemetry data to the IoT hub also tested the device by changing configurations and finally deprovisioned device at last.
 
 ## You have successfully completed the Lab!!
