@@ -17,15 +17,6 @@ The conveyor belt system is a critical link in this process and is visually moni
 * High vibration levels are known to accelerate wear-and-tear of the system
 * When vibration levels exceed a threshold limit, the conveyor belt must be stopped to allow for inspection (to avoid more serious failures)
 
-In addition to maximizing throughput, your automated IoT solution will implement a form of preventive maintenance based on vibration levels, which will be used to detect early warning signs before serious system damage occurs.
-
-> **Note**: **Preventive maintenance** (sometimes called preventative maintenance or predictive maintenance) is an equipment maintenance program that schedules maintenance activities to be performed while the equipment is operating normally. The intent of this approach is to avoid unexpected breakdowns that often incur costly disruptions.
-
-It's not always easy for an operator to visually detect abnormal vibration levels. For this reason, you are looking into an Azure IoT solution that will help to measure vibration levels and data anomalies. Vibration sensors will be attached to the conveyor belt at various locations, and you will use IoT devices to send telemetry to IoT hub. The IoT hub will use Azure Stream Analytics, and a built-in Machine Learning (ML) model, to alert you to vibration anomalies in real time. You also plan to archive all of the telemetry data so that in-house machine learning models can be developed in the future.
-
-You decide to prototype the solution using simulated telemetry from a single IoT device.
-
-To simulate the vibration data in a realistic manner, you work with an engineer from Operations to understand a little bit about what causes the vibrations. It turns out there are a number of different types of vibration that contribute to the overall vibration level. For example, a "force vibration" could be introduced by a broken guide wheel or an especially heavy load placed improperly on the conveyor belt. There's also an "increasing vibration", that can be introduced when a system design limit (such as speed or weight) is exceeded. The Engineering team agrees to help you develop the code for a simulated IoT device that will produce an acceptable representation of vibration data (including anomalies).
 
 ## Lab Objectives
  
@@ -229,9 +220,6 @@ Contoso's vibration monitoring scenario requires you to create the following mes
 * the first process is an IoT hub route that delivers message data to an Azure Blob storage location for data archiving
 * the second process is an Azure Stream Analytics job for real-time analysis
 
-Each process should be built and tested separately, so this exercise will focus on the IoT hub routing process. This IoT hub route will be referred to as the "logging" route, and it involves digging a few levels deep into the creation of Azure resources.
-
-One important feature of message routing is the ability to filter incoming data before routing to an endpoint. The filter, written as a SQL query, directs output through a route only when certain conditions are met.
 
 One of the easiest ways to filter data is to evaluate a message property. The code in your simulated device app configures the device-to-cloud messages as follows:
 
