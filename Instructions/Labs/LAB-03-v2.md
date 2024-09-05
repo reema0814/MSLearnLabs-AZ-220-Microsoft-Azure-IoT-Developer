@@ -141,7 +141,10 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. In the code editor, near the top of the Program class, locate the **dpsIdScope** variable.
 
-1. Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**. Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
+1. Update the following values:
+   - Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service.
+   - Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**.
+   - Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
      ![](./media/az-3-23.png)    
 
@@ -420,9 +423,7 @@ In this task, you will be deleteing the device from the enrollments
 
      ![](./media/az-3-1.png)
 
-1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
-
-1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **Individual Enrollments(2)**.
+1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **Individual Enrollments(2)**.
 
      ![](./media/az-3-17.png)
 
