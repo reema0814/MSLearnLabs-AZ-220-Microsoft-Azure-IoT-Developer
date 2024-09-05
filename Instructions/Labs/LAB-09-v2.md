@@ -304,12 +304,12 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. In the **Create storage account** page and click on **Create** **(5)**: 
 
-   | Settings | Values |
-   |  -- | -- |
-   | **Resource group**  | **Select the default** **(1)** |
-   | **Region**  | **East US** **(2)** |
-   | **Storage account name** | **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** |
-   | **File share** | **cloudshell** **(4)** |
+      | Settings | Values |
+      |  -- | -- |
+      | **Resource group**  | **Select the default** **(1)** |
+      | **Region**  | **East US** **(2)** |
+      | **Storage account name** | **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** |
+      | **File share** | **cloudshell** **(4)** |
 
       ![](./media2/lab09img15.png)
 
