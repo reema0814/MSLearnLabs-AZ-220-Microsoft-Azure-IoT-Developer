@@ -122,14 +122,13 @@ In this lab, you will complete the following:
       >
       > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
 
-
 1. Review the contents of the Terminal pane. You should see the following output in the terminal:
 
-      ``` bash
-          sensor-th-0155: Device booted
-          sensor-th-0155: Current firmware version: 1.0.0
-      ```
-
+    ```bash
+    sensor-th-0155: Device booted
+    sensor-th-0155: Current firmware version: 1.0.0
+    ```
+    
       ![](./media/automate.png)
 
 1. Navigate back to `portal.azure.com`.
@@ -165,11 +164,7 @@ In this lab, you will complete the following:
 
       ![](./media/iot10.png)
 
-1. On the **Target Devices** tab, under **Priority**, in the **Priority (higher values ...)** field, enter **10 (1)**. Under **Target Condition**, in the **Target Condition (2)** field, enter the following query and click on **Next: Metrics> (3)** :
-
-    ``` SQL
-    deviceId='sensor-th-0155'
-    ```
+1. On the **Target Devices** tab, under **Priority**, in the **Priority (higher values ...)** field, enter **10 (1)**. Under **Target Condition**, in the **Target Condition** field add **deviceId='sensor-th-0155' (2)**, and click on **Next: Metrics> (3)** :
 
      ![](./media/iot11.png)
 
