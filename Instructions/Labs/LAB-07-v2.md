@@ -331,7 +331,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       ![](./media/az11-14.png)
 
-1. In the create a storage account page, provide the following:
+ 1. In the create a storage account page, provide the following:
 
     | Settings | Values |
     |  -- | -- |
@@ -342,10 +342,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     | Performance | **Standard (5)** |
     | Redundancy | **Locally-redundant storage (LRS) (6)** |
     | Click on | **Review + create (7)** |
-
-
+    
       ![](./media/edge3.png)
-
+    
 1. Click on **Create**.
 
 ### Task 2: Create an Azure Stream Analytics job
