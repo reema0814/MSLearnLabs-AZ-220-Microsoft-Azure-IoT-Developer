@@ -319,7 +319,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
     az iot hub monitor-events --hub-name "iot-az220-training-<DeploymentID>"
     ```
 
-   >**Note:** Be sure to replace the **<DeploymentID>** value with <inject key="DeploymentID" enableCopy="true" />.
+      >**Note:** Be sure to replace the **<DeploymentID>** value with <inject key="DeploymentID" enableCopy="true" />.
 
 1. Observe the output displayed in the Cloud Shell. With everything still running, notice the output of the previous command in the Cloud Shell will display a JSON representation of the messages being received by the Azure IoT Hub. The output should look similar to the following:
 
