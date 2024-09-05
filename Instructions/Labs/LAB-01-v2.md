@@ -34,6 +34,7 @@ In this lab, you will complete the following:
 1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
 
    | Settings | Values |
+   | --- | --- |
    
    | Subscription | **Select the default Subscription (1)** |
    | Resource group | **Select the Existing Resource group (2)** |
