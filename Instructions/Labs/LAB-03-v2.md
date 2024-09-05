@@ -64,7 +64,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
      |  -- | -- |
      | **Target IoT hubs** | Select your **IoT hub** **(1)** from dropdown |
      | **Allocation policy** | Select **Evenly weighted distribution** **(2)** |
-     | Click on **Next** | **Device settings >** **(3)** |
+     | Click on **Next** | **Device settings** **(3)** |
 
       ![](./media/az-3-41.png)
    
@@ -211,9 +211,7 @@ In this task, you will be adding the code to the dotnet project for provisioning
 
 1. At the bottom of the **SendDeviceToCloudMessagesAsync** method, notice the call to `Task.Delay()`.
 
-1. Near the top of the **Program** class, locate the **telemetryDelay** variable declaration.
-
-    Notice that the default value for the delay is set to **1** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
+1. Near the top of the **Program** class, locate the **telemetryDelay** variable declaration. Notice that the default value for the delay is set to **1** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
 
 ### Task 3: Integrate Device Twin Properties
 
@@ -230,10 +228,6 @@ In this task, you will be using the protal to change the device twin peroperties
     ```csharp
     await deviceClient.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).ConfigureAwait(false);
     ```
-
-    The **SetDesiredPropertyUpdateCallbackAsync** method is used to set up the **DesiredPropertyUpdateCallback** event handler to receive device twin desired property changes. This code configures **deviceClient** to call a method named **OnDesiredPropertyChanged** when a device twin property change event is received.
-
-    Now that the **SetDesiredPropertyUpdateCallbackAsync** method is in place to set up the event handler, you need to create the **OnDesiredPropertyChanged** method that it calls.
 
 1. Locate the `// INSERT OnDesiredPropertyChanged method below here` comment.
 
@@ -265,14 +259,6 @@ In this task, you will be using the protal to change the device twin peroperties
     }
     ```
 
-    Notice that the **OnDesiredPropertyChanged** event handler accepts a **desiredProperties** parameter of type **TwinCollection**.
-
-    Notice that if the value of the **desiredProperties** parameter contains **telemetryDelay** (a device twin desired property), the code will assign the value of the device twin property to the **telemetryDelay** variable. You may recall that the **SendDeviceToCloudMessagesAsync** method includes a **Task.Delay** call that uses the **telemetryDelay** variable to set the delay time between messages sent to IoT hub.
-
-    Notice the next block of code is used to report the current state of the device back up to Azure IoT Hub. This code calls the **DeviceClient.UpdateReportedPropertiesAsync** method and passes it a **TwinCollection** that contains the current state of the device properties. This is how the device reports back to IoT Hub that it received the device twin desired properties changed event, and has now updated its configuration accordingly. Note that it reports what the properties are now set to, not an echo of the desired properties. In the case where the reported properties sent from the device are different than the desired state that the device received, IoT Hub will maintain an accurate Device Twin that reflects the state of the device.
-
-    Now that the device can receive updates to the device twin desired properties from Azure IoT Hub, it also needs to be coded to configure its initial setup when the device starts up. To do this the device will need to load the current device twin desired properties from Azure IoT Hub, and configure itself accordingly.
-
 1. In the **Main** method, locate the `// INSERT Load Device Twin Properties below here` comment.
 
 1. To read the device twin desired properties and configure the device to match on device startup, enter following code:
@@ -282,13 +268,7 @@ In this task, you will be using the protal to change the device twin peroperties
     await OnDesiredPropertyChanged(twin.Properties.Desired, null);
     ```
 
-    This code calls the `DeviceTwin.GetTwinAsync` method to retrieve the device twin for the simulated device. It then accesses the `Properties.Desired` property object to retrieve the current Desired State for the device, and passes that to the **OnDesiredPropertyChanged** method that will configure the simulated devices **telemetryDelay** variable.
-
-    Notice, this code reuses the **OnDesiredPropertyChanged** method that was already created for handling _OnDesiredPropertyChanged_ events. This helps keep the code that reads the device twin desired state properties and configures the device at startup in a single place. The resulting code is simpler and easier to maintain.
-
-1. On the Visual Studio Code **File** menu, click on **Save**.
-
-    Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
+1. On the Visual Studio Code **File** menu, click on **Save**. Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
 ## Exercise 3: Test the Simulated Device
 
@@ -312,9 +292,7 @@ In this task you will build the dotnet project and run to send the telemetry dat
 
     > **Note**: When the Simulated Device application runs, it will first write some details about it's status to the console (terminal pane).
 
-1. Notice that the JSON output following the `Desired Twin Property Changed:` line contains the desired value for the `telemetryDelay` for the device.
-
-    You can scroll up in the terminal pane to review the output. It should be similar to the following:
+1. Notice that the JSON output following the `Desired Twin Property Changed:` line contains the desired value for the `telemetryDelay` for the device. You can scroll up in the terminal pane to review the output. It should be similar to the following:
 
     ```text
     ProvisioningClient AssignedHub: iot-az220-training-{your-id}.azure-devices.net; DeviceID: sensor-thl-1000
@@ -325,9 +303,7 @@ In this task you will build the dotnet project and run to send the telemetry dat
     Start reading and sending device telemetry...
     ```
 
-1. Notice that the Simulated Device application begins sending telemetry events to the Azure IoT Hub.
-
-    The telemetry events include values for `temperature`, `humidity`, `pressure`, `latitude`, and `longitude`, and should be similar to the following:
+1. Notice that the Simulated Device application begins sending telemetry events to the Azure IoT Hub. The telemetry events include values for `temperature`, `humidity`, `pressure`, `latitude`, and `longitude`, and should be similar to the following:
 
     ```text
     11/6/2019 6:38:55 PM > Sending message: {"temperature":25.59094770373355,"humidity":71.17629229611545,"pressure":1019.9274696347665,"latitude":39.82133964767944,"longitude":-98.18181981142438}
@@ -335,12 +311,8 @@ In this task you will build the dotnet project and run to send the telemetry dat
     11/6/2019 6:38:59 PM > Sending message: {"temperature":28.087463226675737,"humidity":74.76071353757787,"pressure":1017.614206096327,"latitude":40.269273772972454,"longitude":-98.28354453319591}
     11/6/2019 6:39:01 PM > Sending message: {"temperature":23.575667940813894,"humidity":77.66409506912534,"pressure":1017.0118147748344,"latitude":40.21020096551372,"longitude":-98.48636739129239}
     ```
-
-    Notice the timestamp differences between telemetry readings. The delay between telemetry messages should be `2` seconds as configured through the device twin; instead of the default of `1` second in the source code.
-
+    
 1. Leave the simulated device app running.
-
-    You will verify that the device code is behaving as expected during the next activities.
 
 ### Task 2: Verify Telemetry Stream sent to Azure IoT Hub
 
@@ -373,11 +345,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > - If prompted **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0. 
 Continue? (y/n) -> y.**
 
-    Notice that your IoT hub is receiving the telemetry messages from the sensor-thl-1000 device.
-
      ![](./media/az-3-20.png)
-
-    Continue to leave the simulated device application running for the next task.
 
 ### Task 3: Change the device configuration through its twin
 
@@ -387,41 +355,29 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Open the Azure portal (if it is not already open), and then navigate to your Azure IoT Hub service **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
-   ![](./media/az-3-21.png)
+     ![](./media/az-3-21.png)
 
 1. On the IoT Hub blade, on the left-side menu under **Device Management**, click on **Devices(1)** and then click on **sensor-thl-1000(2)** under **Device ID**,
 
-   ![](./media/az-3-14.png)
+     ![](./media/az-3-14.png)
 
-    > **IMPORTANT**: Make sure you select the device that you are using for this lab.
+1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**.     The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
-1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**.
+     ![](./media/az-3-15.png)
 
-   ![](./media/az-3-15.png)
+1. Locate the JSON for the `properties.desired` object. This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
 
-    The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
-
-1. Locate the JSON for the `properties.desired` object.
-
-   ![](./media/az-3-16.png)
-
-    This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
+     ![](./media/az-3-16.png)
 
 1. To update the value assigned to the `telemetryDelay` desired property, change the value to `"5"`
 
-    The value includes the quotes ("").
-
-1. At the top of the **Device twin** blade, click on **Save**
-
-    The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
+1. At the top of the **Device twin** blade, click on **Save**. The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
 
 1. Switch to the Visual Studio Code window that you are using to run the simulated device application.
 
 1. In Visual Studio Code, scroll to the bottom of the Terminal pane.
 
-1. Notice that the device recognizes the change to the device twin properties.
-
-    The output will show a message that the `Desired Twin Property Changed` along with the JSON for the new desired`telemetryDelay` property value. Once the device picks up the new configuration of device twin desired state, it will automatically update to start sending sensor telemetry every 5 seconds as now configured.
+1. Notice that the device recognizes the change to the device twin properties. The output will show a message that the `Desired Twin Property Changed` along with the JSON for the new desired`telemetryDelay` property value. Once the device picks up the new configuration of device twin desired state, it will automatically update to start sending sensor telemetry every 5 seconds as now configured.
 
     ```text
     Desired Twin Property Changed:
@@ -432,9 +388,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
     4/21/2020 1:20:22 PM > Sending message: {"temperature":20.963297521678403,"humidity":68.36916032636965,"pressure":1023.7596862048422,"latitude":39.83252821949164,"longitude":-98.31669969393461}
     ```
 
-1. Switch to the browser page where you are running the Azure CLI command in the Azure Cloud Shell.
-
-    Ensure that you are still running the `az iot hub monitor-events` command. If it isn't running, re-start the command.
+1. Switch to the browser page where you are running the Azure CLI command in the Azure Cloud Shell. Ensure that you are still running the `az iot hub monitor-events` command. If it isn't running, re-start the command.
 
 1. Notice that the telemetry events sent to Azure IoT Hub being received at the new interval of 5 seconds.
 
@@ -446,9 +400,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Still in the Azure Portal, on the **sensor-thl-1000** device blade, click **Device Twin**.
 
-1. Locate the JSON for the `properties.reported` object.
-
-    This portion of the JSON contains the state reported by the device. Notice the `telemetryDelay` property exists here as well, and is also set to `5`.  There is also a `$metadata` value that shows you when the value was reported data was last updated and when the specific reported value was last updated.
+1. Locate the JSON for the `properties.reported` object. This portion of the JSON contains the state reported by the device. Notice the `telemetryDelay` property exists here as well, and is also set to `5`.  There is also a `$metadata` value that shows you when the value was reported data was last updated and when the specific reported value was last updated.
 
 1. Close the **Device twin** blade.
 
@@ -466,27 +418,25 @@ In this task, you will be deleteing the device from the enrollments
 
 1. On your Resource group tile, to open your Device Provisioning Service, click on **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/az-3-1.png)
+     ![](./media/az-3-1.png)
 
 1. On the left-side menu under **Settings**, click on **Manage enrollments(1)**.
 
 1. On the **Manage enrollments** pane, to view the list of individual device enrollments, click on **Individual Enrollments(2)**.
 
-   ![](./media/az-3-17.png)
+     ![](./media/az-3-17.png)
 
 1. To the left of **sensor-thl-1000**, click the checkbox. At the top of the blade, click on **Delete**
 
-   ![](./media/az-3-18.png)
+     ![](./media/az-3-18.png)
 
 1. At the top of the blade, click **Delete**.
 
     > **Note**: Deleting the individual enrollment from DPS will permanently remove the enrollment. To temporarily disable the enrollment, you can set the **Enable entry** setting to **Disable** within the **Enrollment Details** for the individual enrollment.
 
-1. On the **Remove enrollment** prompt, click on **Yes**.
+1. On the **Remove enrollment** prompt, click on **Yes**. The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
 
-   ![](./media/lab5img8.png)
-
-    The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
+      ![](./media/lab5img8.png)
 
 ### Task 2: Deregister the device from the IoT Hub
 
@@ -502,7 +452,7 @@ In this task you will delete the device from the IoT hub device management.
 
 1. To the left of **sensor-thl-1000**, click the checkbox.
 
-    > **IMPORTANT**: Make sure you select the device representing the simulated device that you used for this lab.
+    > **Note**: Make sure you select the device representing the simulated device that you used for this lab.
 
 1. At the top of the blade, click on **Delete**.
 
@@ -511,8 +461,6 @@ In this task you will delete the device from the IoT hub device management.
 1. On the **Are you certain you wish to delete selected device(s)** prompt, click on **Yes**.
 
     > **Note**:  Deleting the device ID from IoT Hub will permanently remove the device registration. To temporarily disable the device from connecting to IoT Hub, you can set the **Enable connection to IoT Hub** to **Disable** within the properties for the device.
-
-Now that the Device Enrollment has been removed from the Device Provisioning Service, and the matching Device ID has been removed from the Azure IoT Hub, the simulated device has been fully retired from the solution.
 
 ## Summary
 
