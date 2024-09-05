@@ -79,7 +79,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
     ```
     ![](./media2/lab03updatedimg1.png)
 
-1. Click on **Review + create** and select **create** after validation is successfull.
+1. Click on **Review + create** and select **create** after validation is successful.
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
@@ -111,7 +111,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
     ![](./media/az-3-61.png)
 
-1. Open **Visual Studio Code**.
+1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
    ![](./media/v2img8.png)
 
@@ -127,7 +127,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
    ![](./media/az-3-9.png)
 
-1. Open integrated Terminal in **Visual studio code** click on **Terminal(1)** and then **New Terminal(2).**
+1. Open integrated Terminal in **Visual studio code** click on **Three dots(...) >> Terminal(1)** and then **New Terminal(2).**
 
    ![](./media/az-3-10.png)
    
@@ -375,7 +375,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
      ![](./media/az-3-14.png)
 
-1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**.     The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
+1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**. The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
      ![](./media/az-3-15.png)
 
@@ -383,7 +383,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
      ![](./media/az-3-16.png)
 
-1. To update the value assigned to the `telemetryDelay` desired property, change the value to `"5"`
+1. To update the value assigned to the `telemetryDelay` desired property, change the value to `"5"`.
 
 1. At the top of the **Device twin** blade, click on **Save**. The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
 
