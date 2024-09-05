@@ -34,7 +34,7 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 In this task, you will create an individual enrollment in the Device Provisioning Service.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />.**
+1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />.**
 
    ![](./media/v2img1.png)
 
@@ -225,8 +225,6 @@ In this task, you will be adding the code to the dotnet project for provisioning
 
 In order to use the device twin properties (from Azure IoT Hub) on a device, you need to create the code that accesses and applies the device twin properties. In this case, you want to update your simulated device code to read the telemetryDelay device twin Desired Property, and then assign that value to the corresponding **telemetryDelay** variable in your code. You also want to update the device twin Reported Property (maintained by IoT Hub) to have a record of the delay time that is currently implemented on our device.
 
-In this task, you will be using the protal to change the device twin peroperties.
-
 1. In the Visual Studio Code editor, locate the **Main** method.
 
 1. Locate the `// INSERT Setup OnDesiredPropertyChanged Event Handling below here` comment.
@@ -330,8 +328,6 @@ In this task you will build the dotnet project and run to send the telemetry dat
 
 ### Task 2: Verify Telemetry Stream sent to Azure IoT Hub
 
-In this task, you will verify the Telemetry stream by using Azure Cloud Shell.
-
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
 1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
@@ -363,9 +359,7 @@ Continue? (y/n) -> y.**
 
 ### Task 3: Change the device configuration through its twin
 
-In this task, you will be changing the twin property and will verify that device will automaticcly accomodate the changes made.
-
-With the simulated device running, the `telemetryDelay` configuration can be updated by editing the device twin Desired State within Azure IoT Hub. This can be done by configuring the Device in the Azure IoT Hub within the Azure portal.
+In this task, you will be changing the twin property and will verify that device will automaticcly accomodate the changes made. With the simulated device running, the `telemetryDelay` configuration can be updated by editing the device twin Desired State within Azure IoT Hub. This can be done by configuring the Device in the Azure IoT Hub within the Azure portal.
 
 1. Open the Azure portal (if it is not already open), and then navigate to your Azure IoT Hub service **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
@@ -406,7 +400,7 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 
 1. Notice that the telemetry events sent to Azure IoT Hub being received at the new interval of 5 seconds.
 
-1. Use **Ctrl-C** to stop both the `az` command and the Simulated Device application.
+1. Use **Ctrl+C** to stop both the `az` command and the Simulated Device application.
 
 1. Switch to your browser window for the Azure portal.
 
@@ -423,7 +417,6 @@ With the simulated device running, the `telemetryDelay` configuration can be upd
 ## Exercise 4: Deprovision the Device
 
 In your Contoso scenario, when the shipping container arrives at it's final destination, the IoT device will be removed from the container and returned to a Contoso location. Contoso will need to deprovision the device before it can be tested and placed in inventory. In the future the device could be provisioned to the same IoT hub or an IoT hub in a different region. Complete device deprovisioning is an important step in the life cycle of IoT devices within an IoT solution.
-
 In this exercise, you will perform the tasks necessary to deprovision the device from both the Device Provisioning Service (DPS) and Azure IoT Hub. To fully deprovision an IoT device from an Azure IoT solution it must be removed from both of these services.
 
 ### Task 1: Disenroll the device from the DPS
