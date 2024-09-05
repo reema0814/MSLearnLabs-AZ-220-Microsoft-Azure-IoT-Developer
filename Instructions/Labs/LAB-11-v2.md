@@ -126,8 +126,8 @@ In this lab, you will complete the following:
 1. Review the contents of the Terminal pane. You should see the following output in the terminal:
 
       ``` bash
-        sensor-th-0155: Device booted
-        sensor-th-0155: Current firmware version: 1.0.0
+          sensor-th-0155: Device booted
+          sensor-th-0155: Current firmware version: 1.0.0
       ```
 
       ![](./media/automate.png)
