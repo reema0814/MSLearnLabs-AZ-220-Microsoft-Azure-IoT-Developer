@@ -64,7 +64,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
      |  -- | -- |
      | **Target IoT hubs** | Select your **IoT hub** **(1)** from dropdown |
      | **Allocation policy** | Select **Evenly weighted distribution** **(2)** |
-     | Click on **Next | Device settings >** **(3)** |
+     | Click on **Next** | **Device settings >** **(3)** |
 
       ![](./media/az-3-41.png)
    
@@ -107,11 +107,9 @@ The simulated device that you create in this exercise represents an IoT device t
 
 In this task, you will be creating the simulating device using the dotnet project.
 
-1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview(1)**.
+1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview(1)**. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope(2)** then click on **Copy to clipboard** and then paste it in a Notepad for later use.
 
-1. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope(2)** then click on **Copy to clipboard** and then paste it in any text editor such as Notepad for later use.
-
-   ![](./media/az-3-61.png)
+    ![](./media/az-3-61.png)
 
 1. Open **Visual Studio Code**.
 
@@ -143,32 +141,15 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. In the code editor, near the top of the Program class, locate the **dpsIdScope** variable.
 
-1. Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service.
+1. Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**. Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
-    > **Note**: If you don't have the value of ID Scope available to you, you can find it on the Overview blade of the DPS service (in the Azure portal).
-
-1. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**
-
-1. Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
-
-    > **Note**: If you don't have these Key values available, you can copy them from the Azure portal as follows -
-    >
-    > Open the **Manage enrollments** blade, click **Individual Enrollments**, click **sensor-thl-1000**. Copy the **Primary key and secondary key** values and then paste as noted above.
-
-    ![](./media/az-3-23.png)    
+     ![](./media/az-3-23.png)    
 
 ### Task 2: Add the provisioning code
 
 In this task, you will be adding the code to the dotnet project for provisioning and also implement the code that provisions the device via DPS and creates a DeviceClient instance that can be used to connect to the IoT Hub.
 
 1. Take a minute to scan through the code in the **Program.cs** file.
-
-   The overall layout of the **ContainerDevice** application is similar to the **CaveDevice** application that you created in Lab 4. Notice that both applications include the following:
-
-    * Using statements
-    * Namespace definition
-      * Program class - responsible for connecting to Azure IoT and sending telemetry
-      * EnvironmentSensor class - responsible for generating sensor data
 
 1. In the code editor, locate the `// INSERT Main method below here` comment.
 
@@ -229,8 +210,6 @@ In this task, you will be adding the code to the dotnet project for provisioning
 1. Locate the **SendDeviceToCloudMessagesAsync** method.
 
 1. At the bottom of the **SendDeviceToCloudMessagesAsync** method, notice the call to `Task.Delay()`.
-
-    `Task.Delay()` is used to "pause" the `while` loop for a period of time before creating and sending the next telemetry message. The **telemetryDelay** variable is used to define how many seconds to wait before sending the next telemetry message. Contoso is requiring that the delay time be configurable.
 
 1. Near the top of the **Program** class, locate the **telemetryDelay** variable declaration.
 
