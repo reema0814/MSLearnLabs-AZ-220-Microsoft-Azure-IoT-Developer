@@ -71,8 +71,6 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
       ![](./media/lab12img9.png)
 
-      The `FROM /messages/*` part of the message route will match any device-to-cloud message sent by a module through some or no output, or by a leaf device. Then, the `INTO $upstream` tells the route to send those messages to the Azure IoT Hub.
-
 1. At the bottom of the blade, click **Review + create**.
 
 1. Take a moment to review the deployment manifest.
@@ -141,7 +139,13 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media/lab12img11.png)
 
-1. On the **Add inbound security rule** pane, ensure **Source** is set to **Any**. Under **Destination port ranges**, change the value to **8883 (1)** and **Protocol** as  **TCP** **(2)** and **Name** as **MQTT (3)**. Leave all other settings at the default, and then click **Add (4)**.
+1. On the **Add inbound security rule** pane, ensure the following values are added and then click on **Add (4)**.
+
+    | Settings | Values |
+    |  -- | -- |
+    | **Destination port ranges** | change the value to **8883 (1)** |
+    | **Protocol** | **TCP** **(2)** |
+    | **Name** | **MQTT (3)** | 
 
    ![](./media2/lab08updatedimg1.png)
 
@@ -184,8 +188,8 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
      ![](./media/az11-37.png)
 
-1. Click on **Bash** when prompted.
-
+1. In the **Welcome to Azure Cloud Shell** pop up, click on **Bash**.
+   
      ![](./media/az11-36.png)
 
 1. Select the checkbox for **Mount Storage account (1)**, select the existing **subscription (2)** and click on **Apply (3)**.
@@ -214,7 +218,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
 1. At the Cloud Shell command prompt, paste the **ssh** command that you saved to your text editor, and then press **Enter**. The command should look similar to the following:
 
-    **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
+    - **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
 
 1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections and is only prompted on the first connection.
 
@@ -314,8 +318,6 @@ In this task, you will explore the IoT edge configuration inside your vm.
     pk = 'file:///etc/aziot/iot-edge-device-ca-MyEdgeDeviceCA.key.pem'
     ```
 
-    During the setup, the **connection_string**, **trust_bundle_cert**, **cert** and **pk** values were updated.
-
 1. To ensure the IoT Edge daemon is running, enter the following command:
 
     ```bash
@@ -365,15 +367,13 @@ In this task, you will explore the IoT edge configuration inside your vm.
     √ container on the IoT Edge module network can connect to IoT Hub MQTT port - OK
     ```
 
-    If the connection fails, double-check the connection string value in **config.toml**.
-
 1. To exit the VM shell, enter the following command:
 
     ```bash
     exit
     ```
 
-    > **Important**: The connection to the VM should close and the cloud shell prompt should be displayed.
+    > **Note**: The connection to the VM should close and the cloud shell prompt should be displayed.
 
 ### Task 3: Download SSL certs from VM to Cloud Shell
 
@@ -462,8 +462,6 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. Save the Primary Connection String value of your leaf IoT device in your notepad for future use.
 
-    Be sure to note that this connection string is for the sensor-th-0072 leaf device.
-
 ### Task 2: Download device x509 certificate
 
 In this task, you will configure the connection between a pre-built downstream device and your Edge gateway device.
@@ -478,11 +476,7 @@ In this task, you will configure the connection between a pre-built downstream d
 
     > **Note**: Your browser UI may prompt you to save the download file.
 
-    The Azure IoT Edge Gateway was previously configured in the **/etc/aziot/config.toml** file to use this root CA X.509 certificate for encrypting communications with any downstream devices connecting to the gateway. This X.509 certificate will need to be copied to the downstream devices so they can use it to encrypt communications with the gateway.
-
-1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
-
-      `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
+1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
 
     > **Important**: Make sure the file has that exact name. Rename the file after copying it if necessary.
 
@@ -516,9 +510,7 @@ In this task, you will add the required entry to the hosts file.
 
     ```
 
-1. On the Visual Studio Code **File** menu, click **Save**.
-
-The local machine can now resolve the VM name to the appropriate IP Address.
+1. On the Visual Studio Code **File** menu, click **Save**. The local machine can now resolve the VM name to the appropriate IP Address.
 
 ### Task 4: Connect Downstream Device to IoT Edge Gateway
 
@@ -529,10 +521,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
      ![](./media2/lab06img16.png)
 
 1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
-
-      `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice`
-
-    You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
+`C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice`. You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
 
     > **Note**: If you see messages to restore dotnet and/or load the C# extension, you can complete the installs.
 
@@ -561,10 +550,6 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 1. Press `Ctrl+S` to save.
 
     > **Note**: Remember that this certificate is used to secure the communication from the device to the Edge Gateway. The device uses the symmetric key within the connection string for authentication with the IoT Hub.
-
-    The initial code within this method is responsible for ensuring the **azure-iot-test-only.root.ca.cert.pem** file is available. In production applications you might consider using an alternative mechanism to specify the path to the X.509 certificate, such as an environment variable, or using TPM.
-
-    Once the presence of the X.509 certificate has been verified, the **X509Store** class is used to load the certificate into the current user's certificate store. The certificate will then be available on-demand to secure communication to the gateway - this occurs automatically within the device client, so there is no additional code.
 
     > **Information**: You can learn more about the **X509Store** class [here](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509store?view=netcore-3.1).
 
@@ -618,8 +603,6 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
     ```
 
     >**Note**: Be sure to replace the **{your-id}** with **<inject key="DeploymentID" enableCopy="true" />**. 
-
-    The **az iot hub monitor-events** command enables you to monitor device telemetry & messages sent to an Azure IoT Hub. This will verify that events from the simulated device, being sent to the IoT Edge Gateway, are being received by the Azure IoT Hub.
 
     > **Note**: If prompted **Dependency update (uamqp 1.2) required for IoT extension version: 0.10.13.**, enter **Y**.
 
