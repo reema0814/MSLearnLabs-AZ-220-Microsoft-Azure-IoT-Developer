@@ -121,14 +121,13 @@ In this task, you will be connecting your Docker to Container Registry.
 
     You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
 
-<validation step="50eea306-3342-453b-9f11-b1721b9ac260" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
+   <validation step="50eea306-3342-453b-9f11-b1721b9ac260" />
 
 ## Exercise 3: Create Custom Edge Module in C#
 
@@ -346,13 +345,13 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. Close the **Cloud Shell** window.
 
-<validation step="976bf7db-9c4f-4611-9bfc-f4c533696c10" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+   <validation step="976bf7db-9c4f-4611-9bfc-f4c533696c10" />
 
 ## Exercise 5: Deploy the IoT Edge Solution
 
@@ -481,14 +480,13 @@ In this task, you will configure the IoT edge device and also set the IoT Edge M
 
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
-<validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
 
+   <validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
 
 ## Summary
 
