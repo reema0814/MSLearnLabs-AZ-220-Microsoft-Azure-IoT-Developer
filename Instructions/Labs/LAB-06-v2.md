@@ -18,10 +18,9 @@ You propose adding Azure Data Explorer to the Azure IoT solution. This will enab
 
 In this lab, you will complete the following activities:
 
- - Exercise 1: Configure Lab Prerequisites
- - Exercise 2: Setup Azure Data Explorer
- - Exercise 3: Run Simulated IoT Devices
- - Exercise 4: Visualize Data using Azure Data Explorer Queries
+ - Task 1: Setup Azure Data Explorer
+ - Task 2: Run Simulated IoT Devices
+ - Task 3: Visualize Data using Azure Data Explorer Queries
 
 ## Architecture Diagram
 
@@ -54,6 +53,8 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
    ![](./media2/lab10img11.png)
 
 1. In the **Scale** tab, leave settings to default. Click on **Next : Configurations >**.
+
+   ![](./media2/lab06img1v2.png)
 
 1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion**. Click on **Review + create** and click on **Create** on next pane.
 
@@ -193,6 +194,8 @@ In this exercise, you will run the simulated devices so that they start sending 
  
 1. In the EXPLORER pane, to open the Program.cs file, click **Program.cs**.
 
+    ![](./media2/lab06img2v2.png)
+
 1. Locate the variables used to assign the connections strings.
 
     ```csharp
@@ -205,11 +208,15 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. On the **File** menu, click **Save**.
 
+   ![](./media2/lab06img3v2.png)
+
 1. Open **New terminal** in **Visual Studio Code**
 
-    ![](./media2/lab09img3.png)
+   ![](./media2/lab09img3.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
+
+   ![](./media2/lab06img4v3.png)
 
 1. At the command prompt, to build and run the **ContainerSimulation** app, enter the following command:
 
