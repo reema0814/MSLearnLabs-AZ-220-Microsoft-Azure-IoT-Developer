@@ -67,8 +67,6 @@ In this exercise, you will ensure docker engine is running and install the Azure
     pip install iotedgehubdev --user
     ```
 
-Now that you have configured the Python environment and installed these tools, you are ready to create an Azure Container Registry which will be used to store our custom IoT Edge module.
-
 ## Exercise 2: Create an Azure Container Registry
 
 Azure Container Registry provides storage of private Docker images for container deployments. The service is a managed, private Docker registry service based on the open-source Docker Registry 2.0. Azure Container Registry is used to store and manage your private Docker container images.
@@ -89,9 +87,15 @@ In this task, you will create a Container Registry from Azure Portal.
 
    ![](./media2/lab13img10.png)
 
-1. On the **Create container registry** blade,under **resource group**select your resource group. Provide **Registry name** as **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />**. click on **Review + create** and click on **Create**.
+1. On the **Create container registry** blade, enter the followig details and click on Reviee + **Create (4)**
 
-   ![](./media2/lab09img2updated.png)
+    | Settings | Values |
+    |  -- | -- |
+    | **resource group** | **Select the existing resource group (1)** |
+    | **Registry name** |**acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />** **(2)**|
+    | **Pricing Plan** | **Standard (3)** |
+   
+      ![](./media2/lab09img2updated.png)
 
 ### Task 2: Connect Docker to the container registry
 
@@ -153,18 +157,15 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. When prompted for the name of the custom IoT Edge Module, enter **ObjectCountingModule**.
 
-1. When prompted for name of the Docker image repository for the module, update the placeholder value as follows:
-
-    Replace the "localhost:5000" part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. This will be the Docker repository where the IoT Edge Module docker image will be published. The Docker image repository location follows the format shown below:
-
+1. When prompted for name of the Docker image repository for the module, replace the **localhost:5000** part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training<inject key="DeploymentID" enableCopy="false" />.azurecr.io**.
+   
     ```text
     <acr-name>.azurecr.io/<module-name>
     ```
 
-    Be sure to replace the placeholders with the appropriate values:
-
-    * `<acr-name>`: Replace with the name of the Azure Container Registry service.
-    * `<module-name>`: Replace with the name of the custom Azure IoT Edge Module that's being created.
+    > **Note**: Be sure to replace the placeholders with the appropriate values:
+              - `<acr-name>`: Replace with the name of the Azure Container Registry service.
+              - `<module-name>`: Replace with the name of the custom Azure IoT Edge Module that's being created.
 
     > **Note**:  The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
 
@@ -301,9 +302,16 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
    ![](./media2/lab09img14.png)
 
-1. In the **Create storage account** page, select the **Resource group** **(1)** and **Region** **(2)** same as the resource group. Under **Storage account name** give name as **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** and under **File share** give name as **cloudshell** **(4)**. Click on **Create** **(5)**. 
+1. In the **Create storage account** page and click on **Create** **(5)**: 
 
-   ![](./media2/lab09img15.png)
+   | Settings | Values |
+   |  -- | -- |
+   | **Resource group**  | **Select the default** **(1)** |
+   | **Region**  | **East US** **(2)** |
+   | **Storage account name** | **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** |
+   | **File share** | **cloudshell** **(4)** |
+
+     ![](./media2/lab09img15.png)
 
 1. At the Cloud Shell command prompt, to monitor the messages being sent to Azure IoT Hub from the **SimulatedDevice** running in the IoT Edge Simulator on your local machine, enter the following command:
 
@@ -432,7 +440,6 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
    ![](./media2/lab13img32.png)
 
-
 1. On the **Set modules on device: objectcountingdevice** blade, at the bottom of the blade, click **Next: Routes >**.
 
    ![](./media2/lab13img33.png)
@@ -462,4 +469,4 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 In this lab, you have deployed an azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
 
-### You have successfully completed this Lab
+### You have successfully completed the Lab
