@@ -79,11 +79,11 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 In this task, you will create a Container Registry from Azure Portal.
 
-1. On the Azure Portal, search **Container registries**. Then, click on **Container Registries** from the search results.
+1. On the Azure Portal, search for **Container registries** and select it.
 
    ![](./media2/lab13img9.png)
 
-1. On the **Container registries** blade, click **Create**.
+1. On the **Container registries** blade, click on **Create**.
 
    ![](./media2/lab13img10.png)
 
@@ -141,7 +141,7 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
-1. In the **Visual Studio Code** open, select  **View** menu, to open the Visual Studio Command Palette, click **Command Palette**.
+1. In the **Visual Studio Code** open, select **View** menu, and click on **Command Palette**.
 
    ![](./media2/lab13img13.png)
 
