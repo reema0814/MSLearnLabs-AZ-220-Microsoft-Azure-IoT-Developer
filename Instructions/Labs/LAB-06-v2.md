@@ -32,7 +32,11 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
 In this exercise, you will setup Azure Data Explorer integration with Azure IoT Hub.
 
-1. In the Azure Portal, navigate to your resource group. Under resources select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+
+      ![](./media/v2img1.png)
+
+1. Under the **Resources** tab, select select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media2/lab10img1.png)
 
@@ -48,19 +52,26 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab10img4.png)
 
-1. On the **Create an Azure Data Explorer Cluster** blade, Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**. Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />** and also select the workload as **Dev/test**. Click on **Next : Scale >**.
+1. On the **Create an Azure Data Explorer Cluster** blade,
 
-   ![](./media2/lab10img11.png)
+   - Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**
+   - Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />**
+   - Select the workload as **Dev/test**
+   - Click on **Next : Scale >**
 
-1. In the **Scale** tab, leave settings to default. Click on **Next : Configurations >**.
+        ![](./media2/lab10img11.png)
+
+1. In the **Scale** tab, keep all the settings at their default values. Click on **Next : Configurations >**.
 
    ![](./media2/lab06img1v2.png)
 
-1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion**. Click on **Review + create** and click on **Create** on next pane.
+1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create**.
 
    ![](./media2/lab06img2.png)
 
-   >**Note**: This may take few minutes to get deployed.
+1. Click on **Create** on the next pane.
+   
+      >**Note**: This may take few minutes to get deployed.
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
@@ -70,7 +81,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img3.png)
 
-1. Navigate to **Databases** from left hand menu, verify that **streamingdata** database is created.
+1. Navigate to **Databases** from left hand menu, verify **streamingdata** database is created.
 
    ![](./media2/lab06img4.png)
 
@@ -78,7 +89,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img5.png)
 
-1. On the **Query** pane, run the following KQL script to create a table named **Telemetry**. Click on **Run**.
+1. On the **Query** pane, add the following KQL script to create a table named **Telemetry** and click on **Run**.
 
     ```
     .create table Telemetry (
@@ -94,8 +105,8 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img6.png)
 
-1. After running the script successfully, replace the script with the following to create a JSON Mapping.
-
+1. After running the script successfully, replace the script with the following to create a JSON Mapping and click on **Run**.
+   
    ```
    .alter table Telemetry policy streamingingestion enable
 
@@ -112,7 +123,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
    ```
     ![](./media2/lab06img7.png)
 
-1. After running the script successfully, navigate back to **Databases** pane and click on **Streamingdata** database.
+1. After running the script successfully, navigate back to **Databases** pane and click on **streamingdata** database.
 
    ![](./media2/lab06img8.png)
 
@@ -168,21 +179,21 @@ In this exercise, you will run the simulated devices so that they start sending 
 
     ![](./media2/lab06img18.png)
 
-1. In the IoT Hub pane, select **Devices** from the left menu under device management. select the device **sensor-thl-container-0001**.
+1. In the IoT Hub pane, select **Devices** from the left menu under device management. select the device **sensor-thl-container0001**.
 
     ![](./media2/lab06img19.png)
 
-1. On the device page, copy the **Primary connection string** and note it down. You will be using this further in this exercise.
+1. On the device page, copy the **Primary connection string** and note it down in a notepad for future use.
 
     ![](./media2/lab06img20.png)
 
-1. Follow the same steps for other two devices.
+1. Copy the Primary connection string for **sensor-thl-airplane0001** and **sensor-thl-truck0001** as well. 
 
 1. Open **Visual Studio Code** from the desktop.
 
     ![](./media2/lab06img15.png)
 
-1. On the **File** menu, click **Open Folder**.
+1. On the **File** menu, click on **Open Folder**.
 
     ![](./media2/lab06img16.png)
 
@@ -192,15 +203,13 @@ In this exercise, you will run the simulated devices so that they start sending 
 
     ![](./media2/lab06img17.png)
  
-1. In the EXPLORER pane, to open the Program.cs file, click **Program.cs**.
+1. In the EXPLORER pane, click on **Program.cs**.
 
     ![](./media2/lab06img2v2.png)
 
-1. Locate the variables used to assign the connections strings.
+1. Locate the variables used to assign the connections strings. Update the variable assignments with the connection strings that you saved earlier in the lab. Be sure to replace the placeholder values with the Connection String for the corresponding IoT device.
 
     ![](./media2/lab06img5v2.png)
-
-1. Update the variable assignments with the connection strings that you saved earlier in the lab. Be sure to replace the placeholder values with the Connection String for the corresponding IoT device.
 
 1. On the **File** menu, click **Save**.
 
