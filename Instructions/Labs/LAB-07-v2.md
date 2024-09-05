@@ -51,7 +51,12 @@ In this lab, you will complete the following:
 
       ![](./media/az11-30.png)
 
-   <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
+      > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+      <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
 
 ## Exercise 2: Create and configure an IoT Edge VM
 
@@ -188,6 +193,11 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
     √ container on the IoT Edge module network can connect to IoT Hub MQTT port - OK
     ```
 
+      > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
       <validation step="191f1b2a-c39d-46d1-9bc4-8d667d71674a" />
 
 ## Exercise 3: Add Edge Module to Edge Device
@@ -299,6 +309,11 @@ In this exercise, you will add a Simulated Temperature Sensor as a custom IoT Ed
     The **iotedge logs** command can be used to view the module logs for any of the Edge modules.
 
       ![](./media/az11-15.png)
+
+      > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
       <validation step="fca9d004-2423-4636-826d-89abf367549e" />
   
