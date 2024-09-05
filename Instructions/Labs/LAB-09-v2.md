@@ -12,6 +12,10 @@ Since you have already implemented the IoT solution that monitors the conveyor b
 
 To ensure that the correct number of packages have been processed, you decide to create (and deploy to an IoT Edge device) a simple module that counts the number of packages detected on the conveyor belt system. You already have another module available that can be used to detect the packages (both modules be deployed to the same IoT Edge device).
 
+## Architecture Diagram
+
+![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
+
 ## Lab Objectives
 
 In this lab, you will complete the following activities:
@@ -21,10 +25,6 @@ In this lab, you will complete the following activities:
 * Exercise 3: Create Custom Edge Module in C#
 * Exercise 4: Debug in Attach Mode with IoT Edge Simulator
 * Exercise 5: Deploy the IoT Edge Solution
-
-## Architecture Diagram
-
-![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
 
 ## Exercise 1: Install Azure IoT EdgeHub Dev Tool
 
