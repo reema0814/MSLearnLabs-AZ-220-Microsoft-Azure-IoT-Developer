@@ -111,19 +111,17 @@ The simulated device app that you will build in this task simulates an IoT devic
 
    ![](./media/az-4-4.png)
 
-1. On the Create a device page, under **Device ID**, enter **sensor-v-3000**. click on **Save**.
+1. On the Create a device page, under **Device ID**, enter **sensor-v-3000**. Click on **Save**.
 
    ![](./media/lab7img2.png)
 
 1. On the Devices page, under **Device ID**, click on **sensor-v-3000**.
 
-1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value, click on **Copy**.
+1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value then click on **Copy**.
 
    ![](./media/lab7img3.png)
 
-1. Save the copied device connection string value to Notepad for later use.
-
-1. Navigate back to your IoT hub blade.
+1. Save the copied device connection string value to Notepad for later use. Navigate back to your IoT hub blade.
 
 1. On the left side menu, under **Security settings**, click on **Shared access policies(1)** and then select **iothubowner(2)**.
 
@@ -239,7 +237,7 @@ In this task, you will creating a routes using the message routing tab in the Az
 
     ![](./media/lab7img10.png)
 
-1. To add a new route, click **+ Add**.
+1. To add a new route, click **+ Add**. To add a new route, first, make sure the **Routes** tab is selected. Then, click the **+ Add** button. This will open a route blade where you can configure the new route settings.
 
     ![](./media/lab7img11.png)
 
@@ -271,13 +269,11 @@ In this task, you will creating a routes using the message routing tab in the Az
 
 ### Task 2: Define the storage account container
 
-In thi stask, you will create a storage account and a container for route.
+In this task, you will create a storage account and a container for route.
 
-1. On the **Storage accounts** blade, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
+1. On the **Storage accounts** blade, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. The **Containers** blade should appear. Since this is a new storage account, there are no containers listed.
 
     ![](./media/lab7img13.png)
-
-    The **Containers** blade should appear. Since this is a new storage account, there are no containers listed.
 
 1. To create a container, click **+ Container**. The **New container** dialog should now be displayed.
    
@@ -291,11 +287,9 @@ In thi stask, you will create a storage account and a container for route.
 
     ![](./media/lab7img16.png)
 
-1. Now on the **Add a route** page verify **Endpoint type(1)**, **Endpoint name(2)**, **Azure storage container(3)** and then click on **Create + next**.
+1. Now on the **Add a route** page verify **Endpoint type(1)**, **Endpoint name(2)**, **Azure storage container(3)** and then click on **Create + next**. Notice that the **Endpoint** is now populated.
 
     ![](./media/lab7img17.png)
-
-      Notice that the **Endpoint** is now populated.
 
 ### Task 3: Define the routing query
 
@@ -342,13 +336,11 @@ In this task, you will verify that the data is properly archived or not by looki
 
     >**Note**: It may take some time for the folder to appear.
 
-    Under your IoT hub folder, you will see folders for the Partition, then numeric values for the Year, Month, and Day. The final folder represents the Hour, listed in UTC time. The Hour folder will contain a number of Block Blobs that contain your logging message data.
+1. Under your IoT hub folder, you will see folders for the Partition, then numeric values for the Year, Month, and Day. The final folder represents the Hour, listed in UTC time. The Hour folder will contain a number of Block Blobs that contain your logging message data.
 
-1. Click the Block Blob for the data with the earliest time stamp.
+1. Click the Block Blob for the data with the earliest time stamp. The .avro files use a naming pattern of **{num}.avro** (i.e. **22.avro**).
 
     ![](./media/lab7img22.png)
-
-    The .avro files use a naming pattern of **{num}.avro** (i.e. **22.avro**).
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
@@ -380,11 +372,9 @@ In thi task, you will create a stream analytics job in the Azure portal.
 
 1. On the **New** blade, in the **Search the Marketplace** textbox, type **stream analytics** and then click **Stream Analytics job**.
 
-1. On the **Stream Analytics job** blade, click **Create**.
+1. On the **Stream Analytics job** blade, click **Create**. The **New Stream Analytics job** pane is displayed.
 
     ![](./media/lab7img25.png)
-
-     The **New Stream Analytics job** pane is displayed.
 
 1. On the **New Stream Analytics job** pane, provide the following details and then click on **Review + create**.
 
@@ -403,11 +393,9 @@ In thi task, you will create a stream analytics job in the Azure portal.
 
 In this task, you will create a input in the Stream Analytics in the Portal.
 
-1. On your Stream Analytics Job blade, on the left-side menu under **Job topology**, click **Inputs**.
+1. On your Stream Analytics Job blade, on the left-side menu under **Job topology**, click **Inputs**. The **Inputs** pane will be displayed.
 
     ![](./media/lab7img27.png)
-
-     The **Inputs** pane will be displayed.
 
 1. On the **Inputs** pane, click on **+ Add input(1)** and then select **IoT Hub(2)**.
 
@@ -486,21 +474,15 @@ In this task, you will test the route that you have set in the previous task.
 
 Now for the fun part. Is the telemetry from your device app being processed through your ASA job and delivered to the storage container?
 
-1. Ensure that the device app you created in Visual Studio Code is still running.
-
-    If not, run it in the Visual Studio Code terminal using **dotnet run**.
+1. Ensure that the device app you created in Visual Studio Code is still running. If not, run it in the Visual Studio Code terminal using **dotnet run**.
 
 1. On the **Overview** pane of your Stream Analytics job, click **Start job**.
 
-1. In the **Start job** pane, leave the **Job output start time** set to **Now**, and then click **Start**.
+1. In the **Start job** pane, leave the **Job output start time** set to **Now**, and then click **Start**. It can take a few moments for the job to start.
 
     ![](./media/lab7img33.png)
 
-     It can take a few moments for the job to start.
-
-1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
-
-    If your Storage account is not visible, use the **Refresh** button at the top of the resource group tile.
+1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. If your Storage account is not visible, use the **Refresh** button at the top of the resource group tile.
 
 1. On the **Overview** pane of your Storage account, select the **Monitoring** section. Under **Key metrics**, adjacent to **Show data for last**, change the time range to **1 hour**.
 
