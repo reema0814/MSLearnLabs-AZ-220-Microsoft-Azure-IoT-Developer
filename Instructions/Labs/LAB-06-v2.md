@@ -148,7 +148,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
      ![](./media2/lab06img12.png)
 
-1. Wait till the connection is created. It may take some time, try to refresh the page untill you see the connection.
+1. Wait till the connection is created. It may take some time, try to refresh the page until you see the connection.
 
    ![](./media2/lab06img14.png)
 
@@ -257,7 +257,7 @@ In this exercise, you will get a quick introduction to working with time series 
 
     ![](./media2/lab06img25.png)
 
-1. Check the Graph, observe the **Events recived** and **Events processed** data.
+1. Check the Graph, observe the **Events received** and **Events processed** data.
 
     ![](./media2/lab06img26.png)
 
