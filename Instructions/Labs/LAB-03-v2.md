@@ -188,6 +188,9 @@ In this task, you will be adding the code to the dotnet project for provisioning
     }
     ```
 
+     ![](./media/az-3-vs1.png)    
+    
+
 1. Locate the `// INSERT ProvisionDevice method below here` comment.
 
 1. To create the **ProvisionDevice** method, enter the following code:
@@ -210,6 +213,8 @@ In this task, you will be adding the code to the dotnet project for provisioning
     }
     ```
 
+     ![](./media/az-3-vs2.png)    
+
 1. Locate the **SendDeviceToCloudMessagesAsync** method.
 
 1. At the bottom of the **SendDeviceToCloudMessagesAsync** method, notice the call to `Task.Delay()`.
@@ -231,6 +236,8 @@ In this task, you will be using the protal to change the device twin peroperties
     ```csharp
     await deviceClient.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).ConfigureAwait(false);
     ```
+
+     ![](./media/az-3-vs3.png)    
 
 1. Locate the `// INSERT OnDesiredPropertyChanged method below here` comment.
 
@@ -262,6 +269,8 @@ In this task, you will be using the protal to change the device twin peroperties
     }
     ```
 
+     ![](./media/az-3-vs4.png)    
+
 1. In the **Main** method, locate the `// INSERT Load Device Twin Properties below here` comment.
 
 1. To read the device twin desired properties and configure the device to match on device startup, enter following code:
@@ -270,6 +279,8 @@ In this task, you will be using the protal to change the device twin peroperties
     var twin = await deviceClient.GetTwinAsync().ConfigureAwait(false);
     await OnDesiredPropertyChanged(twin.Properties.Desired, null);
     ```
+
+     ![](./media/az-3-vs5.png)    
 
 1. On the Visual Studio Code **File** menu, click on **Save**. Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
