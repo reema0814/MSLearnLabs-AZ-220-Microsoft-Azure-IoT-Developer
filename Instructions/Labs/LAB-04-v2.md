@@ -98,9 +98,7 @@ In the next task, you will configure the connection string and review the applic
 
 ### Task 2: Configure connection and review code
 
-In this task, you will be reviewing your code and also configure it with connection string.
-
-The simulated device app that you will build in this task simulates an IoT device that is monitoring the conveyor belt. The app will simulate sensor readings and report vibration sensor data every two seconds.
+In this task, you will be reviewing your code and also configure it with connection string. The simulated device app that you will build in this task simulates an IoT device that is monitoring the conveyor belt. The app will simulate sensor readings and report vibration sensor data every two seconds.
 
 1. On your Resources tile of your resource group, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -236,7 +234,7 @@ In this task, you will creating a routes using the message routing tab in the Az
 
     ![](./media/az-4-7.png)
 
-    A list of the storage accounts already present in the Azure Subscription is listed. At this point you could select an existing storage account and container, however, for this lab you will create a new one.
+1. A list of the storage accounts already present in the Azure Subscription is listed. At this point you could select an existing storage account and container, however, for this lab you will create a new one.
 
 1. To begin creating a storage account, click **+ Storage account**. The **Create storage account** blade should now be displayed.
 
@@ -349,7 +347,7 @@ This will enable you to verify that your ASA job processes message data to an ou
 
 ### Task 1: Create the Stream Analytics Job
 
-In thi task, you will create a stream analytics job in the Azure portal.
+In this task, you will create a stream analytics job in the Azure portal.
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
