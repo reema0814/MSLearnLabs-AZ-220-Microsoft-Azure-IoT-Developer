@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 120 minutes
 
-## Overview 
+## Lab Overview 
 
 In this lab, you will be creating a .NET Core console application that simulates the physical IoT device and sensors. Your simulated device will implement the IoT Device SDK and it will connect to IoT Hub just like a physical device would. Your simulated device will also communicate telemetry values using the same SDK resources used by a physical device, but the sensor readings will be generated values rather than real values read from temperature and humidity sensors.
 
@@ -16,16 +16,16 @@ Contoso has decided to launch an automated system that uses IoT devices to monit
 
 To evaluate this asset monitoring solution prior to full scale implementation, you will be connecting an IoT device (that includes temperature and humidity sensors) to IoT Hub.
 
-## Architecure Diagram
-
-![Lab 4 Architecture](media/LAB_AK_04-architecture.png)
-
 ## Lab Objectives
 
 In this lab, you will complete the following:
 
  - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
  - Exercise 2: Create and Test a Simulated Device (C#)
+
+## Architecure Diagram
+
+![Lab 4 Architecture](media/LAB_AK_04-architecture.png)
 
 ## Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
 
@@ -81,8 +81,6 @@ In this task, you will create a device in the IoT Hub.
 ### Task 2: Get the Device Connection String
 
 For a device to connect to an IoT Hub, it needs to establish a connection. In this lab, you will use a connection string to connect your device directly to the IoT Hub (this form of authentication is often referred to as symmetric key authentication). When using Symmetric key authentication, there are two connection strings available - one that utilizes the Primary key, the other that uses the Secondary key. As noted above, the Primary and Secondary keys are only generated once the device record is saved. Therefore, to obtain one of the connection strings, you must first save the record (as you did in the task above) and then re-open the device record (which is what you are about to do).
-
-In this task, you will get the device connection string from the Azure Portal.
 
 1. On the **IoT devices** pane of your IoT Hub, under **Device ID**, click on **sensor-th-0001**.
 
@@ -169,14 +167,12 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
 ### Task 2: Explore the application
 
-In this task, you will be reviewing the starter files after creating a new console.
+In this task, you will be reviewing the starter files after creating a new consol and use Visual Studio Code to review the contents and purpose of the two application files.
 
 As noted above, the application currently consists of two files:
 
 * CaveDevice.csproj
 * Program.cs
-
-In this task, you will use Visual Studio Code to review the contents and purpose of the two application files.
 
 1. In the **EXPLORER** pane, to open the application project file, click on **CaveDevice.csproj**.
 
