@@ -307,6 +307,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
         Console.ReadLine();
     }
     ```
+    ![](./media/az-2-vs2.png)        
 
     The **Main** method is the first part of your application that runs once your app is started.
 
@@ -337,7 +338,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
         }
     }
     ```
-
+    ![](./media/az-2-vs3.png)
+   
     > **Note**: Notice that the declaration for the **SendDeviceToCloudMessagesAsync** method includes the keyword **async**. This specifies that the method contains asynchronous code that uses the **await** keyword and instructs the compiler to handle the callback plumbing for you.
 
 1. Locate the **// INSERT CreateMessageString method below here** comment, and then position the cursor on a blank line below the comment.
@@ -357,7 +359,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
         return JsonConvert.SerializeObject(telemetryDataPoint);
     }
     ```
-
+    ![](./media/az-2-vs4.png)
+   
     > **Note**:  This method creates an anonymous object with the temperature and humidity properties and assigns it to **telemetryDataPoint**. The value of **telemetryDataPoint** is then converted to a JSON string via the **JsonConvert** class that is part of the **Newtonsoft.Json** package you added earlier. The JSON string value is then returned to be used as the payload in the message.
 
 1. Locate the **// INSERT EnvironmentSensor class below here** comment, and then position the cursor on a blank line below the comment.
@@ -391,7 +394,8 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
         }
     }
     ```
-
+    ![](./media/az-2-vs5.png)
+   
     > **Information**:     This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
 
 1. Final code should look like this. Make sure you replace the `<Connection_String>` with the connection string you copied earlier.
@@ -502,8 +506,10 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     ```
 
-1. On the **File** menu, click on **Save**.
+1. On the **File(1)** menu and then click on **Save(2)**.
 
+    ![](./media/az-4-20.png)
+   
 1. Take a minute to scan through your completed application. Your completed application represents a simple simulated device. It demonstrates how to connect a device to an IoT Hub and send Device to Cloud messages. You are now ready to test the application.
 
 ### Task 4: Test the application
