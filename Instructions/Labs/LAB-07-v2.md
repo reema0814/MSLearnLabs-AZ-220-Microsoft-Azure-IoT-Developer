@@ -343,8 +343,6 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    | **Redundancy** | **Locally-redundant storage (LRS) (6)** |
    | Click on | **Review + create (7)** |
 
-   ![](./media/edge3.png)
-
 1. Click on **Create**.
 
 ### Task 2: Create an Azure Stream Analytics job
