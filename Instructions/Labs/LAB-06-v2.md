@@ -283,6 +283,6 @@ In this exercise, you will get a quick introduction to working with time series 
 
 ## Summary
 
-In this lab, you have noted the connection strings of devices that are pre deployed and created a Azure Data Explorer cluster and created a database and connected it to the IoT Hub which was pre-deployed ran the simulator and visualized the data in it.
+In this lab, you started by noting the connection strings of pre-deployed IoT devices. You then created an Azure Data Explorer cluster and set up a database to store and query data. After connecting the database to the IoT Hub, you ran a simulator to generate IoT data, which was ingested into Azure Data Explorer. Finally, you visualized the data to analyze and gain insights, showcasing how Azure services can be used to build an effective IoT data pipeline.
 
 ## You have successfully completed the lab!!
