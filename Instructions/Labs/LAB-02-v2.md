@@ -245,6 +245,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
         // INSERT EnvironmentSensor class below here
     }
     ```
+    ![](./media/az-2-vs1.png)    
 
     > **Note:** As you can see, the namespace and the class have been retained, however, the other items are placeholder comments. In the following steps you will be inserting code into the file below specific comments.
 
