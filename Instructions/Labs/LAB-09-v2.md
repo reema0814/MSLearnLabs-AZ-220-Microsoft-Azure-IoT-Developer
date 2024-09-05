@@ -311,7 +311,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
    | **Storage account name** | **stoaz220<inject key="DeploymentID" enableCopy="true" />** **(3)** |
    | **File share** | **cloudshell** **(4)** |
 
-     ![](./media2/lab09img15.png)
+      ![](./media2/lab09img15.png)
 
 1. At the Cloud Shell command prompt, to monitor the messages being sent to Azure IoT Hub from the **SimulatedDevice** running in the IoT Edge Simulator on your local machine, enter the following command:
 
@@ -323,7 +323,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. Observe the output displayed in the Cloud Shell. With everything still running, notice the output of the previous command in the Cloud Shell will display a JSON representation of the messages being received by the Azure IoT Hub. The output should look similar to the following:
 
-    ![](./media2/lab09img10.png)
+      ![](./media2/lab09img10.png)
 
 1. Close the **Cloud Shell** window.
 
@@ -347,7 +347,7 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
 1. Navigate back to **Visual Studio Code**. and open **New Terminal**.
 
-   ![](./media2/v2img13.png)
+     ![](./media2/v2img13.png)
 
 1. On the terminal, run commands to tag and push the image to **Azure Container Registries**.
 
@@ -357,7 +357,7 @@ In this task, you will use Docker commands to tag and publish the image to conta
    docker images
    ```
 
-   ![](./media2/lab13img23.png)
+     ![](./media2/lab13img23.png)
 
 1. Run the following command to tag the image.
 
@@ -379,11 +379,11 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
 1. Switch to your Azure portal window. On your Resource group tile, to open your Azure Container Registry (ACR) service, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
  
-   ![](./media2/lab13img24.png)
+     ![](./media2/lab13img24.png)
 
 1. On the left side navigation menu, under **Services**, Under **Repositories**, select **objectcountingmodule** and click on **1.4** which is the tag that we have provided.
 
-   ![](./media2/lab13img26.png)
+     ![](./media2/lab13img26.png)
 
 1. Save a copy of the Image URI. The format of the Docker image Repository and Tag names combined will be in the following format:
 
@@ -403,21 +403,21 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. Navigate to your Azure IoT Hub resource.
 
-   ![](./media2/lab13img16.png)
+     ![](./media2/lab13img16.png)
 
 1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge**. On the **IoT Edge** pane, click **Add an IoT Edge device**.
 
-   ![](./media2/lab13img27.png)
+     ![](./media2/lab13img27.png)
 
 1. On the **Create a device** blade, under **Device ID**, enter **objectcountingdevice**. click **Save**.
 
 1. On the **IoT Edge** pane, under **Device ID**, click **objectcountingdevice**.
 
-   ![](./media2/lab13img28.png)
+     ![](./media2/lab13img28.png)
 
 1. At the top of the **objectcountingdevice** blade, click **Set Modules**.
 
-   ![](./media2/lab13img29.png)
+     ![](./media2/lab13img29.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **Container Registry Settings**, enter the following values:
 
@@ -430,19 +430,19 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
     > **Note**: The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
 
-    ![](./media2/lab13img30.png)
+      ![](./media2/lab13img30.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **IoT Edge Modules**, click **Add**, and then click **IoT Edge Module**.
 
-   ![](./media2/lab13img31.png)
+      ![](./media2/lab13img31.png)
 
 1. On the **Add IoT Edge Module** pane, under **IoT Edge Module Name**, enter **objectcountingmodule** **(1)**. Under **Image URI** **(2)** paste the image URI you have copied earlier. Click on **Add** **(3)**.
 
-   ![](./media2/lab13img32.png)
+      ![](./media2/lab13img32.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, at the bottom of the blade, click **Next: Routes >**.
 
-   ![](./media2/lab13img33.png)
+      ![](./media2/lab13img33.png)
 
 1. On the **Routes** tab, add the following two routes:
 
@@ -451,7 +451,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
     | `AllMessagesToObjectCountingModule` | `FROM /* INTO BrokeredEndpoint("/modules/objectcountingmodule/inputs/input1")` |
     | `ObjectCountingModuleToIoTHub` | `FROM /messages/modules/objectcountingmodule/outputs/* INTO $upstream` |
 
-    ![](./media2/lab13img34.png)
+      ![](./media2/lab13img34.png)
 
 1. At the bottom of the blade, click **Next: Review + create >**.
 
