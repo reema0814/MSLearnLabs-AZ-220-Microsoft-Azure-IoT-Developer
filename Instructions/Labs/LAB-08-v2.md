@@ -10,7 +10,7 @@ There are three patterns for using an IoT Edge device as a gateway: transparent,
 
 **Transparent** – Devices that theoretically could connect to IoT Hub can connect to a gateway device instead. The downstream devices have their own IoT Hub identities and are using any of the MQTT, AMQP, or HTTP protocols. The gateway simply passes communications between the devices and IoT Hub. The devices are unaware that they are communicating with the cloud via a gateway, and a user interacting with the devices in IoT Hub is unaware of the intermediate gateway device. Thus, the gateway is transparent. Refer to Create a transparent gateway for specifics on using an IoT Edge device as a transparent gateway.
 
-**Protocol translation** – Also known as an opaque gateway pattern, devices that do not support MQTT, AMQP, or HTTP can use a gateway device to send data to IoT Hub on their behalf. The gateway understands the protocol used by the downstream devices, and is the only device that has an identity in IoT Hub. All information looks like it is coming from one device, the gateway. Downstream devices must embed additional identifying information in their messages if cloud applications want to analyze the data on a per-device basis. Additionally, IoT Hub primitives like twins and methods are only available for the gateway device, not downstream devices.
+**Protocol translation** – Also known as an opaque gateway pattern, devices that do not support MQTT, AMQP, or HTTP can use a gateway device to send data to IoT Hub on their behalf. The gateway understands the protocol used by the downstream devices and is the only device that has an identity in IoT Hub. All information looks like it is coming from one device, the gateway. Downstream devices must embed additional identifying information in their messages if cloud applications want to analyze the data on a per-device basis. Additionally, IoT Hub primitives like twins and methods are only available for the gateway device, not downstream devices.
 
 **Identity translation** - Devices that cannot connect to IoT Hub can connect to a gateway device, instead. The gateway provides IoT Hub identity and protocol translation on behalf of the downstream devices. The gateway is smart enough to understand the protocol used by the downstream devices, provide them identity, and translate IoT Hub primitives. Downstream devices appear in IoT Hub as first-class devices with twins and methods. A user can interact with the devices in IoT Hub and is unaware of the intermediate gateway device.
 
@@ -18,7 +18,7 @@ There are three patterns for using an IoT Edge device as a gateway: transparent,
 
 In this lab, you will perform:
 
- - Exercise 1: Deploy and configure a Linux VM  as an IoT Edge Gateway
+ - Exercise 1: Deploy and configure a Linux VM as an IoT Edge Gateway
  - Exercise 2: Download Device CA Certificate
  - Exercise 3: Create a Downstream Device
 
@@ -26,7 +26,7 @@ In this lab, you will perform:
 
 ![Lab 12 Architecture](media/LAB_AK_12-architecture.png)
 
-## Exercise 1: Deploy and configure a Linux VM  as an IoT Edge Gateway
+## Exercise 1: Deploy and configure a Linux VM as an IoT Edge Gateway
 
 In this exercise, you will deploy an Ubuntu Server VM and configure it as an IoT Edge Gateway.
 
@@ -34,11 +34,11 @@ In this exercise, you will deploy an Ubuntu Server VM and configure it as an IoT
 
 In this task, you will use Azure IoT Hub to create a new IoT Edge device identity that you will use for the IoT Edge Transparent Gateway (your IoT Edge VM).
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
    ![](./media/v2img1.png)
    
-1. On the All resources tile, to open your IoT hub, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the **All resources** tile, to open your IoT hub, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/lab12img1.png)
 
@@ -133,7 +133,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media/az8-19.png)
    
-1. On the All resources tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the **All resources** tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
  
    ![](./media/lab12img10.png)
 
@@ -145,7 +145,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media2/lab08updatedimg1.png)
 
-1. After the MQTT rule is added, to open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
+1. After the MQTT rule is added. To open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
 
     | Destination port ranges | Protocol | Name |
     | :--- | :--- | :--- |
@@ -216,7 +216,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
 
-1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections, and is only prompted on the first connection.
+1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections and is only prompted on the first connection.
 
 1. When prompted to enter the password, enter the administrator password `Password!123` that you created when the Edge Gateway VM was provisioned.
 
@@ -342,7 +342,7 @@ In this task, you will explore the IoT edge configuration inside your vm.
     sudo iotedge check --verbose
     ```
 
-    This runs a number of checks and displays the results. For this lab, ignore the **Configuration checks** warnings/errors. The **Connectivity checks** should succeed and be similar to:
+    This runs several checks and displays the results. For this lab, ignore the **Configuration checks** warnings/errors. The **Connectivity checks** should succeed and be similar to:
 
     ```bash
     Connectivity checks (aziot-identity-service)
@@ -394,7 +394,7 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
 
     >**Important**: The command above has a **space character** followed by a period **.** at the end of the command.
 
-    > **Note**: Replace the **{username}** placeholder with the username of the admin user for the VM, and replace the **{FQDN}** placeholder with the fully qualified domain name for the VM. Refer to the command that you used to open the SSH session if needed.
+    > **Note**: Replace the **{username}** placeholder with the username of the admin user for the VM and replace the **{FQDN}** placeholder with the fully qualified domain name for the VM. Refer to the command that you used to open the SSH session if needed.
     >
     > `scp -r -p vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com:/tmp/lab12 .`
 
@@ -599,7 +599,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     10/25/2019 6:10:15 PM > Sending message: {"temperature":20.48506045736608,"humidity":71.47250854944461}
     ```
 
-    > **Note**: If the message send operation on the device seems to pause for longer than a second on the first send, you likely did not add the network security group (NSG) incoming rules correctly earlier in hte lab, so your MQTT traffic is being blocked. Check your NSG configuration.
+    > **Note**: If the message send operation on the device seems to pause for longer than a second on the first send, you likely did not add the network security group (NSG) incoming rules correctly earlier in the lab, so your MQTT traffic is being blocked. Check your NSG configuration.
 
 1. Leave the simulated device running while you move on to the next task.
 
@@ -666,6 +666,6 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 
 ## Summary
 
-In this lab, you have created an Linux based Virtual Machine as an IoT Edge Device. and you have connected to that VM and check regarding IoT edge modules and download CA certificate and also created a downstream device.
+In this lab, you have created a Linux based Virtual Machine as an IoT Edge Device. and you have connected to that VM and check regarding IoT edge modules and download CA certificate and created a downstream device.
 
 ## You have successfully completed this Lab!!
