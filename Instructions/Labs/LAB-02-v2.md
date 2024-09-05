@@ -110,8 +110,8 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     ![](./media/v2img8.png)
 
-1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)** from the menu.
-
+1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)**.
+   
     ![](./media/az-5-71.png)
 
 1. In the terminal, run the following commands to create a directory named **CaveDevice** and switch to that directory.
@@ -144,11 +144,11 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
     ```
     ![](./media/vs2.png)
 
-1. In Visual Studio Code, on the **Explorer(1)** menu and then click on **Open Folder(2)**.
+1. In Visual Studio Code, on the **Explorer(1)** , click on **Open Folder(2)**.
 
     ![](./media/az-5-81.png)
 
-1. In the **Open Folder** dialog, navigate to the location (**C:\CaveDevice**) where you created the **CaveDevice** directory.
+1. In the **Open Folder** dialog box , navigate to the location `C:\CaveDevice` where you created the **CaveDevice** directory.
 
 1. In the list of folders, click on **CaveDevice(1)** and then click on **Select Folder(2)**.
 
@@ -186,21 +186,17 @@ In this task, you will use Visual Studio Code to review the contents and purpose
     <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
             <OutputType>Exe</OutputType>
-            <TargetFramework>netcoreapp3.1</TargetFramework>
+            <TargetFramework>netcoreapp8.0</TargetFramework>
         </PropertyGroup>
         <ItemGroup>
             <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.*" />
         </ItemGroup>
     </Project>
     ```
-
-    > **Note**: The package version numbers in your file may differ from those shown above, that's okay.
-
+    
 1. In the **EXPLORER** pane, click on **Program.cs**.
 
-1. Take a minute to review the contents of the **Program.cs** file.
-
-    Your file contents should be similar to the following:
+1. Take a minute to review the contents of the **Program.cs** file. Your file contents should be similar to the following:
 
     ```csharp
      Console.WriteLine("Hello, World!");
@@ -224,10 +220,6 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     ![](./media/v2img15.png)
 
-    After a moment, you should see **Hello World!** displayed on the line directly below the **dotnet run** command that you entered.
-
-    You will be using the same **Console.WriteLine** approach in your simulated device application to display information locally, which will help you see the information being sent to IoT Hub and keep track of processes that are being completed by your device.
-
 ### Task 3: Implement the simulated device code
 
 In this task, you will use Visual Studio Code to enter the code that leverages the Azure IoT Device SDK to connect to your IoT Hub resource.
@@ -235,14 +227,6 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 1. In the **EXPLORER** pane, click on **Program.cs**.
 
 1. Select all the existing code, and then delete it.
-
-    > **Important**: In the next step, you will begin the process of building your simulated device code. If you are intending to paste the code into a learning environment such as LODS, there are a few things to be aware of:
-    >
-    > * The **Type text -> Type clipboard text** buffer is limited, so it may truncate the code that is copied - double check your work and add any missing characters.
-    > * As the **Type clipboard text** simulates typing, the default settings in Visual Studio Code will automatically indent code and insert closing braces - **)**, **}** and **]** - resulting in duplicate characters and incorrect indentation. These actions can be turned off in Visual Studio code settings (**File -> Preferences -> Settings**) with the following settings:
-    >    * **Editor: Auto Closing Brackets** - set to **never**
-    >    * **Editor: Auto Indent** - set to **none**
-    > * The source can be reformatted at any time by using **F1** and entering **Format Document** or by pressing **SHIFT + ALT + F**
 
 1. In the code editor pane, to create the basic structure of your simulated device application, enter the following code:
 
@@ -298,16 +282,6 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     private readonly static string connectionString = "{Your device connection string here}";
     ```
 
-1. Take a moment to review the code (and code comments) that you just entered.
-
-    The **deviceClient** variable is used to store an instance of **DeviceClient** - this class comes from the Azure IoT Device SDK and contains methods that a device can use to send messages to and receive from an IoT Hub.
-
-    The **connectionString** variable will contain the connection string for the device we created earlier. This value is used by the **DeviceClient** to connect to the IoT Hub. You will specify the connectionString value in the next step.
-
-    > **Important**: You will see examples in this and other IoT labs on MS Learn where connection strings, passwords and other configuration information is hard-coded into the application. This is done solely to simplify the labs and **is not** a recommended practice. As much as possible, security issues like this will be addressed as they come up.
-
-    As noted within the code comments, connection strings and similar configuration values should be supplied via alternative means such as environment variables, command-line parameters or, better still, stored in secured hardware such as Trusted Platform Modules (TPM).
-
 1. In the code that you just entered, update the value for **connectionString** using the Primary Connection String that you copied from IoT Hub.
 
     Once updated, the **connectionString** variable line should be similar to the following:
@@ -335,28 +309,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     The **Main** method is the first part of your application that runs once your app is started.
 
-1. Take a minute to review the code (and code comments) that you just entered.
-
-    The basic structure of a simple device app is as follows:
-
-    * Connect to the IoT Hub
-    * Send telemetry to the app (Device to Cloud messages)
-
-    Notice that the **deviceClient** variable is initialized with the result of the **DeviceClient** static method, **CreateFromConnectionString**. This method uses the connection string you specified earlier, as well as selecting the protocol that the device will use to the send telemetry - in this case MQTT.
-
-    > **Note**: In a production application, the **CreateFromConnectionString** method call would be wrapped in exception handling code to gracefully deal with any connection issues. This and other lab code is kept as simple as possible to highlight the key points, so most error-handling is omitted for brevity.
-
-    Once connected, the **SendDeviceToCloudMessagesAsync** method is called. You may notice that the method name is underlined with "red squiggles" - this is because Visual Studio Code has noticed that **SendDeviceToCloudMessagesAsync** is not yet implemented. We will add the method shortly.
-
-    Finally, the application waits for user input.
-
-    > **Information**: The **DeviceClient** class is documented [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient?view=azure-dotnet).
-    >
-    > **Information**: The **CreateFromConnectionString** method is documented [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.deviceclient.createfromconnectionstring?view=azure-dotnet#Microsoft_Azure_Devices_Client_DeviceClient_CreateFromConnectionString_System_String_Microsoft_Azure_Devices_Client_TransportType_).
-    >
-    > **Information**: The supported transport protocols are documented [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-protocols).
-
-1. Locate the **// INSERT - SendDeviceToCloudMessagesAsync below here** comment, and then position the cursor on a blank line below the comment.
+1. Locate the **// INSERT - SendDeviceToCloudMessagesAsync below here** comment, and then position the cursor on a blank line below the comment. 
 
 1. To construct the **SendDeviceToCloudMessagesAsync** method, enter the following code:
 
@@ -384,37 +337,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     }
     ```
 
-    Notice that the declaration for the **SendDeviceToCloudMessagesAsync** method includes the keyword **async**. This specifies that the method contains asynchronous code that uses the **await** keyword and instructs the compiler to handle the callback plumbing for you.
-
-1. Take a minute to review the code (and code comments) that you just entered.
-
-    This method implements a typical message loop:
-
-    * Read from one or more sensors
-    * Create a message to send
-    * Send the message
-    * Wait for some time, or for an event to occur, etc.
-    * Repeat the loop
-
-    The following description explains the method code in more detail:
-
-    * The first thing that your code does is create an instance of the **EnvironmentSensor** class. This is done outside the loop and is used to support simulating the sensor data inside the loop. You will add the **EnvironmentSensor** class shortly.
-
-    * You then start an infinite loop - **while(true) {}** will repeat until the user hits **CTRL+C**.
-
-    * Within the loop, the first thing you do is read the temperature and humidity from your sensor and use those values to create a message string - you will add the code for **CreateMessageString** in a moment as well.
-
-    * Then you create the actual **message** that will be sent to IoT Hub. You do this by creating an instance of the **Message** class from the Azure IoT Device SDK - the data structure that represents the message that is used for interacting with Iot Hub (IoT Hub expects a specific message format). The constructor that you use for the **Message** class requires that the message string be encoded as a byte array.
-
-    * Next, you augment the message with additional properties - here, for example, you set the **temperatureAlert** property to true if the **currentTemperature** is greater than 30, otherwise false.
-
-    * You then send the telemetry message via the **await deviceClient.SendEventAsync(message);** call. Note that this line contains an **await** keyword. This instructs the compiler that the following code is asynchronous and will complete sometime in the future - when it does complete, this method will continue executing on the next line.
-
-    * Finally, you write the message string to the local console window to show that telemetry has been sent to IoT Hub, and then wait for 1000 milliseconds (1 second) before repeating the loop.
-
-    > **Information**: You can learn more about **async**, **await** and asynchronous programming in C# [here](https://docs.microsoft.com/en-us/dotnet/csharp/async).
-
-    > **Information**: The **Message** class is documented [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client.message?view=azure-dotnet)
+    > **Note**: Notice that the declaration for the **SendDeviceToCloudMessagesAsync** method includes the keyword **async**. This specifies that the method contains asynchronous code that uses the **await** keyword and instructs the compiler to handle the callback plumbing for you.
 
 1. Locate the **// INSERT CreateMessageString method below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -434,9 +357,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     }
     ```
 
-    This method creates an anonymous object with the temperature and humidity properties and assigns it to **telemetryDataPoint**.
-
-    The value of **telemetryDataPoint** is then converted to a JSON string via the **JsonConvert** class that is part of the **Newtonsoft.Json** package you added earlier. The JSON string value is then returned to be used as the payload in the message.
+    > **Note**:  This method creates an anonymous object with the temperature and humidity properties and assigns it to **telemetryDataPoint**. The value of **telemetryDataPoint** is then converted to a JSON string via the **JsonConvert** class that is part of the **Newtonsoft.Json** package you added earlier. The JSON string value is then returned to be used as the payload in the message.
 
 1. Locate the **// INSERT EnvironmentSensor class below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -470,9 +391,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     }
     ```
 
-    This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
-
-    > **Information**: You can view a more representative example of the code that interacts with a simple temperature, humidity and pressure sensor [here](https://bit.ly/IoT-BME280).
+    > **Information**:     This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
 
 1. Final code should look like this. Make sure you replace the `<Connection_String>` with the connection string you copied earlier.
 
@@ -584,11 +503,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 1. On the **File** menu, click on **Save**.
 
-1. Take a minute to scan through your completed application.
-
-    Your completed application represents a simple simulated device. It demonstrates how to connect a device to an IoT Hub and send Device to Cloud messages.
-
-    You are now ready to test the application
+1. Take a minute to scan through your completed application. Your completed application represents a simple simulated device. It demonstrates how to connect a device to an IoT Hub and send Device to Cloud messages. You are now ready to test the application.
 
 ### Task 4: Test the application
 
@@ -604,15 +519,9 @@ In this task, you will be testing the application that you have built in the pre
     dotnet run
     ```
 
-    This command will build and run the Simulated Device application. Be sure the terminal location is set to the directory with the `CaveDevice.cs` file.
-
     > **Note**:  If the command outputs a **Malformed Token** or other error message, then make sure the **Primary Connection String** value is configured correctly as the value of the **connectionString** variable.
 
-1. Observe the message string output displayed in the Terminal.
-
-    Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values and displaying message string output in the console.
-
-    The terminal output will look similar to the following:
+1. Observe the message string output displayed in the Terminal. Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values and displaying message string output in the console. The terminal output will look similar to the following:
 
     ```text
     IoT Hub C# Simulated Cave Device. Ctrl-C to exit.
