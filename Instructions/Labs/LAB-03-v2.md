@@ -14,6 +14,10 @@ The proposed system will use IoT devices with integrated sensors for tracking th
 
 In Contoso's cheese packaging facility, when an empty container enters the system it will be equipped with the new IoT device and then loaded with packaged cheese products. The IoT device will be auto-provisioned to IoT hub using DPS. When the container arrives at the destination, the IoT device will be retrieved and must be fully deprovisioned (disenrolled and deregistered). The recovered devices will be recycled and re-used for future shipments following the same auto-provisioning process.
 
+## Architecture Diagram
+
+![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
+
 ## Lab Objectives
 
 In this lab, you will perform:
@@ -21,10 +25,6 @@ In this lab, you will perform:
  - Exercise 2: Configure Simulated Device
  - Exercise 3: Test the Simulated Device
  - Exercise 4: Deprovision the Device
-
-## Architecture Diagram
-
-![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
 
 ## Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
 
