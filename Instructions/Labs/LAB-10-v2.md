@@ -18,10 +18,6 @@ Contoso has tasked you with implementing an automated system that keeps the cave
 
 In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors, and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
 
-## Architecture Diagram
-
-![Lab 15 Architecture](media/LAB_AK_15-architecture-1.png)
-
 ## Lab Objectives
 
 In this lab, you will complete the following:
@@ -32,9 +28,13 @@ In this lab, you will complete the following:
 - Exercise 4: Include Code to Invoke a Direct Method
 - Exercise 5: Implement the Device Twin functionality
 
+## Architecture Diagram
+
+![Lab 15 Architecture](media/LAB_AK_15-architecture-1.png)
+
 ### Exercise 1: Configure Lab Prerequisites
 
-1. Navigate to the **Environment (1)** Details tab in your VM and copy the following values:
+1. Navigate to the **Environment (1)** tab in your VM and copy the following values in a notepad for future use:
 
    - **deviceConnectionString (2)**
    - **eventHubsCompatibleEndpoint (3)**
@@ -95,7 +95,7 @@ The simulated device app that you will build in this task simulates an IoT devic
    
       ![](./media/az15-6.png)
 
-1. Press `Ctrl + S` to save.
+1. Press `Ctrl + S` to save the file.
 
 ### Task 3: Test your Code to Send Telemetry
 
