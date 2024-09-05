@@ -40,9 +40,9 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
     ![](./media2/lab10img1.png)
 
-2. On the IoT Hub left hand menu, select **Built-in-endpoints**. Create a new consumer group **adxevents**.
+2. On the IoT Hub left hand menu, select **Built-in-endpoints (1)**. Under **Consumer Group** provide name as **adxevents (2)** to create a new consumer group.
 
-   ![](./media2/lab10img9.png)
+   ![](./media2/lab10img9updated.png)
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
