@@ -39,10 +39,6 @@ For you, this means two things:
 
 You plan to implement features of IoT Hub that enable automatic device management and device management at scale.
 
-## Architecture Diagram
-
-![Lab 16 Architecture](media/LAB_AK_16-architecture-1.png)
-
 ## Lab Objectives
 
 In this lab, you will complete the following:
@@ -51,13 +47,17 @@ In this lab, you will complete the following:
 - Task 2: Examine code for a simulated device that implements firmware update
 - Task 3: Test firmware update on a single device
 
+## Architecture Diagram
+
+![Lab 16 Architecture](media/LAB_AK_16-architecture-1.png)
+
 ### Task 1: Configure Lab Prerequisites
 
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
     ![](./media/v2img1.png)
 
-1. In the **az220rg-inject key="DeploymentID" enableCopy="false"></inject>** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
+1. In the **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
     ![](./media/iot1.png)
 
@@ -123,9 +123,7 @@ In this lab, you will complete the following:
     > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
 
 
-1. Review the contents of the Terminal pane.
-
-    You should see the following output in the terminal:
+1. Review the contents of the Terminal pane. You should see the following output in the terminal:
 
     ``` bash
         sensor-th-0155: Device booted
