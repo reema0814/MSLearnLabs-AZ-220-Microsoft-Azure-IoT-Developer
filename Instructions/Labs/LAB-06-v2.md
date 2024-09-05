@@ -204,15 +204,15 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. On the **File** menu, click **Save**.
 
-   ![](./media2/lab06img3v2.png)
+    ![](./media2/lab06img3v2.png)
 
 1. Open **New terminal** in **Visual Studio Code**
 
-   ![](./media2/lab09img3.png)
+    ![](./media2/lab09img3.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
 
-   ![](./media2/lab06img4v3.png)
+    ![](./media2/lab06img4v3.png)
 
 1. At the command prompt, to build and run the **ContainerSimulation** app, enter the following command:
 
