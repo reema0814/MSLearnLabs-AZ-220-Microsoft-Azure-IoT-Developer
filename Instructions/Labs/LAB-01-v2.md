@@ -35,11 +35,12 @@ In this lab, you will complete the following:
     
 1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
 
-   - Subscription: **Select the default Subscription (1)**.
-   - Resource group: **Select the Existing Resource group (2)**.
-   - IoT hub name: Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)**
-   - Region : **eastus(4)**
-   - Tier :**Standard(5)** 
+   | Settings | Values |
+   | Subscription | **Select the default Subscription (1)** |
+   | Resource group | **Select the Existing Resource group (2)** |
+   | IoT hub name | Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
+   | Region | **eastus(4)** |
+   | Tier | **Standard(5)** |
 
     ![](media/toi1.png)
 
