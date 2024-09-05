@@ -12,10 +12,6 @@ Due to the large amount of data being collected and the urgent time response nee
 
 You have been tasked with prototyping the Azure IoT Edge solution. To begin, you will be setting up an IoT Edge device that monitors temperature (simulating a device connected to one of the cheese processing machines). You will then deploy a Stream Analytics module to the device that will be used to calculate the average temperature and generate an alert notification if process control values are exceeded.
 
-## Architecture Diagram
-
-![Lab 11 Architecture](media/LAB_AK_11-architecture-1.png)
-
 ## Lab Objectives
 
 In this lab, you will complete the following:
@@ -24,6 +20,10 @@ In this lab, you will complete the following:
 - Exercise 2: Create and configure an IoT Edge VM
 - Exercise 3: Add Edge Module to Edge Device
 - Exercise 4: Deploy Azure Stream Analytics as IoT Edge Module
+
+## Architecture Diagram
+
+![Lab 11 Architecture](media/LAB_AK_11-architecture-1.png)
 
 ## Exercise 1: Configure Lab Prerequisites
 
