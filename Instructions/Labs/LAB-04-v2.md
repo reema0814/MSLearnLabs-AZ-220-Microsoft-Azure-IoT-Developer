@@ -19,16 +19,15 @@ The conveyor belt system is a critical link in this process and is visually moni
 * High vibration levels are known to accelerate wear-and-tear of the system
 * When vibration levels exceed a threshold limit, the conveyor belt must be stopped to allow for inspection (to avoid more serious failures)
 
+## Architecture Diagram
+
+![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
 
 ## Lab Objectives
  
  - Exercise 1: Write Code to generate Vibration Telemetry
  - Exercise 2: Create a Message Route to Azure Blob Storage
  - Exercise 3: Create an Azure Stream Analytics Job
-
-## Architecture Diagram
-
-![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
 
 ## Exercise 1: Write Code to generate Vibration Telemetry
 
