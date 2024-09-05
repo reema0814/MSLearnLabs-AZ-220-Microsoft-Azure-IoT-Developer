@@ -198,11 +198,7 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. Locate the variables used to assign the connections strings.
 
-    ```csharp
-    private readonly static string connectionStringTruck = "{Your Truck device connection string here}";
-    private readonly static string connectionStringAirplane = "{Your Airplane device connection string here}";
-    private readonly static string connectionStringContainer = "{Your Container device connection string here}";
-    ```
+    ![](./media2/lab06img5v2.png)
 
 1. Update the variable assignments with the connection strings that you saved earlier in the lab. Be sure to replace the placeholder values with the Connection String for the corresponding IoT device.
 
