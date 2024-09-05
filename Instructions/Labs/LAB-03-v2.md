@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 120 minutes
 
-## Overview
+## Lab Overview
 
 In this lab, you will begin by reviewing the lab prerequisites and you will run a script if needed to ensure that your Azure subscription includes the required resources. You will then create a new individual enrollment in DPS that uses Symmetric Key attestation and specifies an initial Device Twin State (telemetry rate) for the device. With the device enrollment saved, you will go back into the enrollment and get the auto-generated Primary and Secondary keys needed for device attestation. Next, you create a simulated device and verify that device connects successfully with IoT hub and that the initial device twin properties are applied by the device as expected. To finish up, you will complete a deprovisioning process that securely removes the device from your solution by both disenrolling and deregistering the device (from DPS and IoT hub respectively).
 
@@ -14,10 +14,6 @@ The proposed system will use IoT devices with integrated sensors for tracking th
 
 In Contoso's cheese packaging facility, when an empty container enters the system it will be equipped with the new IoT device and then loaded with packaged cheese products. The IoT device will be auto-provisioned to IoT hub using DPS. When the container arrives at the destination, the IoT device will be retrieved and must be fully deprovisioned (disenrolled and deregistered). The recovered devices will be recycled and re-used for future shipments following the same auto-provisioning process.
 
-## Architecture Diagram
-
-![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
-
 ## Lab Objectives
 
 In this lab, you will perform:
@@ -25,6 +21,10 @@ In this lab, you will perform:
  - Exercise 2: Configure Simulated Device
  - Exercise 3: Test the Simulated Device
  - Exercise 4: Deprovision the Device
+
+## Architecture Diagram
+
+![Lab 5 Architecture](media/LAB_AK_05-architecture.png)
 
 ## Exercise 1: Create new individual enrollment (Symmetric keys) in DPS
 
