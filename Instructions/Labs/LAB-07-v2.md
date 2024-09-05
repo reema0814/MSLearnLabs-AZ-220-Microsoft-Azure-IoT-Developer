@@ -343,7 +343,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     | Redundancy | **Locally-redundant storage (LRS) (6)** |
     | Click on | **Review + create (7)** |
     
-    ![](./media/edge3.png)
+     ![](./media/edge3.png)
     
 1. Click on **Create**.
 
@@ -364,7 +364,6 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
      | Name | **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)** |
      | Region | **Select the default region (4)** |
      | Hosting environment | **Edge (5)** |
-
 
       ![](./media/edge4.png)
 
