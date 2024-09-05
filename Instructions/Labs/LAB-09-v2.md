@@ -12,10 +12,6 @@ Since you have already implemented the IoT solution that monitors the conveyor b
 
 To ensure that the correct number of packages have been processed, you decide to create (and deploy to an IoT Edge device) a simple module that counts the number of packages detected on the conveyor belt system. You already have another module available that can be used to detect the packages (both modules be deployed to the same IoT Edge device).
 
-## Architecture Diagram
-
-![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
-
 ## Lab Objectives
 
 In this lab, you will complete the following activities:
@@ -25,6 +21,10 @@ In this lab, you will complete the following activities:
 * Exercise 3: Create Custom Edge Module in C#
 * Exercise 4: Debug in Attach Mode with IoT Edge Simulator
 * Exercise 5: Deploy the IoT Edge Solution
+
+## Architecture Diagram
+
+![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
 
 ## Exercise 1: Install Azure IoT EdgeHub Dev Tool
 
@@ -143,11 +143,11 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. In the **Visual Studio Code** open, select **View** menu, and click on **Command Palette**.
 
-   ![](./media2/lab13img13.png)
+      ![](./media2/lab13img13.png)
 
 1. At the command prompt, type **Azure IoT Edge: New**, and then click **Azure IoT Edge: New IoT Edge Solution**.
 
-   ![](./media2/lab13img14.png)
+      ![](./media2/lab13img14.png)
 
 1. Browse to the folder `C:\Labfiles`, and then click **Select folder**.
 
@@ -191,21 +191,21 @@ In this task, you will be setting up your username and password in the solution.
 
 1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier. Save the updated **.env** file.
 
-   ![](./media2/lab09img3updated.png)
+      ![](./media2/lab09img3updated.png)
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, ensure that the **image** is mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
-   ![](./media2/lab13img22.png)
+      ![](./media2/lab13img22.png)
 
-    >**Note**: You can use the same image name from the below configurations and paste it here.
+      >**Note**: You can use the same image name from the below configurations and paste it here.
 
 1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** or later in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
-   ![](./media2/lab13img21.png)
+      ![](./media2/lab13img21.png)
 
 1. In Visual Studio Code, on the **View** menu, click **Command Palette**
 
-   ![](./media2/lab13img13.png)
+     ![](./media2/lab13img13.png)
 
 1. At the command prompt, type **Azure IoT Edge: Set Default** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution**.
 
@@ -221,21 +221,21 @@ In this task, you will test the IoT Edge device.
 
 1. In the Azure Portal, on your Resource group tile, to open your IoT hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media2/lab13img16.png)
+     ![](./media2/lab13img16.png)
 
 1. On the left side navigation menu, under **Security settings**, click **Shared access policies**. In the list of policies, click **iothubowner**.  copy the value for **Primary connection string**.
 
-   ![](./media2/lab13img17.png)
+     ![](./media2/lab13img17.png)
 
-    >**Note**: Record this value, as you will need it below.
+      >**Note**: Record this value, as you will need it below.
 
 1. On the left side navigation menu, under **Device management**, click **IoT Edge**. Click **Add an IoT Edge device**.
 
-   ![](./media2/lab13img18.png)
+     ![](./media2/lab13img18.png)
 
 1. On the **Create a device** blade, under **Device ID**,  enter **SimulatedDevice**. Leave all other settings as default, click on **save**.
 
-   ![](./media2/lab13img19.png)
+     ![](./media2/lab13img19.png)
 
 ### Task 2: Configure the test module
 
@@ -245,7 +245,7 @@ In this task, you will be configuring the module using the connection string of 
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
 
-   ![](./media2/lab13img1.png)
+      ![](./media2/lab13img1.png)
 
 1. This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
 
@@ -269,7 +269,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
 
-   ![](./media2/lab13img1.png)
+     ![](./media2/lab13img1.png)
 
 1. Observe the build process reporting in your TERMINAL window. It can take quite a few minutes to download and build everything that is required to simulate the IoT Edge device and run your modules, so be patient. Notice that once the **IoT Edge Simulator** is running, the Modules that you built will begin sending message output that is reported to the TERMINAL window:
 
@@ -288,19 +288,19 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. At the top of the portal window, to open the Azure Cloud Shell, click **Cloud Shell**.
 
-    ![](./media2/lab09img11.png)
+      ![](./media2/lab09img11.png)
 
 1. On the **Welcome to Azure Cloud Shell** pane, click on **Bash**.
 
-   ![](./media2/lab0912.png)
+      ![](./media2/lab0912.png)
 
 1. On the **Getting started** pane, select **Mount storage account** **(1)** and select the **subscription** **(2)** and click on **Apply** **(3)**.
 
-   ![](./media2/lab09img13.png)
-
+      ![](./media2/lab09img13.png)
+ 
 1. On the **Mount storage account** pane select **I want to create a storage account** and click on **Next**.
 
-   ![](./media2/lab09img14.png)
+      ![](./media2/lab09img14.png)
 
 1. In the **Create storage account** page and click on **Create** **(5)**: 
 
