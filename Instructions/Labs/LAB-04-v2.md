@@ -47,11 +47,11 @@ In this exercise, you will:
 
 In this task, you will be opening the Simulated device project using visual studio code.
 
-1. In the virtual machine environment, open **Visual Studio Code** from the Desktop.
+1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
    ![](./media/v2img8.png)
 
-1. In Visual Studio Code, on the **File(1)** menu, click on **Open Folder(2)**.
+1. In Visual Studio Code, go to the **File(1)** menu at the top-left corner of the window and select **Open Folder(2)**. This will prompt you to browse through your file system and select the folder you want to open in the workspace.
 
    ![](./media/az-3-22.png)
 
@@ -63,14 +63,12 @@ In this task, you will be opening the Simulated device project using visual stud
 
    ![](./media/az-3-9.png)
 
-    You should see the following files listed in the EXPLORER pane of Visual Studio Code:
+1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
     * Program.cs
     * VibrationDevice.csproj
 
-1. In the **EXPLORER** pane, click **Program.cs(1)**.
-
-1. On the **Terminal(2)** menu, click **New Terminal(3)**.
+1. In the **EXPLORER** pane, click **Program.cs(1)**. On the **Terminal(2)** menu, click **New Terminal(3)**.
 
    ![](./media/az-4-2.png)
 
@@ -159,13 +157,11 @@ The simulated device app that you will build in this task simulates an IoT devic
 
 In this task, you well verify if your code is working or not by running it.
 
-1. At the Terminal command prompt, to run the app, enter the following command:
+1. At the Terminal command prompt, to run the app, enter the following command. This command will run the **Program.cs** file in the current folder.
 
     ```bash
     dotnet run
     ```
-
-   This command will run the **Program.cs** file in the current folder.
 
 1. Console output should be displayed that is similar to the following:
 
@@ -185,9 +181,7 @@ In this task, you well verify if your code is working or not by running it.
 
     > **Note**:  In the Terminal window, green text is used to show things are working as they should and red text when bad stuff is happening. If you receive error messages, start by checking your device connection string.
 
-1. Leave this app running for the next task.
-
-    If you won't be continuing to the next task, you can enter **Ctrl-C** in the Terminal window to stop the app. You can start it again later by using the **dotnet run** command.
+1. Leave this app running for the next task. If you won't be continuing to the next task, you can enter **Ctrl+C** in the Terminal window to stop the app. You can start it again later by using the **dotnet run** command.
 
 ### Task 4: Verify the IoT Hub is Receiving Telemetry
 
@@ -201,9 +195,7 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 
    ![](./media/lab7img9.png)
 
-    The **Device to cloud messages** tile should be plotting some current activity. If no activity is shown, wait a short while, as there's some latency.
-
-    With your device sending telemetry, and your hub receiving it, the next step is to route the messages to their correct endpoints.
+1. The **Device to cloud messages** tile should be plotting some current activity. If no activity is shown, wait a short while, as there's some latency. With your device sending telemetry, and your hub receiving it, the next step is to route the messages to their correct endpoints.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
@@ -251,33 +243,31 @@ In this task, you will creating a routes using the message routing tab in the Az
 
     ![](./media/lab7img11.png)
 
-1. On the **Add a route** blade,
+1. On the **Add a route** blade, provide the following details:
 
-    - Endpoint type: Select **Storage(1)** from the drop down.
-    - Endpoint name: **vibrationLoggingRoute(2)** 
-    - To display a list of Storage accounts associated with your subscription, click on **Pick a container(3)** under Azure Storage Container.
+    | Setting | Value |
+    | --- | --- |
+    | Endpoint type | **Storage(1)** from the drop down |
+    | Endpoint name | **vibrationLoggingRoute(2)** |
+    | Azure Storage Container | To display a list of Storage accounts associated with your subscription, click on **Pick a container(3)** |
 
     ![](./media/az-4-7.png)
 
     A list of the storage accounts already present in the Azure Subscription is listed. At this point you could select an existing storage account and container, however, for this lab you will create a new one.
 
-1. To begin creating a storage account, click **+ Storage account**.
-
-    The **Create storage account** blade should now be displayed.
+1. To begin creating a storage account, click **+ Storage account**. The **Create storage account** blade should now be displayed.
 
 1. On the **Create storage account** blade, provide the following details and then click on **OK** **(3)**.
 
-    - Name: Enter **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (1)**
-    - Account kind: **StorageV2 (general purpose v2) (2)**
-    - Performance: Ensure that **Standard** is selected.
+    | Setting | Value |
+    | --- | --- |
+    | Name | **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (1)**  |
+    | Account kind | **StorageV2 (general purpose v2) (2)** |
+    | Performance | **Standard** |
       
     ![](./media/lab7img12.png)
 
-1. Wait until the request is validated and the storage account deployment has completed.
-
-    Validation and creation can take a minute or two.
-
-    Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
+1. Wait until the request is validated and the storage account deployment has completed. Validation and creation can take a minute or two. Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
 
 ### Task 2: Define the storage account container
 
@@ -289,11 +279,9 @@ In thi stask, you will create a storage account and a container for route.
 
     The **Containers** blade should appear. Since this is a new storage account, there are no containers listed.
 
-1. To create a container, click **+ Container**.
+1. To create a container, click **+ Container**. The **New container** dialog should now be displayed.
    
     ![](./media/lab7img14.png)
-
-    The **New container** dialog should now be displayed.
 
 1. On the **New container** dialog, under **Name** enter **vibrationcontainer** and then click on **Create** to create the Container.
 
@@ -313,24 +301,20 @@ In thi stask, you will create a storage account and a container for route.
 
 In this task, you will define a route for storage account.
 
-1. On the **Add a route** blade, under **Data source**, ensure that **Device Telemetry Messages** is selected.
+1. On the **Add a route** blade, provide the following details:
 
-    - Under Name: Enter **vibrationLoggingRoute**
-    - Under **Data source**, ensure that **Device Telemetry Messages** is selected.
-    - Under **Enable route**, ensure that **Enable** is selected.
-    - Under **Routing query**, replace **true** with the query below:
-
-    ```sql
-    sensorID = 'VSLog'
-    ```
+    | Setting | Value |
+    | --- | --- |
+    | Name | **vibrationLoggingRoute**  |
+    | Data source | **Device Telemetry Messages** |
+    | Enable route | **Enable** |
+    | Under **Routing query** | replace **true** with the query **sensorID = 'VSLog'** |
 
     This query ensures that only messages with the **sensorID** application property set to **VSLog** will be routed to the storage endpoint.
 
     ![](./media/lab7img18.png)
 
-1. To create this route, click on **Create + skip enrichments**.
-
-    Wait for the success message. Once completed, the route should be listed on the **Message routing** pane.
+1. To create this route, click on **Create + skip enrichments**. Wait for the success message. Once completed, the route should be listed on the **Message routing** pane.
 
 1. Once you see your new route listed on the **Message routing** pane, navigate back to your Azure portal Dashboard.
 
@@ -404,10 +388,12 @@ In thi task, you will create a stream analytics job in the Azure portal.
 
 1. On the **New Stream Analytics job** pane, provide the following details and then click on **Review + create**.
 
-    - Subscription: **Select the default Subscription(1)**
-    - Ressourse group: **Select the existing Resource group(2)**
-    - Name: **vibrationJob(3)**
-    - Region: **eastus(4)**
+    | Setting | Value |
+    | --- | --- |
+    | Subscription | **Select the default Subscription(1)**  |
+    | Ressourse group | **Select the existing Resource group(2)** |
+    | Name | **vibrationJob(3)** |
+    | Region | **eastus(4)** |
 
      ![](./media/az-4-9.png)
 
@@ -427,29 +413,21 @@ In this task, you will create a input in the Stream Analytics in the Portal.
 
     ![](./media/az-4-15.png)
 
-1. On the **IoT Hub - New input** pane, under **Input alias**, enter **vibrationInput (1)**
+1. On the **IoT Hub - New input** pane, provide the following settings and click **Save (11)**, and then wait for the input to be created.
 
-   - Ensure that **Select IoT Hub from your subscriptions** is selected.
-
-   - Under **Subscription**, ensure that the subscription you used to create the IoT Hub earlier is selected **(2.)**
-
-   - Under **IoT Hub**, ensure that your **iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> (3)** IoT hub is selected.
-
-   - Under **Consumer group**, ensure that **$Default (4)** is selected.
-
-   - Under **Shared access policy name**, ensure that **iothubowner (5)** is selected.
-
-   - Under **Endpoint**, ensure that **Messaging (6)** is selected.
-
-   - Leave **Partition key (7)** blank.
-
-   - Under **Event serialization format**, ensure that **JSON (8)** is selected.
-
-   - Under **Encoding**, ensure that **UTF-8 (9)** is selected.
-
-   - Under **Event compression type**, ensure **None (10)** is selected.
-
-   - To save the new input, click **Save (11)**, and then wait for the input to be created.
+    | Setting | Value |
+    | --- | --- |
+    | Input alias | **vibrationInput (1)** |
+    | Select IoT Hub from your subscriptions | **Selected** |
+    | Subscription | Ensure that the subscription you used to create the IoT Hub earlier is selected **(2.)** |
+    | IoT Hub | **iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> (3)** |
+    | Consumer group | **$Default (4)** |
+    | Shared access policy name | **iothubowner (5)** |
+    | Endpoint | **Messaging (6)** |
+    | Partition key | **Blank (7)** |
+    | Event serialization format | **JSON (8)** |
+    | Encoding | **UTF-8 (9)** |
+    | Event compression type | **None (10)** |
 
      ![](./media/az-4-16.png)
 
@@ -461,33 +439,23 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
     ![](./media/az-4-18.png)
 
-1. On the **Blob storage/ADLS Gen2 - New output** pane, under **Output alias**, enter **vibrationOutput (1)**.
+1. On the **Blob storage/ADLS Gen2 - New output** pane, provide the following settings, click **Save(9)** and to create the output, and then wait for the output to be created.
 
-   - Ensure that **Select Blob storage/ADLS Gen2 from your subscriptions** is selected.
-
-   - Under **Subscription**, select the subscription you are using for this lab **(2)**.
-
-   - Under **Storage account**, ensure that **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (3)** is selected.
-
-   - Under **Container**, ensure that **Use existing** is selected and that **vibrationcontainer (4)** is selected from the dropdown list.
-
-   - Under **Authentication Mode**, select **Connection string (5)**
-
-   - Under **Event serialization format**, ensure that **JSON (6)** is selected.
-
-   - Under **Format**, ensure that **Line separated (7)** is selected.
-
-   - Under **Encoding**, ensure that **UTF-8 (8)** is selected.
-
-   - Leave the **Path pattern** blank.
-
-   - Leave the **Date format** and **Time format** at their defaults.
-
-   - Leave **Minimum rows** blank.
-
-   - Under **Maximum time**, leave **Hours** and **Minutes** blank.
-
-   - To create the output, click **Save(9)**, and then wait for the output to be created.
+    | Setting | Value |
+    | --- | --- |
+    | Output alias | **vibrationOutput (1)** |
+    | Select Blob storage/ADLS Gen2 from your subscriptions | **Selected** |
+    | Subscription |  select the subscription you are using for this lab **(2)** |
+    | Storage account | **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (3)** |
+    | Container | **Use existing** is selected and **vibrationcontainer (4)** is selected from the dropdown list |
+    | Authentication Mode | **Connection string (5)** |
+    | Event serialization format | **JSON (6)** |
+    | Format | **Line separated (7)** |
+    | Encoding | **UTF-8 (8)** |
+    | Path pattern | **Blank** |
+    | Date format and Time format | **Keep it as default** |
+    | Minimum rows | **Blank** |
+    | Maximum time | Leave **Hours** and **Minutes** blank |
 
      ![](./media/az-4-19.png)
 
@@ -510,9 +478,7 @@ In this task, you will create query in Stream Analytics.
         vibrationInput
     ```
 
-1. Directly above the query editor pane, click **Save Query**.
-
-1. On the left-side menu, click **Overview**.
+1. Directly above the query editor pane, click **Save Query**. On the left-side menu, click **Overview**.
 
 ### Task 5: Test the Logging Route
 
@@ -567,9 +533,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
    
 1. In Visual Studio Code, close the document containing your json data.
 
-1. Return to your Azure portal window and navigate to your Dashboard.
-
-1. On your Resources tile, click **vibrationJob**.
+1. Return to your Azure portal window and navigate to your Dashboard. On your Resources tile, click **vibrationJob**.
 
     ![](./media/lab7img36.png)
 
@@ -577,9 +541,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
     ![](./media/lab7img37.png)
 
-1. Switch to the Visual Studio Code window.
-
-1. At the Terminal command prompt, to exit the device simulator app, press **CTRL-C**.
+1. Switch to the Visual Studio Code window. At the Terminal command prompt, to exit the device simulator app, press **CTRL+C**.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
@@ -592,4 +554,4 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 In this lab, you began by writing code to generate vibration telemetry data. Next, you created a message route to direct this data to Azure Blob Storage. Finally, you set up an Azure Stream Analytics job to process and analyze the incoming telemetry data in real time.
 
-## You have successfully completed the Lab!!
+## You have successfully completed the Lab
