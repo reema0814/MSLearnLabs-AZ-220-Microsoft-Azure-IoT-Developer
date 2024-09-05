@@ -160,13 +160,13 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. With these three ports open on the Network Security Group (NSG), the downstream devices will be able to connect to the IoT Edge Gateway using the MQTT, AMQP, or HTTPS protocols.
 
-<validation step="b1385042-0098-4338-aa44-f920b7ab3d5d" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+   <validation step="b1385042-0098-4338-aa44-f920b7ab3d5d" />
 
 ## Exercise 2: Download Device CA Certificate
 
@@ -416,13 +416,13 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
 
     Once the files are copied to Cloud Shell storage from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine, you will be able to easily download any of the IoT Edge Device certificate and key files to your local machine as necessary. Files can be downloaded from the Cloud Shell using the `download <filename>` command. You will do this later in the lab.
 
-<validation step="347b3d97-90c7-4666-9630-5fe2b5a5b3d8" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+   <validation step="347b3d97-90c7-4666-9630-5fe2b5a5b3d8" />
 
 ## Exercise 3: Create a Downstream Device
 
@@ -656,13 +656,13 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 
     > **Note**: Resources that your created during this lab include an associated fee. If you are using your own Azure account, be sure to clean up your resources to minimize any charges.
 
-<validation step="668a4f06-e613-47f9-85c3-7f08c66ab8e5" />
-
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
   > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+
+   <validation step="668a4f06-e613-47f9-85c3-7f08c66ab8e5" />
 
 ## Summary
 
