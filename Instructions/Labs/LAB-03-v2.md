@@ -554,4 +554,4 @@ Now that the Device Enrollment has been removed from the Device Provisioning Ser
 
 In this lab, you have configured the enrollment in the Device Provision Service, built a device which sends the telemetry data to the IoT hub also tested the device by changing configurations and finally deprovisioned device at last.
 
-## You have successfully completed the Lab!!
+### You have successfully completed the Lab
