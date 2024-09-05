@@ -195,14 +195,6 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     > **Note**: The package version numbers in your file may differ from those shown above, that's okay.
 
-    The project file (.csproj) is an XML document that specifies the type of project that you are working on. In this case, the project is an **Sdk** style project.
-
-    As you can see, the project definition contains two sections - a **PropertyGroup** and an **ItemGroup**.
-
-    The **PropertyGroup** defines the type of output that building this project will produce. In this case you will be building an executable file that targets .NET Core 3.1.
-
-    The **ItemGroup** specifies any external libraries that are required for the application. These particular references are for NuGet packages, and each package reference specifies the package name and the version. The **dotnet add package** commands (that you entered in the steps above) added these references to the project file and the **dotnet restore** command ensured that all of the dependencies were downloaded.
-
 1. In the **EXPLORER** pane, click on **Program.cs**.
 
 1. Take a minute to review the contents of the **Program.cs** file.
@@ -234,8 +226,6 @@ In this task, you will use Visual Studio Code to review the contents and purpose
     After a moment, you should see **Hello World!** displayed on the line directly below the **dotnet run** command that you entered.
 
     You will be using the same **Console.WriteLine** approach in your simulated device application to display information locally, which will help you see the information being sent to IoT Hub and keep track of processes that are being completed by your device.
-
-    Although this Hello World app demonstrates some basic concepts, it is clearly not a simulated device. In the next task you will replace this code with the code for your simulated device.
 
 ### Task 3: Implement the simulated device code
 
