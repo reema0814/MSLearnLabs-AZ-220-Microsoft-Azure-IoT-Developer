@@ -333,15 +333,17 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. In the create a storage account page, provide the following:
 
-     - Subscription: **Select the default subscription (1)**
-     - Resource Group: **Select the existing resource group (2)**
-     - Storage Account Name: Provide the name as **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
-     - Region: **Select the default region (4)**
-     - Performance: **Standard (5)**
-     - **Redundancy**: **Locally-redundant storage (LRS) (6)** 
-     - Click on **Review + create (7)**
+    | Settings | Values |
+    |  -- | -- |
+    | Subscription | **Select the default subscription (1)** |
+    | Resource Group | **Select the existing resource group (2)** |
+    | Storage Account Name | Provide the name as **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(3)** |
+    | Region | **Select the default region (4)** |
+    | Performance | **Standard (5)** |
+    | **Redundancy** | **Locally-redundant storage (LRS) (6)** |
+    | Click on | **Review + create (7)** |
 
-          ![](./media/edge3.png)
+      ![](./media/edge3.png)
 
 1. Click on **Create**.
 
@@ -355,13 +357,15 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
    
 1. In the New Stream Analytics Job, provide the following under the **Basics** tab and click on **Next (6)**:
 
-      - Subscription: **Select the default subscription (1)**
-      - Resource Group: **Select the existing resource group (2)**
-      - Name: **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)**
-      - Region: **Select the default region (4)**
-       - Hosting environment (This determines that the Stream Analytics job will deployed to an on-premises IoT Gateway Edge device.): **Edge (5)**
+    | Settings | Values |
+    |  -- | -- |
+    | Subscription | **Select the default subscription (1)** |
+    | Resource Group | **Select the existing resource group (2)** |
+    | Name | **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** **(3)** |
+    | Region | **Select the default region (4)** |
+    | Hosting environment | **Edge (5)** |
       
-           ![](./media/edge4.png)
+      ![](./media/edge4.png)
 
 1. Under the storage tab, select the **Add storage account** check box then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** from the drop down and click on **Review + create (2)**
 
