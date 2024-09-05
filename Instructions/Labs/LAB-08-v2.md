@@ -259,7 +259,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
 ### Task 2: Explore the IoT Edge configuration
 
-During the initial launch of the VM, a script was executed that configured IoT Edge. This script performed the following operations:
+In this task, you will explore the IoT edge configuration inside your vm. During the initial launch of the VM, a script was executed that configured IoT Edge. This script performed the following operations:
 
 * Installed **aziot-identity-service** package
 * Installed **aziot-edge** package
@@ -270,8 +270,6 @@ During the initial launch of the VM, a script was executed that configured IoT E
 * Generated the test SSL certs in **/tmp/lab12** and copied them to **/etc/aziot**
 * Added the certs to the **/etc/aziot/config.toml**
 * Applied the updated **/etc/aziot/config.toml** to the IoT Edge runtime
-
-In this task, you will explore the IoT edge configuration inside your vm.
 
 1. To determine the version of IoT Edge that was installed, enter the following command:
 
