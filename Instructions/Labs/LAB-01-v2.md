@@ -2,6 +2,10 @@
 
 ### Estimated Duration: 60 minutes
 
+## Lab Overview 
+
+In this lab, you'll create and configure an Azure IoT Hub and Device Provisioning Service (DPS) to manage and securely connect IoT devices. You'll begin by setting up the IoT Hub, exploring key features like device management, message routing, and endpoints. Next, you'll create a DPS to enable automated, secure device provisioning and link it to the IoT Hub. The lab provides step-by-step guidance to help you understand how these services work together for effective IoT device management.
+
 ## Lab Scenario
 
 You are an Azure IoT Developer working for Contoso, a company that crafts and distributes gourmet cheeses. You have been tasked with exploring Azure and the Azure IoT services that you will using to develop Contoso's IoT solution. You have already become familiar with the Azure portal and created a resource group for your project. Now you need to begin investigating the Azure IoT services.
@@ -20,6 +24,8 @@ In this lab, you will complete the following:
 ![](./media2/lab01archv2.png)
 
 ## Exercise 1: Create an IoT Hub using the Azure portal
+
+In this exercise, you will create an IoT Hub using the Azure portal. You'll provide key settings such as the subscription, resource group, hub name, region, and tier, then configure the TLS version and device-to-cloud partitions. After reviewing and completing the setup, you'll access the newly created IoT Hub.
 
 ### Task 1: Use the Azure portal to create a IoT Hub with required property settings
 
@@ -64,9 +70,7 @@ In this lab, you will complete the following:
 
 ## Exercise 2: Examine the IoT Hub Service
 
-IoT Hub is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your Azure IoT services and your connected devices.
-
-In this exercise, you will examine some of the features that IoT Hub provides.
+IoT Hub is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your Azure IoT services and your connected devices. In this exercise, you will examine some of the features that IoT Hub provides.
 
 ### Task 1: Explore the IoT Hub Overview information
 
@@ -137,10 +141,12 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.  Click on **Create**.
 
-   - Subscription: **Select the default subscription (1)**
-   - Resource Group: **Select the existing Resource group (2)**
-   - Name: **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)**
-   - Region: **eastus (4)**
+    | Setting | Value |
+    | --- | --- |
+    | Subscription | **Select the default subscription (1)**  |
+    | Resource Group | **Select the existing Resource group (2)** |
+    | Name | **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
+    | Region | **eastus (4)** |
 
     ![](media/1lab19.png)
    
