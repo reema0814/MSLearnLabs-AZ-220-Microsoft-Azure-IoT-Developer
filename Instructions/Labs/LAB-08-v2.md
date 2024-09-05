@@ -121,7 +121,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
 1. Once validation is passed, click on **Create**.
 
-   > **Note**: Deployment can take as much as 5 minutes to complete.
+   > **Note**: Wait for the deployment to be completed. It will take approximately 5 minutes to complete.
 
 1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
 
@@ -442,7 +442,7 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
 1. On the **Create a device** blade, under **Device ID**, enter **sensor-th-0072 (1)**. Under **Parent device**, click **Set a parent device (2)**.
 
-     ![](./media/az8-9.png)
+     ![](./media/az8-9-1.png)
    
 1. On the **Set an Edge device as a parent device** blade, under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, and then click **OK (2)**.
 
@@ -456,11 +456,9 @@ In this task, you will create a new IoT device identity in Azure IoT Hub for the
 
      ![](./media2/lab08updatedimg2.png)
 
-1. On the IoT Device summary pane, to the right of the **Primary Connection String** field, click **Copy**.
+1. On the IoT Device summary pane, to the right of the **Primary Connection String** field, click **Copy** and paste in a notepad for future use.
 
      ![](./media/lab12img19.png)
-
-1. Save the Primary Connection String value of your leaf IoT device in your notepad for future use.
 
 ### Task 2: Download device x509 certificate
 
@@ -486,9 +484,7 @@ In earlier versions of this lab, the FQDN would be used as the value from the **
 
 In this task, you will add the required entry to the hosts file.
 
-1. Open Visual Studio Code.
-
-    > **Note**: You may find it helpful to maximize the Visual Studio Code window.
+1. Open **Visual Studio Code** from the desktop.
 
 1. On the **File** menu, click **Open File**.
 
@@ -520,8 +516,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
      ![](./media2/lab06img16.png)
 
-1. In the **Open Folder** dialog, navigate to the Starter folder for lab 12, click **DownstreamDevice**, and then click **Select Folder**. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is:
-`C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice`. You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
+1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice` click on **DownstreamDevice**, and then click on **Select Folder**. You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
 
     > **Note**: If you see messages to restore dotnet and/or load the C# extension, you can complete the installs.
 
