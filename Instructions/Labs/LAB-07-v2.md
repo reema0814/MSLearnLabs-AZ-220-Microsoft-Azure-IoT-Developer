@@ -343,7 +343,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     | **Redundancy** | **Locally-redundant storage (LRS) (6)** |
     | Click on | **Review + create (7)** |
 
-    ![](./media/edge3.png)
+      ![](./media/edge3.png)
 
 1. Click on **Create**.
 
@@ -365,7 +365,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
     | Region | **Select the default region (4)** |
     | Hosting environment | **Edge (5)** |
       
-    ![](./media/edge4.png)
+      ![](./media/edge4.png)
 
 1. Under the storage tab, select the **Add storage account** check box then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** from the drop down and click on **Review + create (2)**
 
