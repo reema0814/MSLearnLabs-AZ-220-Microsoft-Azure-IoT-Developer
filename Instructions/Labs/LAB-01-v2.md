@@ -47,11 +47,9 @@ In this lab, you will complete the following:
 
     ![](media/1lab17.png)
 
-1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**.
+1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**. Click on **Create**.
 
     ![](media/toi2.png)
-
-1. Click on **Create**.
 
 1. Once the Deployment is completed,Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
@@ -72,9 +70,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 ### Task 1: Explore the IoT Hub Overview information
 
-1. If the IOt Hub blade is not opened, open your Azure dashboard.
-
-1. Search and select **IoT Hub** from the Azure dashboard.
+1. If the IOT Hub blade is not opened, open your Azure dashboard. Search and select **IoT Hub** from the Azure dashboard.
 
     ![](./media/az11-50.png)
 
@@ -86,8 +82,8 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
 1. To the right of the **IoT Hub Usage(1)** tile, notice the **Number of messages used(2)** tile and the **Device to cloud messages(3)** tile.
 
-- The **Device to cloud messages** tile provides a quick view of the incoming messages from your devices over time.
-- The **Number of messages used** tile can help you to keep track of the total number of messages used.
+   - The **Device to cloud messages** tile provides a quick view of the incoming messages from your devices over time.
+   - The **Number of messages used** tile can help you to keep track of the total number of messages used.
 
      ![](media/az-1-8.png)
 
@@ -101,9 +97,7 @@ In this exercise, you will examine some of the features that IoT Hub provides.
 
     ![](media/az-1-6.png)
 
-1. On the left-side menu, under **Hub settings**, click on **Built-in endpoints**
-
-    IoT Hub exposes "endpoints" that enable external connections. Essentially, an endpoint is anything connected to or communicating with your IoT Hub. You should see that your hub already has endpoints defined, including the following:
+1. On the left-side menu, under **Hub settings**, click on **Built-in endpoints**. IoT Hub exposes "endpoints" that enable external connections. Essentially, an endpoint is anything connected to or communicating with your IoT Hub. You should see that your hub already has endpoints defined, including the following:
 
     * _Event Hub compatible endpoint_ **(1)**
     * _Cloud to device messaging_ **(2)**
@@ -141,7 +135,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
     ![](media/iot29.png)
 
-1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.
+1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.  Click on **Create**.
 
    - Subscription: **Select the default subscription (1)**
    - Resource Group: **Select the existing Resource group (2)**
@@ -149,8 +143,6 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
    - Region: **eastus (4)**
 
     ![](media/1lab19.png)
-
-1. Click on **Create**.
    
 1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
 
@@ -161,7 +153,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
       <validation step="8cec2de1-1475-4740-8c14-a8712f80cfd5" />
 
-#### Task 2: Link your IoT Hub and Device Provisioning Service.
+### Task 2: Link your IoT Hub and Device Provisioning Service.
 
 1. On the Azure dashboard you can see the list of both your **IoT Hub(2)** and **DPS resources(1)**.
 
@@ -187,7 +179,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
         ![](media/az-1-7.png)
 
-1. Here you can see the newly created Linked IoT Hub.
+1. Here, you can see the newly created Linked IoT Hub.
 
     ![](media/iott21.png)
 
