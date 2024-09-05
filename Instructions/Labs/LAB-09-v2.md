@@ -1,10 +1,12 @@
 # Lab 09: Develop, Deploy, and debug a custom module on Azure IoT Edge with VS Code
 
+### Estimated Duration: 120 minutes
+
 ## Lab Scenario
 
 To help manage fluctuations in consumer demand, Contoso maintains a small inventory of ripened cheeses in a warehouse at each cheese making facility. These ripened wheels are sealed in wax and the storage environment is carefully controlled to ensure that the cheese remains in perfect condition. Contoso uses a conveyor system to move the large wax-sealed cheese wheels from the warehouse to the packaging facilities.
 
-In the past, Contoso has run their packaging process at full capacity, processing all of the cheese that is placed in the system. Any excess volume of packaged cheese was not an issue because it could be used for promotional offers, and additional cheese could be pulled from inventory as needed. However, with the significant growth that Contoso is experiencing, and with growing fluctuations due to worldwide demand, the company needs to automate the system in a way that helps to manage the volume of cheese being packaged.
+In the past, Contoso has run their packaging process at full capacity, processing all the cheese that is placed in the system. Any excess volume of packaged cheese was not an issue because it could be used for promotional offers, and additional cheese could be pulled from inventory as needed. However, with the significant growth that Contoso is experiencing, and with growing fluctuations due to worldwide demand, the company needs to automate the system in a way that helps to manage the volume of cheese being packaged.
 
 Since you have already implemented the IoT solution that monitors the conveyor belt system in the packaging and shipping area, you have been tasked with developing a solution that helps to manage/control packaging volumes.
 
@@ -28,7 +30,7 @@ In this lab, you will complete the following activities:
 
 In this exercise, you will ensure docker engine is running and install the Azure IoT EdgeHub Dev Tool.
 
-1. Open **Docker Desktop** from the Desktop.
+1. Navigate to your desktop and locate the **Docker Desktop** icon. Double-click the icon to launch the application.
 
    ![](./media2/lab09img1.png)
 
@@ -40,13 +42,11 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
    ![](./media2/lab13img3.png)
 
-1. Wait for sometime in the  **docker desktop**, ensure that **Engine running** status as shown.
+1. Wait for sometime in the  **docker desktop**, ensure that **Engine running** status as shown. Close the docker desktop, continue with further steps.
 
    ![](./media2/lab13img4.png)
 
-1. Close the docker desktop, continue with further steps.
-
-1. Open Visual Studio Code from desktop.
+1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
    ![](./media2/lab09img1updated.png)
 
@@ -54,14 +54,14 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
    ![](./media2/v2img13.png)
 
-1. At the terminal, to install the package manager for Python (Pip), enter the following commands:
+1. At the terminal, to install the package manager for Python (Pip), run the following commands:
 
     ```cmd/sh
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     python get-pip.py
     ```
 
-1. To verify that the Azure IoT EdgeHub Dev Tool is installed, enter the following command:
+1. To verify that the Azure IoT EdgeHub Dev Tool is installed, run the following command:
 
     ```cmd/sh
     pip install iotedgehubdev --user
@@ -73,7 +73,7 @@ Now that you have configured the Python environment and installed these tools, y
 
 Azure Container Registry provides storage of private Docker images for container deployments. The service is a managed, private Docker registry service based on the open-source Docker Registry 2.0. Azure Container Registry is used to store and manage your private Docker container images.
 
-When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub, and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
+When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
 
 In this exercise, you will use the Azure portal to create a new Azure Container Registry resource.
 
@@ -81,7 +81,7 @@ In this exercise, you will use the Azure portal to create a new Azure Container 
 
 In this task, you will create a Container Registry from Azure Portal.
 
-1. On the Azure Portal, search **container registries**. Click on **container registries**.
+1. On the Azure Portal, search **Container registries**. Then, click on **Container Registries** from the search results.
 
    ![](./media2/lab13img9.png)
 
@@ -99,7 +99,7 @@ In this task, you will be connecting your Docker to Container Registry.
 
 1. From the resources tab of your resource group, open your container registry, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
 
-1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**,check the box to enable it. Make a record of the following values, paste it in a notepad. You will be using this values further in this lab:
+1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**, check the box to enable it. Make a record of the following values, paste it in a notepad. You will be using these values further in this lab:
 
     * **Login server**
     * **Username**
@@ -107,21 +107,21 @@ In this task, you will be connecting your Docker to Container Registry.
 
       ![](./media2/lab13img12.png)
 
-1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then enter the following command:
+1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then run the following command:
 
     ```cmd/sh
     docker login <loginserver>
     ```
 
-    Replace `<loginserver>` with the name you recorded, and enter the username and password you recorded when prompted.  For example:
+   >**Note:** Replace `<loginserver>` with the name you recorded, and enter the username and password you recorded when prompted. For example:
 
     ```cmd/sh
     docker login az220acrcah191204.azurecr.io
     ```
 
-    You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
+1. You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -147,23 +147,15 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. Browse to the folder `C:\Labfiles`, and then click **Select folder**.
 
-1. When prompted for a solution name, enter **EdgeSolution**
+1. When prompted for a solution name, enter **EdgeSolution**. This name will be used as the directory name for the new **IoT Edge Solution** that will be created.
 
-    This name will be used as the directory name for the new **IoT Edge Solution** that will be created.
+1. When prompted to select a module template, click **C# Module**. This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
 
-1. When prompted to select a module template, click **C# Module**.
-
-    This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
-
-1. When prompted for the name of the custom IoT Edge Module, enter **ObjectCountingModule**
+1. When prompted for the name of the custom IoT Edge Module, enter **ObjectCountingModule**.
 
 1. When prompted for name of the Docker image repository for the module, update the placeholder value as follows:
 
-    Replace the "localhost:5000" part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training<inject key="DeploymentID" enableCopy="false" />.azurecr.io**
-
-    This will be the Docker repository where the IoT Edge Module docker image will be published.
-
-    The Docker image repository location follows the format shown below:
+    Replace the "localhost:5000" part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220training<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. This will be the Docker repository where the IoT Edge Module docker image will be published. The Docker image repository location follows the format shown below:
 
     ```text
     <acr-name>.azurecr.io/<module-name>
@@ -176,11 +168,9 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
     > **Note**:  The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
 
-    > **Important**: Make sure to remove any reference to port **5000** from your ACR references!  That port is used for a local Docker repository but it not used in the ACR case.
+    > **Important**: Make sure to remove any reference to port **5000** from your ACR references!  That port is used for a local Docker repository, but it not used in the ACR case.
 
-1. Wait for Visual Studio Code to create the solution.
-
-    Once the new **IoT Edge Solution** has been created, Visual Studio Code will open the solution.
+1. Wait for Visual Studio Code to create the solution. Once the new **IoT Edge Solution** has been created, Visual Studio Code will open the solution.
 
     > **Note**: If Visual Studio Code prompts you to load required resources or C# extension, click **Yes**
 
@@ -190,11 +180,7 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 In this task, you will be setting up your username and password in the solution.
 
-1. In the **Explorer** pane, to open the .env file, click **.env**.
-
-    The .env file is located in the root directory of the IoT Edge Solution. This is where the username and password are configured for accessing your Docker registry.
-
-    The username and password are stored in this file using the following format:
+1. In the **Explorer** pane, to open the .env file, click **.env**. The .env file is located in the root directory of the IoT Edge Solution. This is where the username and password are configured for accessing your Docker registry. The username and password are stored in this file using the following format:
 
     ```text
     CONTAINER_REGISTRY_USERNAME_<registry-name>=<registry-username>
@@ -202,11 +188,9 @@ In this task, you will be setting up your username and password in the solution.
     ```
     >**Note**: Within your version of .env file, notice that the `<registry-name>` has already been added to the configuration values. The value that has been added should match the name of the Docker registry that you specified when creating the IoT Edge Solution.
 
-1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier.
+1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier. Save the updated **.env** file.
 
    ![](./media2/lab09img3updated.png)
-
-1. Save the updated **.env** file.
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, ensure that the **image** is mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
@@ -262,9 +246,9 @@ In this task, you will be configuring the module using the connection string of 
 
    ![](./media2/lab13img1.png)
 
-    This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
+1. This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
 
-    When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**.
+1. When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**.
 
 1. When you see the prompt to setup iotedgehubdev, click **Setup**.
 
@@ -276,9 +260,7 @@ In this task, you will be configuring the module using the connection string of 
 
     > **Note**: It is possible that you will be prompted for your Admin password on your local machine (in the Visual Studio Code **TERMINAL** window), particularly on Linux or macOS. Enter your password at the prompt and press **Enter**. The reason it might ask for your password is that the setup command for **iotedgehubdev** is being run using **sudo** as it requires elevated privileges.
 
-    Once the IoT Edge Simulator is set up successfully, a **Setup IoT Edge Simulator successfully** message will be displayed in the Visual Studio Code TERMINAL.
-
-    Now when you build and run the module in the IoT Edge Simulator, it will run as expected.
+1. Once the IoT Edge Simulator is set up successfully, a **Setup IoT Edge Simulator successfully** message will be displayed in the Visual Studio Code TERMINAL. Now when you build and run the module in the IoT Edge Simulator, it will run as expected.
 
 ### Task 3: Build and run the module
 
@@ -288,11 +270,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
    ![](./media2/lab13img1.png)
 
-1. Observe the build process reporting in your TERMINAL window.
-
-    It can take quite a few minutes to download and build everything that is required to simulate the IoT Edge device and run your modules, so be patient.
-
-    Notice that once the **IoT Edge Simulator** is running, the Modules that you built will begin sending message output that is reported to the TERMINAL window:
+1. Observe the build process reporting in your TERMINAL window. It can take quite a few minutes to download and build everything that is required to simulate the IoT Edge device and run your modules, so be patient. Notice that once the **IoT Edge Simulator** is running, the Modules that you built will begin sending message output that is reported to the TERMINAL window:
 
     ```text
     SimulatedTemperatureSensor    |         12/09/2019 15:05:08> Sending message: 4, Body: [{"machine":{"temperature":23.023276334173641,"pressure":1.2304998355387693},"ambient":{"temperature":20.56235126408858,"humidity":24},"timeCreated":"2019-12-09T15:05:08.4596891Z"}]
@@ -303,7 +281,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
     ObjectCountingModule           | Received message sent
     ```
 
-    Notice the output from the **ObjectCountingModule** contains the text **Received message: #** where **#** is the total message count that has been received by the custom **ObjectCountingModule** IoT Edge Module that was created.
+1. Notice the output from the **ObjectCountingModule** contains the text **Received message: #** where **#** is the total message count that has been received by the custom **ObjectCountingModule** IoT Edge Module that was created.
 
 1. With the IoT Edge Simulator still running, open the Azure portal window.
 
@@ -333,19 +311,15 @@ In this task, you will build the solution and run it as IoT Edge device which se
     az iot hub monitor-events --hub-name "iot-az220-training-<DeploymentID>"
     ```
 
-    Be sure to replace the **<DeploymentID>** value with <inject key="DeploymentID" enableCopy="true" />.
+   >**Note:** Be sure to replace the **<DeploymentID>** value with <inject key="DeploymentID" enableCopy="true" />.
 
-1. Observe the output displayed in the Cloud Shell.
-
-    With everything still running, notice the output of the previous command in the Cloud Shell will display a JSON representation of the messages being received by the Azure IoT Hub.
-
-    The output should look similar to the following:
+1. Observe the output displayed in the Cloud Shell. With everything still running, notice the output of the previous command in the Cloud Shell will display a JSON representation of the messages being received by the Azure IoT Hub. The output should look similar to the following:
 
     ![](./media2/lab09img10.png)
 
 1. Close the **Cloud Shell** window.
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -382,14 +356,12 @@ In this task, you will use Docker commands to tag and publish the image to conta
    ```
    docker tag <local_image_name><version> <acr_address>/<module_name>:<version>
    ```
-   >**Note**: Ensure to change the placeholders with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version.
+   >**Note**: Ensure to change the placeholders with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version. For example, the command look similar to this:
    
-   for example the command look similar to this:
-
    ```
    docker tag mcr.microsoft.com/azureiotedge-hub:1.4 acraz220trainingcah211101.azurecr.io/objectcountingmodule:1.4
    ```
-   >**Note**: ensure you use lowercase letters in the command.
+   >**Note**: Ensure to you use lowercase letters in the command.
   
 1. Run the following command to push the image to **Container Registry**.
 
@@ -397,9 +369,7 @@ In this task, you will use Docker commands to tag and publish the image to conta
    docker push <acr_address>/<module_name>:<version>
    ```
 
-1. Switch to your Azure portal window.
-
-1. On your Resource group tile, to open your Azure Container Registry (ACR) service, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
+1. Switch to your Azure portal window. On your Resource group tile, to open your Azure Container Registry (ACR) service, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
  
    ![](./media2/lab13img24.png)
 
@@ -407,15 +377,13 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
    ![](./media2/lab13img26.png)
 
-1. Save a copy of the Image URI.
-
-    The format of the Docker image Repository and Tag names combined will be in the following format:
+1. Save a copy of the Image URI. The format of the Docker image Repository and Tag names combined will be in the following format:
 
     ```text
     <registry-name>/<repository-name>:<tag>
     ```
 
-    Here's an example of a full Docker image URI for the **objectcountingmodule** IoT Edge Module:
+1. Here's an example of a full Docker image URI for the **objectcountingmodule** IoT Edge Module:
 
     ```text
     acraz220training1440646/objectcountingmodule:1.4
@@ -423,7 +391,7 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
 ### Task 2: Configure an IoT Edge device to use the module
 
-In this task, you will configure the IoT edge device and also set the IoT Edge Module. 
+In this task, you will configure the IoT edge device and set the IoT Edge Module. 
 
 1. Navigate to your Azure IoT Hub resource.
 
@@ -445,10 +413,12 @@ In this task, you will configure the IoT edge device and also set the IoT Edge M
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **Container Registry Settings**, enter the following values:
 
-    * **Name**: Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah191204**)
-    * **Address**: Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah191204.azurecr.io**)
-    * **User Name**: Enter the **Username** for the Azure Container Registry service
-    * **Password**: Enter the **password** for the Azure Container Registry service
+    | Setting | Value |
+    | --- | --- |
+    | Name | Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah191204**)  |
+    | Address | Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah191204.azurecr.io**) |
+    | User Name | Enter the **Username** for the Azure Container Registry service |
+    | Password | Enter the **password** for the Azure Container Registry service |
 
     > **Note**: The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
 
@@ -480,7 +450,7 @@ In this task, you will configure the IoT edge device and also set the IoT Edge M
 
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
->**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -490,6 +460,6 @@ In this task, you will configure the IoT edge device and also set the IoT Edge M
 
 ## Summary
 
-In this lab, you have deployed a azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
+In this lab, you have deployed an azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
 
-## You have successfully completed this Lab!!
+### You have successfully completed this Lab
