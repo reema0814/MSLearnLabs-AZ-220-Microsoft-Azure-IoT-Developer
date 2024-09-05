@@ -2,6 +2,10 @@
 
 ### Estimated Duration: 120 minutes
 
+## Lab Overview 
+
+In this lab, you will create a Logic App resource in Azure and configure it to trigger an action when a new IoT device is created. You will start by creating a Logic App and setting up an HTTP trigger that responds to device creation events. After configuring the app to send an automated email using Outlook.com, you will set up an event subscription in Azure IoT Hub that listens for device creation events. Finally, you'll test the setup by adding new IoT devices, verifying that the Logic App successfully sends the email alerts.
+
 ## Lab Scenario
 
 Contoso management is impressed with the prototype solutions that you've created using Azure IoT services, and they feel comfortable assigning additional budget the capabilities that you have already demonstrated. They are now asking that you explore the integration of certain operational support capabilities. Specifically, they would like to see how the Azure tools support sending alert notifications to the managers who are responsible for specific work areas. Alert criteria will be defined by the business area managers. The telemetry data arriving at IoT hub will be evaluated to generate the notifications.
@@ -26,6 +30,8 @@ In this lab, you will complete the following:
 ![Lab 9 Architecture](media/LAB_AK_09-architecture-1.png)
 
 ### Task 1: Create a Logic App resource in the Azure portal
+
+In this task, you create a new Logic App in Azure. You start by navigating to the Azure portal, searching for "Logic App," and selecting it from the marketplace. After choosing the "Consumption" option for the app, you configure its basic settings, including the subscription, resource group, app name, and region. Once the configuration is set, you review and create the Logic App. After the deployment is complete, you access the newly created app through the resource page.
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
@@ -68,6 +74,8 @@ In this lab, you will complete the following:
       ![](media/9lab6.png)
 
 ### Task 2: Configure Your Logic App
+
+In this task, you configure a Logic App in Azure to send an email notification when an HTTP request is received. After setting up the "When a HTTP request is received" trigger, you input a sample JSON payload to generate a schema. Then, you add an action to send an email using Outlook.com, incorporating dynamic content from the event like event type and time. Finally, you save the Logic App and copy the HTTP POST URL, which serves as the Webhook trigger.
 
 1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
 
@@ -227,9 +235,7 @@ In this lab, you will complete the following:
 
 ## Task 3: Configure Azure IoT Hub Event Subscription
 
-Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub.
-
-In this exercise, you will create an Event Subscription within Azure IoT Hub to setup Event Grid integration that will trigger a Logic App to send an alert email.
+Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub. In this exercise, you will create an Event Subscription within Azure IoT Hub to setup Event Grid integration that will trigger a Logic App to send an alert email.
 
 1. Search for **Iot Hub** and select it. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
@@ -267,7 +273,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 ## Task 4: Test Your Logic App with New Devices
 
-Test your logic app by creating a new device to trigger an event notification email.
+In this task, you will test your Logic App by creating a new device to trigger an event notification email.
 
 1. On your Azure portal, navigate to your Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
 
