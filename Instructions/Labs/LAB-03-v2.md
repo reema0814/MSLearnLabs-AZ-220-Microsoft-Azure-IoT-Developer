@@ -48,24 +48,24 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
-    - **Attestation** : Choose **Symmetric Key** **(1)** from dropdown.
-    - **Registration ID** : Enter **sensor-thl-1000** **(2)**. 
-    - **Reprovision policy** : Select **Reprovision device and migrate current state** **(3)**.
-    - Click on **Next: IoT hubs** **(4)**.
+    | **Attestation** | Choose **Symmetric Key** **(1)** from dropdown |
+    | **Registration ID** | Enter **sensor-thl-1000** **(2)** |
+    | **Reprovision policy** | Select **Reprovision device and migrate current state** **(3)** |
+    | Click on | **Next: IoT hubs** **(4)** |
 
       ![](./media/az-3-3.png)
    
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
-    - **Target IoT hubs** : Select your **IoT hub** **(1)** from dropdown.
-    - **Allocation policy** : Select **Evenly weighted distribution** **(2)**.
-    - Click on **Next: Device settings >** **(3)**.
+     | **Target IoT hubs** | Select your **IoT hub** **(1)** from dropdown |
+     | **Allocation policy** | Select **Evenly weighted distribution** **(2)** |
+     | Click on **Next | Device settings >** **(3)** |
 
       ![](./media/az-3-41.png)
    
 
-1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data.
+1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data. This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
     The final JSON will be like the following:
 
@@ -75,8 +75,6 @@ In this task, you will create an individual enrollment in the Device Provisionin
     }
     ```
     ![](./media2/lab03updatedimg1.png)
-
-    This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
 1. Click on **Review + create** and select **create** after validation is successfull.
 
@@ -88,11 +86,7 @@ In this task, you will be reviewing the enrollment created and obtain the keys f
 
     ![](./media/az-3-17.png)
 
-    As you may recall, you will be using the enrollment record to obtain the Authentication keys.
-
-1. Under **Registration ID**, click on **sensor-thl-1000**.
-
-    This blade enables you to view the enrollment details for the individual enrollment that you just created.
+1. Under **Registration ID**, click on **sensor-thl-1000**. This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
 1. Copy the **Primary Key** and **Secondary Key** values for this device enrollment, and then paste them in any text editor such as notepad for later use.
 
@@ -151,8 +145,6 @@ In this task, you will be creating the simulating device using the dotnet projec
     > **Note**: If you don't have the value of ID Scope available to you, you can find it on the Overview blade of the DPS service (in the Azure portal).
 
 1. Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**
-
-    This variable represents the **Registration ID** value for the individual enrollment that you created in the Device Provisioning Service.
 
 1. Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
@@ -230,16 +222,6 @@ In this task, you will be adding the code to the dotnet project for provisioning
         return DeviceClient.Create(result.AssignedHub, auth, TransportType.Amqp);
     }
     ```
-
-    As you can see, this method receives the the provisioning device client and security instances you created earlier. The `provisioningDeviceClient.RegisterAsync()` is called, which returns a **DeviceRegistrationResult** instance. This result contains a number of properties including the **DeviceId**, **AssignedHub** and the **Status**.
-
-    > **Information**: Full details of the **DeviceRegistrationResult** properties can be found [here](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.provisioning.client.deviceregistrationresult?view=azure-dotnet).
-
-    The method then checks to ensure that the provisioning status has been set and throws an exception if the device is not *Assigned*  - other possible results here include *Unassigned*, *Assigning*, *Failed* and *Disabled*.
-
-    * The **Program.ProvisionDevice** method contains the logic for registering the device via DPS.
-    * The **Program.SendDeviceToCloudMessagesAsync** method sends the telemetry as Device-to-Cloud messages to Azure IoT Hub.
-    * The **EnvironmentSensor** class contains the logic for generating the simulated sensor readings for Temperature, Humidity, Pressure, Latitude, and Longitude.
 
 1. Locate the **SendDeviceToCloudMessagesAsync** method.
 
