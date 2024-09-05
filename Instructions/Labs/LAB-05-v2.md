@@ -252,7 +252,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
     | EVENT TYPES >> Filter to Event Types dropdown | De-select all of the choices except **Device Created(4)** |
     | ENDPOINT DETAILS >> Endpoint Type dropdown | **Web Hook (5)** |
     | ENDPOINT DETAILS | Click on **Configure an endpoint (6)** |
-    | Select Web Hook | Paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**. |
+    | Select Web Hook | Paste the **URL** **(7)** that you copied from your logic app, then click **Confirm Selection(8)**. |
 
       ![](media/az5-8.png)
 
@@ -266,7 +266,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
     | Operator | Select **String begins with (3)** |
     | Value | Enter **devices/sensor-th (4)** |
 
-1. To save the event subscription, click on **Create(5)**.
+1. To save the event subscription, click on **Create (5)**.
 
     ![](media/9lab22.png)
 
@@ -274,11 +274,10 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 Test your logic app by creating a new device to trigger an event notification email.
 
-1. On your Azure portal, Navigate to your Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
+1. On your Azure portal, navigate to your Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
 
-1. On the left side navigation menu, under **Device Management**, click on **Devices(1)**.
+1. On the left side navigation menu, under **Device Management**, click on **Devices(1)**. At the top of the IoT devices blade, click on **+ Add Device(2)**.
 
-1. At the top of the IoT devices blade, click on **+ Add Device(2)**.
     ![](media/9lab23.png)
 
 1. In the **Device ID** field, enter **sensor-th-0050 (1)**. Leave all other fields at the defaults, and then click **Save (2)**.
