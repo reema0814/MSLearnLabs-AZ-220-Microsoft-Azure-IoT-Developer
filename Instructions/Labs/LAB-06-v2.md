@@ -65,11 +65,9 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
    ![](./media2/lab06img1v2.png)
 
-1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create**.
+1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create**. Click on **Create** on the next pane.
 
    ![](./media2/lab06img2.png)
-
-1. Click on **Create** on the next pane.
    
       >**Note**: This may take few minutes to get deployed.
 
@@ -189,7 +187,7 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 1. Copy the Primary connection string for **sensor-thl-airplane0001** and **sensor-thl-truck0001** as well. 
 
-1. Open **Visual Studio Code** from the desktop.
+1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
     ![](./media2/lab06img15.png)
 
@@ -211,7 +209,7 @@ In this exercise, you will run the simulated devices so that they start sending 
 
     ![](./media2/lab06img5v2.png)
 
-1. On the **File** menu, click **Save**.
+1. In the **File** menu, select **Save**. This action will save any changes made to the currently open file, ensuring your latest edits are preserved.
 
     ![](./media2/lab06img3v2.png)
 
@@ -290,4 +288,4 @@ In this exercise, you will get a quick introduction to working with time series 
 
 In this lab, you started by noting the connection strings of pre-deployed IoT devices. You then created an Azure Data Explorer cluster and set up a database to store and query data. After connecting the database to the IoT Hub, you ran a simulator to generate IoT data, which was ingested into Azure Data Explorer. Finally, you visualized the data to analyze and gain insights, showcasing how Azure services can be used to build an effective IoT data pipeline.
 
-## You have successfully completed the lab!!
+## You have successfully completed the lab
