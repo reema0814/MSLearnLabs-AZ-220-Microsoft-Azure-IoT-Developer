@@ -26,7 +26,7 @@ The conveyor belt system is a critical link in this process and is visually moni
  - Exercise 2: Create a Message Route to Azure Blob Storage
  - Exercise 3: Create an Azure Stream Analytics Job
 
-The following resources will be created:
+## Architecture Diagram
 
 ![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
 
