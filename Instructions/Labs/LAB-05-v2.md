@@ -178,7 +178,7 @@ In this lab, you will complete the following:
 
 1. On the **Send an email (V2)** action, in the **To** field, enter <inject key="AzureAdUserEmail"></inject>.
 
-1. In the **Subject** field, enter **IoT Hub alert(2)**
+1. In the **Subject** field, enter **IoT Hub alert(2)**.
 
 1. In the **Body** field, enter the following message content **(3)**:
 
@@ -232,9 +232,7 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
 
 In this exercise, you will create an Event Subscription within Azure IoT Hub to setup Event Grid integration that will trigger a Logic App to send an alert email.
 
-1. Search for **Iot Hub** and select it.
-   
-1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
+1. Search for **Iot Hub** and select it. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
       ![](media/az5-2.png)
 
@@ -256,9 +254,7 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
       ![](media/az5-8.png)
 
-1. At the top of the pane, click on **Filters** .
-
-1. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
+1. At the top of the pane, click on **Filters**. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
 
     | Setting | Value |
     | --- | --- |
