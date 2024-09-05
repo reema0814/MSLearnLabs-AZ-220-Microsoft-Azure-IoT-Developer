@@ -18,7 +18,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 ## Exploring Your Lab credentials and Other Values
  
-For a comprehensive overview of your environment, including user credentials and other essential details required for the lab, please refer to the **Environment Details** tab.
+For a comprehensive overview of your environment, including user credentials and other essential details required for the lab, please refer to the **Environment** tab.
  
    ![](./media//env.png)
  
@@ -30,7 +30,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start**, **stop**, or **restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
    ![](./media/res.png)
  
