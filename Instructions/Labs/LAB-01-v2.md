@@ -4,13 +4,7 @@
 
 ## Lab Scenario
 
-You are an Azure IoT Developer working for Contoso, a company that crafts and distributes gourmet cheeses.
-
-You have been tasked with exploring Azure and the Azure IoT services that you will using to develop Contoso's IoT solution. You have already become familiar with the Azure portal and created a resource group for your project. Now you need to begin investigating the Azure IoT services.
-
-## Architecture Diagram
-
-![](./media2/lab01archv2.png)
+You are an Azure IoT Developer working for Contoso, a company that crafts and distributes gourmet cheeses. You have been tasked with exploring Azure and the Azure IoT services that you will using to develop Contoso's IoT solution. You have already become familiar with the Azure portal and created a resource group for your project. Now you need to begin investigating the Azure IoT services.
 
 ## Lab Objectives
 
@@ -20,6 +14,10 @@ In this lab, you will complete the following:
 - Exercise 2: Examine the IoT Hub Service
 - Exercise 3: Create a Device Provisioning Service using the Azure portal
 - Exercise 4: Examine the Device Provisioning Service
+
+## Architecture Diagram
+
+![](./media2/lab01archv2.png)
 
 ## Exercise 1: Create an IoT Hub using the Azure portal
 
@@ -36,6 +34,7 @@ In this lab, you will complete the following:
 1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
 
    | Settings | Values |
+   
    | Subscription | **Select the default Subscription (1)** |
    | Resource group | **Select the Existing Resource group (2)** |
    | IoT hub name | Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
