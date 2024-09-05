@@ -32,9 +32,7 @@ In this lab, you will complete the following:
 
       ![](media/1lab11.png)
    
-1. On the **Search services and marketplace** box, enter **logic app**.
-
-1. In the search results, select **Logic App**.
+1. On the **Search services and marketplace** box, enter **logic app**. From the search results, select **Logic App**.
 
       ![](media/9lab1.png)
 
@@ -50,23 +48,23 @@ In this lab, you will complete the following:
 
       ![](media/9lab4.png)
 
-1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** provide the following information and click on **Review + create**.
+1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** with the following settings, click on **Review + create**. Click on **Create**.
 
-   - Subscription: **Select the default Subscription (1)**.
-   - Resource group: **Select the existing  Resource group (2)**.
-   - Logic App name: Enter **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)**
-   - Region : **Select the default region (4)**
-   - Enable Log Analytics:  Set to **No (5)**.
+    | Setting | Value |
+    | --- | --- |
+    | Subscription | **Default Subscription (1)**  |
+    | Resource group | **Existing Resource group (2)** |
+    | Logic App name | **logic-az220-training-<inject key="DeploymentID" enableCopy="false"/> (3)** |
+    | Region | **Default region (4)** |
+    | Enable Log Analytics | **No (5)** |
 
-        ![](media/az-5-1.png)
+    ![](media/az-5-1.png)
 
-1. Click on **Create**.
-
-    > **Note**:  It will take a minute or two for the Logic App deployment to complete.
+    > **Note**: It will take a minute or two for the Logic App deployment to complete.
 
 1. After the deployment is completed, click on **Go to resource**.
 
-1. Here you can see the newly created Logic app.
+1. Here, you can see the newly created Logic app.
 
       ![](media/9lab6.png)
 
@@ -164,7 +162,7 @@ In this lab, you will complete the following:
 
       ![](media/az70011.png)
 
-1. When prompted sign in with your credentials.
+1. When prompted to sign in with your credentials.
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -239,21 +237,17 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
       ![](media/az5-1.png)
 
-1. On the Create Event Subscription blade, in the **Name** field, enter **MyDeviceCreateEvent(1)**
+1. On the Create Event Subscription blade, provide the following settings (leave others with their defaults):
 
-      - Name: Enter **MyDeviceCreateEvent(1)**
-
-      -  Ensure that the **EventSchema** field is set to **Event Grid Schema(2)**.
-
-      - Under the **TOPIC DETAILS** section, in the **System Topic Name** field, enter **device-creation(3)**.
-
-      -  Under **EVENT TYPES**, open the **Filter to Event Types** dropdown, and then de-select all of the choices except **Device Created(4)**.
-
-      - Under **ENDPOINT DETAILS**, open the **Endpoint Type** dropdown, and then click **Web Hook(5)**.
-
-      - Under **ENDPOINT DETAILS**, click on **Configure an endpoint(6)**.
-
-      - In the **Select Web Hook** pane, under **Subscriber Endpoint**, paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**.
+    | Setting | Value |
+    | --- | --- |
+    | Name | **MyDeviceCreateEvent (1)** |
+    | EventSchema | **Event Grid Schema (2)** |
+    | TOPIC DETAILS >> System Topic Name | **device-creation (3)** |
+    | EVENT TYPES >> Filter to Event Types dropdown | De-select all of the choices except **Device Created(4)** |
+    | ENDPOINT DETAILS >> Endpoint Type dropdown | **Web Hook (5)** |
+    | ENDPOINT DETAILS | Click on **Configure an endpoint (6)** |
+    | Select Web Hook | Paste the URL **(7)** that you copied from your logic app, then click **Confirm Selection(8)**. |
 
       ![](media/az5-8.png)
 
@@ -261,11 +255,11 @@ In this exercise, you will create an Event Subscription within Azure IoT Hub to 
 
 1. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
 
-    * **Key**: Enter `Subject` **(2)**
-
-    * **Operator**: Select **String begins with(3)** 
-
-    * **Value**:  Enter `devices/sensor-th` **(4)**
+    | Setting | Value |
+    | --- | --- |
+    | Key | **Subject (2)** |
+    | Operator | Select **String begins with (3)** |
+    | Value | Enter **devices/sensor-th (4)** |
 
 1. To save the event subscription, click on **Create(5)**.
 
