@@ -114,21 +114,21 @@ In this lab, you will complete the following:
 
 1. To run the FWUpdateDevice app, enter the following command:
 
-    ``` bash
-    dotnet run "<your device connection string>"
-    ```
+      ``` bash
+      dotnet run "<your device connection string>"
+      ```
 
-    > **IMPORTANT**: Remember to replace the placeholder value with your actual device connection string which you copied earlier in your notepad, and be sure to include "" around your connection string.
-    >
-    > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
+      > **IMPORTANT**: Remember to replace the placeholder value with your actual device connection string which you copied earlier in your notepad, and be sure to include "" around your connection string.
+      >
+      > For example: `dotnet run "HostName=iot-az220-training-{your-id}.azure-devices.net;DeviceId=sensor-th-0155;SharedAccessKey={}="`
 
 
 1. Review the contents of the Terminal pane. You should see the following output in the terminal:
 
-    ``` bash
+      ``` bash
         sensor-th-0155: Device booted
         sensor-th-0155: Current firmware version: 1.0.0
-    ```
+      ```
 
       ![](./media/automate.png)
 
