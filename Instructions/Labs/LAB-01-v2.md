@@ -8,7 +8,7 @@ You are an Azure IoT Developer working for Contoso, a company that crafts and di
 
 You have been tasked with exploring Azure and the Azure IoT services that you will using to develop Contoso's IoT solution. You have already become familiar with the Azure portal and created a resource group for your project. Now you need to begin investigating the Azure IoT services.
 
-## Lab Architecture
+## Architecture Diagram
 
 ![](./media2/lab01archv2.png)
 
