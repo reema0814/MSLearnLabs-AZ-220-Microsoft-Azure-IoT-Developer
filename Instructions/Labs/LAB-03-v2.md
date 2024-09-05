@@ -48,6 +48,8 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
+    | Settings | Values |
+    |  -- | -- |
     | **Attestation** | Choose **Symmetric Key** **(1)** from dropdown |
     | **Registration ID** | Enter **sensor-thl-1000** **(2)** |
     | **Reprovision policy** | Select **Reprovision device and migrate current state** **(3)** |
@@ -58,13 +60,14 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the **Add Enrollment** blade under **IoT hubs**, fill the details as follows:
 
+     | Settings | Values |
+     |  -- | -- |
      | **Target IoT hubs** | Select your **IoT hub** **(1)** from dropdown |
      | **Allocation policy** | Select **Evenly weighted distribution** **(2)** |
      | Click on **Next | Device settings >** **(3)** |
 
       ![](./media/az-3-41.png)
    
-
 1. Under **Device settings** in the **Desired properties** field delete the existing content and add the below json data. This field contains JSON data that represents the initial configuration of desired properties for the device. The data that you entered will be used by the Device to set the time delay for reading sensor telemetry and sending events to IoT Hub.
 
     The final JSON will be like the following:
