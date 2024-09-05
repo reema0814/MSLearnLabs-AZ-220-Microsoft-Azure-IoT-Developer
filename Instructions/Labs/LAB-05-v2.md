@@ -158,7 +158,7 @@ In this lab, you will complete the following:
 
       ![](media/9lab14.png)
 
-     > **Note**: If **The browser has blocked the popup window** this pop up appears,at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
+     > **Note**: If **The browser has blocked the popup window** this pop up appears, at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
       ![](media/az70011.png)
 
