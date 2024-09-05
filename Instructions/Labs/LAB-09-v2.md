@@ -339,11 +339,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 In this exercise, you will build and publish the custom IoT Edge Module into the Azure Container Registry (ACR) service. Once published to ACR, the custom module will then be made available to be deployed to any IoT Edge Device.
 
-### Task 1:  Publish module to the Azure Container Registry
-
-In this task, you will push the image to container registry.
-
-In this task, you will use Docker commands to tag and publish the image to container registry.
+### Task 1: Publish module to the Azure Container Registry
 
 1. Navigate back to **Visual Studio Code**. and open **New Terminal**.
 
@@ -353,37 +349,39 @@ In this task, you will use Docker commands to tag and publish the image to conta
 
 1. Run the following command to check the images and note the **REPOSITORY** and **TAG** value of the image that you have built.
 
-   ```
-   docker images
-   ```
+      ```
+      docker images
+      ```
 
-     ![](./media2/lab13img23.png)
+      ![](./media2/lab13img23.png)
 
 1. Run the following command to tag the image.
 
-   ```
-   docker tag <local_image_name><version> <acr_address>/<module_name>:<version>
-   ```
-   >**Note**: Ensure to change the placeholders with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version. For example, the command look similar to this:
+      ```
+      docker tag <local_image_name><version> <acr_address>/<module_name>:<version>
+      ```
+
+      >**Note**: Ensure to change the placeholders with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version. For example, the command look similar to this:
    
-   ```
-   docker tag mcr.microsoft.com/azureiotedge-hub:1.4 acraz220trainingcah211101.azurecr.io/objectcountingmodule:1.4
-   ```
-   >**Note**: Ensure to you use lowercase letters in the command.
+      ```
+      docker tag mcr.microsoft.com/azureiotedge-hub:1.4 acraz220trainingcah211101.azurecr.io/objectcountingmodule:1.4
+      ```
+
+      >**Note**: Ensure to you use lowercase letters in the command.
   
 1. Run the following command to push the image to **Container Registry**.
 
-   ```
-   docker push <acr_address>/<module_name>:<version>
-   ```
+      ```
+      docker push <acr_address>/<module_name>:<version>
+      ```
 
 1. Switch to your Azure portal window. On your Resource group tile, to open your Azure Container Registry (ACR) service, click **acraz220training<inject key="DeploymentID" enableCopy="false" />**.
  
-     ![](./media2/lab13img24.png)
+      ![](./media2/lab13img24.png)
 
 1. On the left side navigation menu, under **Services**, Under **Repositories**, select **objectcountingmodule** and click on **1.4** which is the tag that we have provided.
 
-     ![](./media2/lab13img26.png)
+      ![](./media2/lab13img26.png)
 
 1. Save a copy of the Image URI. The format of the Docker image Repository and Tag names combined will be in the following format:
 
@@ -403,21 +401,21 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. Navigate to your Azure IoT Hub resource.
 
-     ![](./media2/lab13img16.png)
+      ![](./media2/lab13img16.png)
 
 1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge**. On the **IoT Edge** pane, click **Add an IoT Edge device**.
 
-     ![](./media2/lab13img27.png)
+      ![](./media2/lab13img27.png)
 
 1. On the **Create a device** blade, under **Device ID**, enter **objectcountingdevice**. click **Save**.
 
 1. On the **IoT Edge** pane, under **Device ID**, click **objectcountingdevice**.
 
-     ![](./media2/lab13img28.png)
+      ![](./media2/lab13img28.png)
 
 1. At the top of the **objectcountingdevice** blade, click **Set Modules**.
 
-     ![](./media2/lab13img29.png)
+      ![](./media2/lab13img29.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **Container Registry Settings**, enter the following values:
 
