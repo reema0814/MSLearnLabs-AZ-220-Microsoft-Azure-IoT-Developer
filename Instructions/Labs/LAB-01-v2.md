@@ -35,7 +35,6 @@ In this lab, you will complete the following:
 
    | Settings | Values |
    | --- | --- |
-   
    | Subscription | **Select the default Subscription (1)** |
    | Resource group | **Select the Existing Resource group (2)** |
    | IoT hub name | Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
