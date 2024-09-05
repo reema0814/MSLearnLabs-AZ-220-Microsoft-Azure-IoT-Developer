@@ -37,7 +37,7 @@ In this exercise, you will open your IoT Hub in the Azure portal, add a new IoT 
 
 In this task, you will create a device in the IoT Hub.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, navigate to resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/v2img1.png)
 
@@ -53,19 +53,15 @@ In this task, you will create a device in the IoT Hub.
 
    ![](./media/az-2-1.png)
 
-1. In the **Create a Device** page, enter the following details:
+1. In the **Create a Device** page, enter the following details and click on **Save** **(6)** to add this device record to the IoT Hub.
 
-   - In the **Device ID** field, enter `sensor-th-0001` **(1)**.
-   
-   - Under **Authentication type**, ensure that **Symmetric key** **(2)** is selected.
-
-   - Under **Auto-generate keys** **(3)**, ensure the checkbox is selected.
-
-   - Under **Connect this device to an IoT hub**, ensure that **Enable** **(4)** is selected.
-
-   - Under **Parent device**, leave **No parent device** **(5)** as the value.
-
-   - To add this device record to the IoT Hub, click on **Save** **(6)**
+    | Setting | Value |
+    | --- | --- |
+    | Device ID | `sensor-th-0001` **(1)** |
+    | Authentication type | **Symmetric key** **(2)** |
+    | Auto-generate keys | Ensure the checkbox is selected **(3)** |
+    | Connect this device to an IoT hub | **Enable** **(4)** |
+    | Parent device | **No parent device** **(5)** |
 
      ![](./media/v2img5.png)
 
@@ -79,7 +75,7 @@ In this task, you will create a device in the IoT Hub.
 
 ### Task 2: Get the Device Connection String
 
-In order for a device to connect to an IoT Hub, it needs to establish a connection. In this lab, you will use a connection string to connect your device directly to the IoT Hub (this for of authentication is often referred to as symmetric key authentication). When using Symmetric key authentication, there are two connection strings available - one that utilizes the Primary key, the other that uses the Secondary key. As noted above, the Primary and Secondary keys are only generated once the device record is saved. Therefore, to obtain one of the connection strings, you must first save the record (as you did in the task above) and then re-open the device record (which is what you are about to do).
+For a device to connect to an IoT Hub, it needs to establish a connection. In this lab, you will use a connection string to connect your device directly to the IoT Hub (this form of authentication is often referred to as symmetric key authentication). When using Symmetric key authentication, there are two connection strings available - one that utilizes the Primary key, the other that uses the Secondary key. As noted above, the Primary and Secondary keys are only generated once the device record is saved. Therefore, to obtain one of the connection strings, you must first save the record (as you did in the task above) and then re-open the device record (which is what you are about to do).
 
 In this task, you will get the device connection string from the Azure Portal.
 
@@ -109,18 +105,18 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     ![](./media/v2img8.png)
 
-1. Select **Terminal(1)** and click on **New Terminal(2)** from the menu.
+1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)** from the menu.
 
     ![](./media/az-5-71.png)
 
-1. At the terminal, to create a directory named "CaveDevice" and change the current directory to that directory, enter the following commands after the last command hit enter.
+1. In the terminal, run the following commands to create a directory named **CaveDevice** and switch to that directory.
 
     ```
     New-Item -Path "C:\CaveDevice" -ItemType "Directory"
     cd C:\CaveDevice
     ```
 
-1. To create a new .NET console application, enter the following command:
+1. To create a new .NET console application, run the following command:
 
     ```bash
     dotnet new console
@@ -128,7 +124,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     This command creates a **Program.cs** file in your folder, along with a project file.
 
-1. To install the Azure IoT Device SDK and code libraries required for your simulated device app, enter the following commands:
+1. To install the Azure IoT Device SDK and code libraries required for your simulated device app, run the following command:
 
     ```bash
     dotnet add package Microsoft.Azure.Devices.Client
@@ -136,7 +132,7 @@ In this task, you will be creating a initial dotnet project in your LabVM. For s
 
     > **Note**: The **Microsoft.Azure.Devices.Client** package contains the Azure IoT Device SDK for .NET and has the **Newtonsoft.Json** package as a dependency. The **Newtonsoft.Json** package contains APIs that aid in the creation and manipulation of JSON.
 
-1. To ensure all of the application dependencies are downloaded, enter the following command
+1. To ensure all the application dependencies are downloaded, run the following command:
 
     ```bash
     dotnet restore
@@ -213,7 +209,7 @@ In this task, you will use Visual Studio Code to review the contents and purpose
 
     ![](./media/v2img14.png)
 
-1. To build and run the **CaveDevice** project, enter the following command:
+1. To build and run the **CaveDevice** project, run the following command:
 
     ```cmd/sh
     dotnet run
@@ -233,9 +229,9 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 1. In the **EXPLORER** pane, click on **Program.cs**.
 
-1. Select all of the existing code, and then delete it.
+1. Select all the existing code, and then delete it.
 
-    > **Important**: In the next step, you will begin the process ob building your simulated device code. If you are intending to paste the code into a learning environment such as LODS, there are a few things to be aware of:
+    > **Important**: In the next step, you will begin the process of building your simulated device code. If you are intending to paste the code into a learning environment such as LODS, there are a few things to be aware of:
     >
     > * The **Type text -> Type clipboard text** buffer is limited, so it may truncate the code that is copied - double check your work and add any missing characters.
     > * As the **Type clipboard text** simulates typing, the default settings in Visual Studio Code will automatically indent code and insert closing braces - **)**, **}** and **]** - resulting in duplicate characters and incorrect indentation. These actions can be turned off in Visual Studio code settings (**File -> Preferences -> Settings**) with the following settings:
@@ -341,7 +337,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     * Connect to the IoT Hub
     * Send telemetry to the app (Device to Cloud messages)
 
-    Notice that the **deviceClient** variable is initialized with the result of the **DeviceClient** static method, **CreateFromConnectionString**. This method uses the connection string you specified earlier, as well as selecting the protocol that the device will use to the send telemetry -  in this case MQTT.
+    Notice that the **deviceClient** variable is initialized with the result of the **DeviceClient** static method, **CreateFromConnectionString**. This method uses the connection string you specified earlier, as well as selecting the protocol that the device will use to the send telemetry - in this case MQTT.
 
     > **Note**: In a production application, the **CreateFromConnectionString** method call would be wrapped in exception handling code to gracefully deal with any connection issues. This and other lab code is kept as simple as possible to highlight the key points, so most error-handling is omitted for brevity.
 
@@ -407,7 +403,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     * Next, you augment the message with additional properties - here, for example, you set the **temperatureAlert** property to true if the **currentTemperature** is greater than 30, otherwise false.
 
-    * You then send the telemetry message via the **await deviceClient.SendEventAsync(message);** call. Note that this line contains an **await** keyword. This instructs the compiler that the following code is asynchronous and will complete some time in the future - when it does complete, this method will continue executing on the next line.
+    * You then send the telemetry message via the **await deviceClient.SendEventAsync(message);** call. Note that this line contains an **await** keyword. This instructs the compiler that the following code is asynchronous and will complete sometime in the future - when it does complete, this method will continue executing on the next line.
 
     * Finally, you write the message string to the local console window to show that telemetry has been sent to IoT Hub, and then wait for 1000 milliseconds (1 second) before repeating the loop.
 
@@ -597,7 +593,7 @@ In this task, you will be testing the application that you have built in the pre
 
     ![](./media/v2img13.png)
 
-1. In the Terminal view, at the command prompt, enter the following command:
+1. In the Terminal view, at the command prompt, run the following command:
 
     ```cmd/sh
     dotnet run
@@ -609,7 +605,7 @@ In this task, you will be testing the application that you have built in the pre
 
 1. Observe the message string output displayed in the Terminal.
 
-    Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values, and displaying message string output in the console.
+    Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values and displaying message string output in the console.
 
     The terminal output will look similar to the following:
 
@@ -638,11 +634,11 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
     ![](./media/az-5-9.png)
 
-1. When the **Welcome to Azure Cloud Shell** message is displayed, select **Bash**.
+1. From the **Welcome to Azure Cloud Shell** tab, select **Bash**.
 
     ![](./media/v2img17.png)
 
-1. Select **No Storage Azzount Required** and  Under **Subscription**, ensure the correct subscription is selected. Click on **Apply**
+1. Select **No Storage Account Required** and under **Subscription**, ensure the correct subscription is selected. Click on **Apply**.
 
     ![](./media/v2img18.png)
 
@@ -676,14 +672,12 @@ Continue? (y/n) -> y**
      }
      ```
 
-1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl-C** in the Azure Cloud Shell and Visual Studio Code windows.
+1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl+C** in the Azure Cloud Shell and Visual Studio Code windows.
 
-    Ctrl-C is used to stop the running apps. Always remember to shut down unneeded apps and jobs.
+    > **Note**: **Ctrl+C** is used to stop the running apps. Always remember to shut down unneeded apps and jobs.
 
 ## Summary 
 
-In this lab, intially you have created an Azure IoT Hub Device ID. Next, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and then verified the data was successfully received.
+In this lab, you first created an Azure IoT Hub Device ID.  Then, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and finally verified the data was successfully received.
 
-### You have successfully completed the lab !!
-
-
+## You have successfully completed the lab!!
