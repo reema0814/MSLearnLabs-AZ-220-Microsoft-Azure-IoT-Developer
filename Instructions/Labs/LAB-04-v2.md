@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 120 minutes
 
-## Overview
+## Lab Overview
 
 In this lab, you will begin by ensuring that your Azure subscription includes the required resources for this lab. You will then create a simulated device that sends vibration telemetry to your IoT hub. With your simulated data arriving at IoT hub, you will implement an IoT hub message route and Azure Stream Analytics job that can be used to process device messages (in both cases data will be delivered to a Blob storage container that is used to verify successful implementation).
 
@@ -19,15 +19,15 @@ The conveyor belt system is a critical link in this process and is visually moni
 * High vibration levels are known to accelerate wear-and-tear of the system
 * When vibration levels exceed a threshold limit, the conveyor belt must be stopped to allow for inspection (to avoid more serious failures)
 
-## Architecture Diagram
-
-![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
-
 ## Lab Objectives
  
  - Exercise 1: Write Code to generate Vibration Telemetry
  - Exercise 2: Create a Message Route to Azure Blob Storage
  - Exercise 3: Create an Azure Stream Analytics Job
+
+## Architecture Diagram
+
+![Lab 7 Architecture](media/LAB_AK_07-architecture.png)
 
 ## Exercise 1: Write Code to generate Vibration Telemetry
 
@@ -146,9 +146,7 @@ The simulated device app that you will build in this task simulates an IoT devic
 
 1. On the **File (1)** menu, click on **Save (2)**.
    
-   ![](./media/az-4-20.png)
-   
-    The updated device connection string must be saved before running the code. 
+    ![](./media/az-4-20.png)
 
 ### Task 3: Test your code to send telemetry
 
@@ -212,18 +210,6 @@ Contoso's vibration monitoring scenario requires you to create the following mes
 * the first process is an IoT hub route that delivers message data to an Azure Blob storage location for data archiving
 * the second process is an Azure Stream Analytics job for real-time analysis
 
-
-One of the easiest ways to filter data is to evaluate a message property. The code in your simulated device app configures the device-to-cloud messages as follows:
-
-```csharp
-...
-telemetryMessage.Properties.Add("sensorID", "VSTel");
-...
-loggingMessage.Properties.Add("sensorID", "VSLog");
-```
-
-With the messaged tagged in this way, you can embed a SQL query within your IoT hub message route that uses the **sensorID** property as a criteria for choosing the messages that are processed by the route. In this case, when the value assigned to **sensorID** is **VSLog** (vibration sensor log), the message is intended for the storage archive (logging).
-
 In this exercise, you will create and test the logging route.
 
 ### Task 1: Define the message routing endpoint
@@ -262,7 +248,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     | Account kind | **StorageV2 (general purpose v2) (2)** |
     | Performance | **Standard** |
       
-    ![](./media/lab7img12.png)
+     ![](./media/lab7img12.png)
 
 1. Wait until the request is validated and the storage account deployment has completed. Validation and creation can take a minute or two. Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
 
