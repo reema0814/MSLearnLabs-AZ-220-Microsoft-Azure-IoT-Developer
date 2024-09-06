@@ -4,6 +4,10 @@
 
 ## Lab Scenario
 
+In this lab, you'll set up an Azure IoT Edge solution from scratch. First, you'll install the Azure IoT EdgeHub Dev Tool and ensure Docker is running. Next, you'll create an Azure Container Registry (ACR) for managing your Docker images and connect Docker to this registry. You'll then create a custom IoT Edge Module in C# using Visual Studio Code, configure it, and debug it with the IoT Edge Simulator. Finally, you'll publish the module to the ACR and deploy the IoT Edge solution to an IoT Edge device, configuring it to use the module and setting up necessary routes.
+
+## Lab Scenario
+
 To help manage fluctuations in consumer demand, Contoso maintains a small inventory of ripened cheeses in a warehouse at each cheese making facility. These ripened wheels are sealed in wax and the storage environment is carefully controlled to ensure that the cheese remains in perfect condition. Contoso uses a conveyor system to move the large wax-sealed cheese wheels from the warehouse to the packaging facilities.
 
 In the past, Contoso has run their packaging process at full capacity, processing all the cheese that is placed in the system. Any excess volume of packaged cheese was not an issue because it could be used for promotional offers, and additional cheese could be pulled from inventory as needed. However, with the significant growth that Contoso is experiencing, and with growing fluctuations due to worldwide demand, the company needs to automate the system in a way that helps to manage the volume of cheese being packaged.
@@ -69,11 +73,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 ## Exercise 2: Create an Azure Container Registry
 
-Azure Container Registry provides storage of private Docker images for container deployments. The service is a managed, private Docker registry service based on the open-source Docker Registry 2.0. Azure Container Registry is used to store and manage your private Docker container images.
-
-When a new module instance is created by the IoT Edge runtime, it gets a corresponding module identity. The module identity is stored in IoT Hub and is used as the addressing and security scope for all local and cloud communications for that module instance. In implementation, modules images exist as container images in a repository, and module instances are containers on devices. The only supported container engine for IoT Edge devices in production is Moby.
-
-In this exercise, you will use the Azure portal to create a new Azure Container Registry resource.
+Azure Container Registry (ACR) is a managed service for storing and managing private Docker images based on Docker Registry 2.0. It helps with the deployment of IoT Edge modules by storing module images, which are used for device communication through IoT Hub. In this exercise, you'll create a new ACR resource using the Azure portal.
 
 ### Task 1: Create the container registry
 
