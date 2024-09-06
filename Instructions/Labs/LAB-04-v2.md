@@ -239,14 +239,12 @@ In this task, you will creating a routes using the message routing tab in the Az
 1. To begin creating a storage account, click **+ Storage account**. The **Create storage account** blade should now be displayed.
 
 1. On the **Create storage account** blade, provide the following details and then click on **OK** **(3)**.
-
-    | Setting | Value |
-    | --- | --- |
-    | Name | **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (1)**  |
-    | Account kind | **StorageV2 (general purpose v2) (2)** |
-    | Performance | **Standard** |
+   
+    - Name : **vibrationstore<inject key="DeploymentID" enableCopy="false" /> (1)** 
+    - Account kind: **StorageV2 (general purpose v2) (2)**
+    - Performance: **Standard** 
       
-     ![](./media/lab7img12.png)
+         ![](./media/lab7img12.png)
 
 1. Wait until the request is validated and the storage account deployment has completed. Validation and creation can take a minute or two. Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
 
