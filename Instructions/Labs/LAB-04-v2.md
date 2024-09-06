@@ -232,7 +232,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     | Endpoint name | **vibrationLoggingRoute(2)** |
     | Azure Storage Container | To display a list of Storage accounts associated with your subscription, click on **Pick a container(3)** |
 
-    ![](./media/az-4-7.png)
+      ![](./media/az-4-7.png)
 
 1. A list of the storage accounts already present in the Azure Subscription is listed. At this point you could select an existing storage account and container, however, for this lab you will create a new one.
 
