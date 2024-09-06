@@ -2,7 +2,11 @@
 
 ### Estimated Duration: 120 minutes
 
-## Overview
+## Lab Overview
+
+In this lab, you will explore how to set up Azure Data Explorer and integrate it with IoT Hub to analyze IoT telemetry data. First, you configure Azure Data Explorer to create a cluster and database, define a table schema, and set up streaming ingestion from IoT Hub. Next, you run simulated IoT devices that send telemetry data (like temperature and humidity) to the IoT Hub, simulating different transportation methods (truck, airplane, container). Finally, you visualize the collected data using Azure Data Explorer queries, generating charts and histograms to analyze the incoming telemetry.
+
+## Lab Scenario
 
 Your hard work implementing Azure IoT services and tools has paid off. Contoso has rolled out their "Asset Condition Tracking System" that monitors the environmental conditions of cheese containers during shipment.
 
@@ -28,9 +32,7 @@ In this lab, you will complete the following activities:
 
 ## Task 1: Setup Azure Data Explorer
 
-Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series.
-
-In this exercise, you will setup Azure Data Explorer integration with Azure IoT Hub.
+Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series. In this task, you will setup Azure Data Explorer integration with Azure IoT Hub.
 
 1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
@@ -171,7 +173,7 @@ In this exercise, you will setup Azure Data Explorer integration with Azure IoT 
 
 ## Task 2: Run Simulated IoT Devices
 
-In this exercise, you will run the simulated devices so that they start sending telemetry events to Azure IoT Hub.
+In this task, you will run the simulated devices so that they start sending telemetry events to Azure IoT Hub.
 
 1. In the Azure portal, navigate to your resource group and select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -250,7 +252,7 @@ In this exercise, you will run the simulated devices so that they start sending 
 
 ## Task 3: Visualize Data using Azure Data Explorer Queries
 
-In this exercise, you will get a quick introduction to working with time series data using Azure Data Explorer.
+In this task, you will get a quick introduction to working with time series data using Azure Data Explorer.
 
 1. In the Azure Portal, navigate to your resource group and select **adx-az220-<inject key="DeploymentID" enableCopy="false" />** Azure Data Explorer Cluster.
 
