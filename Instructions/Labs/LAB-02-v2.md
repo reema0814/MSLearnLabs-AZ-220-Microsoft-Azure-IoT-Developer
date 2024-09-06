@@ -502,7 +502,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     ```
 
-1. On the **File(1)** menu and then click on **Save(2)**.
+1. Select the **File(1)** menu and click on **Save(2)**.
 
     ![](./media/az-4-20.png)
    
