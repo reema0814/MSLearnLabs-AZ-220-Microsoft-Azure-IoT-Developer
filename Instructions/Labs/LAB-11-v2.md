@@ -4,22 +4,7 @@
 
 ## Lab Overview
 
-IoT devices often use optimized operating systems or even run code directly on the silicon (without the need for an actual operating system). In order to update the software running on devices like these the most common method is to flash a new version of the entire software package, including the OS as well as the apps running on it (called firmware).
-
-Because each device has a specific purpose, its firmware is also very specific and optimized for the purpose of the device as well as the constrained resources available.
-
-The process for updating firmware can also be specific to the hardware and to the way the hardware manufacturer created the board. This means that a part of the firmware update process is not generic and you will need to work with your device manufacturer to get the details of the firmware update process (unless you are developing your own hardware which means you probably know what the firmware update process).
-
-While firmware updates used to be applied manually on individual devices, this practice no longer makes sense considering the number of devices used in typical IoT solutions. Firmware updates are now more commonly done over-the-air (OTA) with deployments of new firmware managed remotely from the cloud.
-
-There is a set of common denominators to all over-the-air firmware updates for IoT devices:
-
-1. Firmware versions are uniquely identified
-1. Firmware comes in a binary file format that the device will need to acquire from an online source
-1. Firmware is locally stored is some form of physical storage (ROM memory, hard drive,...)
-1. Device manufacturer provide a description of the required operations on the device to update the firmware.
-
-Azure IoT Hub offers advanced support for implementing device management operations on single devices and on collections of devices. The [Automatic Device Management](https://docs.microsoft.com/azure/iot-hub/iot-hub-auto-device-config) feature enables you to simply configure a set of operations, trigger them, and then monitor their progress.
+In this lab, you’ll explore how IoT devices, which may use optimized or minimal operating systems, update their firmware. Firmware updates are essential for maintaining and improving device functionality and are now commonly managed over-the-air (OTA) rather than manually. The process involves acquiring firmware from an online source, which is identified by a unique version, and storing it locally before applying the update. You'll need to understand device-specific requirements and work with manufacturers or hardware developers to handle these updates effectively. Azure IoT Hub offers advanced support for implementing device management operations on single devices and on collections of devices. The [Automatic Device Management](https://docs.microsoft.com/azure/iot-hub/iot-hub-auto-device-config) feature enables you to simply configure a set of operations, trigger them, and then monitor their progress.
 
 ## Lab Scenario
 
@@ -53,6 +38,8 @@ In this lab, you will complete the following:
 
 ### Task 1: Configure Lab Prerequisites
 
+In this task, you'll set up your Azure IoT environment by accessing your resource group in the Azure portal and selecting the appropriate IoT training resource. From there, you'll navigate to the Devices section, locate the specific device **sensor-th-0155**, and copy its connection string for later use.
+
 1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
     ![](./media/v2img1.png)
@@ -70,6 +57,8 @@ In this lab, you will complete the following:
    ![](./media/iot3.png)
 
 ### Task 2: Examine code for a simulated device that implements firmware update
+
+In this task, you'll review code for a simulated device that supports firmware updates. Open Visual Studio Code, navigate to the `fwupdatedevice` project folder, and examine the `Program.cs` file, focusing on the device connection string needed for running the app.
 
 1. Open **Visual Studio Code** from the desktop.
 
@@ -107,6 +96,8 @@ In this lab, you will complete the following:
       ![](./media/az22024.png)
 
 ### Task 3: Test firmware update on a single device
+
+In this task, you'll test a firmware update by running the `FWUpdateDevice` app with your device connection string. After observing the initial firmware version, create a firmware update configuration in the Azure portal. Then, monitor the terminal for progress on the firmware update.
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. The folder location shown within the command prompt should show the FWUpdateDevice project folder.
 
