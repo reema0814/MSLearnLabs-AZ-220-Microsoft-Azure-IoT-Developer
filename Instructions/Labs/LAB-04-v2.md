@@ -301,8 +301,6 @@ In this task, you will verify that the data is properly archived or not by looki
 
 1. Ensure that the device app you created in Visual Studio Code is still running.
 
-    If not, run it in the Visual Studio Code terminal using **dotnet run**.
-
 1. On your Resources tile, to open you Storage account blade, click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media/lab7img19.png)
