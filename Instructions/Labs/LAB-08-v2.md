@@ -4,6 +4,10 @@
 
 ## Lab Scenario
 
+In this lab, you will configure a Linux VM as an IoT Edge Gateway and set up communication with a downstream device. You will start by deploying an Ubuntu Server VM and configuring it as an IoT Edge Gateway, including creating an IoT Edge device identity and setting up necessary inbound ports. Next, you'll download the device CA certificate and explore the IoT Edge configuration on the VM. Finally, you'll create a downstream IoT device in Azure IoT Hub, configure it to connect through the gateway, and verify the event flow to ensure proper communication.
+
+## Lab Scenario
+
 This lab is theoretical and will walk you through how an IoT Edge device can be used as a gateway.
 
 There are three patterns for using an IoT Edge device as a gateway: transparent, protocol translation, and identity translation:
@@ -71,11 +75,7 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
       ![](./media/lab12img9.png)
 
-1. At the bottom of the blade, click **Review + create**.
-
-1. Take a moment to review the deployment manifest.
-
-1. At the bottom of the blade, click **Create**.
+1. At the bottom of the blade, click **Review + create**. Take a moment to review the deployment manifest. At the bottom of the blade, click **Create**.
 
 ### Task 2: Open IoT Edge Gateway Device Ports for Communication
 
@@ -240,7 +240,7 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     > **Note**: Replace the value of FQDN which you had copied earlier.
 
-    The output from the nslookup command will be similar to:
+1. The output from the nslookup command will be similar to:
 
     ```bash
     Server:         127.0.0.53
@@ -283,7 +283,7 @@ In this task, you will explore the IoT edge configuration inside your vm. During
     cat /etc/aziot/config.toml
     ```
 
-    The output will be similar to:
+1. The output will be similar to:
 
     ```s
         [provisioning]
@@ -322,7 +322,7 @@ In this task, you will explore the IoT edge configuration inside your vm. During
     sudo iotedge system status
     ```
 
-    This command will display output similar to:
+1. This command will display output similar to:
 
     ```bash
     System services:
@@ -342,7 +342,7 @@ In this task, you will explore the IoT edge configuration inside your vm. During
     sudo iotedge check --verbose
     ```
 
-    This runs several checks and displays the results. For this lab, ignore the **Configuration checks** warnings/errors. The **Connectivity checks** should succeed and be similar to:
+1. This runs several checks and displays the results. For this lab, ignore the **Configuration checks** warnings/errors. The **Connectivity checks** should succeed and be similar to:
 
     ```bash
     Connectivity checks (aziot-identity-service)
@@ -375,9 +375,7 @@ In this task, you will explore the IoT edge configuration inside your vm. During
 
 ### Task 3: Download SSL certs from VM to Cloud Shell
 
-Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine so that it can be used to encrypt communications between a leaf device and the IoT Edge gateway.
-
-In this task, you will download SSL certs from that VM to the Cloud Shell.
+Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine so that it can be used to encrypt communications between a leaf device and the IoT Edge gateway. In this task, you will download SSL certs from that VM to the Cloud Shell.
 
 1. Ensure that the **Cloud Shell** is open in your Azure portal window.
 
@@ -405,14 +403,14 @@ In this task, you will download SSL certs from that VM to the Cloud Shell.
     ls
     ```
 
-    You should see the following files listed:
+1. You should see the following files listed:
 
     ```bash
     certGen.sh  csr        index.txt.attr      index.txt.old  openssl_root_ca.cnf  serial
     certs       index.txt  index.txt.attr.old  newcerts       private              serial.old
     ```
 
-    Once the files are copied to Cloud Shell storage from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine, you will be able to easily download any of the IoT Edge Device certificate and key files to your local machine as necessary. Files can be downloaded from the Cloud Shell using the `download <filename>` command. You will do this later in the lab.
+1. Once the files are copied to Cloud Shell storage from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine, you will be able to easily download any of the IoT Edge Device certificate and key files to your local machine as necessary. Files can be downloaded from the Cloud Shell using the `download <filename>` command. You will do this later in the lab.
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
@@ -526,13 +524,13 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
     > **Note**: In the previous task, you updated the local machine's **hosts** file to resolve the IoT Edge device's hostname to an IP Address. As a result, the fully qualified domain name (DNS name) of your Edge gateway device is not required.
 
-    The completed connection string values should match the following format:
+1. The completed connection string values should match the following format:
 
     ```text
     HostName={IoT-Hub-Name}.azure-devices.net;DeviceId=sensor-th-0072;SharedAccessKey={Primary-Key-for-IoT-Device};GatewayHostName={Name-of-your-IoT-Edge-Device}
     ```
 
-1. Which look similar to this.
+1. The completed will look similar to this.
 
     ```csharp
     private readonly static string connectionString = "HostName=iot-az220-training-abc201119.azure-devices.net;DeviceId=sensor-th-0072;SharedAccessKey=ygNT/WqWs2d8AbVD9NAlxcoSS2rr628fI7YLPzmBdgE=;GatewayHostName=vm-az220-training-gw0001-{your-id}";
@@ -554,7 +552,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
     dotnet run
     ```
 
-    This command will build and run the code for the **sensor-th-0072** simulated device, which will start sending device telemetry.
+1. This command will build and run the code for the **sensor-th-0072** simulated device, which will start sending device telemetry.
 
     > **Note**: When the app attempts to install the X.509 certificate on the local machine (so that it can use it to authenticate with the IoT Edge Gateway), you may see a Security Warning asking about installing the certificate. You will need to click **Yes** to allow the app to continue.
 
@@ -644,4 +642,4 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 
 In this lab, you have created a Linux based Virtual Machine as an IoT Edge Device. and you have connected to that VM and check regarding IoT edge modules and download CA certificate and created a downstream device.
 
-## You have successfully completed this Lab!!
+## You have successfully completed this Lab
