@@ -20,7 +20,7 @@ For you, this means two things:
 
 1. The Operations team at Contoso is always looking for ways to make improvements. These improvements often lead to requests for new features in the device software.
 
-1. The IoT devices that are deployed to cave locations need the latest security patches to ensure privacy and to prevent hackers from taking control of the system. In order to maintain system security, you need to keep the devices up to date by remotely updating their firmware.
+1. The IoT devices that are deployed to cave locations need the latest security patches to ensure privacy and prevent hackers from taking control of the system. In order to maintain system security, you need to keep the devices up to date by remotely updating their firmware.
 
 You plan to implement features of IoT Hub that enable automatic device management and device management at scale.
 
