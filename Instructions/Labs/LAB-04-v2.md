@@ -465,10 +465,6 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. If your Storage account is not visible, use the **Refresh** button at the top of the resource group tile.
 
-1. On the **Overview** pane of your Storage account, select the **Monitoring** section. Under **Key metrics**, adjacent to **Show data for last**, change the time range to **1 hour**.
-
-    ![](./media/lab7img34.png)
-
 1. On the left-side menu, click on **Storage browser(1)**. In **Storage browser**, under **vibrationstore<inject key="DeploymentID" enableCopy="false" />**, click on **Blob containers(2)**  then click on  **vibrationcontainer(3)** and then select the json file **(4)**
 
     ![](./media/az-4-10.png)
