@@ -57,7 +57,7 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
 
     ![](media/toi2.png)
 
-1. Once the Deployment is completed,Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
+1. Once the Deployment is completed, Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
     ![](media/iott9.png)
 

@@ -394,7 +394,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
            ![](./media/az11-7.png)
      
-1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add**, and then click **Edge Hub**.
+1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add output**, and then click **Edge Hub**.
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
@@ -508,7 +508,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
       > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
 
-1. Take a minute to observe the output.While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query. Output of this event will look similar to the following:
+1. Take a minute to observe the output. While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query. Output of this event will look similar to the following:
 
       ![](./media/az11-91.png)
 

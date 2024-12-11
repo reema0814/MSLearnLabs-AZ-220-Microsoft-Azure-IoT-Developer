@@ -301,7 +301,9 @@ In this task, you will verify that the data is properly archived or not by looki
 
 1. Ensure that the device app you created in Visual Studio Code is still running.
 
-1. On your Resources tile, to open you Storage account blade, click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **Storage Account** and click on it.
+
+1. Click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media/lab7img19.png)
  
@@ -462,10 +464,6 @@ Now for the fun part. Is the telemetry from your device app being processed thro
     ![](./media/lab7img33.png)
 
 1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. If your Storage account is not visible, use the **Refresh** button at the top of the resource group tile.
-
-1. On the **Overview** pane of your Storage account, select the **Monitoring** section. Under **Key metrics**, adjacent to **Show data for last**, change the time range to **1 hour**.
-
-    ![](./media/lab7img34.png)
 
 1. On the left-side menu, click on **Storage browser(1)**. In **Storage browser**, under **vibrationstore<inject key="DeploymentID" enableCopy="false" />**, click on **Blob containers(2)**  then click on  **vibrationcontainer(3)** and then select the json file **(4)**
 
