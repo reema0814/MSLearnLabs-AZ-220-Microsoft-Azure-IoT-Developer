@@ -95,7 +95,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 The simulated device app that you will build in this task simulates an IoT device that monitors temperature and humidity. The app will simulate sensor readings and communicate sensor data every two seconds.
 
-1. In visual studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the device **connection string** that you saved earlier.
+1. In visual studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the **Device connection string** that you saved earlier.
    
       ![](./media/az15-6.png)
 
@@ -151,7 +151,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. In the **EXPLORER** pane, click **Program.cs**.
 
-1. Replace the **eventHubsCompatibleEndpoint (1)**, **eventHubsCompatiblePath (2)** ,**iotHubSasKey (3)** and **serviceConnectionString (4)** placeholder values with the values that you saved earlier in the exercise-1.
+1. Replace the **EventHubsCompatibleEndpoint (1)**, **EventHubsCompatiblePath (2)** ,**IotHubSasKey (3)** and **ServiceConnectionString (4)** placeholder values with the values that you saved earlier in the exercise-1.
 
      ![](./media/az15-9.png)
   
@@ -340,6 +340,8 @@ Device twins synchronize automatically with the IoT device and can be queried by
       ![](./media/az15-17.png)
 
 1. Locate the **OnDesiredPropertyChanged is the handler that is invoked when a desired property changes in the device twin** comment line within the code.
+
+    > **Note:** If this is already commented, please ignore.
 
 1. Take a minute to review the OnDesiredPropertyChanged code.
 
