@@ -301,7 +301,9 @@ In this task, you will verify that the data is properly archived or not by looki
 
 1. Ensure that the device app you created in Visual Studio Code is still running.
 
-1. On your Resources tile, to open you Storage account blade, click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
+1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **Storage Account** and click on it.
+
+1. Click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
     ![](./media/lab7img19.png)
  
