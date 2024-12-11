@@ -60,11 +60,11 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
  
 1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, copy the **Primary Connection String**. Save the **Primary Connection String** value in a notepad for future use.
 
-   ![](./media/az8-15.png)
+   ![](./media/E1T1S6.png)
 
 1. On the **sensor-<inject key="DeploymentID" enableCopy="false" />** blade, scroll down and notice that the list of **Modules (1)** is limited to **\$edgeAgent** and **\$edgeHub**. At the top of the blade, click **Set Modules (2)**.
 
-   ![](./media/az8-3.png)
+   ![](./media/E1T1S7.png)
 
 1. At the top of the **Set module on device** blade, click **Routes**. Under **Routes**, the editor displays a configured default route for the IoT Edge Device. At this time, it should be configured with a route that sends all messages from all modules to Azure IoT Hub. If the route configuration doesn't match this, then update it to match the following route:
 
@@ -111,7 +111,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
     | Device Connection string | Paste the **device primary connection string** you copied earlier in your notepad **(5)** |
     | Virtual Machine Size | **Standard_DS1_v2 (6)** |
     | Ubuntu OS Version | **18.04-LTS (7)** |
-    | Admin Username | Provide the name as **demouser (8)** |
+    | Admin Username | Provide the name as **vmadmin (8)** |
     | Authentication Type | Select **Password (9)** |
     | Admin Password Or Key | Provide the password as **Password!123** **(10)** |
     | Allow SSH | **True (11)** |
@@ -131,7 +131,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media/az8-19.png)
    
-1. On the **All resources** tile, click **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
+1. On the **All resources** tile, click on network security group named as **nsg-vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**.
  
    ![](./media/lab12img10.png)
 
