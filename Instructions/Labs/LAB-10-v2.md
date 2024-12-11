@@ -4,13 +4,13 @@
 
 ## Lab Overview
 
-In this lab, you will set up and configure a simulated IoT environment using Azure IoT Hub. You will start by preparing your environment and reviewing code for sending and receiving telemetry data. Next, you’ll complete a backend application to receive this telemetry and implement functionality to invoke a direct method for controlling a simulated fan. Finally, you'll enable and test Device Twin functionality to synchronize device properties and settings. This exercise includes working with Visual Studio Code to manage code and configurations, running applications, and verifying functionality through terminal outputs.
+In this lab, you will set up and configure a simulated IoT environment using Azure IoT Hub. You will start by preparing your environment and reviewing the code for sending and receiving telemetry data. Next, you’ll complete a backend application to receive this telemetry and implement functionality to invoke a direct method for controlling a simulated fan. Finally, you'll enable and test Device Twin functionality to synchronize device properties and settings. This exercise includes working with Visual Studio Code to manage code and configurations, running applications, and verifying functionality through terminal outputs.
 
 ## Lab Scenario
 
 Contoso is proud of its award-winning cheeses and is careful to maintain the perfect temperature and humidity during the entire manufacturing process, but conditions during the aging process have always received special attention.
 
-In recent years, Contoso has used environmental sensors to record the conditions within their natural cheese caves where aging occurs, and has used that data to identify a near perfect environment. Data from the most successful (aka award producing) locations indicates that the ideal temperature for aging cheese is approximately 50 degrees Fahrenheit +/- 5 degrees (10 degrees Celsius +/- 2.8 degrees). The ideal humidity value, measured in percentage of maximum saturation, is approximately 85% +/- 10%.
+In recent years, Contoso has used environmental sensors to record the conditions within their natural cheese caves where aging occurs and has used that data to identify a near-perfect environment. Data from the most successful (aka award-producing) locations indicates that the ideal temperature for aging cheese is approximately 50 degrees Fahrenheit +/- 5 degrees (10 degrees Celsius +/- 2.8 degrees). The ideal humidity value, measured in percentage of maximum saturation, is approximately 85% +/- 10%.
 
 These ideal temperature and humidity values work well for most types of cheese. However, minor variations are required for especially hard or especially soft cheeses. The environment must also be adjusted at critical times/phases within the aging process to achieve specific results, such as a desired condition for the cheese rind.
 
@@ -20,7 +20,7 @@ Currently, an operator monitors the environmental conditions within each zone of
 
 Contoso has tasked you with implementing an automated system that keeps the cave environment within control limits.
 
-In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors, and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
+In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
 
 ## Lab Objectives
 
@@ -40,11 +40,11 @@ In this lab, you will complete the following:
 
 1. Navigate to the **Environment (1)** tab in your VM and copy the following values in a notepad for future use:
 
-   - **deviceConnectionString (2)**
-   - **eventHubsCompatibleEndpoint (3)**
-   - **eventHubsCompatiblePath (4)**
-   - **iotHubSasKey (5)**
-   - **serviceConnectionString (6)**
+   - **DeviceConnectionString (2)**
+   - **EventHubsCompatibleEndpoint (3)**
+   - **EventHubsCompatiblePath (4)**
+   - **IotHubSasKey (5)**
+   - **ServiceConnectionString (6)**
 
         ![](./media/az15-34.png)
 
