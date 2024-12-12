@@ -391,7 +391,6 @@ Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az
     >**Important**: The command above has a **space character** followed by a period **.** at the end of the command.
 
     > **Note**: Replace the **{username}** placeholder with the username of the admin user for the VM and replace the **{FQDN}** placeholder with the fully qualified domain name for the VM. Refer to the command that you used to open the SSH session if needed.
-    
 
 1. Enter the Admin password for the VM when prompted. Once the command has executed, it will have downloaded a copy of the **/tmp/lab12** directory with the certificate and key files over SSH to the Cloud Shell storage.
 
