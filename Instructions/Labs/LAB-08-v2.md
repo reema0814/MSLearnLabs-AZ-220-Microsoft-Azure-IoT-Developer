@@ -460,12 +460,16 @@ In this task, you will configure the connection between a pre-built downstream d
 
 1. On the Azure portal toolbar, click **Cloud Shell**. Ensure that the environment is set to **Bash**.
 
+1. Run the following command:
+
+    ```bash
+    sudo apt install xmlbeans
+    ```
 1. At the Cloud Shell command prompt, to download the root CA X.509 certificate for the IoT Edge Gateway virtual machine, enter the following command:
 
     ```bash
-    download lab12/certs/azure-iot-test-only.root.ca.cert.pem
+    sdownload lab12/certs/azure-iot-test-only.root.ca.cert.pem
     ```
-
     > **Note**: Your browser UI may prompt you to save the download file.
 
 1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
