@@ -149,6 +149,10 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
       ![](./media2/lab13img14.png)
 
+   >**Note:** If the option is unavailable, navigate to **Extensions (1)**, search for **Azure IoT Tools (2)**, select it, and click **Install (3)**. After installation, please re-perform Task 1.
+
+    ![](./media/extension.png)
+
 1. Browse to the folder `C:\Labfiles`, and then click **Select folder**.
 
 1. When prompted for a solution name, enter **EdgeSolution**. This name will be used as the directory name for the new **IoT Edge Solution** that will be created.
