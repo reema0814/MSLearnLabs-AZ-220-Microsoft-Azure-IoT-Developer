@@ -121,7 +121,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
     |  -- | -- |
     | Subscription | **Select the default subscription (1)** |
     | Resource Group | **Select the existing resource group (2)** |
-    | Region | **Select the default region (3)** |
+    | Region | **eastus(3)** |
     | Virtual Machine Name | Provide the name as **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** **(4)** |
     | Device Connection string | Paste the **device primary connection string** you copied earlier in your notepad **(5)** |
     | Virtual Machine Size | **Standard_DS1_v2 (6)** |
