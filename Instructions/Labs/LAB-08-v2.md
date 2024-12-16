@@ -50,9 +50,9 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/lab12img3.png)
 
-1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, leave other setting as default and click on **save (2)**.
+1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, let **IoT Edge Device** checkbox selected if not selected by default. Leave other setting as default and click on **save (2)**.
 
-   ![](./media/az8-1.png)
+   ![](./media/new-az-220-lab8-099.png)
 
 1. Under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />**.
 
