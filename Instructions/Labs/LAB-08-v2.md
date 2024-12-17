@@ -216,9 +216,11 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     > **Note**: Both *Bash* and *PowerShell* interfaces for the Azure Cloud Shell support the use of **OpenSSL**.
 
-1. At the Cloud Shell command prompt, paste the **ssh** command that you saved to your text editor, and then press **Enter**. The command should look similar to the following:
-
+1. Navigate to the virtual machine **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**, copy the DNS name, add **vmadmin@** as a prefix, and paste the **ssh** command you saved in your text editor. Then press **Enter**. The command should resemble the following:
+  
     - **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
+
+      ![](./media/vmazz-8.png)    
 
 1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections and is only prompted on the first connection.
 
